@@ -16,6 +16,8 @@ Hệ thống đã được thiết lập sẵn các lệnh chuẩn trong `packag
 
 Port mặc định cho localhost là 4321/4322, vào package.json để đổi
 
+[Đọc thêm về Astro](https://docs.astro.build/en/develop-and-build/#start-the-astro-dev-server)
+
 ### 1. Astro Dev mode
 Chạy server:
 ```bash
