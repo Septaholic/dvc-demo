@@ -1,5 +1,7 @@
 # WEB DVC DEMO
 
+## Vẫn còn khá nhiều chỗ bị sai, nhma để mai sửa, buồn ngủ vãi 😴
+
 ---
 
 Don't mind
