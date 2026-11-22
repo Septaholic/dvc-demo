@@ -1,0 +1,145 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Tìm kiếm Thủ tục hành chính - Cổng Dịch vụ công Quốc gia" activeNav="tthc">
+  <div class="container" style="padding-top: 30px; padding-bottom: 50px;">
+    <!-- Breadcrumb -->
+    <ul class="breadcrumb" style="background: transparent; padding: 0 0 15px 0;">
+      <li><a href="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+      <li class="active">Thủ tục hành chính</li>
+    </ul>
+
+    <!-- Filter box -->
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; margin-bottom: 30px;">
+      <h2 style="font-size: 20px; font-weight: 700; color: #0b5796; margin-top: 0; margin-bottom: 20px;">
+        <i class="fa fa-filter" style="margin-right: 8px;"></i>Tìm kiếm thủ tục hành chính
+      </h2>
+
+      <div class="row">
+        <div class="col-md-5 col-sm-6 col-xs-12" style="margin-bottom: 15px;">
+          <label style="font-size: 13px; font-weight: 600; color: #334155;">Từ khóa tìm kiếm:</label>
+          <input type="text" id="inputKeyword" class="form-control" placeholder="Nhập tên thủ tục, mã thủ tục..." />
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 15px;">
+          <label style="font-size: 13px; font-weight: 600; color: #334155;">Lĩnh vực:</label>
+          <select id="selectField" class="form-control">
+            <option value="-1">-- Tất cả lĩnh vực --</option>
+            <option value="Hộ tịch">Hộ tịch</option>
+            <option value="Cư trú">Cư trú</option>
+            <option value="Việc làm">Việc làm</option>
+            <option value="Xây dựng">Xây dựng</option>
+            <option value="An toàn thực phẩm">An toàn thực phẩm</option>
+            <option value="Sở hữu trí tuệ">Sở hữu trí tuệ</option>
+            <option value="Thương mại">Thương mại, Khuyến mại</option>
+            <option value="Giao thông">Giao thông vận tải</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-12 col-xs-12" style="margin-bottom: 15px; display: flex; align-items: flex-end;">
+          <button type="button" class="btn btn-primary" id="btnFilter" style="background: #0b5796; border: none; font-weight: 600; width: 100%; padding: 9px;" onclick="loadProcedures(1)">
+            <i class="fa fa-search" style="margin-right: 5px;"></i> Tìm kiếm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results table -->
+    <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 25px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px;">
+        <h3 id="resultCount" style="margin: 0; font-size: 17px; font-weight: 700; color: #1e293b;">
+          Danh sách thủ tục hành chính
+        </h3>
+        <span style="font-size: 13px; color: #64748b;">Dữ liệu chuẩn hóa quốc gia</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover" id="procTable" style="margin-bottom: 0;">
+          <thead style="background: #f1f5f9; color: #334155; font-size: 13px;">
+            <tr>
+              <th style="width: 130px;">Mã số</th>
+              <th>Tên thủ tục</th>
+              <th>Cơ quan thực hiện</th>
+              <th>Lĩnh vực</th>
+              <th style="width: 110px; text-align: center;">Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="procTableBody" style="font-size: 14px;">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div id="paginationWrap" style="display: flex; justify-content: center; margin-top: 25px;">
+        <!-- Pagination controls -->
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    var currentPage = 1;
+    var pageSize = 15;
+
+    function loadProcedures(page) {
+      currentPage = page;
+      var kw = (document.getElementById('inputKeyword').value || '').trim();
+      var field = document.getElementById('selectField').value;
+      
+      var procs = window.OFFLINE_PROCEDURES || [];
+      var filtered = procs.filter(function(p) {
+        var matchKw = true;
+        if (kw) {
+          matchKw = (p.PROCEDURE_NAME && p.PROCEDURE_NAME.toLowerCase().indexOf(kw.toLowerCase()) !== -1) ||
+                    (p.PROCEDURE_CODE && p.PROCEDURE_CODE.toLowerCase().indexOf(kw.toLowerCase()) !== -1);
+        }
+        var matchField = true;
+        if (field && field !== '-1') {
+          matchField = (p.FIELD_NAME && p.FIELD_NAME.indexOf(field) !== -1);
+        }
+        return matchKw && matchField;
+      });
+
+      var total = filtered.length;
+      document.getElementById('resultCount').innerText = 'Danh sách thủ tục hành chính (' + total + ' kết quả)';
+
+      var start = (currentPage - 1) * pageSize;
+      var paged = filtered.slice(start, start + pageSize);
+
+      var tbody = document.getElementById('procTableBody');
+      var html = '';
+      if (paged.length === 0) {
+        html = '<tr><td colspan="5" class="text-center" style="padding: 30px; color: #64748b;">Không tìm thấy thủ tục nào phù hợp với điều kiện tìm kiếm.</td></tr>';
+      } else {
+        paged.forEach(function(item) {
+          var targetUrl = item.URL || ('/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=' + item.PROCEDURE_CODE + '.html');
+          html += '<tr>' +
+            '<td><a href="' + targetUrl + '" style="font-weight: 600; color: #0b5796;">' + (item.PROCEDURE_CODE || '---') + '</a></td>' +
+            '<td><a href="' + targetUrl + '" style="color: #1e293b; text-decoration: none; font-weight: 500;">' + item.PROCEDURE_NAME + '</a></td>' +
+            '<td style="color: #64748b; font-size: 13px;">' + (item.IMPLEMENTATION_AGENCY || item.PUBLISHED_AGENCY || '---') + '</td>' +
+            '<td><span class="badge" style="background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; font-size: 12px;">' + (item.FIELD_NAME || 'Chung') + '</span></td>' +
+            '<td style="text-align: center;"><a href="' + targetUrl + '" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Chi tiết</a></td>' +
+            '</tr>';
+        });
+      }
+      tbody.innerHTML = html;
+
+      // Render pagination
+      var totalPages = Math.ceil(total / pageSize);
+      var pagHtml = '<ul class="pagination" style="margin: 0;">';
+      for (var i = 1; i <= Math.min(totalPages, 10); i++) {
+        pagHtml += '<li class="' + (i === currentPage ? 'active' : '') + '"><a href="javascript:void(0)" onclick="loadProcedures(' + i + ')">' + i + '</a></li>';
+      }
+      pagHtml += '</ul>';
+      document.getElementById('paginationWrap').innerHTML = totalPages > 1 ? pagHtml : '';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var kw = urlParams.get('tu_khoa') || urlParams.get('tukhoa') || urlParams.get('keyword');
+      if (kw) {
+        document.getElementById('inputKeyword').value = kw;
+      }
+      loadProcedures(1);
+    });
+  </script>
+</Layout>

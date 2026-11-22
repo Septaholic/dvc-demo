@@ -1,0 +1,22 @@
+{
+	"pid": 9952,
+	"port": 4322,
+	"url": "http://localhost:4322",
+	"urls": {
+		"local": [
+			"http://localhost:4322/"
+		],
+		"network": [
+			"http://192.168.214.1:4322/",
+			"http://192.168.44.1:4322/",
+			"http://192.168.53.102:4322/"
+		],
+		"networkInterfaceNames": [
+			"VMware Network Adapter VMnet1",
+			"VMware Network Adapter VMnet8",
+			"Wi-Fi"
+		]
+	},
+	"background": false,
+	"startedAt": "2026-11-22T08:33:59.611Z"
+}

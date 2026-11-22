@@ -1,0 +1,198 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Câu hỏi thường gặp - Cổng Dịch vụ công Quốc gia">
+  <div style="background:#f4f6f9; min-height:800px; padding: 25px 0 50px 0;">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb" style="background:transparent; padding: 8px 0; margin-bottom: 20px;">
+        <li><a href="/" style="color:#d32f2f; font-weight:600;"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li class="active">Câu hỏi thường gặp</li>
+      </ul>
+
+      <!-- Banner -->
+      <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color:white; border-radius:12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(30,58,138,0.2);">
+        <h1 style="margin: 0 0 10px 0; font-size: 26px; font-weight: 700; color: #fff;">
+          <i class="fa fa-question-circle"></i> Hỏi đáp về Thủ tục & Dịch vụ công
+        </h1>
+        <p style="margin: 0; font-size: 15px; opacity: 0.95;">
+          Tra cứu giải đáp thắc mắc thường gặp về điều kiện, trình tự thực hiện các thủ tục hành chính và tài khoản công dân, doanh nghiệp.
+        </p>
+      </div>
+
+      <!-- Search & Filter Card -->
+      <div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div class="row">
+          <div class="col-sm-7 col-xs-12" style="margin-bottom: 10px;">
+            <label style="font-weight: 600; font-size: 13px; color: #475569;">Từ khoá câu hỏi:</label>
+            <div class="input-group" style="width: 100%;">
+              <input
+                type="text"
+                id="faq-search-input"
+                class="form-control input-lg"
+                placeholder="Nhập nội dung câu hỏi cần tìm (ví dụ: xây dựng, hộ chiếu, đất đai...)"
+                style="border-radius: 6px;"
+              />
+            </div>
+          </div>
+          <div class="col-sm-5 col-xs-12" style="margin-bottom: 10px;">
+            <label style="font-weight: 600; font-size: 13px; color: #475569;">Lĩnh vực / Bộ ngành:</label>
+            <div style="display: flex; gap: 8px;">
+              <select id="faq-category-select" class="form-control input-lg" style="border-radius: 6px; flex: 1;">
+                <option value="">-- Tất cả lĩnh vực --</option>
+                <option value="xây dựng">Xây dựng & Quy hoạch</option>
+                <option value="đất đai">Đất đai & Nhà ở</option>
+                <option value="hộ chiếu">Hộ chiếu & Xuất nhập cảnh</option>
+                <option value="kết hôn">Hộ tịch & Gia đình</option>
+                <option value="bảo trợ">Bảo trợ & Lao động</option>
+                <option value="kinh doanh">Đăng ký kinh doanh & Doanh nghiệp</option>
+                <option value="y tế">Y tế & Dược</option>
+              </select>
+              <button id="faq-search-btn" class="btn btn-primary input-lg" style="font-weight: 700; padding: 0 20px; border-radius: 6px;">
+                <i class="fa fa-search"></i> Tìm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px;">
+          <h3 style="margin: 0; font-size: 17px; font-weight: 700; color: #1e293b;">
+            Danh sách câu hỏi (<span id="faq-total-count" style="color: #d32f2f;">0</span> kết quả)
+          </h3>
+          <span style="font-size: 13px; color: #64748b;" id="faq-page-info">Trang 1</span>
+        </div>
+
+        <!-- Question List Container -->
+        <div id="faq-list-container">
+          <div style="text-align: center; padding: 40px; color: #94a3b8;">
+            <i class="fa fa-spinner fa-spin fa-2x"></i>
+            <p style="margin-top: 10px;">Đang tải dữ liệu câu hỏi thường gặp...</p>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div style="text-align: center; margin-top: 25px;" id="faq-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    var currentFaqPage = 1;
+    var faqPageSize = 10;
+    var filteredQuestions = [];
+
+    function decodeHtmlEntities(str) {
+      var txt = document.createElement("textarea");
+      txt.innerHTML = str;
+      return txt.value;
+    }
+
+    function searchFaqs(page) {
+      if (!window.OFFLINE_QUESTIONS) {
+        setTimeout(function() { searchFaqs(page); }, 200);
+        return;
+      }
+
+      var keyword = ($('#faq-search-input').val() || '').trim().toLowerCase();
+      var category = ($('#faq-category-select').val() || '').trim().toLowerCase();
+
+      filteredQuestions = window.OFFLINE_QUESTIONS.filter(function(q) {
+        var text = (decodeHtmlEntities(q.CONTENT) || '').toLowerCase();
+        var matchKw = !keyword || text.indexOf(keyword) !== -1;
+        var matchCat = !category || text.indexOf(category) !== -1;
+        return matchKw && matchCat;
+      });
+
+      currentFaqPage = page || 1;
+      var total = filteredQuestions.length;
+      $('#faq-total-count').text(total);
+
+      var totalPages = Math.ceil(total / faqPageSize) || 1;
+      if (currentFaqPage > totalPages) currentFaqPage = totalPages;
+
+      var startIdx = (currentFaqPage - 1) * faqPageSize;
+      var endIdx = startIdx + faqPageSize;
+      var pageItems = filteredQuestions.slice(startIdx, endIdx);
+
+      $('#faq-page-info').text('Trang ' + currentFaqPage + ' / ' + totalPages);
+
+      if (pageItems.length === 0) {
+        $('#faq-list-container').html(`
+          <div style="text-align: center; padding: 40px 20px; color: #64748b;">
+            <i class="fa fa-info-circle fa-2x" style="color: #cbd5e1; margin-bottom: 10px;"></i>
+            <p style="font-size: 15px;">Không tìm thấy câu hỏi nào phù hợp với từ khóa đã nhập.</p>
+          </div>
+        `);
+        $('#faq-pagination').html('');
+        return;
+      }
+
+      var html = '<ul style="list-style: none; padding-left: 0; margin-bottom: 0;">';
+      pageItems.forEach(function(item, idx) {
+        var decoded = decodeHtmlEntities(item.CONTENT);
+        var itemNum = startIdx + idx + 1;
+        var detailUrl = '/p/home/dvc-chi-tiet-cau-hoi?id=' + encodeURIComponent(item.ID);
+        var staticUrl = '/p/home/dvc-chi-tiet-cau-hoi.html@id=' + encodeURIComponent(item.ID) + '&row_limit=1.html';
+
+        html += `
+          <li style="padding: 16px 18px; border: 1px solid #f1f5f9; border-radius: 8px; margin-bottom: 12px; background: #fafbfc; transition: all 0.2s; display: flex; align-items: flex-start; justify-content: space-between;" onmouseover="this.style.background='#f0fdf4'; this.style.borderColor='#86efac';" onmouseout="this.style.background='#fafbfc'; this.style.borderColor='#f1f5f9';">
+            <div style="flex: 1; padding-right: 15px;">
+              <div style="display: flex; align-items: baseline; gap: 8px;">
+                <span style="background: #e0f2fe; color: #0369a1; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px;">#${itemNum}</span>
+                <span style="font-size: 12px; color: #94a3b8;">ID: ${item.ID}</span>
+              </div>
+              <h4 style="margin: 8px 0 6px 0; font-size: 15px; font-weight: 600; line-height: 1.5;">
+                <a href="${detailUrl}" style="color: #1e3a8a; text-decoration: none;">
+                  ${decoded}
+                </a>
+              </h4>
+            </div>
+            <div style="white-space: nowrap; margin-top: 6px;">
+              <a href="${detailUrl}" class="btn btn-outline-primary btn-sm" style="border: 1px solid #2563eb; color: #2563eb; font-weight: 600; border-radius: 4px; padding: 5px 12px;">
+                Xem câu trả lời <i class="fa fa-angle-right"></i>
+              </a>
+            </div>
+          </li>
+        `;
+      });
+      html += '</ul>';
+      $('#faq-list-container').html(html);
+
+      // Render pagination buttons
+      var pagHtml = '<ul class="pagination" style="margin: 0;">';
+      if (currentFaqPage > 1) {
+        pagHtml += `<li><a href="javascript:void(0)" onclick="searchFaqs(${currentFaqPage - 1})">&laquo; Trước</a></li>`;
+      }
+      for (var p = Math.max(1, currentFaqPage - 2); p <= Math.min(totalPages, currentFaqPage + 2); p++) {
+        pagHtml += `<li class="${p === currentFaqPage ? 'active' : ''}"><a href="javascript:void(0)" onclick="searchFaqs(${p})">${p}</a></li>`;
+      }
+      if (currentFaqPage < totalPages) {
+        pagHtml += `<li><a href="javascript:void(0)" onclick="searchFaqs(${currentFaqPage + 1})">Tiếp &raquo;</a></li>`;
+      }
+      pagHtml += '</ul>';
+      $('#faq-pagination').html(pagHtml);
+    }
+
+    $(document).ready(function() {
+      searchFaqs(1);
+
+      $('#faq-search-btn').on('click', function() {
+        searchFaqs(1);
+      });
+
+      $('#faq-search-input').on('keyup', function(e) {
+        if (e.which === 13) {
+          searchFaqs(1);
+        }
+      });
+
+      $('#faq-category-select').on('change', function() {
+        searchFaqs(1);
+      });
+    });
+  </script>
+</Layout>

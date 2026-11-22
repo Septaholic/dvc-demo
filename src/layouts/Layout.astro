@@ -1,0 +1,61 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const {
+  title = "Cổng Dịch vụ công Quốc gia",
+  description = "Cổng Dịch vụ công Quốc gia hỗ trợ thông tin, đăng ký thủ tục hành chính trực tuyến",
+  activeNav = "home"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="shortcut icon" href="/img/header/quoc_huy.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/theme/vendor/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/theme/vendor/iconsax/style.css" />
+  <link rel="stylesheet" href="/theme/vendor/ap8/css/style.css" />
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/vendor/toastr/toastr.min.css" />
+  <link rel="stylesheet" href="/theme/vendor/slick/slick.css" />
+  <link rel="stylesheet" href="/theme/css/style.css" />
+
+  <!-- Scripts -->
+  <script is:inline src="/theme/vendor/jquery/jquery.2.1.1.min.js"></script>
+  <script is:inline src="/theme/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script is:inline src="/vendor/toastr/toastr.min.js"></script>
+  <script is:inline src="/js/offline-data.js"></script>
+  <script is:inline src="/js/ApiService.js"></script>
+  <script is:inline src="/js/CommonUtil.js"></script>
+  <script is:inline src="/js/Constants.js"></script>
+  <script is:inline src="/js/mock-db.js"></script>
+  <script is:inline>
+    if (typeof initApiService === 'function') {
+      initApiService();
+    }
+  </script>
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+  <Header activeNav={activeNav} />
+  
+  <div style="flex: 1 0 auto;">
+    <slot />
+  </div>
+
+  <Footer />
+</body>
+</html>

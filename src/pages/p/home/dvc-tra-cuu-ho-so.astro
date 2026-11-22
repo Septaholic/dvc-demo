@@ -1,0 +1,164 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Tra cứu tiến độ hồ sơ - Cổng Dịch vụ công Quốc gia" activeNav="search">
+  <div style="background:#f4f6f9; min-height:800px; padding: 25px 0 50px 0;">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb" style="background:transparent; padding: 8px 0; margin-bottom: 20px;">
+        <li><a href="/" style="color:#d32f2f; font-weight:600;"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li class="active">Tra cứu hồ sơ</li>
+      </ul>
+
+      <!-- Banner -->
+      <div style="background: linear-gradient(135deg, #0b5796 0%, #1e40af 100%); color:white; border-radius:12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(11,87,150,0.25);">
+        <h1 style="margin: 0 0 10px 0; font-size: 26px; font-weight: 700; color: #fff;">
+          <i class="fa fa-search"></i> Tra cứu tiến độ giải quyết hồ sơ
+        </h1>
+        <p style="margin: 0; font-size: 15px; opacity: 0.95;">
+          Kiểm tra tình trạng xử lý hồ sơ dịch vụ công trực tuyến bằng Mã hồ sơ hoặc Số CCCD/Định danh điện tử (Hoạt động hoàn toàn qua Client-Side MockDB).
+        </p>
+      </div>
+
+      <!-- Search Box -->
+      <div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div class="row">
+          <div class="col-sm-9 col-xs-12" style="margin-bottom: 10px;">
+            <label style="font-weight: 600; font-size: 13px; color: #475569;">Nhập Mã hồ sơ, Số CCCD hoặc Tên người nộp:</label>
+            <input
+              type="text"
+              id="input-search-dossier"
+              class="form-control input-lg"
+              placeholder="Ví dụ: DVC-2026-753001 hoặc 001090012345 hoặc Nguyễn Văn An"
+              style="border-radius: 6px;"
+            />
+          </div>
+          <div class="col-sm-3 col-xs-12" style="margin-bottom: 10px; padding-top: 25px;">
+            <button id="btn-search-dossier" class="btn btn-primary input-lg" style="background:#0b5796; width: 100%; font-weight: 700; border-radius: 6px;">
+              <i class="fa fa-search"></i> Tra cứu ngay
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="dossier-results-section" style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px;">
+          <h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #1e293b;">
+            <i class="fa fa-folder-open-o" style="color: #0b5796;"></i> Danh sách hồ sơ trong hệ thống (<span id="dossier-count" style="color: #d32f2f;">0</span> hồ sơ)
+          </h3>
+          <div>
+            <button class="btn btn-sm btn-default" id="btn-reset-db" title="Khôi phục dữ liệu ban đầu">
+              <i class="fa fa-refresh"></i> Đặt lại MockDB
+            </button>
+          </div>
+        </div>
+
+        <div id="dossier-list-container">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    function renderDossiers(query) {
+      if (!window.MockDB) {
+        setTimeout(function() { renderDossiers(query); }, 200);
+        return;
+      }
+
+      var list = query ? window.MockDB.dossiers.find(query) : window.MockDB.dossiers.getAll();
+      $('#dossier-count').text(list.length);
+
+      if (list.length === 0) {
+        $('#dossier-list-container').html(`
+          <div style="text-align: center; padding: 40px; color: #64748b;">
+            <i class="fa fa-inbox fa-3x" style="color: #cbd5e1; margin-bottom: 12px;"></i>
+            <p style="font-size: 16px; font-weight: 600;">Không tìm thấy hồ sơ phù hợp</p>
+            <p style="font-size: 13px;">Hãy thử tìm kiếm với mã khác hoặc <a href="/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">nộp hồ sơ trực tuyến mới</a>.</p>
+          </div>
+        `);
+        return;
+      }
+
+      var html = '';
+      list.forEach(function(d) {
+        var badgeColor = d.statusClass === 'success' ? '#16a34a' : (d.statusClass === 'info' ? '#0284c7' : '#d97706');
+        var badgeBg = d.statusClass === 'success' ? '#dcfce7' : (d.statusClass === 'info' ? '#e0f2fe' : '#fef3c7');
+
+        var historyHtml = '';
+        if (d.history && d.history.length > 0) {
+          historyHtml += '<div style="margin-top: 15px; border-top: 1px dashed #e2e8f0; padding-top: 10px;">';
+          historyHtml += '<strong style="font-size: 12px; color: #475569; text-transform: uppercase;">Tiến độ giải quyết:</strong>';
+          historyHtml += '<ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 13px; color: #334155; line-height: 1.6;">';
+          d.history.forEach(function(h) {
+            historyHtml += `<li><span style="color:#64748b; font-size:12px;">[${h.time}]</span> ${h.text}</li>`;
+          });
+          historyHtml += '</ul></div>';
+        }
+
+        html += `
+          <div style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 15px; background: #fafbfc; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#0b5796'" onmouseout="this.style.borderColor='#e2e8f0'">
+            <div class="row">
+              <div class="col-sm-8 col-xs-12">
+                <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px;">
+                  <span style="font-size: 16px; font-weight: 800; color: #0b5796; letter-spacing: 0.5px;">${d.code}</span>
+                  <span style="background: ${badgeBg}; color: ${badgeColor}; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px;">
+                    <i class="fa fa-clock-o"></i> ${d.status}
+                  </span>
+                </div>
+                <h4 style="margin: 0 0 10px 0; font-size: 16px; font-weight: 700; color: #1e293b;">
+                  ${d.procedureName}
+                </h4>
+                <div style="font-size: 13px; color: #475569; line-height: 1.6;">
+                  <div><i class="fa fa-user" style="color: #94a3b8; width: 16px;"></i> Người nộp: <strong>${d.applicantName}</strong> | CCCD: <strong>${d.cccd}</strong> | SĐT: <strong>${d.phone}</strong></div>
+                  <div><i class="fa fa-university" style="color: #94a3b8; width: 16px;"></i> Cơ quan thụ lý: ${d.agency}</div>
+                  <div><i class="fa fa-calendar" style="color: #94a3b8; width: 16px;"></i> Ngày tiếp nhận: ${d.createdAt}</div>
+                </div>
+                ${historyHtml}
+              </div>
+              <div class="col-sm-4 col-xs-12 text-right" style="margin-top: 10px;">
+                <a href="/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=${encodeURIComponent(d.procedureCode)}" class="btn btn-default btn-sm" style="font-weight: 600;">
+                  <i class="fa fa-file-text-o"></i> Xem thủ tục
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      $('#dossier-list-container').html(html);
+    }
+
+    $(document).ready(function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var q = urlParams.get('q') || urlParams.get('code') || '';
+      if (q) {
+        $('#input-search-dossier').val(q);
+      }
+      renderDossiers(q);
+
+      $('#btn-search-dossier').on('click', function() {
+        var query = $('#input-search-dossier').val();
+        renderDossiers(query);
+      });
+
+      $('#input-search-dossier').on('keyup', function(e) {
+        if (e.which === 13) {
+          var query = $(this).val();
+          renderDossiers(query);
+        }
+      });
+
+      $('#btn-reset-db').on('click', function() {
+        if (confirm('Khôi phục danh sách hồ sơ mẫu ban đầu?')) {
+          if (window.MockDB) window.MockDB.dossiers.reset();
+          renderDossiers('');
+          if (window.toastr) toastr.info('Đã đặt lại MockDB về trạng thái mẫu!');
+        }
+      });
+    });
+  </script>
+</Layout>

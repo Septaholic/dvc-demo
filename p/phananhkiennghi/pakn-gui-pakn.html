@@ -1,0 +1,1853 @@
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="V&igrave; nền h&agrave;nh ch&iacute;nh phục vụ. Thuận lợi hơn, minh bạch hơn" name="description" /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" /> 
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="css/style.css" /> 
+  <link rel="shortcut icon" type="image/png" href="img/header/quoc_huy.png" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrapValidator/bootstrapValidator.min.css" /> 
+  <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap-paging/jquery.bootpag.min.js"> --> 
+  <!-- <link rel="stylesheet" type="text/css" href="css/pagination.css"> --> 
+  <script type="text/javascript" src="vendor/jquery/jquery-3.4.0.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrapValidator/bootstrapValidator.min.js"></script> 
+  <!-- <script type="text/javascript" src="js/pagination.js"></script> --> 
+  <!-- <script src="js/jquery.twbsPagination.js"></script> --> 
+  <script src="vendor/bootstrap-paging/jquery.bootpag.min.js"></script> 
+  <script src="js/custom.js"></script> 
+  <script src="js/autosize.js"></script> 
+  <style type="text/css">
+		.menu-phu {
+			padding-left: 0;
+			list-style: none;
+			margin-bottom: 0;
+
+		}
+			.menu-phu li {
+			margin: 6px 0;
+			background: url(img/li1.png) no-repeat left 8px;
+			padding-left: 15px;
+			display: block;
+		   /* padding: 5px 0px;*/
+			color: #333;
+			font-size: 14px;
+			line-height: 22px;
+		}
+		.links li b{
+			 line-height: 22px;
+			 font-size: 14px;
+		}
+		body a{
+			cursor: pointer;
+		}
+		.iconPage{
+			padding-bottom: 3px;
+			padding-top: 3px;
+		}
+		.box-search-pakn {
+			border: 1px solid #C9CDCF;
+			padding: 20px;
+			margin-bottom: 30px;
+		}
+		/*.pakn-sidebar-head {
+			background: #2A6EBB;
+			color: #fff;
+			border-bottom: 5px solid red;
+		}*/
+		.section-pakn .list-pakn a.image-pakn {
+			max-width: 80px;
+		}
+		ol, ul, li, textarea {
+			text-align: justify;
+		}
+		.pakn-chude .item .text {
+			font-size: 18px;
+		}
+		.pakn-custom-links a, .pakn-custom-file a {
+			text-align: initial;
+			white-space: initial !important;
+		}
+
+		.pakn-custom-form-title {
+			text-align: initial;
+		}
+
+		.font-size-number {
+			font-size: 13px;
+		}
+
+		.footer-title {
+			padding-top: 0px !important;
+		}	
+	</style> 
+ </head> 
+ <body> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="loading" id="loading-dialog" style="background: #fff; display: none;"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+    <strong>Đang xử l&yacute;...</strong> 
+   </div> 
+  </div> 
+  <div class="overlay-common"></div> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="../home/dvc-trang-chu.html" class="logo"> <img src="img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account"> 
+      <div class="buttons"> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="../home/dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <li><a href="../home/dvc-gioi-thieu.html">Giới thiệu</a></li> 
+     <li> <a href="pakn-gui-pakn.html#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-trang-chu-cong-dan.html">C&ocirc;ng d&acirc;n</a></li> 
+       <li><a href="../home/dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> 
+       <li><a href="../home/dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ c&ocirc;ng trực tuyến</a></li> 
+       <li><a href="../home/dvc-dich-vu-cong-noi-bat.html">Dịch vụ c&ocirc;ng nổi bật</a></li> 
+       <li><a href="../home/dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="../home/dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="pakn-gui-pakn.html#">Thanh to&aacute;n trực tuyến</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li> 
+       <li><a href="../home/dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế c&aacute; nh&acirc;n/Trước bạ</a></li> 
+       <li><a href="../home/dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh to&aacute;n vi phạm giao th&ocirc;ng</a></li> 
+       <li><a href="../home/dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh to&aacute;n ph&iacute;/lệ ph&iacute; dịch vụ c&ocirc;ng</a></li> 
+      </ul> </li> 
+     <li> <a href="pakn-gui-pakn.html#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gioi-thieu.html">Giới thiệu</a></li> --> 
+       <li><a href="pakn-gui-pakn.html">Gửi PAKN</a></li> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-category.html">Chủ đề PAKN</a></li> --> 
+       <li><a href="pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-huong-dan.html">Hướng dẫn</a></li> --> 
+      </ul> </li> 
+     <li> <a href="pakn-gui-pakn.html#">Thủ tục h&agrave;nh ch&iacute;nh</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li> 
+       <li><a href="../home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục h&agrave;nh ch&iacute;nh</a></li> 
+       <li><a href="../home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục h&agrave;nh ch&iacute;nh li&ecirc;n th&ocirc;ng</a></li> 
+       <li><a href="../home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định c&ocirc;ng bố</a></li> 
+       <li><a href="../home/dvc-tthc-co-quan.html">Cơ quan</a></li> 
+       <!-- <li id="coquan"><a href="dvc-tthc-co-quan.html">Cơ quan</a></li>
+					<li hidden id="bn-ttp"><a href="dvc-tthc-bonganh-tinhtp.html">TTHC Bộ ngành Tỉnh thành phố</a></li> --> 
+      </ul> </li> 
+     <li class=""> <a href="pakn-gui-pakn.html#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="../home/dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="../home/dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="buttons"> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div>
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <div class="section-pakn"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="../../index.html">Trang chủ</a></li> 
+     <li><a>Gửi PAKN</a></li> 
+    </ul> 
+    <div class="row"> 
+     <div class="col-sm-9 col-xs-12"> 
+      <style type="text/css">
+.required-span {
+    color: red;
+}
+
+.gui-pakn-form {
+    background-image: url("img/trongdong.png") no-repeat scroll center top transparent;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    /*background-origin: initial;*/
+    /*background-clip: initial;*/
+    background-color: rgb(252, 248, 227);
+    background-position: center -100px;
+    /* Visible 30 px from the top */
+    position: relative;
+}
+.exist_warning {
+    color: blue;
+    
+}
+
+#exist_pakn_warning {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#exist_pakn_warning a {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    background-image: none !important;
+    background-color: rgba(242, 166, 52, 0.5) !important;
+    background: rgba(242, 166, 52, 0.5) !important;
+    color: rgba(242, 166, 52, 0.5) !important;
+    line-height: 30px !important;
+    border: none !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    top: 12px !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    border-radius: 2px !important;
+}
+
+
+.list-file-text {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: auto;
+    list-style: none;
+}
+
+.section-pakn .list-file-text > li .file {
+    background: none;
+    border: 0px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    position: relative;
+    padding: 5px 10px;
+    padding-left: 70px;
+    padding-right: 40px;
+}
+
+.list-file-text > li .file {
+    width: 120px;
+    height: 160px;
+    border-radius: 4px;
+    background-color: #E2E2E2;
+    border: 1px solid #B2B2B2;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-pakn .list-file-text > li .file .close {
+    visibility: visible;
+}
+.list-file-text > li .file .close {
+    z-index: 2;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.section-pakn .list-file-text > li {
+    display: block;
+    margin-bottom: 10px;
+}
+.list-file-text > li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+.section-pakn .list-file-text > li .image {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice span {
+    color: black;
+}
+
+.section-pakn .list-file-image > li .file .name p {
+    overflow: hidden;
+}
+
+</style> 
+      <script language="javascript" src="js/chosen.jquery.js"></script> 
+      <link rel="stylesheet" href="css/chosen.min.css" /> 
+      <div id="notifySendContent"> 
+       <style>
+.alert-show {
+background-color: #CE7A58;
+white-space: normal;
+}
+.alert-show .mess {
+color: #ffffff;
+}
+.alert-show .mess a:hover {
+color: #3b3bff
+}
+
+</style> 
+       <div class="alert-show -warning col-md-12"> 
+        <span class="-ap icon  icon-warning3"></span> 
+        <div class="text-content"> 
+         <div class="mess">
+           Vui l&ograve;ng 
+          <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=Np0ahpF4exnI6DS_4KuMK_TLHLEa&amp;scope=openid&amp;redirect_uri=https://dichvucong.gov.vn/p/home/dvc-trang-chu.html"><u><i>đăng nhập</i></u></a> t&agrave;i khoản để gửi phản &aacute;nh, kiến nghị! Nếu chưa c&oacute; vui l&ograve;ng đăng k&yacute; 
+          <a href="https://dangky.dichvucong.gov.vn/register"><u><i>tại đ&acirc;y</i></u></a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="box-form-wrapper form-bg-main"> 
+       <div class="main-title -none">
+         Tiếp nhận phản &aacute;nh kiến nghị 
+       </div> 
+       <div id="exist_pakn_warning"> 
+       </div> 
+       <div class="box-form form-horizontal"> 
+        <form id="guiPaknForm" method="post"> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            Đối tượng PAKN 
+           <span class="required-span">*</span> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12" style="padding-top: 7px;"> 
+           <div class="check-action" style="margin-right: 20px;"> 
+            <input type="radio" class="check" name="rdSenderObj" checked="true" '="" value="1" onclick="javascript:changePlaceHolderTen(1)" /> 
+            <span class="name">Người d&acirc;n</span> 
+           </div> 
+           <div class="check-action" style="margin-right: 20px;"> 
+            <input type="radio" class="check" name="rdSenderObj" '="" value="2" onclick="javascript:changePlaceHolderTen(2)" /> 
+            <span class="name">Doanh nghiệp</span> 
+           </div> 
+           <div class="check-action" style="margin-right: 20px;"> 
+            <input type="radio" class="check" name="rdSenderObj" '="" value="3" onclick="javascript:changePlaceHolderTen(3)" /> 
+            <span class="name">Tổ chức</span> 
+           </div> 
+           <div class="check-action"> 
+            <input type="radio" class="check" name="rdSenderObj" '="" value="4" onclick="javascript:changePlaceHolderTen(4)" /> 
+            <span class="name">Cơ quan nh&agrave; nước</span> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="show_for_cq_nha_nuoc"> 
+          <div class="form-group"> 
+           <div class="col-sm-3 col-xs-12 label-text control-label"> 
+            <p>Bộ/Địa phương <span class="required-span">*</span></p> 
+           </div> 
+           <div class="input col-sm-9 col-xs-12"> 
+            <div class="select-custom"> 
+             <select name="provinceOrMinistry" id="provinceOrMinistry" class="form-control"> <option>Bộ/Địa phương </option> </select> 
+            </div> 
+           </div> 
+           <br /> 
+           <br /> 
+           <br /> 
+           <div class="col-sm-3 col-xs-12 label-text control-label"> 
+            <p>Đơn vị trực thuộc <span class="required-span">*</span></p> 
+           </div> 
+           <div class="input col-sm-9 col-xs-12"> 
+            <div class="select-custom"> 
+             <select name="subAgency" id="subAgency" class="form-control"> </select> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label"> 
+           <p id="sent_type_label">Người d&acirc;n <span class="required-span">*</span> </p> 
+           <p> </p> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <input id="ipName" name="ipName" class="form-control" placeholder="Người d&acirc;n" hidden="" /> 
+          </div> 
+         </div> 
+         <div id="show_dt_not_cq_nha_nuoc"> 
+          <div class="form-group"> 
+           <div class="col-sm-3 col-xs-12 label-text control-label">
+             Địa chỉ 
+            <span class="required-span">*</span> 
+           </div> 
+           <div class="input col-sm-3 col-xs-12 remove_class_new"> 
+            <div class="select-custom"> 
+             <select name="slProvince" id="slProvince" class="form-control"> <option>Tỉnh/Th&agrave;nh Phố</option> </select> 
+            </div> 
+           </div> 
+           <div class="input col-sm-3 col-xs-12 remove_class_new"> 
+            <div class="select-custom"> 
+             <select name="slDistrict" id="slDistrict" class="form-control"> </select> 
+            </div> 
+           </div> 
+           <div class="input col-sm-3 col-xs-12 remove_class_new" id="div_village_3Cap"> 
+            <div class="select-custom"> 
+             <select name="slVillage" id="slVillage" class="form-control"> <option>Phường/X&atilde;</option> </select> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="form-group"> 
+           <div class="col-sm-3 col-xs-12 label-text control-label"> 
+           </div> 
+           <div class="input col-sm-9 col-xs-12"> 
+            <input id="ipAddressDetail" name="ipAddressDetail" type="text" class="form-control" placeholder="Nhập số nh&agrave;, th&ocirc;n x&oacute;m,..." /> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            Số điện thoại 
+           <span class="required-span">*</span> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <input id="ipPhonenumber" name="ipPhonenumber" type="text" class="form-control" placeholder="Nhập số điện thoại" /> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            Email 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <input id="ipEmail" name="ipEmail" type="text" class="form-control" placeholder="Nhập email" /> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            PAKN về việc 
+           <span class="required-span">*</span> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12" id="title_1"> 
+           <input id="ipTitle" name="ipTitle" type="text" class="form-control" placeholder="Nhập ti&ecirc;u đề PAKN" /> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12 hide" id="title_2"> 
+           <select name="ipTitle_2" id="ipTitle_2" class="form-control"> <option>Chọn ti&ecirc;u đề phản &aacute;nh kiến nghị</option> <option value="1" tit="Cải c&aacute;ch thủ tục h&agrave;nh ch&iacute;nh">Cải c&aacute;ch thủ tục h&agrave;nh ch&iacute;nh</option> <option value="2" tit="X&acirc;y dựng ch&iacute;nh phủ điện tử">X&acirc;y dựng ch&iacute;nh phủ điện tử</option> <option value="3" tit="Nghị quyết số 68/NQ_CP">Nghị quyết số 68/NQ_CP</option> <option value="4" tit="Đề &aacute;n 468">Đề &aacute;n 468 v&agrave; Đề &aacute;n 06</option> </select> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            Nội dung 
+           <span class="required-span">*</span> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <textarea id="ipContent" name="ipContent" type="text" class="form-control" placeholder="Nhập nội dung" rows="5" style="height: 80px;resize: none;"></textarea> 
+           <span style="color: red; font-style: italic">*Nội dung n&agrave;y sẽ được c&ocirc;ng khai. Vui l&ograve;ng kh&ocirc;ng ghi chi tiết th&ocirc;ng tin c&aacute; nh&acirc;n!</span> 
+          </div> 
+         </div> 
+         <div class="form-group" id="hideDonViTiepNhan"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            Chọn đơn vị tiếp nhận 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <div class="check-action hide" style="width: 100%; margin-bottom: 10px" id="loaiDVTNDiv2"> 
+            <input type="radio" value="2" class="check" name="loaiDVTN" /> 
+            <span class="name">Bộ, cơ quan, địa phương</span> 
+           </div> 
+           <div class="check-action hide" style="width: 100%; margin-bottom: 10px" id="loaiDVTNDiv1"> 
+            <input type="radio" value="1" class="check" name="loaiDVTN" /> 
+            <span class="name">Hội đồng tư vấn cải c&aacute;ch thủ tục h&agrave;nh ch&iacute;nh</span> 
+           </div> 
+           <div class="select-custom" id="selectDvtn"> 
+            <select id="slReceiverAgency" name="slReceiverAgency" multiple="true" class="form-control" placeholder="" data-placeholder="Chọn đơn vị tiếp nhận"> </select> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="form-group box-file"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            T&agrave;i liệu đ&iacute;nh k&egrave;m 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <div class="row"> 
+            <div class="col-sm-4 col-xs-12"> 
+             <div class="select-file select-files"> 
+              <a href="pakn-gui-pakn.html#" class="btn btn-file w100p">Chọn file</a> 
+              <input onchange="dataFunction(this)" class="file inputFile" type="file" multiple="" /> 
+             </div> 
+            </div> 
+            <div class="col-sm-8 col-xs-12 hide" id="tailieuHDTVCCTTHC"> 
+             <a href="assets/MauguiPAKNYK-HDTV9.2021.docx"><span class="-ap icon-download" style="color: #CE7A58; font-size: 160%"></span> Mẫu gửi Hội đồng tư vấn cải c&aacute;ch TTHC</a> 
+            </div> 
+            <div class="col-sm-12 col-xs-12" style="margin-top: 5px"> 
+             <ul class="list-file-image listFileImg"> 
+              <li class="red" id="alertOverTotalSize" style="display: none;">Tổng dung lượng tệp tin đ&iacute;nh k&egrave;m qu&aacute; lớn (&gt;) 20 MB</li> 
+             </ul> 
+            </div> 
+            <div class="attach-files col-sm-12 col-xs-12"> 
+             <div class="item"> 
+              <ul class="list-file-text"> 
+              </ul> 
+             </div> 
+            </div> 
+            <div class="col-sm-12 col-xs-12" style="margin-top: 5px"> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label">
+            M&atilde; bảo mật 
+           <span class="required-span">*</span> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <div class="captcha"> 
+            <input id="ipCaptcha" name="ipCatpcha" class="form-control" placeholder="Nhập m&atilde; bảo mật" /> 
+            <div class="code"> 
+             <!-- 2323 --> 
+             <img style="height: 36px" id="imgcaptcha" src="jsp/imgcaptcha.jsp" /> 
+            </div> 
+            <button class="btn btn-reload" id="reloadCatpCha"> <span class="-ap icon icon-reload"></span> </button> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-3 col-xs-12 label-text control-label"> 
+          </div> 
+          <div class="input col-sm-9 col-xs-12"> 
+           <button id="btnSubmit" class="btn btn-main"> Gửi phản &aacute;nh </button> 
+           <button id="btnReset" class="btn btn-default" type="reset"> Nhập lại </button> 
+           <div class="icon" style="display: inline" id="sendingIcon"> 
+            <img src="../home/img/loading.png" alt="" style="width: 40px; height: 40px;" /> 
+           </div> 
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+      </div> 
+      <div class="modal fade" id="loadingContentModal" aria-hidden="true" data-keyboard="false" data-backdrop="static"> 
+       <div id="loadingContent"> 
+        <div class="modal-dialog modal-sm"> 
+         <div class="modal-content"> 
+          <div class="modal-body"> 
+           <center> 
+            <h4 class="modal-title">Đang thực hiện gửi tệp tin đ&iacute;nh k&egrave;m, vui l&ograve;ng kh&ocirc;ng đ&oacute;ng tr&igrave;nh duyệt đến khi ho&agrave;n tất</h4> 
+            <br /> 
+            <img src="img/loading.gif" /> 
+           </center> 
+          </div> 
+         </div> 
+        </div> 
+        <div> 
+         <script>
+function initDonViByAuthorType() {
+	if ($('input[name=rdSenderObj]:checked').val() == '2') {
+		$('#loaiDVTNDiv1').removeClass('hide');
+		$('#loaiDVTNDiv2').removeClass('hide');
+		// Khoi tao select chon don vi
+		$('#selectDvtn').addClass('hide');
+		$('#tailieuHDTVCCTTHC').removeClass('hide');
+		$('input:radio[name=loaiDVTN][value=2]').click();
+	} else {
+		$('#loaiDVTNDiv1').addClass('hide');
+		$('#loaiDVTNDiv2').addClass('hide');
+		$('#tailieuHDTVCCTTHC').addClass('hide');
+		// Khoi tao select chon don vi
+		$('#selectDvtn').removeClass('hide');
+	}
+}
+
+// Bo sung don vi Cai cach thu tuc hanh chinh
+$('input[name=rdSenderObj]').click(function() {
+	initDonViByAuthorType();
+});
+
+$('input[name=loaiDVTN]').click(function() {
+	if ($('input[name=loaiDVTN]:checked').val() == '1') {
+		$('#selectDvtn').addClass('hide');
+	} else {
+		$('#selectDvtn').removeClass('hide');
+	}
+});
+
+	
+	// --------------------------------------------
+	
+    autosize(document.querySelectorAll('textarea'));
+    let isChuyenDoiDVHC2Cap = false;
+    var list_agency_ref_keywords = [  'c\u00F4ng ngh\u1EC7 th\u00F4ng tin' ,  'n\u01B0\u1EDBc'];
+    var list_agency_ref_agencyIDs = [  '000.00.00.H26' ,  '000.00.00.G22'];
+    var list_forbidden_words = [  'T\u1EEB c\u1EA5m' ,  'hehe' ,  'fuck' ,  'Ch\u00FAng m\u00E0y' ,  'XHCN' ,  't\u1ED1 c\u00E1o' ,  'T\u00F4 \u00C2n X\u00F4' ,  'T\u00F4 L\u00E2m' ,  'T\u1EE9 tr\u1EE5' ,  'hihi' ,  'Chi\u1EBFm \u0111o\u1EA1t t\u00E0i s\u1EA3n' ,  'khi\u1EBFu n\u1EA1i' ,  'T\u1ED0 C\u00C1O' ,  'KHI\u1EBEU N\u1EA0I' ,  'Qu\u1EA5y r\u1ED1i' ,  'L\u1EEBa \u0111\u1EA3o'];
+
+    var paknDetailIntroLink = 'https://dichvucong.gov.vn/p/phananhkiennghi/pakn-detail.html?id=';
+
+    var success_message = "Phản ánh kiến nghị đã được gửi thành công";
+
+    var dangNhapDeGuiDNTC = '1';
+    
+    
+    var maxTotalUploadConfig = '20971520';
+    
+        maxTotalUploadConfig = maxTotalUploadConfig/1024/1024;
+
+    var whiteListFileExtsStr = "DOC|DOCX|PPT|PPTX|PDF|XLS|XLSX|PNG|JPG|JPEG|MP3|MP4|WMV";
+    
+        var whiteListFileExtsArr = whiteListFileExtsStr.split("\|");
+
+    var contentIsValid = true;
+    var totalFileSize = 0;
+
+    var sessionDvcCityId = "";
+    var sessionDvcDistrictId = "";
+    var sessionDvcWardId = "";
+	/*Gui pakn qua oracle*/
+	    $('#btnSubmit').on('click', function() {
+        var email = $("#ipEmail").val();
+        var phoneNumber = $("#ipPhonenumber").val();
+        var _count = 0;
+        var allNotAllowKeywords = "";
+        $("#exist_pakn_warning").html("");
+        /* $('input[type=text], textarea').not("#ipEmail").each(function() {
+
+            var curretValue = $(this).val();
+
+            for (i = 0; i < list_forbidden_words.length; i++) {
+                var keyword = list_forbidden_words[i].toLowerCase();
+
+                var keywordRegex = '(^|\\s)' + keyword + '(\\s|$)';
+                
+
+                var regExp = new RegExp(keywordRegex, 'gi');
+                if ((curretValue.toLowerCase().match(regExp) || []).length > 0) {
+
+                    _count = _count + 1;
+
+                    if (_count > 1) {
+                        allNotAllowKeywords = ", " + allNotAllowKeywords;
+                    }
+
+                    allNotAllowKeywords = keyword +  allNotAllowKeywords;
+                }
+            }
+        }); */
+
+
+
+        if (_count > 0) {
+            toastr.warning("Vui lòng kiểm tra lại nội dung có chứa những từ khóa \"" + allNotAllowKeywords + "\" không hợp lệ!");
+        }
+        // else if ($("#slReceiverAgency").val() == "" || !$("#slReceiverAgency").val()) {
+        //  toastr.warning("Đơn vị tiếp nhận là bắt buộc");
+        // } 
+        else if (($("#slReceiverAgency").val() && $("#slReceiverAgency").val().length > 1) && $("input[name='rdSenderObj']:checked").val()!=4) {
+
+            toastr.warning("Vui lòng chỉ chọn một đơn vị tiếp nhận");
+
+        }
+        else if ( totalFileSize > maxTotalUploadConfig) {
+            toastr.warning("Tổng dung lượng tệp tin đính kèm tối đa " + maxTotalUploadConfig + " MB, vui lòng kiểm tra lại");
+        }
+        // else if ($('.filePreviewCount').length < 1) {
+        //  toastr.warning("Vui lòng đính kèm ít nhất một tệp tin phản ánh");
+        // } 
+        else {
+			
+			isSignin = '0';
+			authorType = $("input[name='rdSenderObj']:checked").val();
+			
+			if (isSignin == '0' && authorType == '2' && dangNhapDeGuiDNTC == '1') {
+				toastr.warning("Vui lòng đăng nhập để thực hiện tạo phản ánh kiến nghị cho doanh nghiệp");
+			} else {
+				$("#guiPaknForm").bootstrapValidator('validate');
+
+				if ($("#guiPaknForm").has('.has-error').length <= 0) {
+				
+					
+					var agentId;
+                    var provinceId ;
+                    var districtId ;
+                    var communeId ;
+                    var provinceOrMinistryId ;
+                    var subAgencyId;
+                    var title;
+					if ($("#slReceiverAgency").val() != undefined) {
+						agentId = $("#slReceiverAgency").val()[0];
+					} else {
+						agentId = ""
+					}
+                    //  Chon doi tuong la co quan nha nuoc thi se luon ve VPCP
+                    if($("input[name='rdSenderObj']:checked").val() == 4){
+                        agentId = "000.00.00.G22";
+                        provinceId = -1;
+                        districtId = -1;
+                        communeId = -1;
+                        provinceOrMinistryId = $("#provinceOrMinistry").find('option:selected').attr("agency_code");
+                        subAgencyId = $("#subAgency").find('option:selected').attr("agency_code");
+                        title = $("#ipTitle_2").find('option:selected').attr("tit");
+                    }
+                    else{
+                        provinceOrMinistryId = -1;
+                        subAgencyId = -1;
+                        provinceId = $("#slProvince  option:selected").val();
+                        districtId = $("#slDistrict  option:selected").val();
+                        communeId = $("#slVillage  option:selected").val();
+                        title = $("#ipTitle").val();
+                    }
+					
+					if ($('input[name=rdSenderObj]:checked').val() == '2' && $('input[name=loaiDVTN]:checked').val() == '1') {
+						agentId = "000.00.31.G22";
+					}
+
+					$("#btnSubmit").attr("disabled", true);
+                    $('#sendingIcon').show();
+					var url = '/p/phananhkiennghi/jsp/submit_pakn.jsp?id=1' +
+						"&authortype=" + $("input[name='rdSenderObj']:checked").val() +
+						"&province=" + provinceId +
+						"&district=" + districtId +
+						"&commune=" + communeId ;
+
+					$.ajax({
+						url: url,
+						cache : false,
+						async: true,
+						data: {
+							"name": $("#ipName").val(),
+							"address": $("#ipAddressDetail").val(),
+							"content": $("#ipContent").val(),
+							"email": email,
+							"title": title,
+							"phone": phoneNumber,
+							"receive_org": agentId,
+							"captchaCode": $("#ipCaptcha").val(),
+							"tthc_id": '',
+							"type": '',
+                            "province_or_ministry" : provinceOrMinistryId,
+                            "sub_agency" : subAgencyId,
+						},
+						type: 'post',
+
+						// dataType : "json",
+
+						success: function(data) {
+
+							var resId = data.trim();
+
+							if (parseInt(resId) > 1) {
+
+								var formData = new FormData();
+								var submitFileIndex = [];
+								var submitFileDom = [];
+								//alert("lisst previewItem:" + $(".section-pakn").find('.list-file-image li').length);
+								$(".box-file").find('.listFileImg  li.filePreviewCount').each(function(i) {
+									var id = $(this).data('index');
+									var dom = $(this).data('dom');
+									submitFileIndex.push(id);
+									submitFileDom.push(dom);
+								});
+								var domArray = document.getElementsByClassName('inputFile');
+								for (var i = 0; i < submitFileIndex.length; i++) {
+									formData.append('file', domArray[submitFileDom[i] - 1].files[submitFileIndex[i]]);
+									
+								};
+                                
+                                                                    $('#loadingContentModal').modal('show');
+                                
+								$.ajax({
+									type: 'POST',
+									url: '/p/phananhkiennghi/jsp/upload_file.jsp?captchaCode=' + $("#ipCaptcha").val() + "&paknId=" + resId
+									+ "&email=" +  email + "&phone=" + phoneNumber + "&receive_org=" + agentId + "&name=" + $("#ipName").val(),
+									// + resJson,
+									processData: false,
+									contentType: false,
+									cache: false,
+									async: false,
+									data: formData,
+									success: function(data) {
+
+									}
+								}).always(function() {
+										$("#guiPaknForm").trigger("resetForm");
+																					$('#guiPaknForm').bootstrapValidator('resetForm', true);
+											$("#slProvince").prop("selectedIndex", 0);
+											$("#slDistrict").prop("selectedIndex", 0);
+											$("#slVillage").prop("selectedIndex", 0);
+                                            $("#provinceOrMinistry").prop("selectedIndex", 0);
+                                            $("#subAgency").prop("selectedIndex", 0);
+                                            
+											$('#ipEmail').val("");
+																				$("#btnSubmit").attr("disabled", false);
+										autosize.update($("#ipContent"));
+										// $("#ipFiles").val('');
+										$(".list-file-image").empty();
+										// $(".list-file-text li").not("li:first").remove();
+                                        $(".list-file-text").empty();
+										$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+										$("#ipCaptcha").val("");
+										$("#slReceiverAgency").val(null);
+										$('#slReceiverAgency option:selected').removeAttr('selected');
+										$("#slReceiverAgency").trigger("chosen:updated");
+										totalFileSize = 0;
+										
+										$.ajax({
+											url: '/p/phananhkiennghi/jsp/submit_pakn_toastr_message.jsp?successPaknId=' + resId,
+											type: 'GET',
+										})
+										.done(function() {
+										})
+										.fail(function() {
+										})
+										.always(function(data) {
+											toastr.success(success_message + "</br>" + data).css({
+												width: "100%"
+											});
+
+                                                                                            $('#loadingContentModal').modal('hide');
+                                                                                        $('#sendingIcon').hide();
+
+                                            $("#notifySendContent").html();
+                                            
+                                            let notifyHTML = `<style>
+.alert-show {
+background-color: #CE7A58;
+white-space: normal;
+}
+.alert-show .mess {
+color: #ffffff;
+}
+.alert-show .mess a:hover {
+color: #3b3bff;
+}
+</style>
+
+<div class="alert-show -success col-md-12">
+				<span class="-ap icon icon-ion-ios-checkmark"></span>
+				<div class="text-content">
+					<div class="title" style="color: #ffffff;">Thành công</div>
+					<div class="mess">Bạn đã gửi thành công phản ánh, kiến nghị: $ma_pakn$</div>
+				</div>
+				
+			</div>`.replace('$ma_pakn$', data.trim());
+
+                                            if (notifyHTML != `null` && notifyHTML != null) {
+                                                $("#notifySendContent").html(notifyHTML);
+                                            }
+                                            
+										});
+                                        
+
+										$.ajax({
+
+											url: '/p/phananhkiennghi/jsp/submit_pakn_send_sms_email.jsp?paknId=' + resId + '&email=' + email+'&phoneNumber='+ phoneNumber,
+											type: 'GET',
+											success: function(data) {},
+											error: function(request, error) {}
+										});
+
+										// $.ajax({
+										// 	type: 'POST',
+										// 	url: '/p/phananhkiennghi/jsp/submit_pakn_send_sms.jsp?paknId=' + resId + '&phoneNumber='+ phoneNumber,
+										// 	type: 'POST',
+										// });
+								});
+
+
+							} else if (parseInt(resId) == -2) {
+								toastr.warning('Phản ánh của bạn có chứa từ khóa không được hợp lệ. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -1000) {
+								toastr.warning('Tiêu đề không được chứa kí tự đặc biệt. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -1001) {
+								toastr.warning('Tên không được chứa kí tự đặc biệt. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -1005) {
+								toastr.warning('Tên không đúng, khác thông tin cá nhân. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -1002) {
+								toastr.warning('Số điện thoại không được chứa kí tự đặc biệt. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -1003) {
+								toastr.warning('Thư điện tử không được chứa kí tự đặc biệt. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -1004) {
+								toastr.warning('Địa chỉ không được chứa kí tự đặc biệt. Gửi không thành công.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();	
+							} else if (parseInt(resId) == -3) {
+								toastr.warning('Mã bảo mật không chính xác, vui lòng nhập lại mã bảo mật và thử lại.');
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -4) {
+								$.ajax({
+										url: "/p/phananhkiennghi/jsp/submit_pakn_exists_pakn_result.jsp",
+										type: 'POST',
+										data: {
+											"title": $("#ipTitle").val(),
+											"content": $("#ipContent").val(),
+											"sendName": $("#ipName").val()
+										},
+										success: function(result) {
+                                            console.log("result exist pakn: "+result);
+											$("#exist_pakn_warning").html("<p class='exist_warning'>Trên hệ thống đã có nội dung PAKN này, Ông/Bà có thể tham khảo các PAKN sau: " + result.trim() + "</p>");
+											$(window).scrollTop(0);
+										}
+									}
+								);
+
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							} else if (parseInt(resId) == -403) {
+                                
+                                toastr.warning('Vui lòng đăng nhập tài khoản dịch vụ công để gửi và kiểm tra lại thông tin sau khi đăng nhập!');
+
+                                $("#notifySendContent").html();
+                                $("#notifySendContent").html(`<style>
+.alert-show {
+background-color: #CE7A58;
+white-space: normal;
+}
+.alert-show .mess {
+color: #ffffff;
+}
+.alert-show .mess a:hover {
+color: #3b3bff
+}
+</style>
+
+<div class="alert-show -warning col-md-12">
+            <span class="-ap icon  icon-warning3"></span>
+            <div class="text-content">
+                <div class="mess">Vui lòng <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&client_id=Np0ahpF4exnI6DS_4KuMK_TLHLEa&scope=openid&redirect_uri=https://dichvucong.gov.vn/p/home/dvc-trang-chu.html"><u><i>đăng nhập</i></u></a> tài khoản để gửi phản ánh, kiến nghị! Nếu chưa có vui lòng đăng ký <a href="https://dangky.dichvucong.gov.vn/register"><u><i>tại đây</i></u></a></div>
+            </div>
+</div>`);
+                                $("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+                            } else {
+								toastr.warning('Đã có lỗi xảy ra, gửi không thành công. Vui lòng thử lại sau');
+								// $('#guiPaknForm').bootstrapValidator('resetForm', true);
+								$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+								$("#ipCaptcha").val("");
+								$("#btnSubmit").attr("disabled", false);
+                                $('#sendingIcon').hide();
+							}
+						},
+						error: function(xhr, status, error) {
+							// console.log(xhr);
+							// Your error handling logic here..
+							toastr.error('Đã xảy ra lỗi, vui lòng liên hệ ban quản trị để xử lý');
+							$("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+							$("#ipCaptcha").val("");
+							$("#btnSubmit").attr("disabled", false);
+                            $('#sendingIcon').hide();
+						}
+					});
+				}
+			}
+        }
+
+
+    })
+	/*Gui pakn qua kafka*/
+	    
+    $('#btnReset').on('click', function() {
+        changeDoiTuongGuiPAKN1();
+        $("#guiPaknForm").trigger("reset");
+                    $('#guiPaknForm').bootstrapValidator('resetForm', true);
+                $("#slReceiverAgency").val(null);
+        $('#slReceiverAgency option:selected').removeAttr('selected');
+        $("#slReceiverAgency").trigger("chosen:updated");
+        $(".list-file-image").empty();
+        $(".list-file-text li").not("li:first").remove();
+        
+        changePlaceHolderTen($("input[name='rdSenderObj']:checked").val());
+
+    })
+
+    function changeSelectDiaChi(idSelect, diaChiIdCha) {
+        $.ajax({
+            url: "/p/phananhkiennghi/jsp/get_du_lieu_dia_chi.jsp?type=1&parentid=" + diaChiIdCha,
+            dataType: "html",
+            async:false,
+            success: function(result) {
+                $(idSelect).find('option').not(':first').remove();
+                $(idSelect).append(result);
+            },
+        });
+    }
+
+    function changeDonViCoQuanNhaNuoc(idSelect, diaChiIdCha) {
+        $.ajax({
+            url: "/p/phananhkiennghi/jsp/get_du_lieu_dia_chi.jsp?type=2&parentid=" + diaChiIdCha,
+            dataType: "html",
+            async:false,
+            success: function(result) {
+                $(idSelect).find('option').remove();
+                $(idSelect).append('<option value="-1" agency_code="-1">Chọn đơn vị</option>');
+                $(idSelect).append(result);
+            },
+        });
+    }
+
+    $("#provinceOrMinistry").on('change', function() {
+        resetSelection('#subAgency');
+        if($("#provinceOrMinistry").find('option:selected').attr("agency_code") == 0)
+            changeDonViCoQuanNhaNuoc("#subAgency", -1);
+        else
+            changeDonViCoQuanNhaNuoc("#subAgency", $("#provinceOrMinistry").find('option:selected').attr("agency_code"));
+    });
+
+    $("#slProvince").on('change', function() {
+        
+        resetSelection('#slDistrict');
+        resetSelection('#slVillage');
+        
+        changeSelectDiaChi("#slDistrict", $("#slProvince").val());
+    });
+
+    
+    $("#slDistrict").on('change', function() {
+        if (isChuyenDoiDVHC2Cap == false) {
+            resetSelection('#slVillage');
+            
+            changeSelectDiaChi("#slVillage", $("#slDistrict").val());
+        }
+    });
+    
+
+
+    $("#reloadCatpCha").on('click', function() {
+        $("#imgcaptcha").attr("src", "/p/phananhkiennghi/jsp/imgcaptcha.jsp?" + (new Date()).getTime());
+        return false;
+    });
+
+    function resetSelection(selectName) {
+        $(selectName).find('option').not(':first').remove();
+        $(selectName).change();
+    }
+    
+    function performClick() {
+        var elem = $(".inputFile").last().click();
+    };
+
+    function ondata() {
+        var data = new FormData();
+        var submitFileIndex = [];
+        var submitFileDom = [];
+        //alert("lisst previewItem:" + $(".section-pakn").find('.list-file-image li').length);
+        $(".box-file").find('.listFileImg  li.filePreviewCount').each(function(i) {
+            var id = $(this).data('index');
+            var dom = $(this).data('dom');
+            submitFileIndex.push(id);
+            submitFileDom.push(dom);
+        });
+        var domArray = document.getElementsByClassName('inputFile');
+        for (var i = 0; i < submitFileIndex.length; i++) {
+            data.append('file', domArray[submitFileDom[i] - 1].files[submitFileIndex[i]]);
+            console.log(domArray[submitFileDom[i] - 1].files[submitFileIndex[i]]);
+        };
+
+    };
+
+    // UPFILE 
+
+    function dataFunction(ths) {
+        $(ths).hide();
+        var countDom = $('.inputFile').length
+        $(".select-files").append('<input onchange="dataFunction(this)" class="file inputFile" type="file" multiple="" />');
+
+        // $(".list-file-image").empty();
+        $(".addnew").remove();
+        var i, count = $('.filePreviewCount').length;
+        for (i = 0; i < $(ths)[0].files.length; i++) {
+            var fileName = $(ths)[0].files[i].name;
+            var fileSize = $(ths)[0].files[i].size / 1024 / 1024;
+            console.log($(ths)[0].files[i].size);
+            console.log(fileSize);
+
+            var ext = fileName.substr(fileName.lastIndexOf('.') + 1);
+            ext = ext.toUpperCase();
+            var previewViewImg = "";
+            if (whiteListFileExtsArr.indexOf(ext) > -1) {
+                if (ext == "JPG" || ext == "PNG" || ext == "JPEG") {
+                    previewViewImg = URL.createObjectURL($(ths)[0].files[i]);
+                } else {
+                    previewViewImg = "/p/phananhkiennghi/img/" + ext.toLowerCase() + ".png";
+                }
+            }
+
+            var fileNameList = "";
+            var index = i + 1 + count;
+            fileNameList = fileNameList + fileName;
+
+            if (fileSize > maxTotalUploadConfig) {
+                // toastr.warning("Vui lòng chỉ lựa chọn file nhỏ hơn 20MB");
+                // var previewText = '<li class="red" id="textPreview' + index + '"><span class="icon -ap icon-paper-clip"></span> <span class="text">File đính kèm: </span><a class="link">' + fileNameList + '<div class="close -ap icon-close" onClick="removePreviewByIndex(' + index + ',' + countDom + ',' + fileSize +')"></div><br /></a> Dung lượng quá lớn (>20MB)</li>';
+                // $(".list-file-text").append(previewText);
+
+                var previewTextNew = '<li><div class="file" style="opacity: 0.5;"><div class="image" style="background-image:url(img/not-accept.png);"></div><div class="text-content"><div class="name"><p>' + fileNameList + '</p></div><div class="size">Dung lượng tệp tin không hợp lệ (>20MB) </div></div><div></div></div></li>';
+
+                $(".list-file-text").append(previewTextNew);
+
+            } else if (previewViewImg != "") {
+
+                totalFileSize = totalFileSize + fileSize;
+                
+                // var previewItem = '<li class="filePreviewCount" data-dom="' + countDom + '" data-index="' + i + '" id="filePreview' + index + '"><div class="file" style="background-image:url('https://vpcp.dichvucong.gov.vn/p/phananhkiennghi/ + previewViewImg + ');"><div class="close -ap icon-close" onClick="removePreviewByIndex(' + index + ',' + countDom + ',' + fileSize + ')"></div></div></li>';
+
+                // var previewText = '<li id="textPreview' + index + '"><span class="icon -ap icon-paper-clip"></span> <span class="text">File đính kèm: </span><a class="link">' + fileNameList + '<div class="close -ap icon-close" onClick="removePreviewByIndex(' + index + ',' + countDom + ',' + fileSize + ')"></div><br /></a></li>';
+
+                var previewItemNew = '<li class="filePreviewCount" data-dom="' + countDom + '" data-index="' + i + '" id="filePreview' + index + '"><div class="file">  <div class="image" style="background-image:url('https://vpcp.dichvucong.gov.vn/p/phananhkiennghi/ + previewViewImg + ');"></div><div class="text-content"><div class="name"><p>' + fileNameList + '</p></div><div class="size">' + formatBytes($(ths)[0].files[i].size) + '</div></div><div class="close -ap icon-close" onClick="removePreviewByIndex(' + index + ',' + countDom + ',' + fileSize + ')"></div></li>';
+
+                $(".listFileImg").append(previewItemNew);
+                // $(".list-file-text").append(previewText);
+
+                toastr.success(fileNameList);
+            } else {
+
+                var previewTextNew = '<li><div class="file" style="opacity: 0.5;"><div class="image" style="background-image:url(img/not-accept.png);"></div><div class="text-content"><div class="name"><p>' + fileNameList + '</p></div><div class="size">Định dạng tệp tin không hợp lệ </div></div><div></div></div></li>';
+
+                $(".list-file-text").append(previewTextNew);   
+            }
+
+            if (totalFileSize > maxTotalUploadConfig) {
+                $("#alertOverTotalSize").show();
+            } else {
+                $("#alertOverTotalSize").hide();
+            }
+        };
+        // $(".listFileImg").append('<li><div onclick="performClick()" class="addnew file"><div class="plus -ap icon-plus3"></div></div></li>');
+
+    };
+
+    function removePreviewByIndex(i, index, fileSize) {
+        $("#filePreview" + i).remove();
+        $("#textPreview" + i).remove();
+
+        totalFileSize = totalFileSize - fileSize;
+
+        if (totalFileSize > maxTotalUploadConfig) {
+            $("#alertOverTotalSize").show();
+        } else {
+            $("#alertOverTotalSize").hide();
+        }
+    };
+
+    // END - UPLOAD
+
+    // function escapeRegExp(string) {
+    //     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // }
+
+    function parseDate(dateString) {
+        return new Date(
+            parseInt(dateString.substring(0, 4), 10),
+            parseInt(dateString.substring(4, 6), 10) - 1,
+            parseInt(dateString.substring(6, 8), 10)
+        );
+    }
+
+$(document).ready(function() {
+	// Khoi tao lan dau cho item Cải cách thủ tục hành chính
+	initDonViByAuthorType();
+
+
+        changeDoiTuongGuiPAKN1();
+    	changePlaceHolderTen($("input[name='rdSenderObj']:checked").val());
+
+        let ngayChuyenDoi2Cap = "20250626";
+        
+        console.log(new Date());
+        console.log(parseDate(ngayChuyenDoi2Cap));
+        if (new Date() > parseDate(ngayChuyenDoi2Cap)) {
+            isChuyenDoiDVHC2Cap = true;
+            $('#slDistrict').append('<option>Phường/Xã</option>');
+            $('#div_village_3Cap').hide();
+            $('.remove_class_new').removeClass("col-sm-3").addClass("col-sm-4");
+        } else {
+            isChuyenDoiDVHC2Cap = false;
+            $('#slDistrict').append('<option>Quận/Huyện</option>');
+            $('#div_village_3Cap').show();
+            $('.remove_class_new').removeClass("col-sm-4").addClass("col-sm-3");
+        }
+
+        changeSelectDiaChi('#slProvince', '0');
+        $('#sendingIcon').hide();
+        
+                    
+                
+                    $("#slDistrict").val();
+                
+                    $("#slVillage").val();
+        
+        
+
+                	$('input[name="rdSenderObj"]').each(function(index, value) {
+        		
+    			$(this).prop("disabled", false);
+        		
+        	});
+        
+        $.ajax({
+            url: "/p/phananhkiennghi/jsp/get_du_lieu_co_quan_nhan_pakn.jsp",
+            dataType: "html",
+            success: function(result) {
+                $("#slReceiverAgency").find('option').remove();
+                $("#slReceiverAgency").append(result);
+                $("#slReceiverAgency").chosen({ width: "100%", placeholder_text_single: " ", no_results_text: " " });
+                $('#slReceiverAgency').chosen({ allow_single_deselect: true });
+
+                                // $("#slReceiverAgency").attr("disabled", "false");
+                $("#slReceiverAgency").trigger("chosen:updated");
+
+                                    $("#slReceiverAgency").attr("data-placeholder","Đăng nhập để chọn cơ quan tiếp nhận");
+                    $("#slReceiverAgency").attr("disabled", "true");
+                    $("#slReceiverAgency").trigger("chosen:updated");
+                            }
+        });
+
+        // $.ajax({
+        //     url: "/p/phananhkiennghi/jsp/get_du_lieu_chuyen_muc_pakn.jsp",
+        //     dataType: "html",
+        //     success: function(result) {
+        //         $("#slCategory").find('option').remove();
+        //         $("#slCategory").append(result);
+        //     }
+        // });
+
+        $("#slProvince").on("change", function() {
+
+            var text = $(this).find("option:selected").text();
+
+            var searchMask = "tỉnh";
+            var regEx = new RegExp(searchMask, "ig");
+            var replaceMask = "";
+            text = text.replace(regEx, replaceMask);
+
+            searchMask = "thành phố";
+            regEx = new RegExp(searchMask, "ig");
+            replaceMask = "";
+            text = text.replace(regEx, replaceMask);
+
+            var regExp = new RegExp(text, 'gi');
+
+
+            $("#slReceiverAgency > option").each(function() {
+                var count = ($(this).text().toLowerCase().match(regExp) || []).length;
+                if (count > 0) {
+                    $(this).prop('selected', 'true');
+                    $("#slReceiverAgency").trigger("chosen:updated");
+                }
+
+
+            });
+        })
+
+        $("#ipTitle").on("focusout", function() {
+
+            var titleAndContent = $("#ipTitle").val() + ' ' + $("#ipContent").val();
+
+            for (i = 0; i < list_agency_ref_keywords.length; i++) {
+                var keyword = list_agency_ref_keywords[i].toLowerCase();
+                var regExp = new RegExp(keyword, 'gi');
+                if ((titleAndContent.toLowerCase().match(regExp) || []).length > 0) {
+
+                    $('#slReceiverAgency option[value="' + list_agency_ref_agencyIDs[i] + '"]').prop('selected', 'selected');
+                    $("#slReceiverAgency").trigger("chosen:updated");
+                }
+            }
+
+            /* Hiển thị cơ quan theo số lượng từ khóa xuất hiện nhiều nhất */
+            // var countMax = 0;
+            // var strValue = "";
+
+            // $("#slReceiverAgency > option").each(function() {
+            // alert(this.text + ' ' + this.value);
+
+            // var regExp = new RegExp(this.text, 'gi');
+
+            // var count = (titleAndContent.match(regExp) || []).length;
+            //  if (count > countMax) {
+            //      countMax = count;
+            //      strValue = this.value;
+            //  }
+            // });
+            // $("#slReceiverAgency").val(strValue);
+            // console.log(titleAndContent);
+        });
+
+        $("#ipContent").on("focusout", function() {
+
+
+            var titleAndContent = $("#ipTitle").val() + ' ' + $("#ipContent").val();
+
+            for (i = 0; i < list_agency_ref_keywords.length; i++) {
+                var keyword = list_agency_ref_keywords[i].toLowerCase();
+                var regExp = new RegExp(keyword, 'gi');
+                if ((titleAndContent.toLowerCase().match(regExp) || []).length > 0) {
+
+                    $('#slReceiverAgency option[value="' + list_agency_ref_agencyIDs[i] + '"]').prop('selected', 'selected');
+                    $("#slReceiverAgency").trigger("chosen:updated");
+                }
+            }
+
+
+            /* Hiển thị cơ quan theo số lượng từ khóa xuất hiện nhiều nhất */
+            //  var countMax = 0;
+            //  var strValue = "";
+
+            // $("#slReceiverAgency > option").each(function() {
+            //       //alert(this.text + ' ' + this.value);
+
+            //       var regExp = new RegExp(this.text, 'gi');
+
+            //       var count = (titleAndContent.match(regExp) || []).length;
+            //   if (count > countMax) {
+            //      countMax = count;
+            //      strValue = this.value;
+            //   }
+            // });
+            // $("#slReceiverAgency").val(strValue);
+            //  // console.log(titleAndContent);
+        });
+
+
+        initFormValidation();
+    })
+
+    /* Cảnh báo từ khóa không hợp lệ ngay khi nhập*/
+    // $("input[type=text], textarea").on("focusout",function(){
+    //  var curretValue = $(this).val().toLowerCase();
+    //  for (i = 0; i < list_forbidden_words.length; i++) {
+    //              var keyword = list_forbidden_words[i].toLowerCase();
+    //              var regExp = new RegExp(keyword, 'gi');
+    //                      if ((curretValue.toLowerCase().match(regExp) || []).length > 0) {
+    //                          toastr.warning("Nội dung bạn vừa nhập có chứa từ khóa \""+  keyword + "\" không hợp lệ, vui lòng kiểm tra lại")
+    //                          window.contentIsValue = false;
+    //                      }
+    //                  }
+
+    // });
+
+    function changeDoiTuongGuiPAKN1(){
+        $('#show_dt_not_cq_nha_nuoc').show();
+        $('#show_for_cq_nha_nuoc').hide();
+        $('#title_2').addClass('hide');
+        $('#title_1').removeClass('hide');
+        $('#hideDonViTiepNhan').show();
+    }
+
+    //   danh cho doi tuong co quan nha nuoc
+    function changeDoiTuongGuiPAKN2(){
+        $('#show_dt_not_cq_nha_nuoc').hide();
+        $('#show_for_cq_nha_nuoc').show();
+        $('#title_1').addClass('hide');
+        $('#title_2').removeClass('hide');
+        $('#hideDonViTiepNhan').hide();
+    }
+
+    function changePlaceHolderTen(value) {
+        if (value == 1 ) {
+            changeDoiTuongGuiPAKN1();
+            $("#ipName").attr("placeholder", "Nhập tên người dân");
+            $("#sent_type_label").html("Người dân <span class='required-span'>*</span>");
+        } else if (value == 2 ) {
+            changeDoiTuongGuiPAKN1();
+            $("#ipName").attr("placeholder", "Nhập tên doanh nghiệp");
+            $("#sent_type_label").html("Doanh nghiệp <span class='required-span'>*</span>");
+        } else if (value == 3 ) {
+            changeDoiTuongGuiPAKN1();
+            $("#ipName").attr("placeholder", "Nhập tên tổ chức");
+            $("#sent_type_label").html("Tổ chức <span class='required-span'>*</span>");
+        }
+        else if (value == 4 ) {
+            changeDoiTuongGuiPAKN2();
+            $("#ipName").attr("placeholder", "Tên cán bộ, công chức, viên chức");
+            $("#sent_type_label").html("Người gửi <span class='required-span'>*</span>");
+            changeDonViCoQuanNhaNuoc('#provinceOrMinistry', '0');
+        }
+		
+		isSignin = '0';
+		if (value == '2' && isSignin == '0' && dangNhapDeGuiDNTC == '1') {
+			toastr.warning("Vui lòng đăng nhập để gửi PAKN của doanh nghiệp");
+		}
+    }
+
+
+        function initFormValidation() {
+            $('#guiPaknForm')
+            .bootstrapValidator({
+                // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+
+                    ipName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Tên người gửi là bắt buộc'
+                            },
+                            stringLength: {
+                                max: 255,
+                                message: 'Tên người gửi tối đa 255 ký tự'
+                            }
+                        }
+                    },
+                    ipTitle_2: {
+                        validators: {
+                            digits: {
+                                message: 'Tiêu đề là bắt buộc'
+                            }
+                        }
+                    },
+                    provinceOrMinistry: {
+                        validators: {
+                            digits: {
+                                message: 'Bộ/Địa phương là bắt buộc'
+                            }
+                        }
+                    },
+                    subAgency: {
+                        validators: {
+                            digits: {
+                                message: 'Đơn vị trực thuộc là bắt buộc'
+                            }
+                        }
+                    },
+                    slProvince: {
+                        validators: {
+                            digits: {
+                                message: 'Tỉnh/Thành phố là bắt buộc'
+                            }
+
+                        }
+                    },
+                    slDistrict: {
+                        validators: {
+                            digits: {
+                                message: isChuyenDoiDVHC2Cap == true?'Phường/Xã là bắt buộc':'Quận/Huyện là bắt buộc'
+                            }
+
+                        }
+                    },
+                    slVillage: {
+                        validators: {
+                            digits: {
+                                message: 'Phường/Xã là bắt buộc'
+                            }
+
+                        }
+                    },
+                    ipAddressDetail: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Địa chỉ là bắt buộc'
+                            },
+                            stringLength: {
+                                max: 255,
+                                message: 'Địa chỉ người gửi tối đa 255 ký tự'
+                            }
+                        }
+                    },
+                    ipPhonenumber: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Số điện thoại là bắt buộc'
+                            },
+                            stringLength: {
+                                max: 20,
+                                min: 10,
+                                message: 'Số điện thoại ít nhất 10 ký tự, nhiều nhất 20 ký tự'
+                            },
+                            regexp: {
+                                regexp: /^[0-9]*$/,
+                                message: 'Số điện thoại chỉ bao gồm số'
+                            }
+                        }
+                    },
+                    ipEmail: {
+                        validators: {
+                            // notEmpty: {
+                            //     message: 'Email là bắt buộc'
+                            // },
+                            emailAddress: {
+                                message: 'Email không đúng định dạng'
+                            },
+                            stringLength: {
+                                max: 255,
+                                message: 'Email tối đa 255 ký tự'
+                            }
+                        }
+                    },
+                    ipTitle: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Tiêu đề là bắt buộc'
+                            },
+                            stringLength: {
+                                max: 2000,
+                                message: 'Tiêu đề tối đa 2000 ký tự'
+                            }
+                        }
+                    },
+                    ipContent: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Nội dung là bắt buộc'
+                            },
+                            stringLength: {
+                                max: 6000,
+                                message: 'Tiêu đề tối đa 6000 ký tự'
+                            }
+                        }
+                    },
+                    ipCaptcha: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Mã bảo mật là bắt buộc'
+                            },
+
+                        }
+                    },
+                    slCategory: {
+                        validators: {
+                            digits: {
+                                message: 'Chuyên mục là bắt buộc'
+                            }
+
+                        }
+                    },
+
+
+                }
+            });
+        }
+
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+
+</script> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-sm-3 col-xs-12"> 
+      <cache id="pakn-note-sidebar" type="cache5"> 
+       <div class="sidebar -note-pakn"> 
+        <div class="head">
+          Th&ocirc;ng b&aacute;o 
+        </div> 
+        <div class="body"> 
+         <div class="article">
+           Theo quy định của ch&iacute;nh phủ, kể từ ng&agrave;y 15/01/2026, 
+          <b> Cục kiểm so&aacute;t thủ tục h&agrave;nh ch&iacute;nh - Bộ Tư ph&aacute;p</b> l&agrave; đầu mối tiếp nhận, xử l&yacute; kịp thời c&aacute;c phản &aacute;nh kiến nghị của tổ chức, c&aacute; nh&acirc;n về quy định h&agrave;nh ch&iacute;nh. 
+         </div> 
+        </div> 
+       </div> 
+      </cache> 
+      <div class="sidebar"> 
+       <div class="head"> 
+        <b>Tra cứu th&ocirc;ng tin PAKN</b> 
+       </div> 
+       <div class="body"> 
+        <input onkeypress="onKey(event)" style="font-size: 14px" type="text" placeholder="Nhập m&atilde; số PAKN/ T&ecirc;n người gửi" class="form-control" id="searchKeywordSidebar" /> 
+        <button onclick="doSearchByTitle()" class="btn btn-main" style="margin-top: 10px !important; width: 100%"> T&igrave;m kiếm </button> 
+       </div> 
+      </div> 
+      <!-- <div class="form-group" style="padding:0px 10px">
+						<a href="/p/phananhkiennghi/pakn-field.html?id=61">
+							<img src="/p/phananhkiennghi/img/banner-covi.png" class="img-responsive">
+						</a>
+					</div>
+					<div class="form-group">
+						<a href="/p/phananhkiennghi/pakn-field.html?id=81">
+							<img src="/p/phananhkiennghi/img/pakn.png" class="img-responsive">
+						</a>
+					</div> --> 
+      <div class="form-group"> 
+       <a href="pakn-category.html"> <img src="img/banner-chu-de.png" class="img-responsive" /> </a> 
+      </div> 
+      <cache id="pakn-note-sidebar" type="cache5"> 
+       <div class="sidebar -note-pakn"> 
+        <div class="head"> 
+         <b>Lưu &yacute;</b> 
+        </div> 
+        <div class="body"> 
+         <div class="article"> 
+          <li> <b>1. Hệ thống tiếp nhận c&aacute;c phản &aacute;nh, kiến nghị về:</b> 
+           <ul class="menu-phu"> 
+            <li>H&agrave;nh vi chậm trễ, g&acirc;y phiền h&agrave; hoặc kh&ocirc;ng thực hiện, thực hiện kh&ocirc;ng đ&uacute;ng quy định của c&aacute;n bộ, c&ocirc;ng chức, vi&ecirc;n chức trong giải quyết thủ tục h&agrave;nh ch&iacute;nh;</li> 
+            <li>Những cơ chế, ch&iacute;nh s&aacute;ch, thủ tục h&agrave;nh ch&iacute;nh kh&ocirc;ng ph&ugrave; hợp với thực tế, kh&ocirc;ng đồng bộ, kh&ocirc;ng thống nhất, kh&ocirc;ng hợp ph&aacute;p, tr&aacute;i với c&aacute;c điều ước quốc tế m&agrave; Việt Nam đ&atilde; k&yacute; kết hoặc gia nhập;</li> 
+            <li>Những giải ph&aacute;p, s&aacute;ng kiến ban h&agrave;nh mới quy định về cơ chế, ch&iacute;nh s&aacute;ch, thủ tục h&agrave;nh ch&iacute;nh li&ecirc;n quan đến hoạt động sản xuất, kinh doanh v&agrave; đời sống của người d&acirc;n.</li> 
+            <li>C&aacute;c trường hợp chậm trễ, kh&ocirc;ng thực hiện, thực hiện kh&ocirc;ng đ&uacute;ng Nghị quyết 68/NQ-CP v&agrave; Quyết định 23/2021/QĐ-TTg</li> 
+           </ul> </li> 
+          <li> <b>2. Hệ thống kh&ocirc;ng tiếp nhận đơn thư khiếu nại, tố c&aacute;o v&agrave; hướng dẫn giải đ&aacute;p ph&aacute;p luật.</b> </li> 
+         </div> 
+        </div> 
+       </div> 
+      </cache> 
+      <cache id="pakn-tinh-hinh-xu-ly" type="cache5"> 
+       <div class="sidebar -statis"> 
+        <div class="head"> 
+         <b>T&igrave;nh h&igrave;nh xử l&yacute; PAKN</b> 
+        </div> 
+        <div class="body"> 
+         <div class="info -icon"> 
+          <div class="key">
+            PAKN đ&atilde; trả lời 
+          </div> 
+          <span class="value" style="color: #7C964C"> 216.493</span> 
+          <span class="icon"> <img src="img/pakn/c-check.svg" /> </span> 
+         </div> 
+         <div class="divider-gray" style="margin: 10px 0px;"></div> 
+         <div class="info -icon"> 
+          <div class="key">
+            PAKN đang xử l&yacute; 
+          </div> 
+          <span class="value" style="color: #F2A634"> 63.362</span> 
+          <span class="icon"> <img src="img/pakn/time.svg" /> </span> 
+         </div> 
+        </div> 
+       </div> 
+      </cache> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+	function doSearchByTitle(){
+		var url = window.location.pathname;
+		
+		var keywords=encodeURI($("#searchKeywordSidebar").val().trim());
+		window.location.href="/p/phananhkiennghi/pakn-search.html?keywords="+keywords;
+	};
+	function onKey(e){
+		if (e.keyCode == 13) {
+			doSearchByTitle();
+		}
+	};
+</script>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="section section-menu-bottom"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="item col-sm-4 col-xs-12"> 
+      <a class="wrap" href="../home/dvc-cau-hoi-pho-bien.html"> 
+       <div class="icon"> 
+        <img src="img/home/trongdong.png" alt="" /> 
+       </div> 
+       <div class="text">
+        C&acirc;u hỏi thường gặp
+       </div> </a> 
+     </div> 
+     <div class="item col-sm-4 col-xs-12"> 
+      <!-- <a class="wrap" href="/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">
+					<div class="icon">
+						<img src="img/home/trongdong.png" alt="">
+					</div>
+					<div class="text">Cơ sở dữ liệu <br/>thủ tục hành chính</div>
+				</a> --> 
+     </div> 
+     <div class="item col-sm-4 col-xs-12"> 
+      <a class="wrap" href="../home/dvc-huong-dan-cong-dan-doanh-nghiep.html"> 
+       <div class="icon"> 
+        <img src="img/home/trongdong.png" alt="" /> 
+       </div> 
+       <div class="text">
+        Hướng dẫn sử dụng
+       </div> </a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add">
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p>
+     </div> 
+     <div class="add">
+      <p>www.dichvucong.gov.vn</p>
+     </div> 
+     <div class="add">
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p>
+     </div> 
+     <div class="add">
+      <p>Email: dichvucong@chinhphu.vn</p>
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <style>
+.select2-container--default .select2-results>.select2-results__options {
+		max-height: 150px;
+		overflow-y: auto;
+	}
+	.select2-selection__clear{
+		display:none;
+	}
+	.select2-selection__arrow{
+		margin-top:5px;
+	}
+	.select2-selection__rendered{
+		padding-top:5px;
+	}
+	.select2-container--default .select2-selection--single {
+	border: 1px solid #C9CDCF;
+	border-radius: 2px;
+	}
+	.select2-container--default{
+		width: 100% !important;
+	}
+</style> 
+  <script type="text/javascript" src="js/custom.js"></script> 
+  <script type="text/javascript">
+$(".targetgroup-box .btn-readmore").click(function(e){
+	e.preventDefault();
+	if($(this).hasClass("active")){
+		$(this).html('Xem thêm <span class="-ap icon-chevron-thin-down icon"></span>');
+		$(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+		$(this).removeClass("active");
+	}else{
+		$(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+		$(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+		$(this).addClass("active");
+	}
+});
+
+$(".list-menus li").each(function(){
+	var link = $(this).find(">a").attr("href");
+	if(path.includes(link)){
+		$(this).parent().parent().addClass("open");
+		$(this).addClass("active");
+	}
+});
+
+$(".menus li").each(function(){
+   var url=window.location.pathname;
+	var href=$(this).find(">a").attr("href");
+	if((url.indexOf("pakn-detail")>-1 || url.indexOf("pakn-tra-loi")>-1 || url.indexOf("pakn-field")>-1  || url.indexOf("pakn-category") >-1 ) && href.indexOf("pakn-search")>-1){
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+	}
+	else if((url.indexOf("pakn-bosunghoso")>-1) && href.indexOf("pakn-gui-pakn")>-1){
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+	}
+	else
+	if(url.indexOf(href)> -1){
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+	}else{
+	 $(this).removeClass("active"); 
+	}
+});
+</script> 
+  <script type="text/javascript">
+$(".menus > li").each(function(){
+	var html="";
+      
+	if($(this).find("ul li").hasClass("active")){
+        $(this).addClass("active");
+        html=$(this).find(">ul").html();
+        $(this).find(">ul").addClass("hidden");
+        $("#list-dropdown").html(html);
+	}
+});
+
+function downloadURI(uri, name) {
+	var uk=uri+"&&filenameOrigin="+encodeURIComponent(name);
+	window.open(uri+"&&filenameOrigin="+encodeURIComponent(name));
+}
+
+function paginationAddLink(){
+	$(".pagination").find("a").attr("href", "#");
+	$(".pagination").find("li.disabled").find("a").removeAttr("href");
+}
+</script>   
+ </body>
+</html>

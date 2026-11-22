@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta name="description" content="Cổng Dịch vụ c&ocirc;ng Quốc gia hỗ trợ th&ocirc;ng tin, đăng k&yacute; thủ tục h&agrave;nh ch&iacute;nh như đổi giấy ph&eacute;p l&aacute;i xe, nộp thuế điện tử, th&ocirc;ng b&aacute;o khuyến mại, cấp lại thẻ BHYT, cấp điện mới..." /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="theme/vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/iconsax/style.css" /> 
+  <!-- <link rel="stylesheet" href="../vendor/iconsax/style.css"> --> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrapValidator.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css" /> 
+  <link rel="stylesheet" href="theme/css/style.css@version=9.css" /> 
+  <link rel="shortcut icon" href="img/header/quoc_huy.png" /> 
+  <script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrapValidator.js"></script> 
+  <script type="text/javascript" src="theme/vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/modules/variable-pie.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts-more.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+  <script type="text/javascript" src="vendor/jq-paginator.js"></script> 
+  <script type="text/javascript" src="vendor/bootbox.all.min.js"></script> 
+  <script type="text/javascript" src="vendor/select2.min.js"></script> 
+  <script type="text/javascript" src="vendor/mime.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script> 
+  <link rel="stylesheet" href="vendor/select2.min.css" /> 
+  <script src="js/ApiService.js@version=18"></script> 
+  <script src="js/CommonUtil.js@version=16"></script> 
+  <script src="js/Constants.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
+  <script src="js/base64.js"></script> 
+  <script type="text/javascript" src="vendor/d3.v4.min.js"></script> 
+  <script>
+		initApiService();
+	</script> 
+ </head> 
+ <body> 
+  <div class="loading-all" id="loading-all" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.png" alt="" /> 
+    <span style="color:blue">Đang xử l&yacute;...<span> </span></span>
+   </div> 
+   <style type="text/css">
+			.loading-all {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 10000;
+				background: #dbdcdc40;
+			}
+			.loading-all .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="overlay-common"></div> 
+  <!-- /mtv/ Log propertise--> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="dvc-trang-chu.html" class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account"> 
+      <div class="buttons"> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-login">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-register">Đăng nhập</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
+     <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=962.html#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
+       <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
+       <!-- <li>
+							<a href="#">Thủ tục hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+							</ul>
+						</li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --> 
+       <li><a href="dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
+       <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=962.html">Thanh to&aacute;n trực tuyến</a> 
+      <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
+      <!-- <ul class="dropdown-menu">
+						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
+						<li><a href="dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế cá nhân/Trước bạ</a></li>
+						<li>
+							<a href="#">Thanh toán vi phạm hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh toán vi phạm giao thông</a></li>
+								<li><a href="dvc-thanh-toan-vi-pham-xay-dung.html">Tra cứu/Thanh toán vi phạm xây dựng</a></li>
+							</ul>
+						</li>
+						<li><a href="dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh toán phí/lệ phí dịch vụ công</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-bhyt.html">Đóng tiếp BHXH tự nguyện, gia hạn BHYT</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-doanh-nghiep.html">Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN</a></li>
+						<li><a href="dvc-thanh-toan-thue-dat-dai.html">Thanh toán nghĩa vụ tài chính về đất đai</a></li>
+						<li><a href="dvc-thanh-toan-dien.html">Thanh toán tiền điện</a></li>
+						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
+						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
+					</ul> --> </li> 
+     <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=962.html#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> --> 
+       <li><a href="../phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+      </ul> </li> 
+     <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
+     <!-- <li>
+				  <a href="#">Thủ tục hành chính</a>
+				  <ul class="dropdown-menu">
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+				  </ul>
+				</li> --> 
+     <li class=""> <a href="dvc-chi-tiet-tin-tuc.html@new_id=962.html#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
+       <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="buttons"> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div> 
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <div class="section-tin-tuc"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="dvc-trang-chu.html">Trang chủ</a></li> 
+     <li><a href="dvc-chi-tiet-tin-tuc.html@new_id=962.html#">Chi tiết th&ocirc;ng b&aacute;o</a></li> 
+    </ul> 
+    <div class="row"> 
+     <div class="col-sm-9 col-xs-12"> 
+      <div class="article"> 
+       <h1 class="main-title-sub">c&ocirc;ng bố dữ liệu quốc gia về bảo hiểm v&agrave; hướng dẫn kết nối, khai th&aacute;c sử dụng dữ liệu quốc gia về bảo hiểm thay thế giấy tờ trong giải quyết thủ tục h&agrave;nh ch&iacute;nh</h1> 
+       <p style="text-align: center;"> <img src="https://vpcp.dichvucong.gov.vn/images/news/20260211163249_Screenshot&#32;2026-02-11&#32;at&#32;15.34.28.png" alt="" /> </p> 
+       <p class="post-date">11/02/2026</p> 
+       <div> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-indent: 0.5in; background: 0px 0px !important;"><strong style="box-sizing: border-box; font-weight: 700; color: rgb(30, 47, 65); font-family: Nunito, Arial; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Chi tiết Quyết định c&ocirc;ng bố tại:&nbsp;<span style="box-sizing: border-box; line-height: 21.4px;"><span style="box-sizing: border-box; font-family: &quot;Times New Roman&quot;, serif;"><span style="box-sizing: border-box; line-height: 21.4px;">https://vbox.vpcp.vn/s/Tfsfb8Ls8aPs9A6</span></span></span></strong></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;"><b style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Điều 1. C&ocirc;ng bố th&ocirc;ng tin cơ sở dữ liệu thay thế</span></b></span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">C&aacute;c dữ liệu sau đ&acirc;y trong Cơ sở dữ liệu quốc gia về bảo hiểm được chia sẻ theo quy định tại Quyết định n&agrave;y đủ điều kiện khai th&aacute;c, sử dụng thay thế giấy tờ trong th&agrave;nh phần hồ sơ thủ tục h&agrave;nh ch&iacute;nh:</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">1. Sổ bảo hiểm x&atilde; hội;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">2. Thẻ bảo hiểm y tế.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;"><b style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Điều 2. Mục ti&ecirc;u, y&ecirc;u cầu v&agrave; c&aacute;c trường th&ocirc;ng tin được chia sẻ</span></b></span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">1. Mục ti&ecirc;u: Thay thế hoặc cắt giảm th&agrave;nh phần hồ sơ trong c&aacute;c thủ tục h&agrave;nh ch&iacute;nh bằng việc khai th&aacute;c hoặc sử dụng dữ liệu tương ứng c&oacute; trong Cơ sở dữ liệu quốc gia về<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">bảo</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>hiểm.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">2. Y&ecirc;u cầu</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">a) Tu&acirc;n thủ c&aacute;c quy định về bảo mật th&ocirc;ng tin, c&aacute;c quy định về quyền sở hữu tr&iacute; tuệ li&ecirc;n quan đến dữ liệu, b&iacute; mật đời tư;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">b) Tu&acirc;n thủ c&aacute;c quy định, hướng dẫn kỹ thuật về trao đổi dữ liệu v&agrave; c&aacute;c nguy&ecirc;n tắc, quy định về quản l&yacute;, kết nối v&agrave; chia sẻ dữ liệu số giữa c&aacute;c cơ quan thuộc hệ thống ch&iacute;nh trị;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">c) Ph&ugrave; hợp với Khung kiến tr&uacute;c Ch&iacute;nh phủ điện t</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">ử</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>Việt Nam, Khung kiến tr&uacute;c Ch&iacute;nh phủ điện tử Bộ T&agrave;i ch&iacute;nh.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">3. C&aacute;c trường th&ocirc;ng tin được chia sẻ</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">a) Th&ocirc;ng tin cơ bản c&aacute; nh&acirc;n bao gồm:</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Họ, chữ đệm v&agrave; t&ecirc;n khai sinh;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Ng&agrave;y, th&aacute;ng, năm sinh;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Giới t&iacute;nh;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">-<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Số</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>định danh c&aacute; nh&acirc;n;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- D&acirc;n tộc;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Quốc tịch;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Nơi đăng k&yacute; khai sinh.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">b) Th&ocirc;ng tin về<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">bảo</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>hiểm x&atilde; hội:</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- M&atilde; số bảo hiểm x&atilde; hội;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Số năm tham gia;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Số th&aacute;ng tham gia;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Tổng số th&aacute;ng đơn vị chậm đ&oacute;ng;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Chi tiết qu&aacute; tr&igrave;nh tham gia;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Chi tiết qu&aacute; tr&igrave;nh đơn vị chậm đ&oacute;ng.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">c) Th&ocirc;ng tin về bảo hiểm y tế:</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- M&atilde; số bảo hiểm x&atilde; hội;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Số thẻ<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">bảo hiểm</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>y tế;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- M&atilde; mức<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">hưởng</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>bảo hiểm y tế;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Thời điểm thẻ bảo hiểm y tế c&oacute; gi&aacute; trị sử dụng v&agrave; thời điểm hết hạn sử</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">dụng;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Thời điểm tham gia bảo hiểm y tế đủ 05 năm li&ecirc;n tục;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- M&atilde; tỉnh kh&aacute;m chữa bệnh;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">-<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Nơi</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>đăng k&yacute; kh&aacute;m bệnh, chữa bệnh<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">bảo</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>hiểm y tế ban đầu (M&atilde;, t&ecirc;n bệnh</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">viện);</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Ng&agrave;y cấp thẻ bảo hiểm y tế;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- M&atilde;, t&ecirc;n cơ quan bảo hiểm x&atilde; hội thực hiện cấp thẻ bảo hiểm y tế;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">- Trạng th&aacute;i thẻ bị thu hồi hoặc tạm kho&aacute;.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;"><b style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Điều 3. Lộ tr&igrave;nh khai th&aacute;c, chia sẻ dữ liệu</span></b></span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Dữ liệu tại Điều 1 Quyết định n&agrave;y được chia sẻ để khai th&aacute;c, sử dụng theo mức độ ho&agrave;n thiện của cơ sở dữ liệu theo quy định tại<span>&nbsp;</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;">khoản 1 Điều 6 Nghị quyết số<span>&nbsp;</span><a href="https://luatvietnam.vn/hanh-chinh/nghi-quyet-66-7-2025-nq-cp-cat-giam-don-gian-hoa-thu-tuc-hanh-chinh-dua-tren-du-lieu-418840-d1.html" style="box-sizing: border-box; color: rgb(166, 124, 82); text-decoration: none; font-size: 16px !important; line-height: 1.5;" target="_blank">66.7/2025/NQ-CP</a></span>.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;"><b style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Điều 4. T&agrave;i liệu hướng dẫn kết nối</span></b></span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Ban h&agrave;nh k&egrave;m theo Quyết định n&agrave;y c&aacute;c T&agrave;i liệu kết nối, khai th&aacute;c chia sẻ th&ocirc;ng tin giữa Cơ sở dữ liệu quốc gia về bảo hiểm với Hệ thống th&ocirc;ng tin giải quyết thủ tục h&agrave;nh ch&iacute;nh cấp Bộ, tỉnh, gồm:</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">1. T&agrave;i liệu kết nối trao đổi th&ocirc;ng tin qu&aacute; tr&igrave;nh tham gia<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">bảo</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>hiểm x&atilde; hội, bảo hiểm thất nghiệp,<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">bảo</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>hiểm tai nạn lao động - bệnh nghề nghiệp;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">2. T&agrave;i liệu đặc tả chi tiết API th&ocirc;ng tin thẻ bảo hiểm y tế.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;"><b style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Điều 5. Hiệu lực thi h&agrave;nh</span></b></span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Quyết định n&agrave;y c&oacute; hiệu lực thi h&agrave;nh kể từ ng&agrave;y k&yacute;.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;"><b style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">Điều 6. Tr&aacute;ch nhiệm thi h&agrave;nh</span></b></span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">1. Bộ trưởng, thủ trưởng cơ quan ngang Bộ, Ủy ban nh&acirc;n d&acirc;n c&aacute;c tỉnh, th&agrave;nh phố c&oacute; tr&aacute;ch nhiệm:</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">a) R&agrave; so&aacute;t, t&aacute;i cấu tr&uacute;c quy tr&igrave;nh giải quyết thủ tục h&agrave;nh ch&iacute;nh thuộc phạm vi quản l&yacute; nh&agrave; nước của ng&agrave;nh, lĩnh vực; c&aacute;c thủ tục h&agrave;nh ch&iacute;nh thuộc thẩm quyền giải quyết của Ủy ban nh&acirc;n d&acirc;n cấp tỉnh, Ủy ban nh&acirc;n d&acirc;n cấp x&atilde; tr&ecirc;n cơ sở khai th&aacute;c dữ liệu c&oacute; trong Cơ sở dữ liệu quốc gia về bảo hiểm, sử dụng thay thế giấy tờ trong th&agrave;nh phần hồ sơ giải quyết thủ tục h&agrave;nh ch&iacute;nh thuộc thẩm quyền theo quy định tại<span>&nbsp;</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important;">Điều 7 Nghị quyết số<span>&nbsp;</span><a href="https://luatvietnam.vn/hanh-chinh/nghi-quyet-66-7-2025-nq-cp-cat-giam-don-gian-hoa-thu-tuc-hanh-chinh-dua-tren-du-lieu-418840-d1.html" style="box-sizing: border-box; color: rgb(166, 124, 82); text-decoration: none; font-size: 16px !important; line-height: 1.5;" target="_blank">66.7/2025/NQ-CP</a></span>;</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">b) Tr&ecirc;n cơ sở t&agrave;i liệu kết nối của Bộ T&agrave;i ch&iacute;nh điều chỉnh hệ thống th&ocirc;ng tin giải quyết thủ tục h&agrave;nh ch&iacute;nh cấp Bộ, cấp tỉnh, bảo đảm kết nối ph&ugrave; hợp để thực hiện khai th&aacute;c dữ liệu quốc gia về bảo hiểm theo y&ecirc;u cầu quản l&yacute; nh&agrave; nước v&agrave; theo quy định ph&aacute;p luật.</span></p> 
+        <p style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; color: rgb(34, 34, 34); font-size: 16px; line-height: 1.5; background: 0px 0px !important; font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-indent: 0.5in;"><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">2. Bộ trưởng, thủ trưởng cơ quan ngang Bộ; Ch&aacute;nh Văn ph&ograve;ng Bộ, Gi&aacute;m đốc Bảo hiểm x&atilde; hội Việt Nam, Cục trưởng Cục C&ocirc;ng nghệ th&ocirc;ng tin v&agrave; Chuyển<span>&nbsp;</span></span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">đổi</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;"><span>&nbsp;</span>số, Thủ trưởng c&aacute;c đơn vị c&oacute; li&ecirc;n quan v&agrave; Ủy ban nh&acirc;n d&acirc;n c&aacute;c tỉnh, th&agrave;nh phố chịu tr&aacute;ch nhiệm thi h&agrave;nh Quyết định n&agrave;y./</span><span style="box-sizing: border-box; font-size: 16px !important; line-height: 1.5; background: 0px 0px !important; color: windowtext;">.</span></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-sm-3 col-xs-12"> 
+      <div class="sidebar sidebar-news"> 
+       <div class="head">
+         Th&ocirc;ng b&aacute;o mới nhất 
+       </div> 
+       <div class="body"> 
+        <ul class="links"> 
+         <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=421.html" class="link">Thư ngỏ của Bộ trưởng, Chủ nhiệm Văn ph&ograve;ng Ch&iacute;nh phủ về việc sử dụng Cổng Dịch vụ c&ocirc;ng Quốc gia phục vụ nhu cầu thiết yếu của người d&acirc;n v&agrave; doanh nghiệp trong bối cảnh dịch COVID-19</a> <p class="post-date">Ng&agrave;y 04/04/2020</p> </li> 
+         <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=381.html" class="link">Danh mục Dịch vụ c&ocirc;ng trực tuyến cung cấp tr&ecirc;n Cổng Dịch vụ c&ocirc;ng quốc gia</a> <p class="post-date">Ng&agrave;y 19/03/2020</p> </li> 
+         <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=261.html" class="link">Tra cứu th&ocirc;ng tin học tập của 6 triệu học sinh tr&ecirc;n Cổng Dịch vụ c&ocirc;ng quốc gia</a> <p class="post-date">Ng&agrave;y 09/01/2020</p> </li> 
+         <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=222.html" class="link">Dịch vụ c&ocirc;ng mới được t&iacute;ch hợp, cung cấp trong th&aacute;ng 12/2019</a> <p class="post-date">Ng&agrave;y 07/12/2019</p> </li> 
+         <li> <a href="dvc-chi-tiet-tin-tuc.html@new_id=2.html" class="link">Lộ tr&igrave;nh t&iacute;ch hợp cung cấp dịch vụ c&ocirc;ng trực tuyến trong qu&yacute; I/2020</a> <p class="post-date">Ng&agrave;y 29/11/2019</p> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="section section-menu-bottom"> 
+   <div class="container"> 
+    <div class="pull-left"> 
+     <a class="wrap" onclick="goToQuestion()"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        C&acirc;u hỏi thường gặp 
+      </div> </a> 
+    </div> 
+    <div class="pull-right"> 
+     <a class="wrap" href="dvc-huong-dan-cong-dan-doanh-nghiep.html"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        Hướng dẫn sử dụng 
+      </div> </a> 
+    </div> 
+    <div class="clearfix"></div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+
+	function goToQuestion(){
+		var path = window.location.pathname;
+		var targetPage = 'dvc-cau-hoi-pho-bien.html';
+		if (path == '/p/home/dvc-trang-chu-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+			){
+			targetPage += '?pObject=5';
+		}else {
+			targetPage += '?pObject=1'
+		}
+		window.location.href = targetPage;
+	}
+</script> 
+  <script>
+
+</script>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="loading" id="loading" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+   <style type="text/css">
+			.loading {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 1000;
+			}
+			.loading .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add"> 
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p> 
+     </div> 
+     <div class="add"> 
+      <p>www.dichvucong.gov.vn</p> 
+     </div> 
+     <div class="add"> 
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p> 
+     </div> 
+     <div class="add"> 
+      <p> Email: dichvucong@chinhphu.vn</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script type="text/javascript" src="theme/vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="theme/vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="theme/js/custom.js"></script> 
+  <script type="text/javascript">
+    function showLoading() {
+        $("#loading-all").show();
+    }
+    function hideLoading(){
+        $("#loading-all").hide();
+    }
+
+    function goToPage(url){
+        window.location.href = url;
+    }
+
+    function goToPage_blank(url){
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    $(".targetgroup-box .btn-readmore").click(function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            $(this).html('Xem tiếp <span class="-ap icon-chevron-thin-down icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+            $(this).removeClass("active");
+        }else{
+            $(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+            $(this).addClass("active");
+        }
+    });
+    var links = [
+            
+        ];
+
+
+    function searchProcedure(){
+        var key = getWords($("#searchKeyWord").val(), 100);
+		console.log(key);
+        // if($("#searchKeyWord").val()) {
+        var href = 'dvc-ket-qua-thu-tuc.html?originKey=' + encodeURIComponent(key) + '&tukhoa=' + key.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g, ' ').trim() + '&tinh_thanh=';
+        window.location.href = href;
+        //}
+    }
+
+function showAdvSearch() {
+    getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+}
+
+function doAdvSearch(){
+
+    let mess = '';
+    let keyWord = $('#txtKEYWORD').val().trim();
+    keyWord = getWords(keyWord, 100);
+    if (!keyWord) {
+        mess += 'Bạn vui lòng nhập từ khóa tìm kiếm!\n';
+    }
+    let tinhThanhValue = $('#cboTINH_THANH').val();
+    let boNganhValue = $('#cboBO_NGANH').val();
+    var rdoBO = $("input[name='cap_thuc_hien']:checked").val();
+
+    if (((!tinhThanhValue || '-1' == tinhThanhValue) && rdoBO != 'bonganh') || (rdoBO == 'bonganh' && (!boNganhValue || '-1' == boNganhValue))) {
+        mess += 'Bạn phải chọn ít nhất một Tỉnh/ Thành phố hoặc một Bộ ngành!\n';
+    }
+
+    if (mess) {
+        toastr.warning(mess);
+        return;
+    }
+
+    var rdoSO = $("input[name='quan_huyen_or_so']:checked").val();
+    if (rdoBO != 'bonganh' && $('#cboTINH_THANH').val() && $('#cboTINH_THANH').val() != '-1' && ($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val()) && ($('#cboSO').val() == '-1' || !$('#cboSO').val()) && ($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val())) {
+
+        var params = 'originKey=' + encodeURIComponent(keyWord) + '&tukhoa=' + keyWord.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g,' ').trim()
+        params+= "&tinh_thanh="+(($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val()  || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        window.location = 'dvc-ket-qua-thu-tuc.html?' + params;
+    } else {
+
+        var params = "tu_khoa=" + keyWord;
+        //params += "&bo_nganh="+(($('#cboBO').val() != '-1' || !$('#cboBO').val() || rdoBO != 'bonganh') ? "" : $('#cboBO option:selected').text());
+        params += "&bo_nganh=" + ($('#cboBO_NGANH option:selected').text());
+        params += "&tinh_thanh=" + (($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val() || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        params += "&so=" + (($('#cboSO').val() == '-1' || !$('#cboSO').val() || rdoSO != 'so') ? "" : $('#cboSO option:selected').text());
+        params += "&quan_huyen=" + (($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val() || rdoSO == 'so') ? "" : $('#cboQUAN_HUYEN option:selected').text());
+        params += "&phuong_xa=" + (($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val() || rdoSO == 'so') ? "" : $('#cboPHUONG_XA option:selected').text());
+        params += "&id_tinh_thanh=" + $('#cboTINH_THANH').val();
+        params += "&id_quan_huyen=" + $('#cboQUAN_HUYEN').val();
+        params += "&id_phuong_xa=" + $('#cboPHUONG_XA').val();
+        params += "&id_so=" + $('#cboSO').val();
+        params += "&id_bo_nganh=" + $('#cboBO_NGANH').val();
+        window.location = 'dvc-danh-sach-dich-vu-cong.html?' + params;
+    }
+
+    $('#advsearch').modal('hide');
+}
+$(document).ready(function(){
+    $("#searchKeyWord").keyup(function (e){
+        if (e.which == 13) {
+            searchProcedure();
+        }
+    });
+    bindEvent();
+});
+
+function changeHeight(){
+    var vl = 1 - $('#popupChange').attr('height');
+    $('#popupChange').attr('height', vl);
+    $('#popupChange').css('height', vl + "px");
+}
+
+function bindEvent(){
+    $('#searchKeyWord').keydown(function(e){
+        if (e.keyCode == 13) {
+            searchProcedure();
+        }
+    });
+    $('#advsearch').on('hidden.bs.modal', function () {
+        $('#divClosePopupSearch').click();
+    });
+    $('#divClosePopupSearch').click(function(){
+        $("#txtKEYWORD").val('');
+        $('#rdoTINH_THANH').click();
+        $('#rdoQUAN_HUYEN').click();
+        $("#cboTINH_THANH").change();
+        getLocation("dvcqg_get_phuong_xa_by_selected", "huyen_id", -1, "cboPHUONG_XA");
+        $('#advsearch').modal('hide');
+
+    });
+
+    $('#rdoTINH_THANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').show();
+        $('#cboBO_NGANH').select2().next().hide();
+        $('#cboTINH_THANH').select2().next().show();
+        getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", -1, "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", -1, "cboSO");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+    });
+    $('#rdoBO_NGANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').hide();
+        $('#cboBO_NGANH').select2().next().show();
+        $('#cboTINH_THANH').select2().next().hide();
+        getLocation("dvcqg_get_bo_nganh_by_selected_v2", null, null, "cboBO_NGANH");
+    });
+
+    $('#rdoQUAN_HUYEN').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+        $('#cboSO').select2().next().hide();
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+    });
+
+    $('#rdoSO').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+        $('#cboSO').select2().next().show();
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+    });
+
+    $("#cboTINH_THANH,#cboQUAN_HUYEN,#cboPHUONG_XA,#cboSO,#cboBO_NGANH").select2({
+        allowClear: true,
+        width: "100%",
+    });
+    $('#cboSO,#cboBO_NGANH').select2().next().hide();
+
+    $("#cboTINH_THANH").change(function () {
+        getLocation("dvcqg_get_so_by_selected", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+
+    });
+    $("#cboQUAN_HUYEN").change(function () {
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", $("#cboQUAN_HUYEN").val(), "cboPHUONG_XA");
+    });
+}
+
+//suggestion search
+function sugggestProcedure(keyword) {
+    var obj = new Object();
+    obj.key_search = 'al:"' + keyword +'"~5';
+    obj.page_size = 5;
+    obj.start_row = 0;
+    obj.source_data = "thu_tuc_v1";
+    obj.type = "fts";
+    var result = apiservice.AjaxJson.executeQuery(obj);
+    var dataMap = result.response.docs.map(function (i) {
+        return {
+            name: i.ten_thu_tuc,
+            link: i.ten_thu_tuc,
+            id: i.ma_thu_tuc
+        }
+    });
+
+    return dataMap;
+}
+
+jQuery(document).ready(function($) {
+
+    var engine = new Bloodhound({
+        remote: {
+            url: '/jsp/procedure-typehead.jsp?keyword=al:"%QUERY%"~5',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('keyword'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    $(".search-input").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3
+    }, {
+        source: engine.ttAdapter(),
+        displayKey: 'ten_thu_tuc',
+        name: 'usersList',
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                console.log(data);
+                if (data.isnganhdoc == 1) {
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html@ma_thu_tuc='%20+%20data.ma_thu_tuc%20+%20'.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else if(data.isdungchung == 1){
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html@ma_thu_tuc='%20+%20data.ma_thu_tuc%20+%20'.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else{
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc='%20+%20data.ma_thu_tuc%20+%20'.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }
+                
+            }
+        }
+    });
+    $('#searchKeyWord:text:visible:first').focus();
+});
+
+</script> 
+  <script type="text/javascript">
+
+    //
+    function autoSetmenu() {
+        var path = window.location.pathname;
+        var isRemoveDropdown = false;
+
+        // Cau hoi
+        if (path == '/p/home/dvc-chi-tiet-cau-hoi.html'){
+            path = '/p/home/dvc-cau-hoi-pho-bien.html';
+        }
+
+        // Huong dan su dung
+        if (path == '/p/home/dvc-huong-dan-bo-nganh-dia-phuong.html' || path == '/p/home/dvc-phan-mem-ho-tro.html' || path == '/p/home/dvc-thiet-ke-giao-dien.html' ||
+            path == '/p/home/dvc-nop-tien-dien.html' || path == '/p/home/dvc-liet-ket-giao-duc.html'
+            ){
+            path = '/p/dvc-huong-dan-cong-dan-doanh-nghiep.html';
+        }
+
+        // Thu tuc hanh hinh cong dan - doanh nghiep
+        if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html'
+            ){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }else if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+            ){
+            path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+        }else if (path == '/p/home/dvc-danh-sach-thu-tuc-theo-nhom-su-kien.html'
+                || path == '/p/home/dvc-danh-sach-cau-hoi-theo-nhom-su-kien.html'
+            ) {
+            var objectId = GetURLParameter('objectId');
+            if (objectId == 1){
+                path = '/p/home/dvc-trang-chu-cong-dan.html';
+            }else if(objectId == 5){
+                path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+            }
+        }
+
+        // DVC trực tuyến & đăng ký xe
+        if (path == '/p/home/dvc-dich-vu-cong-truc-tuyen-ds.html'
+                || path == '/p/home/dvc-dich-vu-cong-truc-tuyen.html'
+                || path == '/p/home/dvc-dang-ky-xe.html'
+            ) {
+            path = '/p/home/dvc-dich-vu-cong-truc-tuyen.html';
+        }
+
+        // Chi tiet TTHC va DVC
+        if (path == '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html' 
+                || path == '/p/home/dvc-danh-sach-dich-vu-cong.html'
+                || path == '/p/home/dvc-danh-sach-thu-tuc-theo-su-kien.html'
+                || path == '/p/home/dvc-ket-qua-thu-tuc.html'
+            ) {
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+            isRemoveDropdown = true;
+        }
+
+        // module TTHC
+        if (path == '/p/home/dvc-tthc-category.html') {
+            path = '/p/home/dvc-tthc-trang-chu.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html';
+        }
+        if (path == '/p/home/dvc-tthc-quyet-dinh-cong-bo-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-quyet-dinh-cong-bo.html';
+        }
+        if (path == '/p/home/dvc-tthc-bonganh-tinhtp.html') {
+            path = '/p/home/dvc-tthc-co-quan.html';
+        }
+
+        if (path == '/p/home/dvc-chi-tiet-tin-tuc.html') {
+            path = '/p/home/dvc-tin-tuc.html';
+        }
+
+        // dvc-cap-ban-sao-tu-ban-chinh
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh.html'){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }
+        //  Đặt lịch hẹn
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh-dlh.html'){
+            path = '/p/home/dvc-tra-cuu-ho-so.html';
+        }
+        // Active main menu
+        $("#main-menu li").each(function () {
+            var link = $(this).find(">a").attr("href");
+            if (path.indexOf(link) != -1) {
+                $(this).parents('li').siblings().removeClass("active");
+                $(this).parents('li').addClass("active");
+                $(this).parents('li').find("li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // Active dropdownmenu
+        $("#main-menu > li").each(function () {
+            if ($(this).hasClass("active")) {
+                var html = $(this).find(">ul").html();
+                $(this).addClass("active");
+                $(this).find(">ul").addClass("hidden");
+                $("#list-dropdown").html(html);
+                if($("#bn-ttp").hasClass("active")){
+                    $("#coquan").addClass("active");
+                }
+            }
+        });
+
+        // Remove
+        if (isRemoveDropdown) {
+            $('#list-dropdown > li').removeClass('active');
+        }
+    }
+
+    var pathHDSD = window.location.pathname;
+    $("#regionleft-introduce li").removeClass('active');
+    $("#left-introduce li a").each(function () {
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $('#left-introduce li:first-child').removeClass('active');
+    $('.child-menus a').each(function(){
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        autoSetmenu();
+    })
+
+
+</script> 
+  <style>
+    .bootbox .modal-footer .btn + .btn {
+        margin-bottom: 0;
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .input-captcha .code .number {
+        height: 100%;
+        padding: 2px;
+    }
+</style>   
+ </body>
+</html>

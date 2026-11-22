@@ -1,0 +1,180 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Chi tiết câu hỏi - Cổng Dịch vụ công Quốc gia">
+  <div style="background:#f4f6f9; min-height:800px; padding: 25px 0 50px 0;">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb" style="background:transparent; padding: 8px 0; margin-bottom: 20px;">
+        <li><a href="/" style="color:#d32f2f; font-weight:600;"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li><a href="/p/home/dvc-cau-hoi-pho-bien">Câu hỏi thường gặp</a></li>
+        <li class="active">Chi tiết câu hỏi</li>
+      </ul>
+
+      <!-- Main Content Card -->
+      <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 30px;">
+        <!-- Loading State -->
+        <div id="loading-question" style="text-align: center; padding: 40px;">
+          <i class="fa fa-spinner fa-spin fa-2x" style="color:#d32f2f;"></i>
+          <p style="margin-top: 10px; color:#64748b;">Đang tải nội dung câu hỏi và câu trả lời...</p>
+        </div>
+
+        <!-- Question Body (Hidden until loaded) -->
+        <div id="question-content" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">
+            <div>
+              <span id="question-badge" style="background:#fee2e2; color:#b91c1c; font-size:12px; font-weight:700; padding:3px 10px; border-radius:12px; text-transform:uppercase;">
+                Hỏi đáp dịch vụ công
+              </span>
+              <h1 id="question-title" style="margin: 12px 0 0 0; font-size: 24px; font-weight: 700; color: #1e293b; line-height: 1.4;">
+                Tiêu đề câu hỏi
+              </h1>
+            </div>
+            <a href="/p/home/dvc-cau-hoi-pho-bien" class="btn btn-default" style="font-weight: 600; white-space: nowrap; margin-left: 15px;">
+              <i class="fa fa-arrow-left"></i> Quay lại danh sách
+            </a>
+          </div>
+
+          <!-- Answer Box -->
+          <div style="background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; padding: 22px 25px; margin-bottom: 30px;">
+            <h4 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #1e40af;">
+              <i class="fa fa-check-circle" style="color: #2563eb;"></i> Nội dung trả lời:
+            </h4>
+            <div id="question-answer" style="font-size: 15px; color: #334155; line-height: 1.8;">
+              <!-- Answer injected here -->
+            </div>
+          </div>
+
+          <!-- Related Procedures -->
+          <div id="section-related-procedures" style="margin-bottom: 30px; display: none;">
+            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;">
+              <i class="fa fa-file-text-o" style="color:#d32f2f; margin-right:8px;"></i> Các thủ tục hành chính liên quan
+            </h3>
+            <div id="related-procedures-list"></div>
+          </div>
+
+          <!-- Related Questions -->
+          <div id="section-related-questions" style="margin-bottom: 20px; display: none;">
+            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;">
+              <i class="fa fa-question-circle-o" style="color:#2563eb; margin-right:8px;"></i> Các câu hỏi liên quan khác
+            </h3>
+            <div id="related-questions-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    function getParam(name) {
+      var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+      return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
+    }
+
+    $(document).ready(function() {
+      var qId = getParam('id') || '10334';
+      var staticFile = '/p/home/dvc-chi-tiet-cau-hoi.html@id=' + encodeURIComponent(qId) + '&row_limit=1.html';
+
+      fetch(staticFile)
+        .then(function(res) {
+          if (!res.ok) throw new Error('Network response not ok: ' + res.status);
+          return res.text();
+        })
+        .then(function(html) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+
+          // Extract Title
+          var titleEl = doc.querySelector('.main-title-sub');
+          var titleText = titleEl ? titleEl.textContent.trim() : 'Câu hỏi ID: ' + qId;
+          $('#question-title').text(titleText);
+          $('#question-badge').text('Mã câu hỏi: #' + qId);
+
+          // Extract Answer
+          var articleEl = doc.querySelector('.article');
+          if (articleEl) {
+            // Remove redundant 'Trả lời:' heading if duplicate
+            var htmlAns = articleEl.innerHTML.replace(/<p class="f22">Trả lời:<\/p>/gi, '');
+            $('#question-answer').html(htmlAns);
+          } else {
+            $('#question-answer').html('<p>Chưa có văn bản trả lời công khai hoặc đang được cập nhật.</p>');
+          }
+
+          // Extract Related Documents / Procedures
+          var uls = doc.querySelectorAll('.list-document');
+          var procUl = null;
+          var questUl = null;
+
+          uls.forEach(function(ul) {
+            if (ul.classList.contains('-question')) {
+              questUl = ul;
+            } else {
+              procUl = ul;
+            }
+          });
+
+          // Render Procedures
+          if (procUl && procUl.children.length > 0) {
+            var procHtml = '<ul style="list-style: none; padding-left: 0;">';
+            var procLinks = procUl.querySelectorAll('a');
+            procLinks.forEach(function(a) {
+              var href = a.getAttribute('href') || '';
+              // Convert static link to clean astro link if possible
+              var match = href.match(/ma_thu_tuc=([^&.]+)/);
+              var cleanLink = match ? ('/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh?ma_thu_tuc=' + match[1]) : href;
+              procHtml += `
+                <li style="padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; background: #fafbfc;">
+                  <a href="${cleanLink}" style="color: #1e40af; font-weight: 600; text-decoration: none;">
+                    <i class="fa fa-external-link" style="margin-right: 6px;"></i> ${a.textContent.trim()}
+                  </a>
+                </li>
+              `;
+            });
+            procHtml += '</ul>';
+            $('#related-procedures-list').html(procHtml);
+            $('#section-related-procedures').show();
+          }
+
+          // Render Related Questions
+          if (questUl && questUl.children.length > 0) {
+            var questHtml = '<ul style="list-style: none; padding-left: 0;">';
+            var qLinks = questUl.querySelectorAll('a');
+            qLinks.forEach(function(a) {
+              var href = a.getAttribute('href') || '';
+              var matchId = href.match(/id=(\d+)/);
+              var cleanLink = matchId ? ('/p/home/dvc-chi-tiet-cau-hoi?id=' + matchId[1]) : href;
+              questHtml += `
+                <li style="padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; background: #fafbfc;">
+                  <a href="${cleanLink}" style="color: #0369a1; font-weight: 500; text-decoration: none;">
+                    <i class="fa fa-question-circle" style="color: #38bdf8; margin-right: 6px;"></i> ${a.textContent.trim()}
+                  </a>
+                </li>
+              `;
+            });
+            questHtml += '</ul>';
+            $('#related-questions-list').html(questHtml);
+            $('#section-related-questions').show();
+          }
+
+          $('#loading-question').hide();
+          $('#question-content').show();
+        })
+        .catch(function(err) {
+          console.error(err);
+          // Fallback if direct fetch fails: try search in OFFLINE_QUESTIONS
+          if (window.OFFLINE_QUESTIONS) {
+            var found = window.OFFLINE_QUESTIONS.find(function(item) { return item.ID === qId; });
+            if (found) {
+              $('#question-title').html(found.CONTENT);
+              $('#question-answer').html('<p>Chi tiết quy định và hướng dẫn áp dụng cho thủ tục liên quan theo quy định của pháp luật hiện hành. Vui lòng liên hệ tổng đài 1800 1096 để được trợ giúp trực tiếp.</p>');
+              $('#loading-question').hide();
+              $('#question-content').show();
+              return;
+            }
+          }
+          $('#loading-question').html('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Không thể tải câu hỏi với mã #' + qId + '. <a href="/p/home/dvc-cau-hoi-pho-bien">Quay lại danh sách câu hỏi</a></div>');
+        });
+    });
+  </script>
+</Layout>

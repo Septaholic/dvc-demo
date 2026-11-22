@@ -1,0 +1,445 @@
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="V&igrave; nền h&agrave;nh ch&iacute;nh phục vụ. Thuận lợi hơn, minh bạch hơn" name="description" /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" /> 
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="css/style.css" /> 
+  <link rel="shortcut icon" type="image/png" href="img/header/quoc_huy.png" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrapValidator/bootstrapValidator.min.css" /> 
+  <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap-paging/jquery.bootpag.min.js"> --> 
+  <!-- <link rel="stylesheet" type="text/css" href="css/pagination.css"> --> 
+  <script type="text/javascript" src="vendor/jquery/jquery-3.4.0.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrapValidator/bootstrapValidator.min.js"></script> 
+  <!-- <script type="text/javascript" src="js/pagination.js"></script> --> 
+  <!-- <script src="js/jquery.twbsPagination.js"></script> --> 
+  <script src="vendor/bootstrap-paging/jquery.bootpag.min.js"></script> 
+  <script src="js/custom.js"></script> 
+  <script src="js/autosize.js"></script> 
+  <style type="text/css">
+		.menu-phu {
+			padding-left: 0;
+			list-style: none;
+			margin-bottom: 0;
+
+		}
+			.menu-phu li {
+			margin: 6px 0;
+			background: url(img/li1.png) no-repeat left 8px;
+			padding-left: 15px;
+			display: block;
+		   /* padding: 5px 0px;*/
+			color: #333;
+			font-size: 14px;
+			line-height: 22px;
+		}
+		.links li b{
+			 line-height: 22px;
+			 font-size: 14px;
+		}
+		body a{
+			cursor: pointer;
+		}
+		.iconPage{
+			padding-bottom: 3px;
+			padding-top: 3px;
+		}
+		.box-search-pakn {
+			border: 1px solid #C9CDCF;
+			padding: 20px;
+			margin-bottom: 30px;
+		}
+		/*.pakn-sidebar-head {
+			background: #2A6EBB;
+			color: #fff;
+			border-bottom: 5px solid red;
+		}*/
+		.section-pakn .list-pakn a.image-pakn {
+			max-width: 80px;
+		}
+		ol, ul, li, textarea {
+			text-align: justify;
+		}
+		.pakn-chude .item .text {
+			font-size: 18px;
+		}
+		.pakn-custom-links a, .pakn-custom-file a {
+			text-align: initial;
+			white-space: initial !important;
+		}
+
+		.pakn-custom-form-title {
+			text-align: initial;
+		}
+
+		.font-size-number {
+			font-size: 13px;
+		}
+
+		.footer-title {
+			padding-top: 0px !important;
+		}	
+	</style> 
+ </head> 
+ <body> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="loading" id="loading-dialog" style="background: #fff; display: none;"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+    <strong>Đang xử l&yacute;...</strong> 
+   </div> 
+  </div> 
+  <div class="overlay-common"></div> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="../home/dvc-trang-chu.html" class="logo"> <img src="img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account"> 
+      <div class="buttons"> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="../home/dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <li><a href="../home/dvc-gioi-thieu.html">Giới thiệu</a></li> 
+     <li> <a href="pakn-search.html#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-trang-chu-cong-dan.html">C&ocirc;ng d&acirc;n</a></li> 
+       <li><a href="../home/dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> 
+       <li><a href="../home/dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ c&ocirc;ng trực tuyến</a></li> 
+       <li><a href="../home/dvc-dich-vu-cong-noi-bat.html">Dịch vụ c&ocirc;ng nổi bật</a></li> 
+       <li><a href="../home/dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="../home/dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="pakn-search.html#">Thanh to&aacute;n trực tuyến</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li> 
+       <li><a href="../home/dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế c&aacute; nh&acirc;n/Trước bạ</a></li> 
+       <li><a href="../home/dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh to&aacute;n vi phạm giao th&ocirc;ng</a></li> 
+       <li><a href="../home/dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh to&aacute;n ph&iacute;/lệ ph&iacute; dịch vụ c&ocirc;ng</a></li> 
+      </ul> </li> 
+     <li> <a href="pakn-search.html#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gioi-thieu.html">Giới thiệu</a></li> --> 
+       <li><a href="pakn-gui-pakn.html">Gửi PAKN</a></li> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-category.html">Chủ đề PAKN</a></li> --> 
+       <li><a href="pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-huong-dan.html">Hướng dẫn</a></li> --> 
+      </ul> </li> 
+     <li> <a href="pakn-search.html#">Thủ tục h&agrave;nh ch&iacute;nh</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li> 
+       <li><a href="../home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục h&agrave;nh ch&iacute;nh</a></li> 
+       <li><a href="../home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục h&agrave;nh ch&iacute;nh li&ecirc;n th&ocirc;ng</a></li> 
+       <li><a href="../home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định c&ocirc;ng bố</a></li> 
+       <li><a href="../home/dvc-tthc-co-quan.html">Cơ quan</a></li> 
+       <!-- <li id="coquan"><a href="dvc-tthc-co-quan.html">Cơ quan</a></li>
+					<li hidden id="bn-ttp"><a href="dvc-tthc-bonganh-tinhtp.html">TTHC Bộ ngành Tỉnh thành phố</a></li> --> 
+      </ul> </li> 
+     <li class=""> <a href="pakn-search.html#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="../home/dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="../home/dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="../home/dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="buttons"> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div>
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <div class="section-pakn"> 
+   <div class="container"> 
+    <n:velocity> 
+     <ul class="breadcrumb"> 
+      <li><a href="../../index.html">Trang chủ</a></li> 
+      <li><a> Tra cứu kết quả trả lời</a></li> 
+     </ul> 
+    </n:velocity> 
+    <div class="list-pakn" id="list-pakn"> 
+     <div class="main-title -none">
+       Tra cứu kết quả trả lời 
+     </div> 
+     <div class="form-group"> 
+      <!-- <div class="label-text">Tìm kiếm PAKN </div> --> 
+      <div class="input-form-pakn"> 
+       <input type="text" id="maPa" value="" onkeypress="OnkeyByID(event)" class="form-control" placeholder="Nhập m&atilde; số PAKN/ T&ecirc;n người gửi" /> 
+       <button onclick="doSearchByID()" class="btn btn-search btn-main">T&igrave;m kiếm</button> 
+      </div> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <!--fix bug atbm start--> 
+     <div class="main-title-sub">
+       Kiến nghị mới trả lời 
+     </div> 
+     <ul class="list-document -img"> 
+      <li> <a href="pakn-detail.html@id=52CCB998033AE462E063540AA8C06858.html"> <span class="icon"> <img src="img/category/tainguyenmoitruong.svg" alt="" /> </span> Phản &aacute;nh về việc chậm đồng bộ dữ liệu giải tỏa Giấy ph&eacute;p l&aacute;i xe tr&ecirc;n VNeID.</a> </li> 
+      <li> <a href="pakn-detail.html@id=52382148575814F2E063570AA8C0B533.html"> <span class="icon"> <img src="img/category/tainguyenmoitruong.svg" alt="" /> </span> Xử phạt lĩnh vực giao th&ocirc;ng</a> </li> 
+      <li> <a href="pakn-detail.html@id=54574BD25C73DB99E063540AA8C0F30E.html"> <span class="icon"> <img src="img/category/caicachthutuchanhchinh.png" alt="" /> </span> Về việc kh&ocirc;ng thể thực hiện thanh to&aacute;n lệ ph&iacute; hồ sơ tr&ecirc;n dịch vụ c&ocirc;ng</a> </li> 
+      <li> <a href="pakn-detail.html@id=54E32FA603E496AFE063560AA8C0D779.html"> <span class="icon"> <img src="img/category/caicachthutuchanhchinh.png" alt="" /> </span> Giấy x&aacute;c nhận độc th&acirc;n</a> </li> 
+      <li> <a href="pakn-detail.html@id=55209B1CC45D75B1E063550AA8C0ABA0.html"> <span class="icon"> <img src="img/category/caicachthutuchanhchinh.png" alt="" /> </span> Phản &aacute;nh kiến nghị về hồ sơ:</a> </li> 
+     </ul> 
+     <div class="actions center"> 
+      <a href="pakn-tra-loi.html" class="btn btn-main">Xem tất cả</a> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <!--fix bug atbm end--> 
+     <!--fix bug atbm start 2--> 
+     <div class="main-title-sub">
+       Kiến nghị xem nhiều nhất 
+     </div> 
+     <ul class="list-document -img"> 
+      <li> <a href="pakn-detail.html@id=337E5BDF264372C1E0634A0AA8C01C67.html"> <span class="icon"> <img src="img/category/anninhquocphong.svg" alt="" /> </span> Thủ tục thu hồi đăng k&yacute; xe v&agrave; biển số xe</a> </li> 
+      <li> <a href="pakn-detail.html@id=2D7B777BECE90CAAE063490AA8C07866.html"> <span class="icon"> <img src="img/category/anninhquocphong.svg" alt="" /> </span> Chờ trả hộ chiếu mới qu&aacute; l&acirc;u. 2 th&aacute;ng vẫn chưa nhận được</a> </li> 
+      <li> <a href="pakn-detail.html@id=2D7B777A9C260CAAE063490AA8C07866.html"> <span class="icon"> <img src="img/category/caicachthutuchanhchinh.png" alt="" /> </span> Quy tr&igrave;nh tiếp nhận v&agrave; trả kết quả hồ sơ nộp trực tuyến qua dịch vụ c&ocirc;ng gồm những g&igrave;?</a> </li> 
+      <li> <a href="pakn-detail.html@id=2D7B7779F8FC0CAAE063490AA8C07866.html"> <span class="icon"> <img src="img/category/anninhquocphong.svg" alt="" /> </span> L&agrave;m X&aacute;c Nhận Căn Cước C&ocirc;ng D&acirc;n v&agrave; Chứng Minh Thư.</a> </li> 
+      <li> <a href="pakn-detail.html@id=2D7B777AACFA0CAAE063490AA8C07866.html"> <span class="icon"> <img src="img/category/khoahoccongnghe.svg" alt="" /> </span> Kh&ocirc;ng truy nhập được website dichvucong.gov.vn</a> </li> 
+     </ul> 
+     <div class="divider-gray"></div> 
+     <!--fix bug atbm end 2--> 
+    </div> 
+   </div> 
+  </div> 
+  <style type="text/css">
+	@keyframes blink { 
+		50% { border-color: #ff0000; } 
+	}
+</style> 
+  <n:velocity> 
+   <script type="text/javascript">
+
+function OnkeyByID(e){
+	if (e.keyCode == 13) 
+	{
+		SearchByID(10,1);
+	}
+}
+
+	function doSearchByID(){
+		SearchByID(10,1);
+		$( "#maPa" ).css( "border", "none" );
+	};
+	
+	function doSearch(pRect, pIndex){
+	var keywords=encodeURI("");
+		$('#list-pakn').html('Đang lấy dữ liệu....');
+		var url ='/p/phananhkiennghi/jsp/pakn-search.jsp?id='+keywords+'&record_per_page='+pRect+'&page_index='+pIndex;
+		$.ajax({
+			url: url,
+			type: 'GET',
+			success: function (data) {
+				$("#list-pakn").html(data);
+				paginationAddLink();
+			}
+		});
+	};
+	function SearchByID(pRect, pIndex){
+		var mapa=encodeURI($("#maPa").val().trimRight(' ').trimLeft(' '));
+		$('#list-pakn').html('Đang lấy dữ liệu....');
+		var url='/p/phananhkiennghi/jsp/pakn-search.jsp?id='+mapa
+		+'&record_per_page='+pRect+'&page_index='+pIndex;
+		$.ajax({
+			url: url,
+			type: 'GET',
+			success: function (data) {
+				$("#list-pakn").html(data);
+				paginationAddLink();
+			}
+		});
+	};
+	function doSearchTotals(pRect, pIndex, totals){
+		$('#list-pakn').html('Đang lấy dữ liệu....');
+		var mapa=encodeURI($("#maPa").val().trimRight(' ').trimLeft(' '));
+		// var keywords=encodeURI($("#keywords").val().trimRight(' ').trimLeft(' '));
+		$.ajax({
+			url: '/p/phananhkiennghi/jsp/pakn-search.jsp?id='+mapa+'&record_per_page='+pRect+'&page_index='+pIndex,
+			type: 'GET',
+			success: function (data) {
+				$("#list-pakn").html(data);
+			}
+		});
+	};
+</script> 
+  </n:velocity>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="section section-menu-bottom"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="item col-sm-4 col-xs-12"> 
+      <a class="wrap" href="../home/dvc-cau-hoi-pho-bien.html"> 
+       <div class="icon"> 
+        <img src="img/home/trongdong.png" alt="" /> 
+       </div> 
+       <div class="text">
+        C&acirc;u hỏi thường gặp
+       </div> </a> 
+     </div> 
+     <div class="item col-sm-4 col-xs-12"> 
+      <!-- <a class="wrap" href="/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">
+					<div class="icon">
+						<img src="img/home/trongdong.png" alt="">
+					</div>
+					<div class="text">Cơ sở dữ liệu <br/>thủ tục hành chính</div>
+				</a> --> 
+     </div> 
+     <div class="item col-sm-4 col-xs-12"> 
+      <a class="wrap" href="../home/dvc-huong-dan-cong-dan-doanh-nghiep.html"> 
+       <div class="icon"> 
+        <img src="img/home/trongdong.png" alt="" /> 
+       </div> 
+       <div class="text">
+        Hướng dẫn sử dụng
+       </div> </a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add">
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p>
+     </div> 
+     <div class="add">
+      <p>www.dichvucong.gov.vn</p>
+     </div> 
+     <div class="add">
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p>
+     </div> 
+     <div class="add">
+      <p>Email: dichvucong@chinhphu.vn</p>
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <style>
+.select2-container--default .select2-results>.select2-results__options {
+		max-height: 150px;
+		overflow-y: auto;
+	}
+	.select2-selection__clear{
+		display:none;
+	}
+	.select2-selection__arrow{
+		margin-top:5px;
+	}
+	.select2-selection__rendered{
+		padding-top:5px;
+	}
+	.select2-container--default .select2-selection--single {
+	border: 1px solid #C9CDCF;
+	border-radius: 2px;
+	}
+	.select2-container--default{
+		width: 100% !important;
+	}
+</style> 
+  <script type="text/javascript" src="js/custom.js"></script> 
+  <script type="text/javascript">
+$(".targetgroup-box .btn-readmore").click(function(e){
+	e.preventDefault();
+	if($(this).hasClass("active")){
+		$(this).html('Xem thêm <span class="-ap icon-chevron-thin-down icon"></span>');
+		$(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+		$(this).removeClass("active");
+	}else{
+		$(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+		$(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+		$(this).addClass("active");
+	}
+});
+
+$(".list-menus li").each(function(){
+	var link = $(this).find(">a").attr("href");
+	if(path.includes(link)){
+		$(this).parent().parent().addClass("open");
+		$(this).addClass("active");
+	}
+});
+
+$(".menus li").each(function(){
+   var url=window.location.pathname;
+	var href=$(this).find(">a").attr("href");
+	if((url.indexOf("pakn-detail")>-1 || url.indexOf("pakn-tra-loi")>-1 || url.indexOf("pakn-field")>-1  || url.indexOf("pakn-category") >-1 ) && href.indexOf("pakn-search")>-1){
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+	}
+	else if((url.indexOf("pakn-bosunghoso")>-1) && href.indexOf("pakn-gui-pakn")>-1){
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+	}
+	else
+	if(url.indexOf(href)> -1){
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
+	}else{
+	 $(this).removeClass("active"); 
+	}
+});
+</script> 
+  <script type="text/javascript">
+$(".menus > li").each(function(){
+	var html="";
+      
+	if($(this).find("ul li").hasClass("active")){
+        $(this).addClass("active");
+        html=$(this).find(">ul").html();
+        $(this).find(">ul").addClass("hidden");
+        $("#list-dropdown").html(html);
+	}
+});
+
+function downloadURI(uri, name) {
+	var uk=uri+"&&filenameOrigin="+encodeURIComponent(name);
+	window.open(uri+"&&filenameOrigin="+encodeURIComponent(name));
+}
+
+function paginationAddLink(){
+	$(".pagination").find("a").attr("href", "#");
+	$(".pagination").find("li.disabled").find("a").removeAttr("href");
+}
+</script>   
+ </body>
+</html>

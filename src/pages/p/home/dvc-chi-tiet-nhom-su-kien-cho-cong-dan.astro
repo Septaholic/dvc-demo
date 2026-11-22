@@ -1,0 +1,365 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const citizenGroups = [
+  {
+    id: "753",
+    name: "Cư trú và giấy tờ tuỳ thân",
+    icon: "/p/home/theme/img/congdan/icons-white/cutru.svg",
+    desc: "Cung cấp thông tin thủ tục hành chính, dịch vụ công trực tuyến liên quan đến thường trú, tạm trú và cấp một số loại giấy tờ tuỳ thân của cá nhân.",
+    events: [
+      { id: "363", name: "Đăng ký tạm vắng" },
+      { id: "273", name: "Cấp, đổi hộ chiếu phổ thông" },
+      { id: "272", name: "Căn cước công dân / Chứng minh nhân dân" },
+      { id: "271", name: "Lưu trú" },
+      { id: "270", name: "Tạm trú" },
+      { id: "269", name: "Hộ khẩu thường trú" }
+    ]
+  },
+  {
+    id: "754",
+    name: "Hôn nhân và gia đình",
+    icon: "/p/home/theme/img/congdan/icons-white/honnhan.svg",
+    desc: "Thủ tục đăng ký kết hôn, đăng ký nuôi con nuôi, giám hộ và các việc hộ tịch gia đình.",
+    events: [
+      { id: "274", name: "Đăng ký kết hôn" },
+      { id: "281", name: "Đăng ký nhận nuôi con nuôi" },
+      { id: "279", name: "Nhận cha, mẹ, con" },
+      { id: "286", name: "Cải chính, trích lục hộ tịch" },
+      { id: "275", name: "Giám hộ" }
+    ]
+  },
+  {
+    id: "755",
+    name: "Điện lực, nhà ở, đất đai",
+    icon: "/p/home/theme/img/congdan/icons-white/datdai.svg",
+    desc: "Cấp giấy phép xây dựng, giao dịch bất động sản, đăng ký quyền sở hữu nhà ở và đất đai.",
+    events: [
+      { id: "313", name: "Cấp Giấy phép xây dựng nhà ở, công trình" },
+      { id: "287", name: "Đăng ký quyền sở hữu, quyền sử dụng đất" },
+      { id: "288", name: "Chuyển nhượng, tặng cho, thừa kế bất động sản" },
+      { id: "311", name: "Chuyển mục đích sử dụng đất" },
+      { id: "323", name: "Cung cấp điện năng" }
+    ]
+  },
+  {
+    id: "757",
+    name: "Phương tiện và người lái",
+    icon: "/p/home/theme/img/congdan/icons-white/phuongtien.svg",
+    desc: "Đăng ký, sang tên xe mô tô, ô tô, đổi biển số và cấp đổi giấy phép lái xe.",
+    events: [
+      { id: "316", name: "Sang tên, chuyển quyền sở hữu, đổi chủ xe" },
+      { id: "315", name: "Cấp, đổi Giấy phép lái xe" },
+      { id: "317", name: "Đăng kiểm phương tiện giao thông" }
+    ]
+  },
+  {
+    id: "752",
+    name: "Việc làm và lao động",
+    icon: "/p/home/theme/img/congdan/icons-white/vieclam.svg",
+    desc: "Thủ tục cấp phép lao động cho người nước ngoài, chứng chỉ hành nghề, bảo hiểm thất nghiệp và hỗ trợ việc làm.",
+    events: [
+      { id: "267", name: "Cấp Giấy phép lao động cho người nước ngoài tại Việt Nam" },
+      { id: "264", name: "Cấp Chứng chỉ hành nghề y dược, xây dựng, kiến trúc" },
+      { id: "262", name: "Đăng ký bảo trợ xã hội, bảo hiểm thất nghiệp, trợ cấp" },
+      { id: "266", name: "Thuế thu nhập cá nhân" },
+      { id: "260", name: "Hỗ trợ, tư vấn giới thiệu việc làm" }
+    ]
+  },
+  {
+    id: "756",
+    name: "Sức khỏe và y tế",
+    icon: "/p/home/theme/img/congdan/icons-white/suckhoe.svg",
+    desc: "Thủ tục cấp chứng chỉ hành nghề khám bệnh, chữa bệnh, kinh doanh thuốc và dịch vụ y tế.",
+    events: [
+      { id: "314", name: "Cấp chứng chỉ hành nghề y, dược tư nhân" },
+      { id: "312", name: "Chính sách khám, chữa bệnh và BHYT" }
+    ]
+  },
+  {
+    id: "750",
+    name: "Có con nhỏ",
+    icon: "/p/home/theme/img/congdan/icons-white/coconnho.svg",
+    desc: "Liên thông đăng ký khai sinh, đăng ký thường trú và cấp thẻ bảo hiểm y tế cho trẻ dưới 6 tuổi.",
+    events: [
+      { id: "250", name: "Liên thông khai sinh, bảo hiểm y tế, cư trú" },
+      { id: "251", name: "Khai sinh" },
+      { id: "252", name: "Bảo hiểm y tế cho trẻ em" },
+      { id: "253", name: "Đăng ký nơi cư trú" }
+    ]
+  },
+  {
+    id: "751",
+    name: "Học tập và giáo dục",
+    icon: "/p/home/theme/img/congdan/icons-white/hoctap.svg",
+    desc: "Văn bằng, chứng chỉ, chuyển trường, học bổng và tuyển sinh.",
+    events: [
+      { id: "257", name: "Cấp văn bằng, chứng chỉ, công nhận văn bằng nước ngoài" },
+      { id: "254", name: "Tuyển sinh đầu cấp" },
+      { id: "255", name: "Chuyển trường, tiếp nhận học sinh" },
+      { id: "256", name: "Học bổng và chính sách hỗ trợ học sinh" }
+    ]
+  },
+  {
+    id: "758",
+    name: "Hưu trí",
+    icon: "/p/home/theme/img/congdan/icons-white/huutri.svg",
+    desc: "Chế độ hưu trí, chuẩn bị nghỉ hưu, giải quyết hưởng lương hưu hàng tháng.",
+    events: [
+      { id: "319", name: "Giải quyết chế độ hưu trí" },
+      { id: "318", name: "Chuẩn bị nghỉ hưu và xác nhận quá trình đóng BHXH" }
+    ]
+  },
+  {
+    id: "759",
+    name: "Người thân qua đời",
+    icon: "/p/home/theme/img/congdan/icons-white/nguoithan.svg",
+    desc: "Thủ tục khai tử, giải quyết chế độ tử tuất và hỗ trợ mai táng phí.",
+    events: [
+      { id: "320", name: "Thủ tục đăng ký khai tử" },
+      { id: "321", name: "Chế độ tử tuất, trợ cấp mai táng phí" }
+    ]
+  },
+  {
+    id: "771",
+    name: "Giải quyết khiếu kiện",
+    icon: "/p/home/theme/img/congdan/icons-white/khieunai.svg",
+    desc: "Khiếu nại, tố cáo, kiến nghị và phản ánh hành chính theo quy định pháp luật.",
+    events: [
+      { id: "343", name: "Thủ tục tiếp nhận, thụ lý giải quyết khiếu nại hành chính" }
+    ]
+  }
+];
+---
+
+<Layout title="Sự kiện đời thường dành cho Công dân - Cổng Dịch vụ công Quốc gia">
+  <div class="section-cong-dan" style="background:#f4f6f9; min-height:800px; padding: 25px 0 50px 0;">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb" style="background:transparent; padding: 8px 0; margin-bottom: 20px;">
+        <li><a href="/" style="color:#d32f2f; font-weight:600;"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li><a href="/#cong-dan">Dành cho công dân</a></li>
+        <li class="active">Nhóm sự kiện đời thường</li>
+      </ul>
+
+      <!-- Page Header -->
+      <div style="background: linear-gradient(135deg, #a71c1c 0%, #d32f2f 100%); color:white; border-radius:12px; padding: 25px 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(167,28,28,0.2);">
+        <div class="row" style="align-items: center; display: flex; flex-wrap: wrap;">
+          <div class="col-md-8">
+            <span style="display:inline-block; background:rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 10px;">
+              <i class="fa fa-user"></i> Cổng Dịch vụ công Quốc gia dành cho Công dân
+            </span>
+            <h1 id="group-main-title" style="margin: 0 0 10px 0; font-size: 26px; font-weight: 700; color: #fff;">
+              Cư trú và giấy tờ tuỳ thân
+            </h1>
+            <p id="group-main-desc" style="margin: 0; font-size: 15px; opacity: 0.95; line-height: 1.6;">
+              Cung cấp thông tin thủ tục hành chính, dịch vụ công trực tuyến liên quan đến thường trú, tạm trú và cấp một số loại giấy tờ tuỳ thân của cá nhân.
+            </p>
+          </div>
+          <div class="col-md-4 text-right" style="margin-top: 15px;">
+            <a href="/p/home/dvc-tthc-thu-tuc-hanh-chinh" class="btn btn-warning btn-lg" style="font-weight: 700; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.15);">
+              <i class="fa fa-search"></i> Tra cứu tất cả TTHC
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Layout: Sidebar of Groups + Event Accordions -->
+      <div class="row">
+        <!-- Left Column: Groups List -->
+        <div class="col-md-4 col-sm-5">
+          <div class="panel panel-default" style="border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+            <div class="panel-heading" style="background:#fff; border-bottom: 2px solid #a71c1c; padding: 15px 20px;">
+              <h4 style="margin:0; font-size: 16px; font-weight: 700; color: #1e293b;">
+                <i class="fa fa-list-ul" style="color:#a71c1c; margin-right:8px;"></i> Các nhóm sự kiện công dân
+              </h4>
+            </div>
+            <div class="list-group" id="groups-list" style="margin-bottom:0;">
+              {citizenGroups.map((g) => (
+                <a
+                  href={`#group=${g.id}`}
+                  class="list-group-item group-tab-btn"
+                  data-group-id={g.id}
+                  style="padding: 14px 20px; font-size: 14px; font-weight: 600; color: #334155; border-left: 4px solid transparent; transition: all 0.2s;"
+                >
+                  <span class="fa fa-chevron-right pull-right" style="font-size: 11px; margin-top: 4px; color: #94a3b8;"></span>
+                  {g.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Quick Help Box -->
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 20px; margin-top: 20px;">
+            <h5 style="color: #1e40af; font-weight: 700; margin-top: 0;">
+              <i class="fa fa-info-circle"></i> Bạn cần hỗ trợ?
+            </h5>
+            <p style="font-size: 13px; color: #3b82f6; margin-bottom: 12px; line-height: 1.5;">
+              Tổng đài hỗ trợ quốc gia giải đáp thắc mắc về thực hiện dịch vụ công trực tuyến và thủ tục hành chính.
+            </p>
+            <div style="font-size: 18px; font-weight: 800; color: #d32f2f;">
+              <i class="fa fa-phone"></i> 1800 1096
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Events & Procedures -->
+        <div class="col-md-8 col-sm-7">
+          <div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); padding: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px;">
+              <div>
+                <h3 id="current-group-heading" style="margin: 0; font-size: 18px; font-weight: 700; color: #0f172a;">
+                  Cư trú và giấy tờ tuỳ thân
+                </h3>
+                <small style="color: #64748b;">Nhấp vào từng sự kiện bên dưới để xem chi tiết thủ tục hành chính liên quan</small>
+              </div>
+            </div>
+
+            <!-- Dynamic Accordion Container -->
+            <div class="panel-group" id="events-accordion" role="tablist" aria-multiselectable="true">
+              <!-- Rendered via JS based on selected group -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ citizenGroups }}>
+    window.CITIZEN_GROUPS_DATA = citizenGroups;
+
+    function getParam(name) {
+      var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+      if (!match) {
+        // also check hash
+        match = RegExp('#.*group=([^&]*)').exec(window.location.hash);
+      }
+      return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
+    }
+
+    function renderGroup(groupId) {
+      var group = window.CITIZEN_GROUPS_DATA.find(function(g) { return g.id === groupId; });
+      if (!group) {
+        group = window.CITIZEN_GROUPS_DATA[0];
+      }
+
+      // Update UI title & desc
+      $('#group-main-title').text(group.name);
+      $('#group-main-desc').text(group.desc);
+      $('#current-group-heading').text(group.name);
+
+      // Highlight active in sidebar
+      $('.group-tab-btn').removeClass('active').css({
+        'border-left-color': 'transparent',
+        'background-color': 'white',
+        'color': '#334155'
+      });
+      $('.group-tab-btn[data-group-id="' + group.id + '"]').addClass('active').css({
+        'border-left-color': '#a71c1c',
+        'background-color': '#fef2f2',
+        'color': '#a71c1c'
+      });
+
+      // Render Accordion for events
+      var html = '';
+      group.events.forEach(function(ev, idx) {
+        var isFirst = idx === 0;
+        var collapseId = 'collapseEvent_' + ev.id;
+        html += `
+          <div class="panel panel-default" style="border: 1px solid #e2e8f0; margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+            <div class="panel-heading" role="tab" style="background: #f8fafc; padding: 14px 18px; cursor: pointer;" onclick="loadEventProcedures('${ev.id}')">
+              <h4 class="panel-title" style="font-size: 15px; font-weight: 700; color: #1e293b;">
+                <a role="button" data-toggle="collapse" data-parent="#events-accordion" href="#${collapseId}" aria-expanded="${isFirst ? 'true' : 'false'}" style="text-decoration:none; display:flex; justify-content:space-between; align-items:center;">
+                  <span><i class="fa fa-folder-open-o" style="color:#a71c1c; margin-right: 10px;"></i> ${ev.name}</span>
+                  <span class="fa fa-chevron-down" style="font-size: 12px; color: #64748b;"></span>
+                </a>
+              </h4>
+            </div>
+            <div id="${collapseId}" class="panel-collapse collapse ${isFirst ? 'in' : ''}" role="tabpanel">
+              <div class="panel-body" style="padding: 15px 20px; background: white;">
+                <div id="event_container_${ev.id}">
+                  <div style="text-align:center; padding: 20px; color:#94a3b8;">
+                    <i class="fa fa-spinner fa-spin"></i> Đang tải danh sách thủ tục...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      $('#events-accordion').html(html);
+
+      // Automatically load the first event's procedures
+      if (group.events.length > 0) {
+        loadEventProcedures(group.events[0].id);
+      }
+    }
+
+    function loadEventProcedures(eventId) {
+      var container = $('#event_container_' + eventId);
+      
+      // Execute offline API service
+      var obj = {
+        service: "dvcqg_gets_procedure_by_event_id_limit_v2",
+        type: "ref",
+        limit: 10,
+        event_id: eventId
+      };
+
+      var list = [];
+      if (window.apiservice && window.apiservice.AjaxJson) {
+        list = window.apiservice.AjaxJson.executeQuery(obj) || [];
+      } else if (window.TARGET_SERVICES_BY_EVENT && window.TARGET_SERVICES_BY_EVENT[eventId]) {
+        list = window.TARGET_SERVICES_BY_EVENT[eventId];
+      }
+
+      if (list && list.length > 0) {
+        var listHtml = '<ul style="list-style: none; padding-left: 0; margin-bottom: 0;">';
+        list.forEach(function(item) {
+          var code = item.PROCEDURE_CODE;
+          var link = '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh?ma_thu_tuc=' + encodeURIComponent(code);
+          var staticLink = '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=' + encodeURIComponent(code) + '.html';
+          
+          listHtml += `
+            <li style="padding: 12px 14px; border-bottom: 1px dashed #e2e8f0; display: flex; justify-content: space-between; align-items: center; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+              <div style="padding-right: 15px;">
+                <a href="${link}" style="font-weight: 600; color: #1e40af; font-size: 14px; text-decoration: none; line-height: 1.4; display: block;">
+                  <i class="fa fa-file-text-o" style="color: #64748b; margin-right: 6px;"></i> ${item.PROCEDURE_NAME}
+                </a>
+                <span style="font-size: 12px; color: #64748b; margin-top: 4px; display: inline-block;">
+                  Mã TTHC: <strong style="color: #334155;">${code}</strong>
+                </span>
+              </div>
+              <div style="white-space: nowrap;">
+                <a href="${link}" class="btn btn-primary btn-sm" style="font-weight: 600; border-radius: 4px; padding: 4px 10px;">
+                  Xem thủ tục <i class="fa fa-angle-right"></i>
+                </a>
+              </div>
+            </li>
+          `;
+        });
+        listHtml += '</ul>';
+        container.html(listHtml);
+      } else {
+        container.html(`
+          <div style="padding: 15px; color: #64748b; font-size: 13px; text-align: center;">
+            <i class="fa fa-info-circle"></i> Chưa có thủ tục trực tuyến mẫu cho sự kiện này hoặc đang cập nhật.
+          </div>
+        `);
+      }
+    }
+
+    $(document).ready(function() {
+      var requestedGroup = getParam('group') || '753';
+      renderGroup(requestedGroup);
+
+      $('.group-tab-btn').on('click', function(e) {
+        e.preventDefault();
+        var gid = $(this).data('group-id');
+        history.pushState(null, null, '?group=' + gid);
+        renderGroup(gid);
+      });
+    });
+  </script>
+</Layout>
