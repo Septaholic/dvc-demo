@@ -10,7 +10,7 @@ Don't mind
 https://video.twimg.com/amplify_video/2121488887247712256/vid/avc1/320x320/R_DUcOdyTHn7UbXU.mp4
 ```
 
-## I. KHỞI CHẠY ASTRO
+## I. KHỞI CHẠY [ASTRO](https://astro.build)
 
 Hệ thống đã được thiết lập sẵn các lệnh chuẩn trong `package.json`:
 
