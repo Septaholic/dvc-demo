@@ -1,12 +1,983 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import HeroBanner from '../../../components/HeroBanner.astro';
-import FocusServicesSection from '../../../components/FocusServicesSection.astro';
-import CitizenBusinessTabs from '../../../components/CitizenBusinessTabs.astro';
 ---
 
-<Layout title="Trang chủ - Cổng Dịch vụ công Quốc gia" activeNav="home">
-  <HeroBanner />
-  <FocusServicesSection />
-  <CitizenBusinessTabs />
+<Layout title="Cổng Dịch vụ công Quốc gia">
+  <div class="hero-banner"> 
+   <div class="container"> 
+    <div class="maxw991"> 
+     <div class="form-group"> 
+      <div class="box-search -adv"> 
+       <input type="text" class="form-control search-input" placeholder="Nhập từ kho&aacute; t&igrave;m kiếm" id="searchKeyWord" /> 
+       <div class="adv" data-toggle="modal" data-target="#advsearch" onclick="showAdvSearch()">
+         T&igrave;m kiếm n&acirc;ng cao 
+       </div> 
+       <button class="btn btn-search" onclick="searchProcedure()"> <span class="-ap icon-ion-ios-search-strong icon"></span> </button> 
+      </div> 
+     </div> 
+     <div class="actions"> 
+      <div class="row">
+       <div class="col-sm-4 col-xs-12">
+        <button onclick="goToPage('dvc-dich-vu-cong-truc-tuyen.html')" class="btn btn-fourth fullw">Dịch vụ c&ocirc;ng trực tuyến</button>
+       </div>
+       <div class="col-sm-4 col-xs-12">
+        <button onclick="goToPage('dvc-tthc-thu-tuc-hanh-chinh.html')" class="btn btn-fourth fullw">Dịch vụ c&ocirc;ng trực tuyến của Đảng</button>
+       </div>
+       <div class="col-sm-4 col-xs-12">
+        <button onclick="goToPage('dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html')" class="btn btn-fourth fullw">Dịch vụ c&ocirc;ng li&ecirc;n th&ocirc;ng: Khai sinh, Khai tử</button>
+       </div>
+      </div>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!--Modal search--> 
+  <div class="modal" id="advsearch" data-toggle="modal"> 
+   <div class="popup-box" style="max-width: 471px;"> 
+    <div class="close -ap icon-close" id="divClosePopupSearch"> 
+    </div> 
+    <div class="head"> 
+     <div class="title">
+       Nhập từ kho&aacute; t&igrave;m kiếm 
+     </div> 
+    </div> 
+    <div class="form-group"> 
+     <input type="text" class="form-control" placeholder="Nhập từ kh&oacute;a t&igrave;m kiếm" id="txtKEYWORD" autofocus="" /> 
+    </div> 
+    <div class="title">
+      Chọn cấp thực hiện 
+    </div> 
+    <div class="list-check form-group"> 
+     <div class="check-action"> 
+      <input type="radio" checked="" class="check" name="cap_thuc_hien" value="tinhthanhpho" id="rdoTINH_THANH" /> 
+      <span class="name">Tỉnh/ Th&agrave;nh phố</span> 
+     </div> 
+     <div class="check-action"> 
+      <input type="radio" class="check" name="cap_thuc_hien" value="bonganh" id="rdoBO_NGANH" /> 
+      <span class="name">Bộ ng&agrave;nh</span> 
+     </div> 
+    </div> 
+    <div class="form-group"> 
+     <div class="select-custom"> 
+      <select name="tinh_thanh" class="form-control" id="cboTINH_THANH"> </select> 
+      <select name="bo_nganh" class="form-control" id="cboBO_NGANH" style="display:none"> </select> 
+     </div> 
+    </div> 
+    <div id="popupChange" style="color: white; height: 0" height="0">
+      _ 
+    </div> 
+    <div id="hide_for_bo_nganh"> 
+     <div class="list-check form-group"> 
+      <div class="check-action"> 
+       <input type="radio" checked="" class="check" value="quan/huyen" name="quan_huyen_or_so" id="rdoQUAN_HUYEN" /> 
+       <span class="name">Phường/ X&atilde;</span> 
+      </div> 
+      <div class="check-action"> 
+       <input type="radio" class="check" value="so" name="quan_huyen_or_so" id="rdoSO" /> 
+       <span class="name">Sở</span> 
+      </div> 
+     </div> 
+     <div class="form-group"> 
+      <div class=""> 
+       <select name="" id="cboQUAN_HUYEN" class="form-control"> </select> 
+       <select name="" id="cboSO" class="form-control" style="display:none"> </select> 
+      </div> 
+     </div> 
+     <!-- <div class="form-group">
+				<div class="">
+					<select name="" id="cboPHUONG_XA" class="form-control">
+					</select>
+				</div>
+			</div> --> 
+    </div> 
+    <div class="form-group"> 
+     <button class="btn btn-main w100" onclick="doAdvSearch()">T&igrave;m kiếm</button> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="hotnews-top"> 
+   <div class="container"> 
+    <div class="list-news" id="new_post"> 
+     <div class="item"> 
+      <div class="wrap"> 
+       <a href="dvc-chi-tiet-tin-tuc.html@new_id=1002.html" class="post-title">CHUYỂN ĐỔI, VẬN H&Agrave;NH CH&Iacute;NH THỨC CỔNG DỊCH VỤ C&Ocirc;NG QUỐC GIA TẠI TRUNG T&Acirc;M DỮ LIỆU QUỐC GIA, BỘ C&Ocirc;NG AN</a> 
+       <p class="post-date">Ng&agrave;y 29/05/2026</p> 
+      </div> 
+     </div> 
+     <div class="item"> 
+      <div class="wrap"> 
+       <a href="dvc-chi-tiet-tin-tuc.html@new_id=982.html" class="post-title">TH&Ocirc;NG B&Aacute;O VỀ VIỆC DỪNG VẬN H&Agrave;NH CỔNG DỊCH VỤ C&Ocirc;NG QUỐC GIA DO VĂN PH&Ograve;NG CH&Iacute;NH PHỦ QUẢN L&Yacute;</a> 
+       <p class="post-date">Ng&agrave;y 21/04/2026</p> 
+      </div> 
+     </div> 
+     <div class="item"> 
+      <div class="wrap"> 
+       <a href="dvc-chi-tiet-tin-tuc.html@new_id=962.html" class="post-title">c&ocirc;ng bố dữ liệu quốc gia về bảo hiểm v&agrave; hướng dẫn kết nối, khai th&aacute;c sử dụng dữ liệu quốc gia về bảo hiểm thay thế giấy tờ trong giải quyết thủ tục h&agrave;nh ch&iacute;nh</a> 
+       <p class="post-date">Ng&agrave;y 11/02/2026</p> 
+      </div> 
+     </div> 
+     <div class="item"> 
+      <div class="wrap"> 
+       <a href="dvc-chi-tiet-tin-tuc.html@new_id=943.html" class="post-title">C&Ocirc;NG BỐ V&Agrave; HƯỚNG DẪN KẾT NỐI ĐỂ KHAI TH&Aacute;C, SỬ DỤNG DỮ LIỆU TH&Ocirc;NG TIN VỀ GIẤY CHỨNG NHẬN QUYỀN SỬ DỤNG ĐẤT, QUYỀN SỞ HỮU T&Agrave;I SẢN GẮN LIỀN VỚI ĐẤT THAY THẾ TH&Agrave;NH PHẦN HỒ SƠ TRONG GIẢI QUYẾT THỦ TỤC H&Agrave;NH CH&Iacute;NH</a> 
+       <p class="post-date">Ng&agrave;y 11/02/2026</p> 
+      </div> 
+     </div> 
+     <div class="item"> 
+      <div class="wrap"> 
+       <a href="dvc-chi-tiet-tin-tuc.html@new_id=942.html" class="post-title">C&Ocirc;NG BỐ DỮ LIỆU, HƯỚNG DẪN KHAI TH&Aacute;C, SỬ DỤNG DỮ LIỆU SỔ SỨC KHOẺ ĐIỆN TỬ T&Iacute;CH HỢP TR&Ecirc;N VNEID THAY THẾ SỔ GIẤY TRONG GIẢI QUYẾT THỦ TỤC H&Agrave;NH CH&Iacute;NH</a> 
+       <p class="post-date">Ng&agrave;y 11/02/2026</p> 
+      </div> 
+     </div> 
+     <div class="item"> 
+      <div class="wrap"> 
+       <a href="dvc-chi-tiet-tin-tuc.html@new_id=923.html" class="post-title">C&Ocirc;NG BỐ DỮ LIỆU V&Agrave; HƯỚNG DẪN KẾT NỐI, KHAI TH&Aacute;C SỬ DỤNG DỮ LIỆU ĐĂNG K&Yacute; DOANH NGHIỆP, HỢP T&Aacute;C X&Atilde;, HỘ KINH DOANH THAY THẾ GIẤY TỜ TRONG GIẢI QUYẾT THỦ TỤC H&Agrave;NH CH&Iacute;NH</a> 
+       <p class="post-date">Ng&agrave;y 11/02/2026</p> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!--
+<div class="hotnews-top">
+		<div class="container">			
+			<div class="box-text-content second center thick">
+				<a href="https://dichvucong.gov.vn/p/phananhkiennghi/pakn-gui-pakn.html">Tiếp nhận kiến nghị, đề xuất tại Hội nghị do Thủ tướng Chính phủ chủ trì về tháo gỡ khó khăn, thúc đẩy sản xuất kinh doanh, phục hồi nền kinh tế ứng phó với đại dịch Covid -19 ngày 09/05/2020</a>
+			</div>
+		</div>
+</div>
+--> 
+  <div class="targetgroup-area section"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-sm-6 col-xs-12"> 
+      <div class="targetgroup-box -congdan"> 
+       <div class="targetgroup-head" onclick="goToPage('dvc-trang-chu-cong-dan.html')"> 
+        <h2 class="targetgroup-title"><a href="dvc-trang-chu-cong-dan.html">C&Ocirc;NG D&Acirc;N</a></h2> 
+       </div> 
+       <div class="targetgroup-body"> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=750.html"> <span class="icon"> <img src="theme/img/home/congdan/cocon.svg" alt="" /> </span> <span class="text">C&oacute; con nhỏ</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=751.html"> <span class="icon"> <img src="theme/img/home/congdan/giaoduc.svg" alt="" /> </span> <span class="text">Học tập</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=752.html"> <span class="icon"> <img src="theme/img/home/congdan/vieclam.svg" alt="" /> </span> <span class="text">Việc l&agrave;m</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=753.html"> <span class="icon"> <img src="theme/img/home/congdan/cutru.svg" alt="" /> </span> <span class="text">Cư tr&uacute; v&agrave; giấy tờ t&ugrave;y th&acirc;n</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=754.html"> <span class="icon"> <img src="theme/img/home/congdan/honnhan.svg" alt="" /> </span> <span class="text">H&ocirc;n nh&acirc;n v&agrave; gia đ&igrave;nh</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=755.html"> <span class="icon"> <img src="theme/img/home/congdan/nhao.svg" alt="" /> </span> <span class="text">Điện lực, nh&agrave; ở, đất đai</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=756.html"> <span class="icon"> <img src="theme/img/home/congdan/suckhoe.svg" alt="" /> </span> <span class="text">Sức khỏe v&agrave; y tế</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=757.html"> <span class="icon"> <img src="theme/img/home/congdan/phuongtien.svg" alt="" /> </span> <span class="text">Phương tiện v&agrave; người l&aacute;i</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=758.html"> <span class="icon"> <img src="theme/img/home/congdan/huutri.svg" alt="" /> </span> <span class="text">Hưu tr&iacute;</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=759.html"> <span class="icon"> <img src="theme/img/home/congdan/quadoi.svg" alt="" /> </span> <span class="text">Người th&acirc;n qua đời</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=771.html"> <span class="icon"> <img src="theme/img/home/congdan/balance.svg" alt="" /> </span> <span class="text">Giải quyết khiếu kiện</span> </a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-sm-6 col-xs-12"> 
+      <div class="targetgroup-box -doanhnghiep"> 
+       <div class="targetgroup-head" onclick="goToPage('dvc-trang-chu-doanh-nghiep.html')"> 
+        <h2 class="targetgroup-title"><a href="dvc-trang-chu-doanh-nghiep.html">DOANH NGHIỆP</a></h2> 
+       </div> 
+       <div class="targetgroup-body"> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=760.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/khoisukinhdoanh.svg" alt="" /> </span> <span class="text">Khởi sự kinh doanh</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=761.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/laodong.svg" alt="" /> </span> <span class="text">Lao động v&agrave; bảo hiểm x&atilde; hội</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=762.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/taichinhdn.svg" alt="" /> </span> <span class="text">T&agrave;i ch&iacute;nh doanh nghiệp</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=763.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/datdai.svg" alt="" /> </span> <span class="text">Điện lực, đất đai, x&acirc;y dựng</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=764.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/thuongmai.svg" alt="" /> </span> <span class="text">Thương mại, quảng c&aacute;o</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=765.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/sohuutritue.svg" alt="" /> </span> <span class="text">Sở hữu tr&iacute; tuệ, đăng k&yacute; t&agrave;i sản</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=766.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/tlcn.svg" alt="" /> </span> <span class="text">Th&agrave;nh lập chi nh&aacute;nh, văn ph&ograve;ng đại diện</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=767.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/dauthau.svg" alt="" /> </span> <span class="text">Đấu thầu, mua sắm c&ocirc;ng</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=768.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/taicautrucdn.svg" alt="" /> </span> <span class="text">T&aacute;i cấu tr&uacute;c doanh nghiệp</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=791.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/balance.svg" alt="" /> </span> <span class="text">Giải quyết tranh chấp hợp đồng</span> </a> 
+        </div> 
+        <div class="item"> 
+         <a class="wrap" href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=769.html"> <span class="icon"> <img src="theme/img/home/doanhnghiep/tamdung.svg" alt="" /> </span> <span class="text">Tạm dừng, chấm dứt hoạt động</span> </a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div class="section" id="dich-vu-trong-tam" style="background: #f8fafc; padding: 40px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 30px;">
+        <h2 style="font-size: 26px; font-weight: bold; color: #0b5796; text-transform: uppercase; margin-bottom: 8px;">
+          <i class="fa fa-star" style="color: #f59e0b; margin-right: 8px;"></i>13 Dịch Vụ Công Trực Tuyến Trọng Tâm
+        </h2>
+        <p style="color: #64748b; font-size: 15px;">Truy cập nhanh các thủ tục hành chính trọng tâm dành cho Công dân và Doanh nghiệp</p>
+      </div>
+
+      <div class="row">
+        <!-- CÔNG DÂN -->
+        <div class="col-md-7 col-xs-12">
+          <div style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 25px; border-top: 4px solid #0b5796;">
+            <h3 style="font-size: 18px; font-weight: bold; color: #0b5796; margin-bottom: 15px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+              <i class="fa fa-user" style="margin-right: 8px;"></i>Dịch Vụ Dành Cho Công Dân
+            </h3>
+            
+            <div class="list-group" style="margin-bottom: 0;">
+              <!-- 0. GPXD -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">0. Cấp Giấy phép xây dựng</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Điện lực, nhà ở, đất đai</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=755.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Nuôi con nuôi -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">2. Đăng ký nuôi con nuôi</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Hôn nhân và gia đình</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.001263.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=754.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. Giấy phép lao động NNN -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">4. Cấp Giấy phép lao động cho người nước ngoài</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Việc làm</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000267.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=752.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. Tạm vắng -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">5. Đăng ký tạm vắng</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Cư trú và giấy tờ tùy thân</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000363.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=753.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 6. Bảo trợ xã hội -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">6. Đăng ký trợ cấp bảo trợ xã hội</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Việc làm, trợ cấp</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000262.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=752.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 9. Cấp CCHN y dược -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">9. Cấp chứng chỉ hành nghề y dược</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Việc làm (chứng chỉ hành nghề)</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000264.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=752.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ảnh 2 - 0. Cấp đổi hộ chiếu -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">10. Cấp đổi Hộ chiếu (Ảnh 2 #0)</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Cư trú và giấy tờ tùy thân</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001456.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=753.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ảnh 2 - 1. Đăng ký kết hôn -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">11. Đăng ký kết hôn (Ảnh 2 #1)</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Hôn nhân và gia đình</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000274.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=754.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ảnh 2 - 2. Sang tên đổi chủ xe -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">12. Sang tên, đổi chủ xe (Ảnh 2 #2)</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Phương tiện và người lái</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000316.html" class="btn btn-xs btn-primary" style="background: #0b5796; border: none; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=757.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOANH NGHIỆP -->
+        <div class="col-md-5 col-xs-12">
+          <div style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 25px; border-top: 4px solid #f59e0b;">
+            <h3 style="font-size: 18px; font-weight: bold; color: #b45309; margin-bottom: 15px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+              <i class="fa fa-building" style="margin-right: 8px;"></i>Dịch Vụ Cho Doanh Nghiệp
+            </h3>
+
+            <div class="list-group" style="margin-bottom: 0;">
+              <!-- 0. GPXD Doanh nghiệp -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">Cấp Giấy phép xây dựng (DN)</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Đất đai, xây dựng</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html" class="btn btn-xs btn-warning" style="background: #f59e0b; border: none; color: white; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=763.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 1. An toàn thực phẩm -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">1. Cấp GCN an toàn thực phẩm</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Thương mại, quảng cáo</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000295.html" class="btn btn-xs btn-warning" style="background: #f59e0b; border: none; color: white; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=764.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Giấy phép ANTT -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">3. Cấp giấy phép an ninh trật tự</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Khởi sự kinh doanh</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000268.html" class="btn btn-xs btn-warning" style="background: #f59e0b; border: none; color: white; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=760.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 7. Bảo hộ nhãn hiệu, logo -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">7. Đăng ký bảo hộ nhãn hiệu, logo</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Sở hữu trí tuệ</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000297.html" class="btn btn-xs btn-warning" style="background: #f59e0b; border: none; color: white; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=765.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 8. Khuyến mại -->
+              <div class="list-group-item" style="border-radius: 6px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
+                <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                  <div class="col-sm-7 col-xs-12">
+                    <strong style="color: #1e293b;">8. Thông báo hoạt động khuyến mại</strong>
+                    <div style="font-size: 12px; color: #64748b;">Nhóm: Thương mại, quảng cáo</div>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 text-right" style="margin-top: 5px;">
+                    <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000033.html" class="btn btn-xs btn-warning" style="background: #f59e0b; border: none; color: white; padding: 4px 10px;">Xem thủ tục</a>
+                    <a href="dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=764.html" class="btn btn-xs btn-default" style="padding: 4px 8px;">Sự kiện</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="modal " id="popupNcovi">
+		<div class="popup-ncovi">
+			<div class="banner-top">
+				<div class="close -ap icon  icon-uniF108" data-dismiss="modal" >
+				</div>
+				
+			</div>
+			<div class="box-content">
+				<div class="mydvc-list">
+					<div id="dichVuCong" hidden>
+					</div>
+					<table class="table-dvc" id="tableListDVC">
+					</table>
+				</div>
+			</div>
+			
+		</div>
+</div> --> 
+  <div class="modal " id="popupNcovi"> 
+   <div class="modal-dialog modal-noti" style="max-width: 800px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="relative modal-body"> 
+      <div class="close -ap icon icon-uniF108" data-dismiss="modal" style="background-color: transparent;color: #666;"> 
+      </div> 
+      <div class="box-title"> 
+       <div class="subtitle">
+         Th&ocirc;ng b&aacute;o về dịch vụ 
+       </div> 
+       <div class="title">
+         Bạn đang c&oacute; dịch vụ cần thực hiện 
+       </div> 
+       <div class="note">
+         Đừng qu&ecirc;n nh&eacute; ! 
+       </div> 
+      </div> 
+      <div id="tableListDVC"></div> 
+      <style>
+		  
+		  	.modal-body {
+				max-height: 90vh; /* hoặc 500px tuỳ nhu cầu */
+				overflow-y: auto;
+			}
+            .box-title{
+              display: flex;
+              flex-direction: column;
+              row-gap: 2px;
+            }
+            .box-title .subtitle{
+              color: #287867;
+              
+            }
+            .box-title .title{
+              font-size: 22px;
+              font-weight: 600;
+
+            }
+            .box-title .note{
+              font-weight: 600;
+              color: #ca5900;
+              font-size: 22px;
+            }
+            .box-notification{
+              border-radius: 10px;
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+              column-gap: 20px;
+              border: 1px solid #d9d9d9;
+              box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+              margin-top: 20px;
+            }
+            .box-notification .title1{
+              font-size: 18px;
+              font-weight: 600;
+              color: #ca5900;
+            }
+            .box-notification .title2{
+              font-size: 18px;
+              font-weight: 600;
+              
+            }
+            .content-box{
+              display: flex;
+              align-items: center;
+              column-gap: 20px;
+            }
+            .content-box .input{
+              flex: 1;
+              min-width: 0px;
+            }
+            .content-box .input .label-text{
+              font-weight: 600;
+            }
+            .content-box .input .area{
+              background-color: #fff3e3;
+              padding: 7px 14px;
+              border-radius: 4px;
+              min-height: 80px;
+              border: 1px solid #f7910a;
+            }
+
+            .content-box .actions img{
+              max-width: 100px;
+            }
+            .info-content{
+              display: flex;
+              flex-direction: column;
+              row-gap: 20px;
+            }
+            .info-content .item{
+              display: flex;
+              column-gap: 5px;
+              align-items: center;
+            }
+            .info-content .shape{
+              width: 16px;
+              height: 16px;
+              border-radius: 3px;
+              background-color: #f7910a;
+              border: 3px solid #fff3e3;
+
+            }
+            .info-content .key{
+              opacity: 0.5;
+            }
+            .content-box .actions .btn-main{
+              font-size: 16px;
+              padding: 5px 20px;
+              min-width: 0px;
+              height: auto;
+            }
+            @media(max-width:600px){
+              .content-box{
+                flex-direction: column;
+                row-gap: 10px;
+                align-items: flex-start;
+              }
+              .box-notification .title{
+                margin-bottom: 20px;
+              }
+            }
+          </style> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script is:inline>
+	var userInfo = {};
+	var taxCodeInfo = {};
+	var userType = '';
+	
+	</script> 
+  <script is:inline>
+
+	let isPopupVisible = false;
+	function showPopupNcovi() {
+		if (!isPopupVisible) {
+		  	$("#popupNcovi").fadeIn( "slow" );
+		  	$(".overlay-common").addClass("show");
+			isPopupVisible = true;
+		}
+	}
+	
+	$("#popupNcovi .close").click(function(){
+		$("#popupNcovi").fadeOut( "slow" );
+		$(".overlay-common").removeClass("show");
+		isPopupVisible = false;
+	});
+
+	//
+	$(document).ready(function(){
+		$(".list-news").slick({
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						dots: true
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
+		});
+
+					//setTimeout(showPopupNcovi, 2000);
+			});
+
+	let itemsPerPage = 2;
+	let currentPage = 1;
+	let listDataObj = [];
+
+	function doSearch(currentPage) {
+        var obj = new Object();
+        var keyword = '';
+        obj.keyword = $.trim(keyword);
+        obj.ma_ho_so = '';
+        obj.status = "3,5,6";
+        obj.record_per_page = "100";
+        obj.page_index = currentPage;
+
+        $('#tableListDVC').html('');
+        showLoading();
+        $.ajax({
+            type: 'POST',
+            url: '/jsp/mongodb/submission/get-list_trangchu.jsp',
+            data: obj,
+            success: function (response) {
+                hideLoading();
+                console.log(response);
+                if (response.HoSo && response.HoSo.length > 0) {
+                    $('#dichVuCong').hide();
+                    $('#dichVuCong').html('');
+					renderHTML(response.HoSo, currentPage, response.TongSo);
+					setTimeout(showPopupNcovi, 2000);
+                    // renderTabHTML(response.HoSo, currentPage, response.TongSo);
+                } else {
+                    $('#dichVuCong').html('<div class="text"><div class="center" style="font-size:18px;color: rgb(206, 122, 88);">Không tìm thấy hồ sơ nào thoả mãn điều kiện tìm kiếm</div></div>');
+                    $('#dichVuCong').show();
+                    // loadPagination(0, 0, "paginationCN", "doChangePageCN", null, PAGE_SIZE);
+                }
+            },
+            error: function (error) {
+                hideLoading();
+                $('#dichVuCong').html('<div class="text"><div class="center" style="font-size:18px;color: rgb(206, 122, 88);">Không tìm thấy hồ sơ nào thoả mãn điều kiện tìm kiếm</div></div>');
+                $('#dichVuCong').show();
+                // loadPagination(0, 0, "paginationCN", "doChangePageCN", null, PAGE_SIZE);
+                console.log("Không thể kết nối tới server MongoDB");
+            }
+        });
+    }
+
+
+	function renderHTML(listData, currentPage, totalCnt) {
+        var strTable = "";
+        var data = new Object();
+        var classStatus = "";
+        var textViewResult = "";
+		let start = (currentPage - 1) * itemsPerPage;
+    	let end = Math.min(start + itemsPerPage, listData.length);
+		console.log('end======',end);
+		console.log('listData.length======',listData.length);
+        for (var i = 0; i < listData.length; i++) {
+            data = listData[i];
+			console.log('data.TaiKhoanDongBo======',data.TaiKhoanDongBo);
+			var agencyData = getAgencyInfoFromAgency(data.TaiKhoanDongBo);
+			var agency_link = "";
+			if(agencyData){
+				try{
+					agency_link = agencyData[0].API_GET_DATA_URL +data.MaHoSo;
+				}catch(e){
+					console.log('don vi chua cau hinh link chi tiet======');
+				}
+			}
+			console.log(agency_link);
+			var recivedDate = data.NgayTiepNhan ? data.NgayTiepNhan : "";
+			var NoiDungBoSung = '';
+			var NgayBoSung = '';
+			if(data.DanhSachHoSoBoSung !== undefined && data.DanhSachHoSoBoSung.length > 0){
+				NoiDungBoSung = data.DanhSachHoSoBoSung[data.DanhSachHoSoBoSung.length - 1].NoiDungBoSung;
+				NgayBoSung = getDateFromString(data.DanhSachHoSoBoSung[data.DanhSachHoSoBoSung.length - 1].NgayBoSung);
+			}
+			// console.log('data.NoiDungBoSung======',data.DanhSachHoSoBoSung[data.DanhSachHoSoBoSung.length - 1].NoiDungBoSung);
+
+			strTable += '<div class="box-notification">';
+
+			// Phần title
+			strTable += '<div class="title">';
+			strTable += '<div class="title1">'+ getStatusNameFromId(data.TrangThaiHoSo) +'</div>';
+			strTable += '<div class="title2">' + (data.TenTTHC || 'Không rõ thủ tục') + '</div>';
+			strTable += '</div>'; // đóng title
+
+			// Phần content-box
+			strTable += '<div class="content-box">';
+
+			// Phần info-content
+			strTable += '<div class="info-content">';
+			strTable += '<div class="item">';
+			strTable += '<div class="shape"></div>';
+			strTable += '<span class="key">Mã hồ sơ </span>';
+			strTable += '<div class="value">' + data.MaHoSo + '</div>';
+			strTable += '</div>'; // đóng item
+
+			strTable += '<div class="item">';
+			strTable += '<div class="shape"></div>';
+			strTable += '<span class="key">Ngày trả </span>';
+			strTable += '<div class="value">' + (NgayBoSung || 'Chưa có') + '</div>';
+			strTable += '</div>'; // đóng item
+			strTable += '</div>'; // đóng info-content
+
+			// Phần nội dung
+			strTable += '<div class="input">';
+			strTable += '<div class="label-text">Nội dung</div>';
+			strTable += '<div class="area">' + (NoiDungBoSung) + '</div>';
+			strTable += '</div>'; // đóng input
+
+			// Phần actions
+			strTable += '<div class="actions">';
+			strTable += '<div class="image">';
+			if(data.TrangThaiHoSo == '6'){
+				strTable += '<img src="img/congdan/2.jpg" alt="">';
+			}else{
+				strTable += '<img src="img/congdan/1.jpg" alt="">';
+			}
+			
+
+			strTable += '</div>';
+			strTable += '<a href="https://vpcp.dichvucong.gov.vn/p/home/' + agency_link + '" target="_blank">';
+			strTable += '<button class="btn btn-main">Xem chi tiết</button>';
+			strTable += '</a>';
+			strTable += '</div>'; // đóng actions
+
+			strTable += '</div>'; // đóng content-box
+			strTable += '</div>'; // đóng box-notification
+		}
+		
+		$('#tableListDVC').html(strTable);
+	}
+
+
+
+
+	function renderTabHTML(listData, currentPage, totalCnt) {
+        var strTable = "";
+        var data = new Object();
+        var classStatus = "";
+        var textViewResult = "";
+        for (var i = 0; i < listData.length; i++) {
+            data = listData[i];
+			console.log('data.TaiKhoanDongBo======',data.TaiKhoanDongBo);
+			var agencyData = getAgencyInfoFromAgency(data.TaiKhoanDongBo);
+			var agency_link = "";
+			if(agencyData){
+				agency_link = agencyData[0].API_GET_DATA_URL +data.MaHoSo;
+			}
+			console.log(agency_link);
+            classStatus = (data.TrangThaiHoSo == 8 || data.TrangThaiHoSo == 9 || data.TrangThaiHoSo == 10) ? (data.TrangThaiHoSo == 8 ? "-rejected" : "-replied") : "-noanswer";
+            textViewResult = (data.TrangThaiHoSo == 9 || data.TrangThaiHoSo == 10) ? "Xem kết quả" : "";
+
+            strTable += '<tr class="head"><td colspan="7"><a class="title">' + data.TenTTHC + '</a><div class="status ' + classStatus + '">' + getStatusNameFromId(data.TrangThaiHoSo) + '</div></td></tr>';
+            strTable += '<tr>';
+            strTable += '<td><span class="thick key" style="min-width: 84px;">Mã HS </span><a href="javascript:viewDetail(\'' + data._id.$oid + '\',\'' + data.MaHoSo + '\');">' + data.MaHoSo + '</a></td>'
+            strTable += '<td><span class="thick key" style="min-width: 84px;">Đơn vị thực hiện</span>' + data.DonViXuLy + '</td>';
+            var recivedDate = data.NgayTiepNhan ? data.NgayTiepNhan : "";
+            strTable += '<td><span class="thick key" style="min-width: 84px;">Ngày tiếp nhận </span>' + getDateFromString(recivedDate) + '</td>';
+            if (data.TrangThaiHoSo == 10) {
+                var ngayTraStr = data.NgayTra ? data.NgayTra : "N/A";
+                strTable += '<td><span class="thick key" style="min-width: 84px;">Ngày trả </span>' + getDateFromString(ngayTraStr) + '</td>';
+            } else {
+                strTable += '<td><span class="thick key" style="min-width: 84px;"></span></td>';
+            }
+            strTable += '<td><div class="actions nowrap">';
+			strTable += '<a title="Xem chi tiết" href="https://vpcp.dichvucong.gov.vn/p/home/' + agency_link + '" class="btn btn-main">Xem chi tiết</a>';
+
+            
+            // strTable += '<a title="Gửi phản ánh kiến nghị" href="javascript:sendPAKN(\'' + data.MaHoSo + '\', \'' + data.MaTTHC + '\', \'' + data.TenTTHC + '\', \'' + data.DonViXuLy + '\');" class="btn-img"><img src="theme/img/account/apply.svg" alt=""></a>';
+
+            // var isKhaiBaoFee = checkLePhiKhaiBao(data.MaTTHC);
+            // if (data.TrangThaiHoSo != 10 && isKhaiBaoFee) {
+            //     strTable += '<a title="Thanh toán phí lệ phí hồ sơ" class="btn-img" href="javascript:checkThongTinTT(\'' + data.MaHoSo + '\',\'' + data.MaTTHC + '\')"><img src="theme/img/account/wallet.svg" style="height: 18px;" alt=""></a>';
+            // }
+
+            strTable += "</div></td></tr>";
+
+            if (i < listData.length - 1) {
+                strTable += '<tr><td colspan="7" ><div class="divider-gray"></div></td></tr>';
+            }
+
+            classStatus = "";
+        }
+
+        $('#tableListDVC').html(strTable);
+        // loadPagination(parseInt(totalCnt), currentPage, "paginationCN", "doChangePageCN", listData, PAGE_SIZE);
+    }
+
+
+	function getStatusNameFromId(statusId) {
+        var obj = new Object();
+        obj.service = 'dvc_get_status_name_by_id';
+        obj.type = "qry";
+        obj.id = statusId;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+            return validStr(result[0].STATUS_NAME);
+        }
+
+        return "N/A";
+    }
+
+	function getDateFromString(dateStr, isTimeShow) {
+        // Dateformat 2013-03-10T02:00:00Z
+
+        if (validStr(dateStr) && validStr(dateStr.$date)) {
+            var date = new Date(dateStr.$date);
+
+            if (!isTimeShow) {
+                return getNumberLessTen(date.getDate()) + '/' + getNumberLessTen(date.getMonth() + 1) + '/' + date.getFullYear();
+            } else {
+                return getNumberLessTen(date.getDate()) + '/' + getNumberLessTen(date.getMonth() + 1) + '/' + date.getFullYear() + ' ' + getNumberLessTen(date.getHours()) + ':' + getNumberLessTen(date.getMinutes()) + ':' + getNumberLessTen(date.getSeconds());
+            }
+        }
+
+        return "N/A";
+    }
+
+    function getNumberLessTen(number) {
+        if (number < 10) {
+            return "0" + number;
+        }
+
+        return number;
+    }
+
+	function checkLePhiKhaiBao(procedureCode) {
+        var obj = new Object();
+        obj.service = 'dvcqg_get_fee_declared';
+        obj.type = "val";
+        obj.procedure_code = procedureCode;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+	
+	// document.addEventListener("DOMContentLoaded", () => {
+	// 	setInterval(() => {
+	// 		showPopupNcovi();
+	// 	}, 5 * 1000); // 5 giây
+	// });
+	
+
+
+	function getAgencyInfoFromAgency(agency_code) {
+        var obj = new Object();
+        obj.service = 'get_api_thanhtoan_hs_service';
+        obj.type = "ref";
+		obj.api_type_code = "API_CAPNHAT_HOSO_BNDP";
+        obj.agency_code = agency_code;
+		// obj.agency_code = "H34";
+		obj.provider = "dvcquocgia";
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        return result;
+    }
+
+
+	function getParamQuery() {
+        var obj = new Object();
+        obj.service = 'crud_get_list_value_by_id';
+        obj.type = "qry";
+		obj.provider = "dvcquocgiaRead";
+		obj.id = "9138350";
+        var result = apiservice.AjaxJson.executeQuery(obj);
+        return result;
+    }
+
+	
+
+
+	function callSearch() {
+		const key = 'lastCalledTime';
+		const now = new Date().getTime();
+		const lastCalled = localStorage.getItem(key);
+		var value_show = getParamQuery();
+		if(value_show && value_show[0].VALUE == '1'){
+			if (!lastCalled) {
+				doSearch(1);
+				localStorage.setItem(key, now);
+			} else {
+				const elapsed = now - parseInt(lastCalled); // thời gian đã trôi qua
+				const muoiPhut = 1 * 60 * 1000; // 10 phút tính bằng ms
+
+				if (elapsed >= muoiPhut) {
+				doSearch(1);
+				localStorage.setItem(key, now);
+				} else {
+				console.log('Chưa đủ 10 phút, không gọi lại.');
+				}
+			}
+		}
+		
+	}
+
+	
+
+</script>  
+
 </Layout>

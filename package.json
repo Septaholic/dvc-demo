@@ -1,13 +1,12 @@
 {
   "name": "dvc-portal",
-  "version": "1.0.0",
-  "description": "Cổng Dịch vụ công Quốc gia Demo",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev --port 4322 --host",
-    "start": "astro dev --port 4322 --host",
+    "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview --port 4321 --host"
+    "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^7.4.13"

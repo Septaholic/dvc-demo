@@ -1,119 +1,683 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Câu hỏi thường gặp - Cổng Dịch vụ công Quốc gia</title><meta name="description" content="Cổng Dịch vụ công Quốc gia hỗ trợ thông tin, đăng ký thủ tục hành chính trực tuyến"><link rel="shortcut icon" href="/img/header/quoc_huy.png"><!-- Stylesheets --><link rel="stylesheet" href="/theme/vendor/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="/theme/vendor/iconsax/style.css"><link rel="stylesheet" href="/theme/vendor/ap8/css/style.css"><link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="/vendor/toastr/toastr.min.css"><link rel="stylesheet" href="/theme/vendor/slick/slick.css"><link rel="stylesheet" href="/theme/css/style.css"><!-- Scripts --><script src="/theme/vendor/jquery/jquery.2.1.1.min.js"></script><script src="/theme/vendor/bootstrap/js/bootstrap.min.js"></script><script src="/vendor/toastr/toastr.min.js"></script><script src="/js/offline-data.js"></script><script src="/js/ApiService.js"></script><script src="/js/CommonUtil.js"></script><script src="/js/Constants.js"></script><script src="/js/mock-db.js"></script><script>
-    if (typeof initApiService === 'function') {
-      initApiService();
+<!DOCTYPE html><html lang="vi" data-astro-cid-ju4pidww><head><meta charset="UTF-8"><title>Câu hỏi thường gặp - Cổng Dịch vụ công Quốc gia</title><meta content="width=device-width, initial-scale=1" name="viewport" id="viewport"><meta name="description" content="Cổng Dịch vụ c&ocirc;ng Quốc gia hỗ trợ th&ocirc;ng tin, đăng k&yacute; thủ tục h&agrave;nh ch&iacute;nh như đổi giấy ph&eacute;p l&aacute;i xe, nộp thuế điện tử, th&ocirc;ng b&aacute;o khuyến mại, cấp lại thẻ BHYT, cấp điện mới..."><meta content="IE=edge" http-equiv="X-UA-Compatible"><meta content="width=device-width, initial-scale=1" name="viewport" id="viewport"><meta content="index, follow" name="ROBOTS"><link rel="stylesheet" href="theme/vendor/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="theme/vendor/iconsax/style.css"><!-- <link rel="stylesheet" href="../vendor/iconsax/style.css"> --><link rel="stylesheet" type="text/css" href="theme/vendor/ap8/css/style.css"><link rel="stylesheet" type="text/css" href="theme/vendor/slick/slick.css"><link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="theme/vendor/typeahead/style.css"><link rel="stylesheet" href="vendor/toastr/toastr.min.css"><link rel="stylesheet" href="vendor/bootstrap/css/bootstrapValidator.min.css"><link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css"><link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css"><link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css"><link rel="stylesheet" href="theme/css/style.css@version=9.css"><link rel="shortcut icon" href="img/header/quoc_huy.png"><script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script><script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="vendor/bootstrap/js/bootstrapValidator.js"></script><script type="text/javascript" src="theme/vendor/slick/slick.min.js"></script><script type="text/javascript" src="theme/vendor/highchart/highcharts.js"></script><script type="text/javascript" src="theme/vendor/highchart/modules/variable-pie.js"></script><script type="text/javascript" src="theme/vendor/highchart/highcharts-more.js"></script><script type="text/javascript" src="vendor/toastr/toastr.min.js"></script><script type="text/javascript" src="vendor/slimscroll/jquery.slimscroll.min.js"></script><script type="text/javascript" src="vendor/jq-paginator.js"></script><script type="text/javascript" src="vendor/bootbox.all.min.js"></script><script type="text/javascript" src="vendor/select2.min.js"></script><script type="text/javascript" src="vendor/mime.js"></script><script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script><script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script><link rel="stylesheet" href="vendor/select2.min.css"><script src="js/ApiService.js@version=18"></script><script src="js/CommonUtil.js@version=16"></script><script src="js/Constants.js"></script><script type="text/javascript" src="vendor/typeahead/index.js"></script><script type="text/javascript" src="vendor/typeahead/handlebars.js"></script><script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script><script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><script src="js/base64.js"></script><script type="text/javascript" src="vendor/d3.v4.min.js"></script><script>
+		initApiService();
+	</script><style>.loading-all[data-astro-cid-ju4pidww]{z-index:10000;background:#dbdcdc40;position:fixed;inset:0}.loading-all[data-astro-cid-ju4pidww] .icon[data-astro-cid-ju4pidww]{width:100px;height:100px;margin:auto;position:absolute;inset:0}.bootbox[data-astro-cid-ju4pidww] .modal-footer[data-astro-cid-ju4pidww] .btn[data-astro-cid-ju4pidww]+.btn[data-astro-cid-ju4pidww]{margin-top:0;margin-bottom:0;margin-left:5px}.input-captcha[data-astro-cid-ju4pidww] .code[data-astro-cid-ju4pidww] .number[data-astro-cid-ju4pidww]{height:100%;padding:2px}@media (width>=992px){.header-nav[data-astro-cid-ju4pidww] .header-account[data-astro-cid-ju4pidww]{display:none!important}}@media (width<=991px){.header[data-astro-cid-ju4pidww]>.container[data-astro-cid-ju4pidww] .header-account[data-astro-cid-ju4pidww]{display:none!important}}
+</style></head><body data-astro-cid-ju4pidww><div class="loading-all" id="loading-all" style="display:none" data-astro-cid-ju4pidww><div class="icon" data-astro-cid-ju4pidww><img src="img/loading.png" alt="" data-astro-cid-ju4pidww><span style="color:blue" data-astro-cid-ju4pidww>Đang xử l&yacute;...<span data-astro-cid-ju4pidww> </span></span></div></div><!--DEFINE CONSTANT --><!--END CONSTANT--><div class="overlay-common" data-astro-cid-ju4pidww></div><!-- /mtv/ Log propertise--><div class="header" data-astro-cid-ju4pidww><div class="container" data-astro-cid-ju4pidww><div class="relative content" data-astro-cid-ju4pidww><div class="logo-text" data-astro-cid-ju4pidww><a href="dvc-trang-chu.html" class="logo" data-astro-cid-ju4pidww> <img src="theme/img/header/logo.png" alt="" data-astro-cid-ju4pidww> </a></div><div class="nav-toggle" data-astro-cid-ju4pidww><span class="-ap icon icon-menu" data-astro-cid-ju4pidww></span></div><div class="header-account header-account-guest" data-astro-cid-ju4pidww><div class="buttons" data-astro-cid-ju4pidww><a href="/authenticationendpoint/login.do.html" class="btn btn-login" data-astro-cid-ju4pidww>Đăng k&yacute;</a><a href="/authenticationendpoint/login.do.html" class="btn btn-register" data-astro-cid-ju4pidww>Đăng nhập</a></div></div><div class="header-account dropdown header-account-user" style="display: none;" data-astro-cid-ju4pidww><div class="user" data-toggle="dropdown" data-astro-cid-ju4pidww><div class="avatar" style="background-image: url(img/header/user-avatar.png);" data-astro-cid-ju4pidww></div><div class="username" title="Người dùng" data-placement="bottom" data-toggle="tooltip" data-astro-cid-ju4pidww><span class="dvc-user-name" data-astro-cid-ju4pidww>Người dùng</span><span class="icon fa fa-angle-down" data-astro-cid-ju4pidww></span></div></div><ul class="dropdown-menu" data-astro-cid-ju4pidww><li data-astro-cid-ju4pidww><a href="dvc-dich-vu-cong-cua-toi.html" data-astro-cid-ju4pidww><span class="icon -ap icon-user5" data-astro-cid-ju4pidww></span> Thông tin cá nhân</a></li><li data-astro-cid-ju4pidww><a href="javascript:void(0);" onclick="dvcLogout();" data-astro-cid-ju4pidww><span class="icon -ap icon-log-out" data-astro-cid-ju4pidww></span> Đăng xuất</a></li></ul></div></div></div></div><nav class="header-nav" data-astro-cid-ju4pidww><div class="container" data-astro-cid-ju4pidww><ul id="main-menu" class="pull-left menus" data-astro-cid-ju4pidww><li class="active" id="home-page" data-astro-cid-ju4pidww><a href="dvc-trang-chu.html" data-astro-cid-ju4pidww><span class="-ap icon icon-home4" data-astro-cid-ju4pidww></span></a></li><!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --><li data-astro-cid-ju4pidww> <a href="dvc-trang-chu.html#" data-astro-cid-ju4pidww>Th&ocirc;ng tin v&agrave; dịch vụ</a><ul class="dropdown-menu" data-astro-cid-ju4pidww><!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --><!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --><!-- <li>
+							<a href="#">Thủ tục hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+							</ul>
+						</li> --><!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --><!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --><li data-astro-cid-ju4pidww><a href="dvc-tra-cuu-ho-so.html" data-astro-cid-ju4pidww>Tra cứu hồ sơ</a></li><li data-astro-cid-ju4pidww><a href="dvc-tra-cuu-ban-an.html" data-astro-cid-ju4pidww>T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li><li data-astro-cid-ju4pidww><a href="dvc-cau-hoi-pho-bien.html" data-astro-cid-ju4pidww>C&acirc;u hỏi thường gặp</a></li></ul> </li><li data-astro-cid-ju4pidww> <a href="dvc-trang-chu.html" data-astro-cid-ju4pidww>Thanh to&aacute;n trực tuyến</a><!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --><!-- <ul class="dropdown-menu">
+						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
+						<li><a href="dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế cá nhân/Trước bạ</a></li>
+						<li>
+							<a href="#">Thanh toán vi phạm hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh toán vi phạm giao thông</a></li>
+								<li><a href="dvc-thanh-toan-vi-pham-xay-dung.html">Tra cứu/Thanh toán vi phạm xây dựng</a></li>
+							</ul>
+						</li>
+						<li><a href="dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh toán phí/lệ phí dịch vụ công</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-bhyt.html">Đóng tiếp BHXH tự nguyện, gia hạn BHYT</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-doanh-nghiep.html">Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN</a></li>
+						<li><a href="dvc-thanh-toan-nghia-vu-dat-dai-tai-san.html">Thanh toán nghĩa vụ tài chính về đất đai</a></li>
+						<li><a href="dvc-thanh-toan-dien.html">Thanh toán tiền điện</a></li>
+						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
+						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
+					</ul> --> </li><li data-astro-cid-ju4pidww> <a href="dvc-trang-chu.html#" data-astro-cid-ju4pidww>Phản &aacute;nh kiến nghị</a><ul class="dropdown-menu" data-astro-cid-ju4pidww><li data-astro-cid-ju4pidww><a href="../phananhkiennghi/pakn-gui-pakn.html" data-astro-cid-ju4pidww>Gửi PAKN</a></li><li data-astro-cid-ju4pidww><a href="../phananhkiennghi/pakn-search.html" data-astro-cid-ju4pidww>Tra cứu kết quả trả lời</a></li></ul> </li><li data-astro-cid-ju4pidww><a href="dvc-index-tinhthanhpho-tonghop.html" data-astro-cid-ju4pidww>Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li><!-- <li>
+				  <a href="#">Thủ tục hành chính</a>
+				  <ul class="dropdown-menu">
+					<li><a href="dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+				  </ul>
+				</li> --><li class="" data-astro-cid-ju4pidww> <a href="dvc-trang-chu.html#" data-astro-cid-ju4pidww>Hỗ trợ</a><ul class="dropdown-menu" data-astro-cid-ju4pidww><li data-astro-cid-ju4pidww><a href="dvc-gioi-thieu.html" data-astro-cid-ju4pidww>Giới thiệu</a></li><li data-astro-cid-ju4pidww><a href="dvc-dieu-khoan-su-dung.html" data-astro-cid-ju4pidww>Điều khoản sử dụng</a></li><li data-astro-cid-ju4pidww><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html" data-astro-cid-ju4pidww>Hướng dẫn sử dụng</a></li><li data-astro-cid-ju4pidww><a href="dvc-tin-tuc.html" data-astro-cid-ju4pidww>Th&ocirc;ng b&aacute;o</a></li></ul> </li></ul><div class="header-account mobile-ds header-account-guest" data-astro-cid-ju4pidww><div class="buttons" data-astro-cid-ju4pidww><a href="/authenticationendpoint/login.do.html" class="btn btn-login" data-astro-cid-ju4pidww>Đăng nhập</a><a href="/authenticationendpoint/login.do.html" class="btn btn-register" data-astro-cid-ju4pidww>Đăng k&yacute;</a></div></div><div class="header-account mobile-ds dropdown header-account-user" style="display: none;" data-astro-cid-ju4pidww><div class="user" data-toggle="dropdown" data-astro-cid-ju4pidww><div class="avatar" style="background-image: url(img/header/user-avatar.png);" data-astro-cid-ju4pidww></div><div class="username" title="Người dùng" data-placement="bottom" data-toggle="tooltip" data-astro-cid-ju4pidww><span class="dvc-user-name" data-astro-cid-ju4pidww>Người dùng</span><span class="icon fa fa-angle-down" data-astro-cid-ju4pidww></span></div></div><ul class="dropdown-menu" data-astro-cid-ju4pidww><li data-astro-cid-ju4pidww><a href="dvc-dich-vu-cong-cua-toi.html" data-astro-cid-ju4pidww><span class="icon -ap icon-user5" data-astro-cid-ju4pidww></span> Thông tin cá nhân</a></li><li data-astro-cid-ju4pidww><a href="javascript:void(0);" onclick="dvcLogout();" data-astro-cid-ju4pidww><span class="icon -ap icon-log-out" data-astro-cid-ju4pidww></span> Đăng xuất</a></li></ul></div></div></nav><div class="header-bottom" data-astro-cid-ju4pidww><div class="container" data-astro-cid-ju4pidww><ul id="list-dropdown" data-astro-cid-ju4pidww></ul></div></div><div class="section-hotro"><div class="container"><ul class="breadcrumb"><li><a href="dvc-trang-chu.html">Trang chủ</a></li><li><a href="dvc-cau-hoi-pho-bien.html#">C&acirc;u hỏi thường gặp</a></li></ul><div class="cau-hoi-pho-bien"><div class="box-form"><div class="row"><div class="col-sm-6 col-xs-12"><input type="text" class="form-control" id="tuKhoa" value=" " = ""="" placeholder="Nhập nội dung cần t&igrave;m" autofocus=""></div><div class="col-sm-6 col-xs-12"><div class="input-right-button"><div class="select-custom"><select name="ministry" id="ministry" class="form-control"> </select></div><button class="btn btn-search btn-main" id="doSearch" name="doSearch"> <span class="-ap icon-search icon"></span> T&igrave;m kiếm </button></div></div></div></div><div class="divider-gray"></div><h1 class="main-title-sub" id="mainTitle">C&acirc;u hỏi thường gặp</h1><ul class="tabs -style01"><li class="active"><a href="dvc-cau-hoi-pho-bien.html#tatca" id="tatCaTab" data-toggle="tab">Tất cả <span id="spnTotalTatCa">(9452)</span></a></li><li><a href="dvc-cau-hoi-pho-bien.html#congdan" id="congDanTab" data-toggle="tab">C&ocirc;ng d&acirc;n <span id="spnTotalCongDan">(1133)</span></a></li><li><a href="dvc-cau-hoi-pho-bien.html#doanhNghiep" id="doanhNghiepTab" data-toggle="tab">Doanh nghiệp <span id="spnTotalDoanhNghiep">(834)</span></a></li><li><a href="dvc-cau-hoi-pho-bien.html#tochuckhac" id="toChucKhacTab" data-toggle="tab">Tổ chức kh&aacute;c <span id="spnTotalKhac">(1492)</span></a></li></ul><div class="tab-content"><div class="tab-pane active" id="tatCa"><div class="list-document -question"><p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p></div></div><div class="tab-pane" id="congDan"><div class="list-document -question"><p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p></div></div><div class="tab-pane" id="doanhNghiep"><div class="list-document -question"><p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p></div></div><div class="tab-pane" id="toChucKhac"><div class="list-document -question"><p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p></div></div></div><div class="divider-gray"></div><div class="pagination-bottom" id="paginationBottom"><div class="pull-left" id="pullLeft"><span>Hiển thị</span><div class="inline select-custom"><select name="strLeftResult" id="strLeftResult" class="form-control"> <option value="10">10</option> <option value="20">20</option> <option value="50">50</option> </select></div><span>tr&ecirc;n <span id="totalRecord"></span> bản ghi</span></div><div><ul class="pagination pull-right" id="paginationKQTT"></ul></div><div class="clearfix"></div></div></div></div></div><div class="section section-menu-bottom"><div class="container"><div class="pull-left"><a class="wrap" onclick="goToQuestion()"><div class="icon"><img src="img/home/trongdong.png" alt=""></div><div class="text">C&acirc;u hỏi thường gặp</div> </a></div><div class="pull-right"><a class="wrap" href="dvc-huong-dan-cong-dan-doanh-nghiep.html"><div class="icon"><img src="img/home/trongdong.png" alt=""></div><div class="text">Hướng dẫn sử dụng</div> </a></div><div class="clearfix"></div></div></div><script>
+
+	function goToQuestion(){
+		var path = window.location.pathname;
+		var targetPage = 'dvc-cau-hoi-pho-bien.html';
+		if (path == '/p/home/dvc-trang-chu-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+			){
+			targetPage += '?pObject=5';
+		}else {
+			targetPage += '?pObject=1'
+		}
+		window.location.href = targetPage;
+	}
+</script><script>
+	var PAGE_SIZE = 10;
+	var objectId = '';
+	var onLoad = true;
+
+	$(document).ready(function(){
+		$('#strLeftResult').val(PAGE_SIZE);
+		var tuKhoa = GetURLParameter('tuKhoa');
+		var boNganh = GetURLParameter('boNganh');
+		var pObject = parseInt(GetURLParameter('pObject'));
+		getLocation("dvcqg_get_list_ministry_have_question_service_v2", null, null, "ministry");
+
+		if (tuKhoa) {
+			objectId = '';
+			$("#tuKhoa").val(tuKhoa);
+		}
+		if (boNganh) {
+			objectId = '';
+			$("#ministry").val(boNganh);
+		}
+		searchAllQuestion(1, false);
+		
+		$("#tuKhoa").keyup(function(e) {
+			if (e.which == 13) {
+				objectId = '';
+				$('.tabs').hide();
+				searchAllQuestion(1, false);
+			}
+		});
+		$('#tuKhoa:text:visible:first').focus();
+
+		$('#ministry').on('change', function () {
+			objectId = '';
+			searchAllQuestion(1, false);
+			$('.tabs').hide();
+		});
+
+		$('#congDanTab').click(function(){
+			objectId = 1;
+			searchAllQuestion(1, false);
+		});
+
+		$('#doanhNghiepTab').click(function(){
+			objectId = 5;
+			searchAllQuestion(1, false);
+		});
+
+		$('#toChucKhacTab').click(function(){
+			objectId = 99;
+			searchAllQuestion(1, false);
+		});
+
+		$('#tatCaTab').click(function(){
+			objectId = '';
+			searchAllQuestion(1, false);
+		});
+
+		if(pObject){
+			switch (pObject){
+				case 1: $('#congDanTab').click(); break;
+				case 5: $('#doanhNghiepTab').click(); break;
+				default: $('#tatCaTab').click();
+			}
+			return;	
+		} 
+	});
+
+	$('#doSearch').click(function () {
+		if($('#tuKhoa').val().trim() == ''){
+			toastr.warning('Cần nhập từ khóa cần tìm kiếm');
+			return;
+		}
+		$('.tabs').hide();
+		objectId = '';
+		searchAllQuestion(1, false);
+	});
+
+	function resetSearch() {
+		$('#tuKhoa').html('');
+	}
+
+	function GetURLParameter(sParam) {
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) {
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) {
+				return decodeURIComponent(sParameterName[1]);
+			}
+		}
+	}
+
+	function searchAllQuestion(currentPage, isResetSearch) {
+		if (isResetSearch) {
+			resetSearch();
+		}
+		if (!currentPage) {
+			currentPage = 1;
+		}
+		
+		var tuKhoa = $.trim($('#tuKhoa').val().toLowerCase());
+		tuKhoa = tuKhoa.normalize('NFC').replace(/\s\s+/g, ' ');
+		var orgCode = "";
+		if ($('#ministry').val()) {
+			if ($('#ministry').val() != '-1')
+			orgCode = $('#ministry').val();
+		}
+		var obj = new Object();
+		obj.type = "ref";
+		obj.service = "dvcqg_search_question_with_key_and_ministry_service_v2";
+		obj.provider = "dvcquocgiaRead";
+		obj.objectId = objectId;
+		obj.keyWord = tuKhoa;
+		obj.orgCode = orgCode;
+		obj.status = 2;
+		
+		START_ROW = PAGE_SIZE * (currentPage - 1);
+		obj.startRecord = START_ROW;
+		obj.endRecord = (START_ROW + PAGE_SIZE);
+		showLoading();
+		var result = apiservice.AjaxJson.executeQuery(obj);
+
+		if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+			totalCnt = parseInt(result[0].TOTAL_RESULT);
+			$('#totalRecord').html(totalCnt);
+			if (tuKhoa === "" && orgCode === ""){
+				$('#mainTitle').text('Câu hỏi thường gặp');
+			}else {
+				$('.tabs').hide();
+				$('#mainTitle').text('Tìm thấy '+ totalCnt +' kết quả');
+			}
+			$('.list-document').html('');
+				$('#tab-pane').html('');
+				$('#tab-pane').append('<div class="list-document -question" id="questionListContent"></div>');
+			renderHTLMAllQuestion(result, currentPage, totalCnt);
+			if (totalCnt <= 10){
+				$('#paginationBottom').hide();
+			}else {
+				$('#paginationBottom').show();
+			}
+			if (onLoad) onLoad = false;
+			else window.location.href = '#mainTitle';
+		}else {
+			$('#mainTitle').text('Không tìm thấy kết quả phù hợp nào');
+			$('.list-document').html('');
+			$('#paginationKQTT').hide();
+			$('#paginationBottom').hide();
+		}
+		hideLoading();
+	}
+	
+	function renderHTLMAllQuestion(listData, currentPage, totalRecords) {
+		var listLi = "";
+		if (listData.length >= 1) {
+			for (var i = 0; i < listData.length; i++) {
+				var data = listData[i];
+				listLi += '<a class="item" href="https://vpcp.dichvucong.gov.vn/p/home/dvc-chi-tiet-cau-hoi.html?id='+data.ID+'&row_limit=1" >' + data.CONTENT + '</a>';
+			}
+			$('.list-document').append(listLi);
+			loadPagination(totalCnt, currentPage, "paginationKQTT", "doChangePageAll", '', PAGE_SIZE);
+		}
+	}
+
+	function doChangePageAll(currentPage) {
+		searchAllQuestion(currentPage, false);
+	}
+
+	$(document).on("change", 'select[name="strLeftResult"]', function (event) {
+		var page = $(this).val();
+		if (page !== undefined && page !== '') {
+			PAGE_SIZE = parseInt(page);
+			$('#strLeftResult').val(PAGE_SIZE);
+			searchAllQuestion(1, false);
+		}
+	});
+
+</script><footer class="footer" data-astro-cid-ju4pidww><div class="footer-bottom" data-astro-cid-ju4pidww><div class="container" data-astro-cid-ju4pidww><div class="add" data-astro-cid-ju4pidww><p data-astro-cid-ju4pidww>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p></div><div class="add" data-astro-cid-ju4pidww><p data-astro-cid-ju4pidww>www.dichvucong.gov.vn</p></div><div class="add" data-astro-cid-ju4pidww><p data-astro-cid-ju4pidww>Tổng đ&agrave;i hỗ trợ: 18001096</p></div><div class="add" data-astro-cid-ju4pidww><p data-astro-cid-ju4pidww> Email: dichvucong@chinhphu.vn</p></div></div></div></footer><script type="text/javascript" src="theme/vendor/typeahead/index.js"></script><script type="text/javascript" src="theme/vendor/typeahead/handlebars.js"></script><script type="text/javascript" src="theme/js/custom.js"></script><script type="text/javascript">
+    function showLoading() {
+        $("#loading-all").show();
     }
-  </script></head><body style="min-height: 100vh; display: flex; flex-direction: column;"><header class="site-header"><!-- Top bar --><div class="header-top-bar" style="background: #a82218; color: #fff; padding: 6px 0; font-size: 13px;"><div class="container"><div class="row" style="display: flex; align-items: center; justify-content: space-between;"><div class="col-sm-6 col-xs-12"><span><i class="fa fa-phone" style="margin-right: 5px;"></i>Tổng đài hỗ trợ: <strong>1800 1096</strong> (Miễn phí)</span></div><div class="col-sm-6 col-xs-12 text-right"><a href="/p/home/dvc-cau-hoi-pho-bien.html" style="color: #fff; margin-right: 15px;"><i class="fa fa-question-circle"></i> Trợ giúp</a><a href="javascript:void(0)" onclick="toastr.info('Cổng DVCQG hỗ trợ đăng nhập qua tài khoản VNeID.')" style="color: #fff; margin-right: 15px;"><i class="fa fa-user"></i> Đăng nhập</a><a href="javascript:void(0)" onclick="toastr.info('Vui lòng sử dụng ứng dụng định danh điện tử VNeID để đăng ký tài khoản.')" style="color: #fff;"><i class="fa fa-pencil-square-o"></i> Đăng ký</a></div></div></div></div><!-- Main header banner --><div class="header-main" style="background: #ffffff; padding: 18px 0; border-bottom: 2px solid #e2e8f0;"><div class="container"><div class="row" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;"><div class="col-md-7 col-sm-8 col-xs-12" style="display: flex; align-items: center;"><a href="/" style="display: flex; align-items: center; text-decoration: none;"><img src="/img/header/quoc_huy.png" alt="Quốc huy Việt Nam" style="height: 68px; width: auto; margin-right: 15px;" onerror="this.src='/p/home/img/header/quoc_huy.png'"><div><div style="color: #a82218; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1.2;">CỔNG DỊCH VỤ CÔNG QUỐC GIA</div><div style="color: #64748b; font-size: 13px; font-weight: 500; margin-top: 3px;">Kết nối, cung cấp thông tin và dịch vụ công trực tuyến</div></div></a></div><div class="col-md-5 col-sm-4 col-xs-12 text-right" style="margin-top: 10px;"><div style="display: inline-flex; align-items: center; gap: 8px;"><span class="badge" style="background-color: #0b5796; padding: 8px 12px; font-size: 13px; font-weight: 600;"><i class="fa fa-check-circle" style="margin-right: 4px;"></i> Astro v7 Powered</span><span class="badge" style="background-color: #f59e0b; padding: 8px 12px; font-size: 13px; font-weight: 600; color: #fff;"><i class="fa fa-bolt" style="margin-right: 4px;"></i> 13 Dịch vụ trọng tâm</span></div></div></div></div></div><!-- Navigation bar --><nav class="navbar navbar-default" style="background: #0b5796; border-radius: 0; margin-bottom: 0; border: none;"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false" style="border-color: #fff;"><span class="sr-only">Toggle navigation</span><span class="icon-bar" style="background-color: #fff;"></span><span class="icon-bar" style="background-color: #fff;"></span><span class="icon-bar" style="background-color: #fff;"></span></button></div><div class="collapse navbar-collapse" id="main-navbar" style="padding-left: 0; padding-right: 0;"><ul class="nav navbar-nav"><li class="active"><a href="/" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase;"><i class="fa fa-home"></i> Trang chủ</a></li><li class><a href="/p/home/dvc-tthc-thu-tuc-hanh-chinh.html" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase;">Thủ tục hành chính</a></li><li class><a href="/#dich-vu-trong-tam" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase; background-color: rgba(255,255,255,0.12);">13 Dịch vụ trọng tâm</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase;">Công dân <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=753.html">Cư trú và giấy tờ tùy thân</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=754.html">Hôn nhân và gia đình</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=752.html">Việc làm và lao động</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=755.html">Điện lực, nhà ở, đất đai</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=757.html">Phương tiện và người lái</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=758.html">Hưu trí và bảo trợ xã hội</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase;">Doanh nghiệp <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=760.html">Khởi sự kinh doanh</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=763.html">Đất đai, xây dựng</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=764.html">Thương mại, quảng cáo</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=765.html">Sở hữu trí tuệ, tài sản</a></li><li><a href="/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=762.html">Thuế và hóa đơn</a></li></ul></li><li class><a href="/p/home/dvc-cau-hoi-pho-bien.html" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase;">Hỏi đáp</a></li><li><a href="/p/phananhkiennghi/pakn-tra-cuu.html" style="color: #fff; font-weight: 600; padding: 14px 18px; text-transform: uppercase;">Phản ánh kiến nghị</a></li></ul></div></div></nav></header><div style="flex: 1 0 auto;"><div style="background:#f4f6f9; min-height:800px; padding: 25px 0 50px 0;"><div class="container"><!-- Breadcrumb --><ul class="breadcrumb" style="background:transparent; padding: 8px 0; margin-bottom: 20px;"><li><a href="/" style="color:#d32f2f; font-weight:600;"><i class="fa fa-home"></i> Trang chủ</a></li><li class="active">Câu hỏi thường gặp</li></ul><!-- Banner --><div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color:white; border-radius:12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(30,58,138,0.2);"><h1 style="margin: 0 0 10px 0; font-size: 26px; font-weight: 700; color: #fff;"><i class="fa fa-question-circle"></i> Hỏi đáp về Thủ tục & Dịch vụ công</h1><p style="margin: 0; font-size: 15px; opacity: 0.95;">Tra cứu giải đáp thắc mắc thường gặp về điều kiện, trình tự thực hiện các thủ tục hành chính và tài khoản công dân, doanh nghiệp.</p></div><!-- Search & Filter Card --><div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);"><div class="row"><div class="col-sm-7 col-xs-12" style="margin-bottom: 10px;"><label style="font-weight: 600; font-size: 13px; color: #475569;">Từ khoá câu hỏi:</label><div class="input-group" style="width: 100%;"><input type="text" id="faq-search-input" class="form-control input-lg" placeholder="Nhập nội dung câu hỏi cần tìm (ví dụ: xây dựng, hộ chiếu, đất đai...)" style="border-radius: 6px;"></div></div><div class="col-sm-5 col-xs-12" style="margin-bottom: 10px;"><label style="font-weight: 600; font-size: 13px; color: #475569;">Lĩnh vực / Bộ ngành:</label><div style="display: flex; gap: 8px;"><select id="faq-category-select" class="form-control input-lg" style="border-radius: 6px; flex: 1;"><option value="">-- Tất cả lĩnh vực --</option><option value="xây dựng">Xây dựng & Quy hoạch</option><option value="đất đai">Đất đai & Nhà ở</option><option value="hộ chiếu">Hộ chiếu & Xuất nhập cảnh</option><option value="kết hôn">Hộ tịch & Gia đình</option><option value="bảo trợ">Bảo trợ & Lao động</option><option value="kinh doanh">Đăng ký kinh doanh & Doanh nghiệp</option><option value="y tế">Y tế & Dược</option></select><button id="faq-search-btn" class="btn btn-primary input-lg" style="font-weight: 700; padding: 0 20px; border-radius: 6px;"><i class="fa fa-search"></i> Tìm</button></div></div></div></div><!-- Results Section --><div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);"><div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px;"><h3 style="margin: 0; font-size: 17px; font-weight: 700; color: #1e293b;">Danh sách câu hỏi (<span id="faq-total-count" style="color: #d32f2f;">0</span> kết quả)</h3><span style="font-size: 13px; color: #64748b;" id="faq-page-info">Trang 1</span></div><!-- Question List Container --><div id="faq-list-container"><div style="text-align: center; padding: 40px; color: #94a3b8;"><i class="fa fa-spinner fa-spin fa-2x"></i><p style="margin-top: 10px;">Đang tải dữ liệu câu hỏi thường gặp...</p></div></div><!-- Pagination --><div style="text-align: center; margin-top: 25px;" id="faq-pagination"></div></div></div></div><script>
-    var currentFaqPage = 1;
-    var faqPageSize = 10;
-    var filteredQuestions = [];
-
-    function decodeHtmlEntities(str) {
-      var txt = document.createElement("textarea");
-      txt.innerHTML = str;
-      return txt.value;
+    function hideLoading(){
+        $("#loading-all").hide();
     }
 
-    function searchFaqs(page) {
-      if (!window.OFFLINE_QUESTIONS) {
-        setTimeout(function() { searchFaqs(page); }, 200);
-        return;
-      }
-
-      var keyword = ($('#faq-search-input').val() || '').trim().toLowerCase();
-      var category = ($('#faq-category-select').val() || '').trim().toLowerCase();
-
-      filteredQuestions = window.OFFLINE_QUESTIONS.filter(function(q) {
-        var text = (decodeHtmlEntities(q.CONTENT) || '').toLowerCase();
-        var matchKw = !keyword || text.indexOf(keyword) !== -1;
-        var matchCat = !category || text.indexOf(category) !== -1;
-        return matchKw && matchCat;
-      });
-
-      currentFaqPage = page || 1;
-      var total = filteredQuestions.length;
-      $('#faq-total-count').text(total);
-
-      var totalPages = Math.ceil(total / faqPageSize) || 1;
-      if (currentFaqPage > totalPages) currentFaqPage = totalPages;
-
-      var startIdx = (currentFaqPage - 1) * faqPageSize;
-      var endIdx = startIdx + faqPageSize;
-      var pageItems = filteredQuestions.slice(startIdx, endIdx);
-
-      $('#faq-page-info').text('Trang ' + currentFaqPage + ' / ' + totalPages);
-
-      if (pageItems.length === 0) {
-        $('#faq-list-container').html(`
-          <div style="text-align: center; padding: 40px 20px; color: #64748b;">
-            <i class="fa fa-info-circle fa-2x" style="color: #cbd5e1; margin-bottom: 10px;"></i>
-            <p style="font-size: 15px;">Không tìm thấy câu hỏi nào phù hợp với từ khóa đã nhập.</p>
-          </div>
-        `);
-        $('#faq-pagination').html('');
-        return;
-      }
-
-      var html = '<ul style="list-style: none; padding-left: 0; margin-bottom: 0;">';
-      pageItems.forEach(function(item, idx) {
-        var decoded = decodeHtmlEntities(item.CONTENT);
-        var itemNum = startIdx + idx + 1;
-        var detailUrl = '/p/home/dvc-chi-tiet-cau-hoi?id=' + encodeURIComponent(item.ID);
-        var staticUrl = '/p/home/dvc-chi-tiet-cau-hoi.html@id=' + encodeURIComponent(item.ID) + '&row_limit=1.html';
-
-        html += `
-          <li style="padding: 16px 18px; border: 1px solid #f1f5f9; border-radius: 8px; margin-bottom: 12px; background: #fafbfc; transition: all 0.2s; display: flex; align-items: flex-start; justify-content: space-between;" onmouseover="this.style.background='#f0fdf4'; this.style.borderColor='#86efac';" onmouseout="this.style.background='#fafbfc'; this.style.borderColor='#f1f5f9';">
-            <div style="flex: 1; padding-right: 15px;">
-              <div style="display: flex; align-items: baseline; gap: 8px;">
-                <span style="background: #e0f2fe; color: #0369a1; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px;">#${itemNum}</span>
-                <span style="font-size: 12px; color: #94a3b8;">ID: ${item.ID}</span>
-              </div>
-              <h4 style="margin: 8px 0 6px 0; font-size: 15px; font-weight: 600; line-height: 1.5;">
-                <a href="${detailUrl}" style="color: #1e3a8a; text-decoration: none;">
-                  ${decoded}
-                </a>
-              </h4>
-            </div>
-            <div style="white-space: nowrap; margin-top: 6px;">
-              <a href="${detailUrl}" class="btn btn-outline-primary btn-sm" style="border: 1px solid #2563eb; color: #2563eb; font-weight: 600; border-radius: 4px; padding: 5px 12px;">
-                Xem câu trả lời <i class="fa fa-angle-right"></i>
-              </a>
-            </div>
-          </li>
-        `;
-      });
-      html += '</ul>';
-      $('#faq-list-container').html(html);
-
-      // Render pagination buttons
-      var pagHtml = '<ul class="pagination" style="margin: 0;">';
-      if (currentFaqPage > 1) {
-        pagHtml += `<li><a href="javascript:void(0)" onclick="searchFaqs(${currentFaqPage - 1})">&laquo; Trước</a></li>`;
-      }
-      for (var p = Math.max(1, currentFaqPage - 2); p <= Math.min(totalPages, currentFaqPage + 2); p++) {
-        pagHtml += `<li class="${p === currentFaqPage ? 'active' : ''}"><a href="javascript:void(0)" onclick="searchFaqs(${p})">${p}</a></li>`;
-      }
-      if (currentFaqPage < totalPages) {
-        pagHtml += `<li><a href="javascript:void(0)" onclick="searchFaqs(${currentFaqPage + 1})">Tiếp &raquo;</a></li>`;
-      }
-      pagHtml += '</ul>';
-      $('#faq-pagination').html(pagHtml);
+    function goToPage(url){
+        window.location.href = url;
     }
 
-    $(document).ready(function() {
-      searchFaqs(1);
+    function goToPage_blank(url){
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
 
-      $('#faq-search-btn').on('click', function() {
-        searchFaqs(1);
-      });
-
-      $('#faq-search-input').on('keyup', function(e) {
-        if (e.which === 13) {
-          searchFaqs(1);
+    $(".targetgroup-box .btn-readmore").click(function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            $(this).html('Xem tiếp <span class="-ap icon-chevron-thin-down icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+            $(this).removeClass("active");
+        }else{
+            $(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+            $(this).addClass("active");
         }
-      });
-
-      $('#faq-category-select').on('change', function() {
-        searchFaqs(1);
-      });
     });
-  </script></div><footer class="site-footer" style="background: #1e293b; color: #cbd5e1; padding: 45px 0 25px 0; margin-top: 50px; font-size: 14px;"><div class="container"><div class="row"><div class="col-md-5 col-sm-6 col-xs-12" style="margin-bottom: 25px;"><div style="display: flex; align-items: center; margin-bottom: 15px;"><img src="/img/header/quoc_huy.png" alt="Quốc huy" style="height: 50px; width: auto; margin-right: 12px;" onerror="this.src='/p/home/img/header/quoc_huy.png'"><div><h4 style="color: #fff; font-size: 16px; font-weight: 700; text-transform: uppercase; margin: 0;">CỔNG DỊCH VỤ CÔNG QUỐC GIA</h4><div style="color: #94a3b8; font-size: 12px; margin-top: 3px;">Hệ thống cung cấp dịch vụ công trực tuyến quốc gia</div></div></div><p style="color: #94a3b8; line-height: 1.6;">Cơ quan chủ quản: <strong>Văn phòng Chính phủ</strong><br>Đơn vị vận hành: <strong>Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT)</strong><br>Địa chỉ: Số 1 Hoàng Hoa Thám, Ba Đình, Hà Nội.</p></div><div class="col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 25px;"><h4 style="color: #fff; font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; border-left: 3px solid #0b5796; padding-left: 10px;">Liên kết nhanh</h4><ul style="list-style: none; padding-left: 0; line-height: 2;"><li><a href="/" style="color: #cbd5e1; text-decoration: none;"><i class="fa fa-angle-right" style="margin-right: 6px;"></i>Trang chủ Cổng DVCQG</a></li><li><a href="/#dich-vu-trong-tam" style="color: #cbd5e1; text-decoration: none;"><i class="fa fa-angle-right" style="margin-right: 6px;"></i>13 Dịch vụ công trọng tâm</a></li><li><a href="/p/home/dvc-tthc-thu-tuc-hanh-chinh.html" style="color: #cbd5e1; text-decoration: none;"><i class="fa fa-angle-right" style="margin-right: 6px;"></i>Thủ tục hành chính</a></li><li><a href="/p/home/dvc-cau-hoi-pho-bien.html" style="color: #cbd5e1; text-decoration: none;"><i class="fa fa-angle-right" style="margin-right: 6px;"></i>Câu hỏi thường gặp</a></li><li><a href="/HUONG_DAN_DICH_VU.md" target="_blank" style="color: #f59e0b; text-decoration: none;"><i class="fa fa-book" style="margin-right: 6px;"></i>Tài liệu hướng dẫn (Markdown)</a></li></ul></div><div class="col-md-4 col-sm-12 col-xs-12" style="margin-bottom: 25px;"><h4 style="color: #fff; font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; border-left: 3px solid #f59e0b; padding-left: 10px;">Hỗ trợ trực tuyến 24/7</h4><div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);"><div style="font-size: 18px; color: #f59e0b; font-weight: bold; margin-bottom: 6px;"><i class="fa fa-phone" style="margin-right: 8px;"></i>1800 1096</div><p style="margin: 0; color: #94a3b8; font-size: 13px;">Tổng đài hỗ trợ người dân và doanh nghiệp thực hiện thủ tục hành chính và dịch vụ công trực tuyến.</p></div></div></div><div class="row" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 15px;"><div class="col-sm-6 col-xs-12"><p style="margin: 0; font-size: 12px; color: #64748b;">© 2026 Cổng Dịch vụ công Quốc gia. Ported to Astro framework.</p></div><div class="col-sm-6 col-xs-12 text-right"><p style="margin: 0; font-size: 12px; color: #64748b;">Phiên bản hệ thống 2.0 | Astro v7</p></div></div></div></footer></body></html>
+    var links = [
+            
+        ];
+
+
+    function searchProcedure(){
+        var key = getWords($("#searchKeyWord").val(), 100);
+		console.log(key);
+        // if($("#searchKeyWord").val()) {
+        var href = 'dvc-tthc-thu-tuc-hanh-chinh.html?tu_khoa=' + encodeURIComponent(key);
+        window.location.href = href;
+        //}
+    }
+
+function showAdvSearch() {
+    getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+}
+
+function doAdvSearch(){
+
+    let mess = '';
+    let keyWord = $('#txtKEYWORD').val().trim();
+    keyWord = getWords(keyWord, 100);
+    if (!keyWord) {
+        mess += 'Bạn vui lòng nhập từ khóa tìm kiếm!\n';
+    }
+    let tinhThanhValue = $('#cboTINH_THANH').val();
+    let boNganhValue = $('#cboBO_NGANH').val();
+    var rdoBO = $("input[name='cap_thuc_hien']:checked").val();
+
+    if (((!tinhThanhValue || '-1' == tinhThanhValue) && rdoBO != 'bonganh') || (rdoBO == 'bonganh' && (!boNganhValue || '-1' == boNganhValue))) {
+        mess += 'Bạn phải chọn ít nhất một Tỉnh/ Thành phố hoặc một Bộ ngành!\n';
+    }
+
+    if (mess) {
+        toastr.warning(mess);
+        return;
+    }
+
+    var rdoSO = $("input[name='quan_huyen_or_so']:checked").val();
+    if (rdoBO != 'bonganh' && $('#cboTINH_THANH').val() && $('#cboTINH_THANH').val() != '-1' && ($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val()) && ($('#cboSO').val() == '-1' || !$('#cboSO').val()) && ($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val())) {
+
+        var params = 'originKey=' + encodeURIComponent(keyWord) + '&tukhoa=' + keyWord.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g,' ').trim()
+        params+= "&tinh_thanh="+(($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val()  || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        window.location = 'dvc-tthc-thu-tuc-hanh-chinh.html?' + params;
+    } else {
+
+        var params = "tu_khoa=" + keyWord;
+        //params += "&bo_nganh="+(($('#cboBO').val() != '-1' || !$('#cboBO').val() || rdoBO != 'bonganh') ? "" : $('#cboBO option:selected').text());
+        params += "&bo_nganh=" + ($('#cboBO_NGANH option:selected').text());
+        params += "&tinh_thanh=" + (($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val() || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        params += "&so=" + (($('#cboSO').val() == '-1' || !$('#cboSO').val() || rdoSO != 'so') ? "" : $('#cboSO option:selected').text());
+        params += "&quan_huyen=" + (($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val() || rdoSO == 'so') ? "" : $('#cboQUAN_HUYEN option:selected').text());
+        params += "&phuong_xa=" + (($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val() || rdoSO == 'so') ? "" : $('#cboPHUONG_XA option:selected').text());
+        params += "&id_tinh_thanh=" + $('#cboTINH_THANH').val();
+        params += "&id_quan_huyen=" + $('#cboQUAN_HUYEN').val();
+        params += "&id_phuong_xa=" + $('#cboPHUONG_XA').val();
+        params += "&id_so=" + $('#cboSO').val();
+        params += "&id_bo_nganh=" + $('#cboBO_NGANH').val();
+        window.location = 'dvc-tthc-thu-tuc-hanh-chinh.html?' + params;
+    }
+
+    $('#advsearch').modal('hide');
+}
+$(document).ready(function(){
+    $("#searchKeyWord").keyup(function (e){
+        if (e.which == 13) {
+            searchProcedure();
+        }
+    });
+    bindEvent();
+});
+
+function changeHeight(){
+    var vl = 1 - $('#popupChange').attr('height');
+    $('#popupChange').attr('height', vl);
+    $('#popupChange').css('height', vl + "px");
+}
+
+function bindEvent(){
+    $('#searchKeyWord').keydown(function(e){
+        if (e.keyCode == 13) {
+            searchProcedure();
+        }
+    });
+    $('#advsearch').on('hidden.bs.modal', function () {
+        $('#divClosePopupSearch').click();
+    });
+    $('#divClosePopupSearch').click(function(){
+        $("#txtKEYWORD").val('');
+        $('#rdoTINH_THANH').click();
+        $('#rdoQUAN_HUYEN').click();
+        $("#cboTINH_THANH").change();
+        getLocation("dvcqg_get_phuong_xa_by_selected", "huyen_id", -1, "cboPHUONG_XA");
+        $('#advsearch').modal('hide');
+
+    });
+
+    $('#rdoTINH_THANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').show();
+        $('#cboBO_NGANH').select2().next().hide();
+        $('#cboTINH_THANH').select2().next().show();
+        getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", -1, "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", -1, "cboSO");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+    });
+    $('#rdoBO_NGANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').hide();
+        $('#cboBO_NGANH').select2().next().show();
+        $('#cboTINH_THANH').select2().next().hide();
+        getLocation("dvcqg_get_bo_nganh_by_selected_v2", null, null, "cboBO_NGANH");
+    });
+
+    $('#rdoQUAN_HUYEN').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+        $('#cboSO').select2().next().hide();
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+    });
+
+    $('#rdoSO').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+        $('#cboSO').select2().next().show();
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+    });
+
+    $("#cboTINH_THANH,#cboQUAN_HUYEN,#cboPHUONG_XA,#cboSO,#cboBO_NGANH").select2({
+        allowClear: true,
+        width: "100%",
+    });
+    $('#cboSO,#cboBO_NGANH').select2().next().hide();
+
+    $("#cboTINH_THANH").change(function () {
+        getLocation("dvcqg_get_so_by_selected", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+
+    });
+    $("#cboQUAN_HUYEN").change(function () {
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", $("#cboQUAN_HUYEN").val(), "cboPHUONG_XA");
+    });
+}
+
+//suggestion search
+function sugggestProcedure(keyword) {
+    var obj = new Object();
+    obj.key_search = 'al:"' + keyword +'"~5';
+    obj.page_size = 5;
+    obj.start_row = 0;
+    obj.source_data = "thu_tuc_v1";
+    obj.type = "fts";
+    var result = apiservice.AjaxJson.executeQuery(obj);
+    var dataMap = result.response.docs.map(function (i) {
+        return {
+            name: i.ten_thu_tuc,
+            link: i.ten_thu_tuc,
+            id: i.ma_thu_tuc
+        }
+    });
+
+    return dataMap;
+}
+
+jQuery(document).ready(function($) {
+
+    var engine = new Bloodhound({
+        remote: {
+            url: '/jsp/procedure-typehead.jsp?keyword=al:"%QUERY%"~5',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('keyword'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    $(".search-input").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3
+    }, {
+        source: engine.ttAdapter(),
+        displayKey: 'ten_thu_tuc',
+        name: 'usersList',
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                console.log(data);
+                if (data.isnganhdoc == 1) {
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html@ma_thu_tuc=' + data.ma_thu_tuc + '.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else if(data.isdungchung == 1){
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html@ma_thu_tuc=' + data.ma_thu_tuc + '.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else{
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=' + data.ma_thu_tuc + '.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }
+                
+            }
+        }
+    });
+    $('#searchKeyWord:text:visible:first').focus();
+});
+
+</script><script type="text/javascript">
+
+    //
+    function autoSetmenu() {
+        var path = window.location.pathname;
+        var isRemoveDropdown = false;
+
+        // Cau hoi
+        if (path == '/p/home/dvc-chi-tiet-cau-hoi.html'){
+            path = '/p/home/dvc-cau-hoi-pho-bien.html';
+        }
+
+        // Huong dan su dung
+        if (path == '/p/home/dvc-huong-dan-bo-nganh-dia-phuong.html' || path == '/p/home/dvc-phan-mem-ho-tro.html' || path == '/p/home/dvc-thiet-ke-giao-dien.html' ||
+            path == '/p/home/dvc-nop-tien-dien.html' || path == '/p/home/dvc-liet-ket-giao-duc.html'
+            ){
+            path = '/p/dvc-huong-dan-cong-dan-doanh-nghiep.html';
+        }
+
+        // Thu tuc hanh hinh cong dan - doanh nghiep
+        if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html'
+            ){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }else if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+            ){
+            path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+        }else if (path == '/p/home/dvc-danh-sach-thu-tuc-theo-nhom-su-kien.html'
+                || path == '/p/home/dvc-danh-sach-cau-hoi-theo-nhom-su-kien.html'
+            ) {
+            var objectId = GetURLParameter('objectId');
+            if (objectId == 1){
+                path = '/p/home/dvc-trang-chu-cong-dan.html';
+            }else if(objectId == 5){
+                path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+            }
+        }
+
+        // DVC trực tuyến & đăng ký xe
+        if (path == '/p/home/dvc-dich-vu-cong-truc-tuyen-ds.html'
+                || path == '/p/home/dvc-dich-vu-cong-truc-tuyen.html'
+                || path == '/p/home/dvc-dang-ky-xe.html'
+            ) {
+            path = '/p/home/dvc-dich-vu-cong-truc-tuyen.html';
+        }
+
+        // Chi tiet TTHC va DVC
+        if (path == '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html' 
+                || path == '/p/home/dvc-danh-sach-dich-vu-cong.html'
+                || path == '/p/home/dvc-danh-sach-thu-tuc-theo-su-kien.html'
+                || path == '/p/home/dvc-ket-qua-thu-tuc.html'
+            ) {
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+            isRemoveDropdown = true;
+        }
+
+        // module TTHC
+        if (path == '/p/home/dvc-tthc-category.html') {
+            path = '/p/home/dvc-tthc-trang-chu.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html';
+        }
+        if (path == '/p/home/dvc-tthc-quyet-dinh-cong-bo-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-quyet-dinh-cong-bo.html';
+        }
+        if (path == '/p/home/dvc-tthc-bonganh-tinhtp.html') {
+            path = '/p/home/dvc-tthc-co-quan.html';
+        }
+
+        if (path == '/p/home/dvc-chi-tiet-tin-tuc.html') {
+            path = '/p/home/dvc-tin-tuc.html';
+        }
+
+        // dvc-cap-ban-sao-tu-ban-chinh
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh.html'){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }
+        //  Đặt lịch hẹn
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh-dlh.html'){
+            path = '/p/home/dvc-tra-cuu-ho-so.html';
+        }
+        // Active main menu
+        $("#main-menu li").each(function () {
+            var link = $(this).find(">a").attr("href");
+            if (path.indexOf(link) != -1) {
+                $(this).parents('li').siblings().removeClass("active");
+                $(this).parents('li').addClass("active");
+                $(this).parents('li').find("li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // Active dropdownmenu
+        $("#main-menu > li").each(function () {
+            if ($(this).hasClass("active")) {
+                var html = $(this).find(">ul").html();
+                $(this).addClass("active");
+                $(this).find(">ul").addClass("hidden");
+                $("#list-dropdown").html(html);
+                if($("#bn-ttp").hasClass("active")){
+                    $("#coquan").addClass("active");
+                }
+            }
+        });
+
+        // Remove
+        if (isRemoveDropdown) {
+            $('#list-dropdown > li').removeClass('active');
+        }
+    }
+
+    var pathHDSD = window.location.pathname;
+    $("#regionleft-introduce li").removeClass('active');
+    $("#left-introduce li a").each(function () {
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $('#left-introduce li:first-child').removeClass('active');
+    $('.child-menus a').each(function(){
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        autoSetmenu();
+    })
+
+    function updateDvcAuthState() {
+        // Clean up any stale localStorage to ensure logged out by default
+        if (localStorage.getItem('dvc_user')) {
+            localStorage.removeItem('dvc_user');
+        }
+
+        var rawUser = sessionStorage.getItem('dvc_user');
+        var guestEls = document.querySelectorAll('.header-account-guest');
+        var userEls = document.querySelectorAll('.header-account-user');
+        var nameEls = document.querySelectorAll('.dvc-user-name');
+
+        if (rawUser) {
+            try {
+                var user = JSON.parse(rawUser);
+                var displayName = user.name || 'Người dùng';
+                nameEls.forEach(function(el) {
+                    el.textContent = displayName;
+                });
+                guestEls.forEach(function(el) { el.style.display = 'none'; });
+                userEls.forEach(function(el) { el.style.display = ''; });
+            } catch (e) {
+                guestEls.forEach(function(el) { el.style.display = ''; });
+                userEls.forEach(function(el) { el.style.display = 'none'; });
+            }
+        } else {
+            guestEls.forEach(function(el) { el.style.display = ''; });
+            userEls.forEach(function(el) { el.style.display = 'none'; });
+        }
+    }
+
+    function dvcLogout() {
+        sessionStorage.removeItem('dvc_user');
+        localStorage.removeItem('dvc_user');
+        updateDvcAuthState();
+        window.location.href = '/p/home/dvc-trang-chu.html';
+    }
+
+    $(document).on('click', '.header-account.dropdown .user', function(e) {
+        e.stopPropagation();
+        $(this).closest('.dropdown').toggleClass('open');
+    });
+
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.header-account.dropdown').length) {
+            $('.header-account.dropdown').removeClass('open');
+        }
+    });
+
+    $(document).on('click', 'a', function(e) {
+        var href = $(this).attr('href') || '';
+        if (href.indexOf('xacthuc.dichvucong.gov.vn') !== -1 || href.indexOf('/oauth2/authorize') !== -1) {
+            e.preventDefault();
+            window.location.href = '/authenticationendpoint/login.do.html';
+        }
+    });
+
+    updateDvcAuthState();
+    $(document).ready(function() {
+        updateDvcAuthState();
+    });
+</script></body></html>

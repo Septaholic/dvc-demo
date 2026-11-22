@@ -1,0 +1,569 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Dịch vụ công của tôi - Cổng Dịch vụ công Quốc gia">
+  <div class="section-account"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="dvc-trang-chu.html">Trang chủ</a></li> 
+     <li><a href="#">Danh sách dịch vụ của tôi</a></li> 
+    </ul> 
+    <div class="row"> 
+     <div class="col-sm-3 col-xs-12" id="userLeftSideBar"> 
+      <div class="widget widget-user"> 
+       <div class="user"> 
+        <div class="avatar" style="background-image: url(img/header/user-avatar.png);"> 
+        </div> 
+        <div class="username dvc-user-name">
+          Người dùng 
+        </div> 
+       </div> 
+       <div class="divider-gray"></div> 
+       <div class="box-info"> 
+        <div class="info"> 
+         <div class="value" style="color: #36B37E;" id="finishNumber">0</div> 
+         <p class="key"> Hồ sơ <br /> đã hoàn thành </p> 
+        </div> 
+        <div class="info"> 
+         <div class="value" style="color: #FFAB00" id="processingNumber">0</div> 
+         <p class="key"> Hồ sơ <br /> đang xử lý </p> 
+        </div> 
+       </div> 
+       <ul class="list-menus"> 
+        <li class="open"> <a> <span class="icon"> <img src="theme/img/account/badge-13.svg" /></span> <span class="text">Thông tin tài khoản</span> </a> 
+         <div class="down"></div> 
+         <ul> 
+          <li> <a href="/p/home/dvc-thong-tin-tai-khoan.html">Thông tin định danh</a> </li> 
+          <li><a href="/p/home/dvc-thong-tin-tai-khoan-mo-rong-cong-dan.html">Thông tin mở rộng</a></li> 
+         </ul> </li> 
+        <li class="open"> <a href="#"> <span class="icon"> <img src="theme/img/account/File_info.svg" /></span> <span class="text">Quản lý dịch vụ công</span> </a> 
+         <div class="down"></div> 
+         <ul> 
+          <li> <a href="/p/home/dvc-dich-vu-cong-cua-toi.html">Dịch vụ công của tôi</a> </li> 
+         </ul> </li> 
+        <li> <a href="/p/home/dvc-giay-to-ca-nhan.html"> <span class="icon"> <img src="theme/img/document.svg" /></span> <span class="text">Tài liệu điện tử</span> </a> </li> 
+        <li> <a href="/p/home/dvc-tien-ich.html"> <span class="icon"> <img src="theme/img/account/wallet.svg" /></span> <span class="text">Tiện ích</span> </a> </li> 
+        <li> <a href="/p/home/dvc-lien-ket-mot-cua.html"> <span class="icon"> <img src="theme/img/account/File_info.svg" /></span> <span class="text">Liên kết tài khoản</span> </a> </li> 
+        <li> <a href="/p/home/dvc-lich-su-thanh-toan.html"> <span class="icon"> <img src="theme/img/account/thue.svg" /></span> <span class="text">Lịch sử thanh toán</span> </a> </li> 
+        <li> <a href="/p/home/dvc-thong-bao.html"> <span class="icon"> <img src="theme/img/bell.svg" /></span> <span class="text">Thông báo <span id="spnThongBao" style="color: red;">(0)</span></span> </a> </li> 
+       </ul> 
+      </div> 
+      <script is:inline type="text/javascript">
+		$(".list-menus .down").click(function(e){
+			if($(this).parent().find("ul").length){
+				e.preventDefault();
+				$(this).parent().toggleClass("open");
+				$(this).parent().siblings().removeClass("open");
+			}
+        });
+        
+        $(".list-menus > li.open > a").click(function(e){
+			if($(this).parent().find("ul").length){
+				e.preventDefault();
+				$(this).parent().toggleClass("open");
+				$(this).parent().siblings().removeClass("open");
+			}
+        });
+    </script> 
+      <style>
+        .list-menus > li > a {
+            cursor: pointer;
+        }
+    </style> 
+     </div> 
+     <div class="col-sm-9 col-xs-12"> 
+      <div class="main-title"> 
+       <div class="icon"> 
+        <img src="theme/img/account/info-white.svg" alt="" /> 
+       </div> 
+       <div class="title">
+         Dịch vụ công của tôi 
+       </div> 
+      </div> 
+      <div class="form"> 
+       <div class="form-group"> 
+        <div class="label-text">
+          Tên dịch vụ công 
+        </div> 
+        <input type="text" class="form-control" placeholder="Nhập tên dịch vụ công" name="tenDVC" id="tenDVC" /> 
+       </div> 
+       <div class="row"> 
+        <div class="col-sm-6 col-xs-12"> 
+         <div class="form-group"> 
+          <div class="label-text">
+            Mã hồ sơ 
+          </div> 
+          <input type="text" class="form-control" placeholder="Nhập mã hồ sơ" name="maHS" id="maHS" /> 
+         </div> 
+        </div> 
+        <div class="col-sm-6 col-xs-12"> 
+         <div class="form-group"> 
+          <div class="label-text">
+            Trạng thái hồ sơ 
+          </div> 
+          <div class="select-custom"> 
+           <select name="trangThaiSearch" id="trangThaiSearch" class="form-control"> 
+            <option value="0">-- Chọn trạng thái hồ sơ --</option> 
+            <option value="1">Mới đăng ký </option> 
+            <option value="2">Được tiếp nhận </option> 
+            <option value="3">Không được tiếp nhận </option> 
+            <option value="4">Đang xử lý </option> 
+            <option value="5">Yêu cầu bổ sung giấy tờ </option> 
+            <option value="6">Yêu cầu thực hiện nghĩa vụ tài chính </option> 
+            <option value="7">Công dân yêu cầu rút hồ sơ </option> 
+            <option value="8">Dừng xử lý </option> 
+            <option value="9">Đã xử lý xong </option> 
+            <option value="10">Đã trả kết quả</option> 
+            <option value="11">BNĐP từ chối</option> 
+            <option value="13">Đã nộp tại CDVCQG (chưa gửi tới BNĐP)</option> 
+            <option value="14">Không gửi được</option> 
+           </select> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="center"> 
+        <button class="btn btn-main" onclick="searchSubmission()">Tìm kiếm</button> 
+       </div> 
+      </div> 
+      <div class="divider-gray"></div> 
+      <div class="mydvc-list"> 
+       <div id="dichVuCong"> 
+        <div class="text"><div class="center" style="font-size:18px;color: rgb(206, 122, 88);margin-top: 30px;">Không tìm thấy hồ sơ nào thoả mãn điều kiện tìm kiếm</div></div>
+       </div> 
+       <table class="table-dvc" id="tableListDVC"> 
+       </table> 
+      </div> 
+     </div> 
+     <ul class="pagination pull-right" id="paginationCN" style="padding-bottom: 40px;"> 
+     </ul> 
+     <div class="clearfix"></div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <!-- Modals -->
+  <div id="modalViewDetail" class="modal fade" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 768px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title -none marb0" style="margin-bottom:0px;">Xem giấy tờ</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div id="tbDinhKem"> 
+       <div class="main-title-sub f20">
+         Giấy tờ đã nộp 
+       </div> 
+       <div class="table-content"> 
+        <table class="table-result table" id="tbDinhKemBody"> 
+         <thead> 
+          <tr> 
+           <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+           <th>Tên giấy tờ</th> 
+           <th></th> 
+          </tr> 
+         </thead> 
+         <tbody id="fileAttachModalBody" class="content-popup-giayto"> 
+         </tbody> 
+        </table> 
+        <div id="dinhKemEmpty" class="center" style="display: none; color:#CE7A58"> 
+         <span>Chưa có giấy tờ</span> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="tbKetQua"> 
+       <div class="main-title-sub f20">
+         Kết quả xử lý 
+       </div> 
+       <div class="table-content"> 
+        <table class="table-result table" id="tbKetQuaBody"> 
+         <thead> 
+          <tr> 
+           <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+           <th>Tên tệp</th> 
+           <th></th> 
+          </tr> 
+         </thead> 
+         <tbody id="fileResultModalBody" class="content-popup-giayto"> 
+         </tbody> 
+        </table> 
+        <div id="ketQuaEmpty" class="center" style="display: none; color:#CE7A58"> 
+         <span>Chưa có kết quả xử lý</span> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div id="popupKQ" class="modal fade popup-chitietTTHC" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 768px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Kết quả dịch vụ công</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="table-wrapper"> 
+       <table class="table table-result"> 
+        <thead> 
+         <tr> 
+          <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+          <th>Tên tệp</th> 
+          <th></th> 
+         </tr> 
+        </thead> 
+        <tbody id="fileResultModalBody" class="content-popup-giayto"> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div class="loading" id="loadingScreen" style="display: none;background: rgb(44,62,80, 0.2);"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+  </div> 
+
+  <div id="popupGiayTo" class="modal fade popup-chitietTTHC" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Giấy tờ đã nộp</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="table-wrapper"> 
+       <table class="table table-result"> 
+        <thead> 
+         <tr> 
+          <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+          <th>Tên giấy tờ</th> 
+          <th></th> 
+         </tr> 
+        </thead> 
+        <tbody id="fileAttachModalBody" class="content-popup-giayto"> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div id="popupVoteForm" class="modal fade popup-chitietTTHC popup-vote" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Tại sao bạn không hài lòng?</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="form-horizontal"> 
+       <div class="form-group"> 
+        <input type="hidden" id="procedureCode" /> 
+        <input type="hidden" id="submissionId" /> 
+        <input type="hidden" id="submissionCode" /> 
+        <div class="col-sm-12 col-xs-12"> 
+         <textarea id="reasonContent" placeholder="Lý do của bạn" class="form-control" style="height: 160px;resize: vertical;" required=""></textarea> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="modal-footer"> 
+      <button class="btn btn-main" onclick="voteUnHappySubmission(3);">Gửi</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div id="voteReasonModal" class="modal fade popup-chitietTTHC popup-vote" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Lý do bạn không hài lòng?</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="form-horizontal"> 
+       <div class="col-sm-12 col-xs-12"> 
+        <textarea id="reasonVoteContent" class="form-control" style="height: 160px;resize: vertical;" disabled=""></textarea> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div id="popupDetail" class="modal fade popup-chitietTTHC" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 1200px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title center">Chi tiết thông tin dịch vụ</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 80%;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="form-horizontal form-horizontal-modal" id="submissionDetail" hidden=""> 
+       <div class="info" id="info"> 
+        <div class="header header-detail-hs"> 
+         <span>Thông tin hồ sơ</span> 
+        </div> 
+        <div class="content content-detail-hs"> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Tên dịch vụ 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="tenDichVu"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Mã hồ sơ 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="maHoSo"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Chủ hồ sơ 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="nguoiNop"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Thời gian tiếp nhận 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="thoiGian"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Trạng thái 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input status -replied" style="margin-left: 0;" id="trangThai"> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="process"> 
+        <div class="header header-detail-hs"> 
+         <span>Thông tin xử lý</span> 
+        </div> 
+        <div class="content content-detail-hs"> 
+         <div class="table-wrapper"> 
+          <table id="processTable" class="table table-pro"> 
+           <tbody> 
+            <tr class="footable-header"> 
+             <th>Nội dung xử lý</th> 
+             <th>Phòng ban xử lý</th> 
+             <th>Người xử lý</th> 
+             <th>Thời gian</th> 
+             <th>Hạn xử lý</th> 
+            </tr> 
+           </tbody> 
+           <tbody id="processTableBody"> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div class="modal" id="ttTT"> 
+   <div class="popup-box" style="max-width: 600px;"> 
+    <div class="close -ap icon-close" data-dismiss="modal"> 
+    </div> 
+    <div class="head"> 
+     <div class="main-title center">
+       Thông tin thanh toán 
+     </div> 
+    </div> 
+    <div class="info-row -inline" id="maHoSoTT"> 
+     <div class="key">
+       Mã hồ sơ: 
+     </div> 
+     <div class="value"> 
+     </div> 
+    </div> 
+    <div class="info-row -inline" id="tenDVC"> 
+     <div class="key">
+       Tên dịch vụ công: 
+     </div> 
+     <div class="value"> 
+     </div> 
+    </div> 
+    <div class="info-row -inline" id="ttHoSO"> 
+     <div class="key">
+       Trạng thái hồ sơ: 
+     </div> 
+     <div class="value"> 
+     </div> 
+    </div> 
+    <div class="table-content" id="tbTTTT"> 
+     <table class="table-result"> 
+      <thead> 
+       <tr> 
+        <th>Loại phí</th> 
+        <th>Số tiền</th> 
+       </tr> 
+      </thead> 
+      <tbody id="tbSoTien"> 
+      </tbody> 
+     </table> 
+    </div> 
+    <div class="form-group mart20 center" id="btnActionTT"> 
+    </div> 
+   </div> 
+  </div> 
+
+  <script is:inline>
+    var PAGE_SIZE = 10;
+    var submissionId;
+    var submissionCodePA = "";
+    var orgName = "";
+
+    function doSearch(currentPage) {
+        var keyword = $.trim($('#tenDVC').val());
+        var maHS = $.trim($('#maHS').val());
+        var status = $('#trangThaiSearch').val();
+
+        $('#tableListDVC').html('');
+        $('#dichVuCong').html('<div class="text"><div class="center" style="font-size:18px;color: rgb(206, 122, 88);margin-top: 30px;">Không tìm thấy hồ sơ nào thoả mãn điều kiện tìm kiếm</div></div>');
+        $('#dichVuCong').show();
+        if (typeof loadPagination === 'function') {
+            loadPagination(0, 0, "paginationCN", "doChangePageCN", null, PAGE_SIZE);
+        }
+    }
+
+    function searchSubmission() {
+        var text = $.trim($('#tenDVC').val());
+        $('#tenDVC').val(text);
+        getTotalSubmissionByUser();
+        doSearch(1);
+    }
+
+    function getTotalSubmissionByUser() {
+        $('#finishNumber').text('0');
+        $('#processingNumber').text('0');
+    }
+
+    function doChangePageCN(currentPage) {
+        doSearch(currentPage);
+    }
+
+    $(document).ready(function () {
+        if ($.fn.select2) {
+            $('#trangThaiSearch').select2({
+                width: "100%",
+            });
+        }
+
+        doSearch(1);
+        getTotalSubmissionByUser();
+
+        $('#tenDVC:text:visible:first').focus();
+
+        // Update username if available
+        var rawUser = sessionStorage.getItem('dvc_user');
+        if (rawUser) {
+            try {
+                var u = JSON.parse(rawUser);
+                if (u.name) {
+                    $('.dvc-user-name').text(u.name);
+                }
+            } catch(e) {}
+        }
+    });
+  </script>
+
+  <style>
+    .form-horizontal-modal {
+        border: 1px solid #dddddd;
+    }
+    .form-horizontal-modal .header-detail-hs {
+        background: #f3f3f3;
+    }
+    .form-horizontal-modal .header-detail-hs span {
+        font-size: 18px;
+        padding: 10px;
+        font-weight: 500;
+    }
+    .form-horizontal-modal .content-detail-hs {
+        padding-top: 10px;
+    }
+    .form-horizontal-modal .content-detail-hs .form-group {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+    .form-horizontal-modal .content-detail-hs .form-group .label-text {
+        text-align: right;
+    }
+    .form-horizontal-modal .footable-header th {
+        border-top: none;
+    }
+    @media (max-width: 768px) {
+        .form-horizontal .content-detail-hs .form-group .label-text {
+            text-align: left !important;
+        }
+        #processTable {
+            overflow-x: auto;
+        }
+        .content-detail-hs .form-group {
+            display: flex;
+        }
+    }
+    .section-account .actions .btn {
+        margin-right: 5px;
+    }
+    .section-account .mydvc-list .title {
+        color: #000;
+    }
+    .bootbox .btn-primary {
+        background-color: #CE7A58 !important;
+        border-color: #d8541f !important;
+    }
+    .loading-all {
+        z-index: 100000;
+    }
+    .actions.vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex-start;
+    }
+    .actions.vertical .btn-img {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    .actions.vertical .btn-img img {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+  </style>
+</Layout>

@@ -3,196 +3,293 @@ import Layout from '../../../layouts/Layout.astro';
 ---
 
 <Layout title="Câu hỏi thường gặp - Cổng Dịch vụ công Quốc gia">
-  <div style="background:#f4f6f9; min-height:800px; padding: 25px 0 50px 0;">
-    <div class="container">
-      <!-- Breadcrumb -->
-      <ul class="breadcrumb" style="background:transparent; padding: 8px 0; margin-bottom: 20px;">
-        <li><a href="/" style="color:#d32f2f; font-weight:600;"><i class="fa fa-home"></i> Trang chủ</a></li>
-        <li class="active">Câu hỏi thường gặp</li>
-      </ul>
-
-      <!-- Banner -->
-      <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color:white; border-radius:12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(30,58,138,0.2);">
-        <h1 style="margin: 0 0 10px 0; font-size: 26px; font-weight: 700; color: #fff;">
-          <i class="fa fa-question-circle"></i> Hỏi đáp về Thủ tục & Dịch vụ công
-        </h1>
-        <p style="margin: 0; font-size: 15px; opacity: 0.95;">
-          Tra cứu giải đáp thắc mắc thường gặp về điều kiện, trình tự thực hiện các thủ tục hành chính và tài khoản công dân, doanh nghiệp.
-        </p>
-      </div>
-
-      <!-- Search & Filter Card -->
-      <div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-        <div class="row">
-          <div class="col-sm-7 col-xs-12" style="margin-bottom: 10px;">
-            <label style="font-weight: 600; font-size: 13px; color: #475569;">Từ khoá câu hỏi:</label>
-            <div class="input-group" style="width: 100%;">
-              <input
-                type="text"
-                id="faq-search-input"
-                class="form-control input-lg"
-                placeholder="Nhập nội dung câu hỏi cần tìm (ví dụ: xây dựng, hộ chiếu, đất đai...)"
-                style="border-radius: 6px;"
-              />
-            </div>
-          </div>
-          <div class="col-sm-5 col-xs-12" style="margin-bottom: 10px;">
-            <label style="font-weight: 600; font-size: 13px; color: #475569;">Lĩnh vực / Bộ ngành:</label>
-            <div style="display: flex; gap: 8px;">
-              <select id="faq-category-select" class="form-control input-lg" style="border-radius: 6px; flex: 1;">
-                <option value="">-- Tất cả lĩnh vực --</option>
-                <option value="xây dựng">Xây dựng & Quy hoạch</option>
-                <option value="đất đai">Đất đai & Nhà ở</option>
-                <option value="hộ chiếu">Hộ chiếu & Xuất nhập cảnh</option>
-                <option value="kết hôn">Hộ tịch & Gia đình</option>
-                <option value="bảo trợ">Bảo trợ & Lao động</option>
-                <option value="kinh doanh">Đăng ký kinh doanh & Doanh nghiệp</option>
-                <option value="y tế">Y tế & Dược</option>
-              </select>
-              <button id="faq-search-btn" class="btn btn-primary input-lg" style="font-weight: 700; padding: 0 20px; border-radius: 6px;">
-                <i class="fa fa-search"></i> Tìm
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Results Section -->
-      <div style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px;">
-          <h3 style="margin: 0; font-size: 17px; font-weight: 700; color: #1e293b;">
-            Danh sách câu hỏi (<span id="faq-total-count" style="color: #d32f2f;">0</span> kết quả)
-          </h3>
-          <span style="font-size: 13px; color: #64748b;" id="faq-page-info">Trang 1</span>
-        </div>
-
-        <!-- Question List Container -->
-        <div id="faq-list-container">
-          <div style="text-align: center; padding: 40px; color: #94a3b8;">
-            <i class="fa fa-spinner fa-spin fa-2x"></i>
-            <p style="margin-top: 10px;">Đang tải dữ liệu câu hỏi thường gặp...</p>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <div style="text-align: center; margin-top: 25px;" id="faq-pagination"></div>
-      </div>
-    </div>
-  </div>
-
+  <div class="section-hotro"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="dvc-trang-chu.html">Trang chủ</a></li> 
+     <li><a href="dvc-cau-hoi-pho-bien.html#">C&acirc;u hỏi thường gặp</a></li> 
+    </ul> 
+    <div class="cau-hoi-pho-bien"> 
+     <div class="box-form"> 
+      <div class="row"> 
+       <div class="col-sm-6 col-xs-12"> 
+        <input type="text" class="form-control" id="tuKhoa" value=" " =""="" placeholder="Nhập nội dung cần t&igrave;m" autofocus="" /> 
+       </div> 
+       <div class="col-sm-6 col-xs-12"> 
+        <div class="input-right-button"> 
+         <div class="select-custom"> 
+          <select name="ministry" id="ministry" class="form-control"> </select> 
+         </div> 
+         <button class="btn btn-search btn-main" id="doSearch" name="doSearch"> <span class="-ap icon-search icon"></span> T&igrave;m kiếm </button> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <h1 class="main-title-sub" id="mainTitle">C&acirc;u hỏi thường gặp</h1> 
+     <ul class="tabs -style01"> 
+      <li class="active"><a href="dvc-cau-hoi-pho-bien.html#tatca" id="tatCaTab" data-toggle="tab">Tất cả <span id="spnTotalTatCa">(9452)</span></a></li> 
+      <li><a href="dvc-cau-hoi-pho-bien.html#congdan" id="congDanTab" data-toggle="tab">C&ocirc;ng d&acirc;n <span id="spnTotalCongDan">(1133)</span></a></li> 
+      <li><a href="dvc-cau-hoi-pho-bien.html#doanhNghiep" id="doanhNghiepTab" data-toggle="tab">Doanh nghiệp <span id="spnTotalDoanhNghiep">(834)</span></a></li> 
+      <li><a href="dvc-cau-hoi-pho-bien.html#tochuckhac" id="toChucKhacTab" data-toggle="tab">Tổ chức kh&aacute;c <span id="spnTotalKhac">(1492)</span></a></li> 
+     </ul> 
+     <div class="tab-content"> 
+      <div class="tab-pane active" id="tatCa"> 
+       <div class="list-document -question"> 
+        <p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p> 
+       </div> 
+      </div> 
+      <div class="tab-pane" id="congDan"> 
+       <div class="list-document -question"> 
+        <p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p> 
+       </div> 
+      </div> 
+      <div class="tab-pane" id="doanhNghiep"> 
+       <div class="list-document -question"> 
+        <p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p> 
+       </div> 
+      </div> 
+      <div class="tab-pane" id="toChucKhac"> 
+       <div class="list-document -question"> 
+        <p>&nbsp;Đang t&igrave;m kiếm dữ liệu...</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <div class="pagination-bottom" id="paginationBottom"> 
+      <div class="pull-left" id="pullLeft"> 
+       <span>Hiển thị</span> 
+       <div class="inline select-custom"> 
+        <select name="strLeftResult" id="strLeftResult" class="form-control"> <option value="10">10</option> <option value="20">20</option> <option value="50">50</option> </select> 
+       </div> 
+       <span>tr&ecirc;n <span id="totalRecord"></span> bản ghi</span> 
+      </div> 
+      <div> 
+       <ul class="pagination pull-right" id="paginationKQTT"> 
+       </ul> 
+      </div> 
+      <div class="clearfix"></div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="section section-menu-bottom"> 
+   <div class="container"> 
+    <div class="pull-left"> 
+     <a class="wrap" onclick="goToQuestion()"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        C&acirc;u hỏi thường gặp 
+      </div> </a> 
+    </div> 
+    <div class="pull-right"> 
+     <a class="wrap" href="dvc-huong-dan-cong-dan-doanh-nghiep.html"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        Hướng dẫn sử dụng 
+      </div> </a> 
+    </div> 
+    <div class="clearfix"></div> 
+   </div> 
+  </div> 
   <script is:inline>
-    var currentFaqPage = 1;
-    var faqPageSize = 10;
-    var filteredQuestions = [];
 
-    function decodeHtmlEntities(str) {
-      var txt = document.createElement("textarea");
-      txt.innerHTML = str;
-      return txt.value;
-    }
+	function goToQuestion(){
+		var path = window.location.pathname;
+		var targetPage = 'dvc-cau-hoi-pho-bien.html';
+		if (path == '/p/home/dvc-trang-chu-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+			){
+			targetPage += '?pObject=5';
+		}else {
+			targetPage += '?pObject=1'
+		}
+		window.location.href = targetPage;
+	}
+</script> 
+  <script is:inline>
+	var PAGE_SIZE = 10;
+	var objectId = '';
+	var onLoad = true;
 
-    function searchFaqs(page) {
-      if (!window.OFFLINE_QUESTIONS) {
-        setTimeout(function() { searchFaqs(page); }, 200);
-        return;
-      }
+	$(document).ready(function(){
+		$('#strLeftResult').val(PAGE_SIZE);
+		var tuKhoa = GetURLParameter('tuKhoa');
+		var boNganh = GetURLParameter('boNganh');
+		var pObject = parseInt(GetURLParameter('pObject'));
+		getLocation("dvcqg_get_list_ministry_have_question_service_v2", null, null, "ministry");
 
-      var keyword = ($('#faq-search-input').val() || '').trim().toLowerCase();
-      var category = ($('#faq-category-select').val() || '').trim().toLowerCase();
+		if (tuKhoa) {
+			objectId = '';
+			$("#tuKhoa").val(tuKhoa);
+		}
+		if (boNganh) {
+			objectId = '';
+			$("#ministry").val(boNganh);
+		}
+		searchAllQuestion(1, false);
+		
+		$("#tuKhoa").keyup(function(e) {
+			if (e.which == 13) {
+				objectId = '';
+				$('.tabs').hide();
+				searchAllQuestion(1, false);
+			}
+		});
+		$('#tuKhoa:text:visible:first').focus();
 
-      filteredQuestions = window.OFFLINE_QUESTIONS.filter(function(q) {
-        var text = (decodeHtmlEntities(q.CONTENT) || '').toLowerCase();
-        var matchKw = !keyword || text.indexOf(keyword) !== -1;
-        var matchCat = !category || text.indexOf(category) !== -1;
-        return matchKw && matchCat;
-      });
+		$('#ministry').on('change', function () {
+			objectId = '';
+			searchAllQuestion(1, false);
+			$('.tabs').hide();
+		});
 
-      currentFaqPage = page || 1;
-      var total = filteredQuestions.length;
-      $('#faq-total-count').text(total);
+		$('#congDanTab').click(function(){
+			objectId = 1;
+			searchAllQuestion(1, false);
+		});
 
-      var totalPages = Math.ceil(total / faqPageSize) || 1;
-      if (currentFaqPage > totalPages) currentFaqPage = totalPages;
+		$('#doanhNghiepTab').click(function(){
+			objectId = 5;
+			searchAllQuestion(1, false);
+		});
 
-      var startIdx = (currentFaqPage - 1) * faqPageSize;
-      var endIdx = startIdx + faqPageSize;
-      var pageItems = filteredQuestions.slice(startIdx, endIdx);
+		$('#toChucKhacTab').click(function(){
+			objectId = 99;
+			searchAllQuestion(1, false);
+		});
 
-      $('#faq-page-info').text('Trang ' + currentFaqPage + ' / ' + totalPages);
+		$('#tatCaTab').click(function(){
+			objectId = '';
+			searchAllQuestion(1, false);
+		});
 
-      if (pageItems.length === 0) {
-        $('#faq-list-container').html(`
-          <div style="text-align: center; padding: 40px 20px; color: #64748b;">
-            <i class="fa fa-info-circle fa-2x" style="color: #cbd5e1; margin-bottom: 10px;"></i>
-            <p style="font-size: 15px;">Không tìm thấy câu hỏi nào phù hợp với từ khóa đã nhập.</p>
-          </div>
-        `);
-        $('#faq-pagination').html('');
-        return;
-      }
+		if(pObject){
+			switch (pObject){
+				case 1: $('#congDanTab').click(); break;
+				case 5: $('#doanhNghiepTab').click(); break;
+				default: $('#tatCaTab').click();
+			}
+			return;	
+		} 
+	});
 
-      var html = '<ul style="list-style: none; padding-left: 0; margin-bottom: 0;">';
-      pageItems.forEach(function(item, idx) {
-        var decoded = decodeHtmlEntities(item.CONTENT);
-        var itemNum = startIdx + idx + 1;
-        var detailUrl = '/p/home/dvc-chi-tiet-cau-hoi?id=' + encodeURIComponent(item.ID);
-        var staticUrl = '/p/home/dvc-chi-tiet-cau-hoi.html@id=' + encodeURIComponent(item.ID) + '&row_limit=1.html';
+	$('#doSearch').click(function () {
+		if($('#tuKhoa').val().trim() == ''){
+			toastr.warning('Cần nhập từ khóa cần tìm kiếm');
+			return;
+		}
+		$('.tabs').hide();
+		objectId = '';
+		searchAllQuestion(1, false);
+	});
 
-        html += `
-          <li style="padding: 16px 18px; border: 1px solid #f1f5f9; border-radius: 8px; margin-bottom: 12px; background: #fafbfc; transition: all 0.2s; display: flex; align-items: flex-start; justify-content: space-between;" onmouseover="this.style.background='#f0fdf4'; this.style.borderColor='#86efac';" onmouseout="this.style.background='#fafbfc'; this.style.borderColor='#f1f5f9';">
-            <div style="flex: 1; padding-right: 15px;">
-              <div style="display: flex; align-items: baseline; gap: 8px;">
-                <span style="background: #e0f2fe; color: #0369a1; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px;">#${itemNum}</span>
-                <span style="font-size: 12px; color: #94a3b8;">ID: ${item.ID}</span>
-              </div>
-              <h4 style="margin: 8px 0 6px 0; font-size: 15px; font-weight: 600; line-height: 1.5;">
-                <a href="${detailUrl}" style="color: #1e3a8a; text-decoration: none;">
-                  ${decoded}
-                </a>
-              </h4>
-            </div>
-            <div style="white-space: nowrap; margin-top: 6px;">
-              <a href="${detailUrl}" class="btn btn-outline-primary btn-sm" style="border: 1px solid #2563eb; color: #2563eb; font-weight: 600; border-radius: 4px; padding: 5px 12px;">
-                Xem câu trả lời <i class="fa fa-angle-right"></i>
-              </a>
-            </div>
-          </li>
-        `;
-      });
-      html += '</ul>';
-      $('#faq-list-container').html(html);
+	function resetSearch() {
+		$('#tuKhoa').html('');
+	}
 
-      // Render pagination buttons
-      var pagHtml = '<ul class="pagination" style="margin: 0;">';
-      if (currentFaqPage > 1) {
-        pagHtml += `<li><a href="javascript:void(0)" onclick="searchFaqs(${currentFaqPage - 1})">&laquo; Trước</a></li>`;
-      }
-      for (var p = Math.max(1, currentFaqPage - 2); p <= Math.min(totalPages, currentFaqPage + 2); p++) {
-        pagHtml += `<li class="${p === currentFaqPage ? 'active' : ''}"><a href="javascript:void(0)" onclick="searchFaqs(${p})">${p}</a></li>`;
-      }
-      if (currentFaqPage < totalPages) {
-        pagHtml += `<li><a href="javascript:void(0)" onclick="searchFaqs(${currentFaqPage + 1})">Tiếp &raquo;</a></li>`;
-      }
-      pagHtml += '</ul>';
-      $('#faq-pagination').html(pagHtml);
-    }
+	function GetURLParameter(sParam) {
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) {
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) {
+				return decodeURIComponent(sParameterName[1]);
+			}
+		}
+	}
 
-    $(document).ready(function() {
-      searchFaqs(1);
+	function searchAllQuestion(currentPage, isResetSearch) {
+		if (isResetSearch) {
+			resetSearch();
+		}
+		if (!currentPage) {
+			currentPage = 1;
+		}
+		
+		var tuKhoa = $.trim($('#tuKhoa').val().toLowerCase());
+		tuKhoa = tuKhoa.normalize('NFC').replace(/\s\s+/g, ' ');
+		var orgCode = "";
+		if ($('#ministry').val()) {
+			if ($('#ministry').val() != '-1')
+			orgCode = $('#ministry').val();
+		}
+		var obj = new Object();
+		obj.type = "ref";
+		obj.service = "dvcqg_search_question_with_key_and_ministry_service_v2";
+		obj.provider = "dvcquocgiaRead";
+		obj.objectId = objectId;
+		obj.keyWord = tuKhoa;
+		obj.orgCode = orgCode;
+		obj.status = 2;
+		
+		START_ROW = PAGE_SIZE * (currentPage - 1);
+		obj.startRecord = START_ROW;
+		obj.endRecord = (START_ROW + PAGE_SIZE);
+		showLoading();
+		var result = apiservice.AjaxJson.executeQuery(obj);
 
-      $('#faq-search-btn').on('click', function() {
-        searchFaqs(1);
-      });
+		if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+			totalCnt = parseInt(result[0].TOTAL_RESULT);
+			$('#totalRecord').html(totalCnt);
+			if (tuKhoa === "" && orgCode === ""){
+				$('#mainTitle').text('Câu hỏi thường gặp');
+			}else {
+				$('.tabs').hide();
+				$('#mainTitle').text('Tìm thấy '+ totalCnt +' kết quả');
+			}
+			$('.list-document').html('');
+				$('#tab-pane').html('');
+				$('#tab-pane').append('<div class="list-document -question" id="questionListContent"></div>');
+			renderHTLMAllQuestion(result, currentPage, totalCnt);
+			if (totalCnt <= 10){
+				$('#paginationBottom').hide();
+			}else {
+				$('#paginationBottom').show();
+			}
+			if (onLoad) onLoad = false;
+			else window.location.href = '#mainTitle';
+		}else {
+			$('#mainTitle').text('Không tìm thấy kết quả phù hợp nào');
+			$('.list-document').html('');
+			$('#paginationKQTT').hide();
+			$('#paginationBottom').hide();
+		}
+		hideLoading();
+	}
+	
+	function renderHTLMAllQuestion(listData, currentPage, totalRecords) {
+		var listLi = "";
+		if (listData.length >= 1) {
+			for (var i = 0; i < listData.length; i++) {
+				var data = listData[i];
+				listLi += '<a class="item" href="https://vpcp.dichvucong.gov.vn/p/home/dvc-chi-tiet-cau-hoi.html?id='+data.ID+'&row_limit=1" >' + data.CONTENT + '</a>';
+			}
+			$('.list-document').append(listLi);
+			loadPagination(totalCnt, currentPage, "paginationKQTT", "doChangePageAll", '', PAGE_SIZE);
+		}
+	}
 
-      $('#faq-search-input').on('keyup', function(e) {
-        if (e.which === 13) {
-          searchFaqs(1);
-        }
-      });
+	function doChangePageAll(currentPage) {
+		searchAllQuestion(currentPage, false);
+	}
 
-      $('#faq-category-select').on('change', function() {
-        searchFaqs(1);
-      });
-    });
-  </script>
+	$(document).on("change", 'select[name="strLeftResult"]', function (event) {
+		var page = $(this).val();
+		if (page !== undefined && page !== '') {
+			PAGE_SIZE = parseInt(page);
+			$('#strLeftResult').val(PAGE_SIZE);
+			searchAllQuestion(1, false);
+		}
+	});
+
+</script>  
+ 
+
 </Layout>

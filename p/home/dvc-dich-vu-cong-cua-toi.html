@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta name="description" content="Cổng Dịch vụ c&ocirc;ng Quốc gia hỗ trợ th&ocirc;ng tin, đăng k&yacute; thủ tục h&agrave;nh ch&iacute;nh như đổi giấy ph&eacute;p l&aacute;i xe, nộp thuế điện tử, th&ocirc;ng b&aacute;o khuyến mại, cấp lại thẻ BHYT, cấp điện mới..." /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="theme/vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/iconsax/style.css" /> 
+  <!-- <link rel="stylesheet" href="../vendor/iconsax/style.css"> --> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrapValidator.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css" /> 
+  <link rel="stylesheet" href="theme/css/style.css?version=9" /> 
+  <link rel="shortcut icon" href="img/header/quoc_huy.png" /> 
+  <script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrapValidator.js"></script> 
+  <script type="text/javascript" src="theme/vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/modules/variable-pie.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts-more.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+  <script type="text/javascript" src="vendor/jq-paginator.js"></script> 
+  <script type="text/javascript" src="vendor/bootbox.all.min.js"></script> 
+  <script type="text/javascript" src="vendor/select2.min.js"></script> 
+  <script type="text/javascript" src="vendor/mime.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script> 
+  <link rel="stylesheet" href="vendor/select2.min.css" /> 
+  <script src="./js/ApiService.js?version=18"></script> 
+  <script src="./js/CommonUtil.js?version=16"></script> 
+  <script src="./js/Constants.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
+  <script src="./js/base64.js"></script> 
+  <script type="text/javascript" src="vendor/d3.v4.min.js"></script> 
+  <script>
+		initApiService();
+	</script> 
+ </head> 
+ <body> 
+  <div class="loading-all" id="loading-all" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.png" alt="" /> 
+    <span style="color:blue">Đang xử l&yacute;...<span> </span></span>
+   </div> 
+   <style type="text/css">
+			.loading-all {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 10000;
+				background: #dbdcdc40;
+			}
+			.loading-all .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="overlay-common"></div> 
+  <!-- /mtv/ Log propertise--> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="dvc-trang-chu.html" class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account dropdown"> 
+      <div class="user" data-toggle="dropdown"> 
+       <div class="avatar" style="background-image: url(img/header/user-avatar.png);"> 
+       </div> 
+       <div class="username" title="Nguyễn Ho&agrave;ng Long" data-placement="bottom" data-toggle="tooltip">
+        Nguyễn Ho&agrave;ng Long 
+        <span class="icon fa fa-angle-down"></span> 
+       </div> 
+      </div> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-dich-vu-cong-cua-toi.html"><span class="icon -ap icon-user5"></span> Th&ocirc;ng tin c&aacute; nh&acirc;n</a></li> 
+       <li><a href="dvc-logout.html"><span class="icon -ap icon-log-out"></span> Đăng xuất</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
+     <li> <a href="#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
+       <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
+       <!-- <li>
+							<a href="#">Thủ tục hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+							</ul>
+						</li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --> 
+       <li><a href="dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
+       <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="">Thanh to&aacute;n trực tuyến</a> 
+      <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
+      <!-- <ul class="dropdown-menu">
+						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
+						<li><a href="dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế cá nhân/Trước bạ</a></li>
+						<li>
+							<a href="#">Thanh toán vi phạm hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh toán vi phạm giao thông</a></li>
+								<li><a href="dvc-thanh-toan-vi-pham-xay-dung.html">Tra cứu/Thanh toán vi phạm xây dựng</a></li>
+							</ul>
+						</li>
+						<li><a href="dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh toán phí/lệ phí dịch vụ công</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-bhyt.html">Đóng tiếp BHXH tự nguyện, gia hạn BHYT</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-doanh-nghiep.html">Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN</a></li>
+						<li><a href="dvc-thanh-toan-thue-dat-dai.html">Thanh toán nghĩa vụ tài chính về đất đai</a></li>
+						<li><a href="dvc-thanh-toan-dien.html">Thanh toán tiền điện</a></li>
+						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
+						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
+					</ul> --> </li> 
+     <li> <a href="#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> --> 
+       <li><a href="/p/phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+      </ul> </li> 
+     <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
+     <!-- <li>
+				  <a href="#">Thủ tục hành chính</a>
+				  <ul class="dropdown-menu">
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+				  </ul>
+				</li> --> 
+     <li class=""> <a href="#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
+       <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="header-account dropdown"> 
+      <div class="user" data-toggle="dropdown"> 
+       <div class="avatar" style="background-image: url(img/header/user-avatar.png);"> 
+       </div> 
+       <div class="username" title="Nguyễn Ho&agrave;ng Long" data-placement="bottom" data-toggle="tooltip">
+        Nguyễn Ho&agrave;ng Long 
+        <span class="icon fa fa-angle-down"></span> 
+       </div> 
+      </div> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-dich-vu-cong-cua-toi.html"><span class="icon -ap icon-user5"></span> Th&ocirc;ng tin c&aacute; nh&acirc;n</a></li> 
+       <li><a href="dvc-logout.html"><span class="icon -ap icon-log-out"></span> Đăng xuất</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div> 
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <div class="section-account"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="dvc-trang-chu.html">Trang chủ</a></li> 
+     <li><a href="#">Danh s&aacute;ch dịch vụ của t&ocirc;i</a></li> 
+    </ul> 
+    <div class="row"> 
+     <div class="col-sm-3 col-xs-12" id="userLeftSideBar"> 
+      <div class="widget widget-user"> 
+       <div class="user"> 
+        <div class="avatar" style="background-image: url(img/header/user-avatar.png);"> 
+        </div> 
+        <div class="username">
+          Nguyễn Ho&agrave;ng Long 
+        </div> 
+       </div> 
+       <div class="divider-gray"></div> 
+       <div class="box-info"> 
+        <div class="info"> 
+         <div class="value" style="color: #36B37E;" id="finishNumber"></div> 
+         <p class="key"> Hồ sơ <br /> đ&atilde; ho&agrave;n th&agrave;nh </p> 
+        </div> 
+        <div class="info"> 
+         <div class="value" style="color: #FFAB00" id="processingNumber"></div> 
+         <p class="key"> Hồ sơ <br /> đang xử l&yacute; </p> 
+        </div> 
+       </div> 
+       <ul class="list-menus"> 
+        <li class="open"> <a> <span class="icon"> <img src="theme/img/account/badge-13.svg" /></span> <span class="text">Th&ocirc;ng tin t&agrave;i khoản</span> </a> 
+         <div class="down"></div> 
+         <ul> 
+          <li> <a href="/p/home/dvc-thong-tin-tai-khoan.html">Th&ocirc;ng tin định danh</a> </li> 
+          <li><a href="/p/home/dvc-thong-tin-tai-khoan-mo-rong-cong-dan.html">Th&ocirc;ng tin mở rộng</a></li> 
+         </ul> </li> 
+        <li class="open"> <a href="#"> <span class="icon"> <img src="theme/img/account/File_info.svg" /></span> <span class="text">Quản l&yacute; dịch vụ c&ocirc;ng</span> </a> 
+         <div class="down"></div> 
+         <ul> 
+          <li> <a href="/p/home/dvc-dich-vu-cong-cua-toi.html">Dịch vụ c&ocirc;ng của t&ocirc;i</a> </li> 
+         </ul> </li> 
+        <li> <a href="/p/home/dvc-giay-to-ca-nhan.html"> <span class="icon"> <img src="theme/img/document.svg" /></span> <span class="text">T&agrave;i liệu điện tử</span> </a> </li> 
+        <li> <a href="/p/home/dvc-tien-ich.html"> <span class="icon"> <img src="theme/img/account/wallet.svg" /></span> <span class="text">Tiện &iacute;ch</span> </a> </li> 
+        <li> <a href="/p/home/dvc-lien-ket-mot-cua.html"> <span class="icon"> <img src="theme/img/account/File_info.svg" /></span> <span class="text">Li&ecirc;n kết t&agrave;i khoản</span> </a> </li> 
+        <li> <a href="/p/home/dvc-lich-su-thanh-toan.html"> <span class="icon"> <img src="theme/img/account/thue.svg" /></span> <span class="text">Lịch sử thanh to&aacute;n</span> </a> </li> 
+        <li> <a href="/p/home/dvc-thong-bao.html"> <span class="icon"> <img src="theme/img/bell.svg" /></span> <span class="text">Th&ocirc;ng b&aacute;o <span id="spnThongBao" style="color: red;">(0)</span></span> </a> </li> 
+       </ul> 
+      </div> 
+      <script type="text/javascript">
+		$(".list-menus .down").click(function(e){
+			if($(this).parent().find("ul").length){
+				e.preventDefault();
+				$(this).parent().toggleClass("open");
+				$(this).parent().siblings().removeClass("open");
+			}
+        });
+        
+        $(".list-menus > li.open > a").click(function(e){
+			if($(this).parent().find("ul").length){
+				e.preventDefault();
+				$(this).parent().toggleClass("open");
+				$(this).parent().siblings().removeClass("open");
+			}
+        });
+    </script> 
+      <style>
+        .list-menus > li > a {
+            cursor: pointer;
+        }
+    </style> 
+     </div> 
+     <div class="col-sm-9 col-xs-12"> 
+      <div class="main-title"> 
+       <div class="icon"> 
+        <img src="theme/img/account/info-white.svg" alt="" /> 
+       </div> 
+       <div class="title">
+         Dịch vụ c&ocirc;ng của t&ocirc;i 
+       </div> 
+      </div> 
+      <div class="form"> 
+       <div class="form-group"> 
+        <div class="label-text">
+          T&ecirc;n dịch vụ c&ocirc;ng 
+        </div> 
+        <input type="text" class="form-control" placeholder="Nhập t&ecirc;n dịch vụ c&ocirc;ng" name="tenDVC" id="tenDVC" /> 
+       </div> 
+       <div class="row"> 
+        <div class="col-sm-6 col-xs-12"> 
+         <div class="form-group"> 
+          <div class="label-text">
+            M&atilde; hồ sơ 
+          </div> 
+          <input type="text" class="form-control" placeholder="Nhập m&atilde; hồ sơ" name="maHS" id="maHS" /> 
+         </div> 
+        </div> 
+        <div class="col-sm-6 col-xs-12"> 
+         <div class="form-group"> 
+          <div class="label-text">
+            Trạng th&aacute;i hồ sơ 
+          </div> 
+          <div class="select-custom"> 
+           <select name="trangThaiSearch" id="trangThaiSearch" class="form-control"> <option value="0">-- Chọn trạng th&aacute;i hồ sơ --</option> <option value="1">Mới đăng k&yacute; </option> <option value="2">Được tiếp nhận </option> <option value="3">Kh&ocirc;ng được tiếp nhận </option> <option value="4">Đang xử l&yacute; </option> <option value="5">Y&ecirc;u cầu bổ sung giấy tờ </option> <option value="6">Y&ecirc;u cầu thực hiện nghĩa vụ t&agrave;i ch&iacute;nh </option> <option value="7">C&ocirc;ng d&acirc;n y&ecirc;u cầu r&uacute;t hồ sơ </option> <option value="8">Dừng xử l&yacute; </option> <option value="9">Đ&atilde; xử l&yacute; xong </option> <option value="10">Đ&atilde; trả kết quả</option> <option value="11">BNĐP từ chối</option> <option value="13">Đ&atilde; nộp tại CDVCQG (chưa gửi tới BNĐP)</option> <option value="14">Kh&ocirc;ng gửi được</option> </select> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="center"> 
+        <button class="btn btn-main" onclick="searchSubmission()">T&igrave;m kiếm</button> 
+       </div> 
+      </div> 
+      <div class="divider-gray"></div> 
+      <div class="mydvc-list"> 
+       <div id="dichVuCong" hidden=""> 
+       </div> 
+       <table class="table-dvc" id="tableListDVC"> 
+       </table> 
+      </div> 
+     </div> 
+     <ul class="pagination pull-right" id="paginationCN" style="padding-bottom: 40px;"> 
+     </ul> 
+     <div class="clearfix"></div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="modalViewDetail" class="modal fade" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 768px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title -none marb0" style="margin-bottom:0px;">Xem giấy tờ</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div id="tbDinhKem"> 
+       <div class="main-title-sub f20">
+         Giấy tờ đ&atilde; nộp 
+       </div> 
+       <div class="table-content"> 
+        <table class="table-result table" id="tbDinhKemBody"> 
+         <thead> 
+          <tr> 
+           <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+           <th>T&ecirc;n giấy tờ</th> 
+           <th></th> 
+          </tr> 
+         </thead> 
+         <tbody id="fileAttachModalBody" class="content-popup-giayto"> 
+         </tbody> 
+        </table> 
+        <div id="dinhKemEmpty" class="center" style="display: none; color:#CE7A58"> 
+         <span>Chưa c&oacute; giấy tờ</span> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="tbKetQua"> 
+       <div class="main-title-sub f20">
+         Kết quả xử l&yacute; 
+       </div> 
+       <div class="table-content"> 
+        <table class="table-result table" id="tbKetQuaBody"> 
+         <thead> 
+          <tr> 
+           <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+           <th>T&ecirc;n tệp</th> 
+           <th></th> 
+          </tr> 
+         </thead> 
+         <tbody id="fileResultModalBody" class="content-popup-giayto"> 
+         </tbody> 
+        </table> 
+        <div id="ketQuaEmpty" class="center" style="display: none; color:#CE7A58"> 
+         <span>Chưa c&oacute; kết quả xử l&yacute;</span> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="popupKQ" class="modal fade popup-chitietTTHC" role="dialog"> 
+   <!-- Modal content--> 
+   <div class="modal-dialog" style="max-width: 768px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Kết quả dịch vụ c&ocirc;ng</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="table-wrapper"> 
+       <table class="table table-result"> 
+        <thead> 
+         <tr> 
+          <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+          <th>T&ecirc;n tệp</th> 
+          <th></th> 
+         </tr> 
+        </thead> 
+        <tbody id="fileResultModalBody" class="content-popup-giayto"> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="loading" id="loadingScreen" style="display: none;background: rgb(44,62,80, 0.2);"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+  </div> 
+  <div id="popupGiayTo" class="modal fade popup-chitietTTHC" role="dialog"> 
+   <!-- Modal content--> 
+   <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Giấy tờ đ&atilde; nộp</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="table-wrapper"> 
+       <table class="table table-result"> 
+        <thead> 
+         <tr> 
+          <th class="center" style="width: 20px;white-space: nowrap;">STT</th> 
+          <th>T&ecirc;n giấy tờ</th> 
+          <th></th> 
+         </tr> 
+        </thead> 
+        <tbody id="fileAttachModalBody" class="content-popup-giayto"> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="popupVoteForm" class="modal fade popup-chitietTTHC popup-vote" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">Tại sao bạn kh&ocirc;ng h&agrave;i l&ograve;ng?</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="form-horizontal"> 
+       <div class="form-group"> 
+        <input type="hidden" id="procedureCode" /> 
+        <input type="hidden" id="submissionId" /> 
+        <input type="hidden" id="submissionCode" /> 
+        <div class="col-sm-12 col-xs-12"> 
+         <textarea id="reasonContent" placeholder="L&yacute; do của bạn" class="form-control" style="height: 160px;resize: vertical;" required=""></textarea> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="modal-footer"> 
+      <button class="btn btn-main" onclick="voteUnHappySubmission(3);">Gửi</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="voteReasonModal" class="modal fade popup-chitietTTHC popup-vote" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title">L&yacute; do bạn kh&ocirc;ng h&agrave;i l&ograve;ng?</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 450px;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="form-horizontal"> 
+       <div class="col-sm-12 col-xs-12"> 
+        <textarea id="reasonVoteContent" class="form-control" style="height: 160px;resize: vertical;" disabled=""></textarea> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="popupDetail" class="modal fade popup-chitietTTHC" role="dialog"> 
+   <div class="modal-dialog" style="max-width: 1200px;width: 100%;"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <h2 class="main-title center">Chi tiết th&ocirc;ng tin dịch vụ</h2> 
+      <div class="close" data-dismiss="modal"> 
+       <span class="-ap icon icon-close"></span> 
+      </div> 
+     </div> 
+     <div class="modal-body" style="max-height: 80%;overflow: auto;padding: 20px;overflow-x: hidden;"> 
+      <div class="form-horizontal form-horizontal-modal" id="submissionDetail" hidden=""> 
+       <div class="info" id="info"> 
+        <div class="header header-detail-hs"> 
+         <span>Th&ocirc;ng tin hồ sơ</span> 
+        </div> 
+        <div class="content content-detail-hs"> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            T&ecirc;n dịch vụ 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="tenDichVu"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            M&atilde; hồ sơ 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="maHoSo"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Chủ hồ sơ 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="nguoiNop"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Thời gian tiếp nhận 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input" id="thoiGian"> 
+          </div> 
+         </div> 
+         <div class="form-group"> 
+          <div class="col-sm-2 col-xs-12 label-text">
+            Trạng th&aacute;i 
+          </div> 
+          <div class="col-sm-9 col-xs-12 input status -replied" style="margin-left: 0;" id="trangThai"> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="process"> 
+        <div class="header header-detail-hs"> 
+         <span>Th&ocirc;ng tin xử l&yacute;</span> 
+        </div> 
+        <div class="content content-detail-hs"> 
+         <div class="table-wrapper"> 
+          <thread> 
+          </thread> 
+          <table id="processTable" class="table table-pro"> 
+           <tbody> 
+            <tr class="footable-header"> 
+             <th>Nội dung xử l&yacute;</th> 
+             <th>Ph&ograve;ng ban xử l&yacute;</th> 
+             <th>Người xử l&yacute;</th> 
+             <th>Thời gian</th> 
+             <th>Hạn xử l&yacute;</th> 
+            </tr> 
+           </tbody> 
+           <tbody id="processTableBody"> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="modal" id="ttTT"> 
+   <div class="popup-box" style="max-width: 600px;"> 
+    <div class="close -ap icon-close" data-dismiss="modal"> 
+    </div> 
+    <div class="head"> 
+     <div class="main-title center">
+       Th&ocirc;ng tin thanh to&aacute;n 
+     </div> 
+    </div> 
+    <div class="info-row -inline" id="maHoSoTT"> 
+     <div class="key">
+       M&atilde; hồ sơ: 
+     </div> 
+     <div class="value"> 
+     </div> 
+    </div> 
+    <div class="info-row -inline" id="tenDVC"> 
+     <div class="key">
+       T&ecirc;n dịch vụ c&ocirc;ng: 
+     </div> 
+     <div class="value"> 
+     </div> 
+    </div> 
+    <div class="info-row -inline" id="ttHoSO"> 
+     <div class="key">
+       Trạng th&aacute;i hồ sơ: 
+     </div> 
+     <div class="value"> 
+     </div> 
+    </div> 
+    <div class="table-content" id="tbTTTT"> 
+     <table class="table-result"> 
+      <thead> 
+       <tr> 
+        <th>Loại ph&iacute;</th> 
+        <th>Số tiền</th> 
+       </tr> 
+      </thead> 
+      <tbody id="tbSoTien"> 
+      </tbody> 
+     </table> 
+    </div> 
+    <div class="form-group mart20 center" id="btnActionTT"> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+    var maHSSelected = "";
+    var tthcSelected = "";
+
+    function checkThongTinTT(submissionCode, procedureCode) {
+        tthcSelected = procedureCode;
+        maHSSelected = submissionCode;
+        var data = new Object();
+        data.submissionCode = submissionCode;
+        data.backend = "true";
+        showLoading();
+        
+        $.ajax({
+            type: 'POST',
+            url: '/jsp/submission-bill/tracuu-hoso.jsp',
+            data: data,
+            success: function (response) {
+                hideLoading();
+                fillDataToModalTT(response.error_code, response.message);
+            },
+            error: function (error) {
+                hideLoading();
+                toastr.warning('Không thể tra cứu thông tin thanh toán mã hồ sơ này tại địa phương');
+            }
+        });
+    }
+
+    function getThongTinHS() {
+        var obj = new Object();
+        obj.service = 'get_user_info_full';
+        obj.type = "qry";
+        obj.technical_id = 'cb0e4bee-6b12-4d92-a0c6-ca41a968a12f';
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]" && result[0].ERROR_CODE != "") {
+            var fullInfoStr = result[0].FULL_INFO_EXTRA;
+
+            if (fullInfoStr) {
+                var obj = JSON.parse(fullInfoStr);
+                var diaChiHT = obj.DiaChi;
+
+                if (diaChiHT) {
+                    var ttNguoiNop = new Object();
+                    ttNguoiNop.HoTen = "Nguyễn Hoàng Long";
+                    ttNguoiNop.SoCMND = "";
+                    var diaChiHTObj = JSON.parse(diaChiHT.value);
+                    
+                    if (Object.keys(diaChiHTObj).length > 0) {
+                        ttNguoiNop.DiaChi = diaChiHTObj.SoNha;
+                        
+                        var tenTinh = getTenDVHCById(diaChiHTObj.TinhID);
+                        var tenHuyen = getTenDVHCById(diaChiHTObj.HuyenID);
+                        var tenXa = getTenDVHCById(diaChiHTObj.XaID);
+
+                        if(tenTinh != "") {
+                            ttNguoiNop.TinhThanh = tenTinh;
+                        } else {
+                            return new Object();
+                        }
+
+                        if(tenHuyen != "") {
+                            ttNguoiNop.QuanHuyen = tenHuyen;
+                        } else {
+                            return new Object();
+                        }
+
+                        if(tenXa != "") {
+                            ttNguoiNop.XaPhuong = tenXa;
+                        } else {
+                            return new Object();
+                        }
+
+                        return ttNguoiNop;
+                    }
+                }
+            }
+        }
+
+        return new Object(); 
+    }
+
+    function getTenDVHCById(id) {
+        var obj = new Object();
+        obj.service = 'dvcqg_tpgt_get_area_by_id_service';
+        obj.type = "qry";
+        obj.id = id;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]" && result[0].ERROR_CODE != "") {
+            return result[0].NAME;
+        }
+
+        return "";
+    }
+
+    function thanhToanHS() {
+        var thongTinHSObj = getThongTinHS();
+
+        if(Object.keys(thongTinHSObj).length > 4) {
+            var data = new Object();
+            data.MaHoSo = maHSSelected;
+            data.ThongTinNguoiNop = JSON.stringify(thongTinHSObj);
+
+            $.ajax({
+                type: 'POST',
+                url: '/jsp/submission-bill/thanhtoan-hoso.jsp',
+                data: data,
+                success: function (rsPay) {
+                    if (rsPay && rsPay.error_code === '0') {
+                        if (rsPay.url)
+                            window.open(rsPay.url, "_self");
+                        else 
+                            toastr.warning('Lỗi kết quả thanh toán.');
+                    } else {
+                        toastr.warning(rsPay.message);
+                    }
+                },
+                error: function (error) {
+                    toastr.warning('Không thể tra cứu thông tin thanh toán mã hồ sơ này tại địa phương');
+                }
+            });
+        } else {
+            var linkTTMoRong = "/p/home/dvc-thong-tin-tai-khoan-mo-rong-cong-dan.html";
+            if("" != "") {
+                linkTTMoRong = "/p/home/dvc-thong-tin-tai-khoan-mo-rong-doanh-nghiep.html";
+            }
+            var str = 'Thông tin biên lai cần nhập đầy đủ thông tin Tỉnh thành/Quận huyện/Xã phường và ';
+            str += 'địa chỉ chi tiết của người nộp, đề nghị quý khách cập nhật thông tin: <a href="' + linkTTMoRong + '" style="color:#0d2ed0;font-weight:bold">Tại đây</a>'
+            toastr.warning(str);
+        }
+    }
+
+    function fillDataToModalTT(error_code, data) {
+        if(data) {
+            $("#tbSoTien").html("");
+            $("#btnActionTT").html("");
+            $("#ttTT #maHoSoTT .value").text(maHSSelected);
+            var tenDVC = data.TenDVC ? data.TenDVC : getTenDVCByTTHC(tthcSelected);
+            $("#ttTT #tenDVC .value").text(tenDVC);
+            
+            var ttText = error_code == 1 ? "Yêu cầu thanh toán phí, lệ phí DVC" : "Không có phí cần thanh toán";
+            $("#ttTT #ttHoSO .value").text(ttText);
+            var btnStr = "";
+            var tbStr = "";
+            if(error_code == 1) {
+                $("#tbTTTT").show();
+                btnStr += '<button class="btn btn-main" onclick="thanhToanHS();">Tiếp tục thanh toán</button>';
+            } else {
+                $("#tbTTTT").hide();
+                btnStr += '<button class="btn btn-second" data-dismiss="modal">Bỏ qua</button>';
+            }
+            
+            if(error_code == 1) {
+                for(i = 0; i < data.PhiLePhi.length; i++) {
+                    var obj = data.PhiLePhi[i];
+                    var soTien = obj.SoTien;
+                    tbStr += "<tr>";
+                    tbStr += '<td data-title="Loại phí">' + obj.TenPhiLePhi + '</td>';
+                    tbStr += '<td data-title="Số tiền" id="soTien">' + format_curency(soTien) + '</td>';
+                }
+
+                $("#tbSoTien").html(tbStr);
+            }
+
+            $("#btnActionTT").html(btnStr);
+            $('#ttTT').modal("show");
+        } else {
+            toastr.warning("Không thể kết nối tới BNĐP để lấy thông tin thanh toán");
+        }
+    }
+    
+    function getTenDVCByTTHC(procedureCode) {
+        var obj = new Object();
+        obj.service = 'get_dvc_name_by_tthc';
+        obj.type = "ref";
+        obj.procedure_code = procedureCode;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]" && result[0].ERROR_CODE != "") {
+            return result[0].TENDVC;
+        }
+
+        return "";
+    }
+
+    function format_curency(number) {
+        return number.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + " VNĐ";
+    }
+
+    $(document).ready(function () {
+        $("#ttTT").on("hidden.bs.modal", function () {
+            $("#ttTT #maHoSoTT .value").text();
+            $("#ttTT #tenDVC .value").text();
+            $("#ttTT #ttHoSO .value").text();
+            tthcSelected = "";
+            maHSSelected = "";
+            $(".modal-backdrop.in").hide();
+        });
+    })
+    
+</script> 
+  <script>
+    var PAGE_SIZE = 10;
+    var submissionId;
+    var submissionCodePA = "";
+    var orgName = "";
+
+    function doSearch(currentPage) {
+        var obj = new Object();
+        var keyword = $('#tenDVC').val().replace("%", "#%");
+        obj.keyword = $.trim(keyword);
+        obj.ma_ho_so = $('#maHS').val().trim();
+        obj.status = $('#trangThaiSearch').val();
+        obj.record_per_page = PAGE_SIZE + "";
+        obj.page_index = currentPage;
+
+        $('#tableListDVC').html('');
+        showLoading();
+        $.ajax({
+            type: 'POST',
+            url: '/jsp/mongodb/submission/get-list.jsp',
+            data: obj,
+            success: function (response) {
+                hideLoading();
+                console.log(response);
+                if (response.HoSo && response.HoSo.length > 0) {
+                    $('#dichVuCong').hide();
+                    $('#dichVuCong').html('');
+
+                    renderTabHTML(response.HoSo, currentPage, response.TongSo);
+                } else {
+                    $('#dichVuCong').html('<div class="text"><div class="center" style="font-size:18px;color: rgb(206, 122, 88);">Không tìm thấy hồ sơ nào thoả mãn điều kiện tìm kiếm</div></div>');
+                    $('#dichVuCong').show();
+                    loadPagination(0, 0, "paginationCN", "doChangePageCN", null, PAGE_SIZE);
+                }
+            },
+            error: function (error) {
+                hideLoading();
+                $('#dichVuCong').html('<div class="text"><div class="center" style="font-size:18px;color: rgb(206, 122, 88);">Không tìm thấy hồ sơ nào thoả mãn điều kiện tìm kiếm</div></div>');
+                $('#dichVuCong').show();
+                loadPagination(0, 0, "paginationCN", "doChangePageCN", null, PAGE_SIZE);
+                console.log("Không thể kết nối tới server MongoDB");
+            }
+        });
+    }
+
+    function renderTabHTML(listData, currentPage, totalCnt) {
+        var strTable = "";
+        var data = new Object();
+        var classStatus = "";
+        var textViewResult = "";
+        for (var i = 0; i < listData.length; i++) {
+            data = listData[i];
+
+            // console.log('data.TaiKhoanDongBo======',data.TaiKhoanDongBo);
+			// var agencyData = getAgencyInfoFromAgency(data.TaiKhoanDongBo);
+            // console.log('data.agencyData======',agencyData);
+
+            var coquan = data.TaiKhoanDongBo;
+            var input = data.MaHoSo;
+            var result = input.split("-").pop();
+            var agencyData = getAgencyInfoFromAgency(coquan);
+            if (result.length > 5) {
+                result = result.substring(0, 2);
+                coquan = "G" + result;
+                agencyData = getAgencyInfoFromAgency_v2(coquan);
+            }
+
+			var agency_link = "";
+            if(data.loaihs === "400dvc" ){
+                agency_link = "https://tiepnhan.dichvucong.gov.vn/web/dvc/dich-vu-cong?IdHoSo=" + (data._id?.$oid || "");
+            }else{
+                if(agencyData && agencyData.length > 0){
+                    try{
+                        agency_link = agencyData[0].API_GET_DATA_URL +data.MaHoSo;
+                    }catch(e){
+                        console.log('don vi chua cau hinh link chi tiet======');
+                    }
+                }
+            }
+			
+			console.log(agency_link);
+
+            classStatus = (data.TrangThaiHoSo == 8 || data.TrangThaiHoSo == 9 || data.TrangThaiHoSo == 10) ? (data.TrangThaiHoSo == 8 ? "-rejected" : "-replied") : "-noanswer";
+            textViewResult = (data.TrangThaiHoSo == 9 || data.TrangThaiHoSo == 10) ? "Xem kết quả" : "";
+
+            strTable += '<tr class="head"><td colspan="7"><a class="title">' + data.TenTTHC + '</a><div class="status ' + classStatus + '">' + getStatusNameFromId(data.TrangThaiHoSo) + '</div></td></tr>';
+            strTable += '<tr>';
+            strTable += '<td><span class="thick key" style="min-width: 84px;">Mã HS </span><a href="javascript:viewDetail(\'' + data._id.$oid + '\',\'' + data.MaHoSo + '\');">' + data.MaHoSo + '</a></td>'
+            strTable += '<td><span class="thick key" style="min-width: 84px;">Đơn vị thực hiện</span>' + data.DonViXuLy + '</td>';
+            var recivedDate = data.NgayTiepNhan ? data.NgayTiepNhan : "";
+            strTable += '<td><span class="thick key" style="min-width: 84px;">Ngày tiếp nhận </span>' + getDateFromString(recivedDate) + '</td>';
+            if (data.TrangThaiHoSo == 10) {
+                var ngayTraStr = data.NgayTra ? data.NgayTra : "N/A";
+                strTable += '<td><span class="thick key" style="min-width: 84px;">Ngày trả </span>' + getDateFromString(ngayTraStr) + '</td>';
+            } else {
+                strTable += '<td><span class="thick key" style="min-width: 84px;"></span></td>';
+            }
+            // strTable += '<td><span class="thick key" style="min-width: 84px;">Giấy tờ đã nộp </span><a href="#" onclick="viewFileAttach(' + data.ID + ')" class="link thick">Xem giấy tờ</a></td>';
+            // if (data.STATUS == 10) {
+            //     strTable += '<td><span class="thick key" style="min-width: 84px;">Kết quả </span><a href="#" onclick="viewResultFile(' + data.ID + ')" class="link thick">' + textViewResult + '</a></td>';
+            // }
+            // // listLi += '<td><span class="thick key" style="min-width: 84px;">Phản ánh, kiến nghị </span><a href="#" onclick="viewPopupPA(' + data.ID + ', \'' + data.SUBMISSION_CODE + '\', \'' + data.ORG_NAME_HANDLER + '\')" class="link thick">Gửi phản ánh</a></td>';
+            // strTable += '<td><span class="thick key" style="min-width: 84px;">Phản ánh, kiến nghị </span><a href="javascript:sendPAKN(' + data.ID + ', \'' + data.SUBMISSION_CODE + '\', \'' + data.PROCEDURE_CODE + '\', \'' + data.PROCEDURE_NAME + '\', \'' + data.ORG_NAME_HANDLER + '\')" class="link thick">Gửi phản ánh</a></td>';
+            strTable += '<td><span class="thick key">Thao tác</span><div class="actions vertical">';
+            // if(data.TrangThaiHoSo == 3 || data.TrangThaiHoSo == 5 || data.TrangThaiHoSo == 1){
+            if(data.loaihs === "400dvc" ){
+                strTable += '<a title="Xem chi tiết" href="' + agency_link + '" class="btn-img" target="_blank"><img src="theme/img/account/confirmfile.svg"><span>Xem chi tiết</span></a>';
+            }else{
+                strTable += '<a title="Xem chi tiết" href="' + agency_link + '" class="btn-img"><img src="theme/img/account/confirmfile.svg"><span>Xem chi tiết</span></a>';
+            }
+                
+            // }
+            if(data.loaihs === "dvcqg"){
+                strTable += '<a title="Xem giấy tờ" href="javascript:viewKetQuaHS(\'' + data._id.$oid + '\');" class="btn-img"><img src="theme/img/account/viewfile.svg" alt=""><span>Xem giấy tờ</span></a>';
+                // strTable += '<a title="Gửi phản ánh kiến nghị" href="https://dichvucong.gov.vn/p/phananhkiennghi/pakn-gui-pakn.html" class="btn-img"><img src="theme/img/account/apply.svg" alt=""><span>Gửi PAKN</span></a>';
+            }
+            // strTable += '<a title="Xem giấy tờ" href="javascript:viewKetQuaHS(\'' + data._id.$oid + '\');" class="btn-img"><img src="theme/img/account/viewfile.svg" alt=""><span>Xem giấy tờ</span></a>';
+            // strTable += '<a title="Giấy tờ đã nộp" href="javascript:viewFileAttach(' + data.ID + ');" class="btn-img"><img src="theme/img/account/viewfile.svg" alt=""></a>';
+            // if (data.STATUS == 10) {
+            //     strTable += '<a title="Kết quả" href="javascript:viewResultFile(' + data.ID + ');" class="btn-img"><img src="theme/img/account/confirmfile.svg" alt=""></a>';
+            // }
+            // strTable += '<a title="Gửi phản ánh kiến nghị" href="javascript:sendPAKN(\'' + data.MaHoSo + '\', \'' + data.MaTTHC + '\', \'' + data.TenTTHC + '\', \'' + data.DonViXuLy + '\');" class="btn-img"><img src="theme/img/account/apply.svg" alt=""><span>Gửi PAKN</span></a>';
+            strTable += '<a title="Gửi phản ánh kiến nghị" href="https://dichvucong.gov.vn/p/phananhkiennghi/pakn-gui-pakn.html" class="btn-img"><img src="theme/img/account/apply.svg" alt=""><span>Gửi PAKN</span></a>';
+            // strTable += '<button class="btn btn-gray">Xem giấy tờ</button></td>';
+            var isKhaiBaoFee = checkLePhiKhaiBao(data.MaTTHC);
+            if (data.TrangThaiHoSo != 10 && isKhaiBaoFee) {
+                strTable += '<a title="Thanh toán phí lệ phí hồ sơ" class="btn-img" href="javascript:checkThongTinTT(\'' + data.MaHoSo + '\',\'' + data.MaTTHC + '\')"><img src="theme/img/account/wallet.svg" style="height: 18px;" alt=""><span>Thanh toán lệ phí</span></a>';
+            }
+
+            
+
+
+            strTable += "</div></td></tr>";
+            if (data.TrangThaiHoSo == 9 || data.TrangThaiHoSo == 10) {
+                strTable += '<tr><td colspan="7">';
+                strTable += '<div class="actions" id="voteActions-' + data._id.$oid + '">';
+
+                var voteStr = getVoteBySubmissionCode(validStr(data.MaHoSo));
+                if (voteStr != "") {
+                    strTable += voteStr;
+                } else {
+                    strTable += '<button class="btn -sohappy" onclick="voteSubmissionProcess(1, \'' + data.MaTTHC + '\', \'' + data._id.$oid + '\', \'' + data.MaHoSo + '\')" >';
+                    strTable += '<span class="icon -ap icon-uniF12C"></span> RẤT HÀI LÒNG';
+                    strTable += '</button>';
+                    strTable += '<button class="btn -happy" onclick="voteSubmissionProcess(2, \'' + data.MaTTHC + '\', \'' + data._id.$oid + '\', \'' + data.MaHoSo + '\')" >';
+                    strTable += '<span class="icon -ap icon-uniF12C"></span> HÀI LÒNG';
+                    strTable += '</button>';
+                    strTable += '<button class="btn -nohappy" onclick="voteSubmissionProcess(3, \'' + data.MaTTHC + '\', \'' + data._id.$oid + '\', \'' + data.MaHoSo + '\')" >';
+                    strTable += '<span class="icon -ap icon-uniF114"></span> KHÔNG HÀI LÒNG';
+                    strTable += '</button>';
+                }
+
+                strTable += '</div>';
+                strTable += '</td></tr>';
+            }
+
+            if (i < listData.length - 1) {
+                strTable += '<tr><td colspan="7" ><div class="divider-gray"></div></td></tr>';
+            }
+
+            classStatus = "";
+        }
+
+        $('#tableListDVC').html(strTable);
+        loadPagination(parseInt(totalCnt), currentPage, "paginationCN", "doChangePageCN", listData, PAGE_SIZE);
+    }
+
+    function doChangePageCN(currentPage) {
+        doSearch(currentPage);
+    }
+
+    function getVoteBySubmissionCode(submissionCode) {
+        var obj = new Object();
+        obj.service = 'dvc_get_vote_by_submission_code';
+        obj.type = "qry";
+        obj.code = submissionCode;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+            var data = result[0];
+            return insertVoteAction(data.VOTE_RESULT, data.VOTE_REASON, data.ID);
+        }
+
+        return "";
+    }
+
+    function getAgencyInfoFromAgency(agency_code) {
+        console.log('agency====',agency_code);
+        var obj = new Object();
+        obj.service = 'get_api_thanhtoan_hs_service';
+        obj.type = "ref";
+		obj.api_type_code = "API_CAPNHAT_HOSO_BNDP";
+        obj.agency_code = agency_code;
+		// obj.agency_code = "H34";
+		obj.provider = "dvcquocgia";
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        return result;
+    }
+
+    function getAgencyInfoFromAgency_v2(agency_code) {
+        var obj = new Object();
+        obj.service = 'get_api_thanhtoan_hs_service';
+        obj.type = "ref";
+		obj.api_type_code = "API_CHITIET_HOSO_BNDP";
+        obj.agency_code = agency_code;
+		obj.provider = "dvcquocgia";
+        var result = apiservice.AjaxJson.executeQuery(obj);
+        return result;
+    }
+
+    function getStatusNameFromId(statusId) {
+        var obj = new Object();
+        obj.service = 'dvc_get_status_name_by_id';
+        obj.type = "qry";
+        obj.id = statusId;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+            return validStr(result[0].STATUS_NAME);
+        }
+
+        return "N/A";
+    }
+
+    function getDateFromString(dateStr, isTimeShow) {
+        // Dateformat 2013-03-10T02:00:00Z
+
+        if (validStr(dateStr) && validStr(dateStr.$date)) {
+            var date = new Date(dateStr.$date);
+
+            if (!isTimeShow) {
+                return getNumberLessTen(date.getDate()) + '/' + getNumberLessTen(date.getMonth() + 1) + '/' + date.getFullYear();
+            } else {
+                return getNumberLessTen(date.getDate()) + '/' + getNumberLessTen(date.getMonth() + 1) + '/' + date.getFullYear() + ' ' + getNumberLessTen(date.getHours()) + ':' + getNumberLessTen(date.getMinutes()) + ':' + getNumberLessTen(date.getSeconds());
+            }
+        }
+
+        return "N/A";
+    }
+
+    function getNumberLessTen(number) {
+        if (number < 10) {
+            return "0" + number;
+        }
+
+        return number;
+    }
+
+    function checkLePhiKhaiBao(procedureCode) {
+        var obj = new Object();
+        obj.service = 'dvcqg_get_fee_declared';
+        obj.type = "val";
+        obj.procedure_code = procedureCode;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    function searchSubmission() {
+        var text = $.trim($('#tenDVC').val());
+        $('#tenDVC').val(text);
+        getTotalSubmissionByUser();
+        doSearch(1);
+    }
+
+    function viewKetQuaHS(id) {
+        var obj = new Object();
+        obj.id = id;
+
+        $.ajax({
+            type: 'POST',
+            url: '/jsp/mongodb/submission/get-file.jsp',
+            data: obj,
+            success: function (response) {
+                if (response.length > 0) {
+                    viewFileAttach(response[0].TaiLieuNop, response[0].MaHoSo, id);
+                    viewResultFile(response[0].DanhSachGiayToKetQua, response[0].MaHoSo, id);
+                    $("#modalViewDetail").modal("show");
+                }
+            },
+            error: function (error) {
+                console.log("Không thể kết nối tới server MongoDB");
+            }
+        });
+    }
+
+    function viewFileAttach(dataJson, submissionCode, objectId) {
+        if (dataJson && dataJson.length > 0) {
+            var fileTable = "";
+            for (var i = 0; i < dataJson.length; i++) {
+                var data = dataJson[i];
+                //var orgCode = extractOrgCode(data.SUBMISSION_CODE);
+                fileTable += '<tr>';
+                fileTable += '<td>' + (i + 1) + '</td>';
+                fileTable += '<td>' + data.TenTepDinhKem + '</td>';
+                fileTable += '<td style="white-space: nowrap;width: 20px;">';
+                if (submissionCode.includes("000.00.15.G04") || submissionCode.includes("G22.99-")) {
+                    // Tổng cục đường bộ
+                    fileTable += '<a href="' + data.DuongDanTaiTepTin + '" class="btn btn-main">Tải về</a>';
+                } else {
+                    fileTable += '<a href="/jsp/download-mongodb.jsp?id=' + objectId + '&fileId=' + (i + 1) + '&type=sfile&isResult=0" class="btn btn-main">Tải về</a>';
+                }
+                fileTable += '</td>';
+                fileTable += '</tr>';
+            }
+            $("#fileAttachModalBody").html(fileTable);
+            $("#tbDinhKemBody").show();
+            $("#dinhKemEmpty").hide();
+        } else {
+            $("#tbDinhKemBody").hide();
+            $("#dinhKemEmpty").show();
+        }
+    }
+
+    function viewResultFile(dataJson, submissionCode, objectId) {
+        if (dataJson && dataJson.length > 0) {
+            var fileTable = "";
+            $("#fileResultModalBody").html(fileTable);
+
+            for (var i = 0; i < dataJson.length; i++) {
+                var data = dataJson[i];
+                //var orgCode = extractOrgCode(data.SUBMISSION_CODE);
+                var index = i + 1;
+
+                fileTable += '<tr>';
+                fileTable += '<td>' + index + '</td>';
+                fileTable += '<td>' + data.TenGiayTo + '</td>';
+                fileTable += '<td style="white-space: nowrap;float: right;">';
+                var tpHoSo = checkMaThanhPhanHS(data.MaGiayToKetQua);
+
+                if (tpHoSo.length > 0) {
+                    if (submissionCode.includes("000.00.15.G04") || submissionCode.includes("G04.15.00.000")) {
+                        // Tổng cục đường bộ
+                        fileTable += '<a href="' + data.DuongDanTepTinKetQua + '" class="btn btn-main" target="_blank">Tải về</a>';
+                    } else {
+                        fileTable += '<a title="Lưu về kho tài liệu điện tử" href="javascript:downloadFileTL(\'' + objectId + '\', ' + i + ', \'' + data.MaGiayToKetQua + '\', \'' + tpHoSo[0].TEN + '\')" class="btn-img"><img src="theme/img/account/apply.svg" style="width: 32px;margin-right: 20px;" alt=""></a>';
+                        //fileTable += '<button class="btn btn-main" style="margin-right: 10px;" onclick="downloadResultFile(\'' + data.MaThanhPhanHoSo + '\', \'' + data.TenGiayTo + '\',\'' + index + '\', \'' + objectId + '\',\'' + submissionCode + '\')">Tải về kho</button>';
+                    }
+                    if (submissionCode.includes("000.00.15.G04") || submissionCode.includes("G04.15.00.000") || submissionCode.includes("G22.99-")) {
+                        fileTable += '<a class="btn btn-second" href="' + data.DuongDanTepTinKetQua + '" target="_blank">Xem chi tiết</a>';
+                    } else {
+                        if (checkOfficeExtension(data.TenGiayTo)) {
+                            var urlDownload = '/jsp/download-mongodb.jsp?id=' + objectId + '&fileId=' + index + '&type=sfile&isResult=1';
+                            fileTable += '<a class="btn btn-second" href="' + urlDownload + '">Xem chi tiết</a>';
+                        } else {
+                            fileTable += '<button class="btn btn-second" onclick="viewGiayToDetail(\'' + index + '\', \'' + objectId + '\', \'' + data.TenGiayTo + '\')">Xem chi tiết</button>';
+                        }
+                    }
+                } else {
+                    if (submissionCode.includes("000.00.15.G04") || submissionCode.includes("G22.99-")) {
+                        fileTable += '<a class="btn btn-second" href="' + data.DuongDanTepTinKetQua + '" target="_blank">Xem chi tiết</a>';
+                    } else {
+                        if (checkOfficeExtension(data.TenGiayTo)) {
+                            var urlDownload = '/jsp/download-mongodb.jsp?id=' + objectId + '&fileId=' + index + '&type=sfile&isResult=1';
+                            fileTable += '<a class="btn btn-second" href="' + urlDownload + '">Xem chi tiết</a>';
+                        } else {
+                            fileTable += '<button class="btn btn-second" onclick="viewGiayToDetail(\'' + index + '\', \'' + objectId + '\', \'' + data.TenGiayTo + '\')">Xem chi tiết</button>';
+                        }
+                    }
+                }
+                fileTable += '</td>';
+                fileTable += '</tr>';
+            }
+            $("#fileResultModalBody").html(fileTable);
+            $("#tbKetQuaBody").show();
+            $("#ketQuaEmpty").hide();
+        } else {
+            $("#tbKetQuaBody").hide();
+            $("#ketQuaEmpty").show();
+        }
+    }
+
+    function checkMaThanhPhanHS(code) {
+        var obj = new Object();
+        obj.service = 'dvc_check_document_is_main';
+        obj.type = "ref";
+        obj.code = code;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+            return result;
+        }
+
+        return [];
+    }
+
+    function checkMaThanhPhanHSTaiLieu(code) {
+        var obj = new Object();
+        obj.service = 'dvc_check_document_is_tailieu';
+        obj.type = "ref";
+        obj.code = code;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]") {
+            return true;
+        }
+
+        return false;
+    }
+
+    function checkOfficeExtension(name) {
+        if (name.includes(".doc") || name.includes(".docx") ||
+            name.includes(".xls") || name.includes(".xlsx") ||
+            name.includes(".ppt") || name.includes(".pptx")) {
+            return true;
+        }
+
+        return false;
+    }
+
+    function viewGiayToDetail(fileId, objectId, name) {
+        console.log('vào đây============');
+        console.log('vào đây===fileId=========',fileId);
+        console.log('vào đây===objectId=========',objectId);
+        console.log('vào đây===name=========',name);
+        $.ajax({
+            type: 'GET',
+            url: '/jsp/download-mongodb.jsp?id=' + objectId + '&fileId=' + fileId + '&type=afile&isResult=1',
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                const jsonObject = JSON.parse(response);
+
+                console.log("contentType====",jsonObject.contentType)
+                var objbuilder = '';
+                var mimeType = mime.getType(name);
+                if(jsonObject.contentType){
+                    mimeType = jsonObject.contentType;
+                }
+                if (mimeType == "application/pdf" || mimeType == "application/octet-stream") {
+                    //objbuilder += "<iframe id='iframeResult' class='iframe-view-detail-result' width='1100px' height='100%' src='data:application/pdf;base64, " + encodeURI(response) + "'></iframe>";
+                    //objbuilder += '<iframe id="iframeResult" class="iframe-view-detail-result" src="' + response + '" width="1100px" style="border: none;"></iframe>';
+
+                    var byteCharacters = atob(jsonObject.base64);
+                    var byteNumbers = new Array(byteCharacters.length);
+                    for (var i = 0; i < byteCharacters.length; i++) {
+                        byteNumbers[i] = byteCharacters.charCodeAt(i);
+                    }
+                    var byteArray = new Uint8Array(byteNumbers);
+                    var file = new Blob([byteArray], { type: 'application/pdf;base64' });
+                    var fileURL = URL.createObjectURL(file);
+                    window.open(fileURL);
+                } else {
+                    objbuilder += ('<object style="width: 100%" data="data:' + mimeType + ';base64,');
+                    objbuilder += (jsonObject.base64);
+                    objbuilder += ('" type="' + mimeType + '" class="internal">');
+                    objbuilder += ('<embed src="data:' + mimeType + ';base64,');
+                    objbuilder += (jsonObject.base64);
+                    objbuilder += ('" type="' + mimeType + '"  />');
+                    objbuilder += ('</object>');
+                    var win = window.open("#", "_blank");
+                    var title = "Xem chi tiết tệp kết quả hồ sơ " + name;
+                    win.document.write('<html><title>' + title + '</title><body style="width:1100px;margin: 0 auto;">');
+                    win.document.write(objbuilder);
+                    win.document.write('</body></html>');
+                    layer = jQuery(win.document);
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            },
+            complete: function () {
+                $("#loadingScreen").hide();
+            }
+        });
+    }
+
+    function downloadFileTL(id, index, code, name) {
+        if (checkMaThanhPhanHSTaiLieu(code)) {
+            showLoading();
+            var obj = new Object();
+            obj.service = "/web/v1/personal-paper/insert-paper-detail-dvc";
+            obj.method = REST_API.METHOD.POST;
+            obj.provider = "webportal-spring-api";
+
+            var paperObject = new Object();
+            paperObject.id = id;
+            paperObject.index = index;
+            paperObject.tenDmGiayTo = name;
+            obj.body = JSON.stringify(paperObject);
+
+            var result = apiservice.AjaxJson.executeQueryAsync(obj, function (response) {
+                console.log('INSERT PAPER DETAIL DVC', response);
+                if (response.errorCode == "0") {
+                    hideLoading();
+                    toastr.success("Thêm mới vào tài liệu điện tử thành công");
+                } else {
+                    hideLoading();
+                    toastr.warning(response.message);
+                }
+            });
+        } else {
+            toastr.warning("Bạn không được phép lưu loại giấy tờ này!");
+        }
+    }
+
+    function sendPAKN(code, proCode, proName, name) {
+        submissionCodePA = code;
+        var orgCode = extractAgencyCode(submissionCodePA);
+        var title = 'Phản ánh kiến nghị về: ' + proName;
+        var address = getAddressAccount("DiaChi");
+        var wardId = getAddressAccount("XaID");
+        var districtId = getAddressAccount("HuyenID");
+        var cityId = getAddressAccount("TinhID");
+        var url = '/jsp/reflection.jsp?';
+        url += '&title=' + title;
+        url += '&orgCode=' + orgCode;
+        url += '&orgName=' + name;
+        url += '&procedureCode=' + proCode;
+        url += '&object=' + "1";
+        url += '&address=' + address;
+        url += '&name=' + "Nguyễn Hoàng Long";
+        url += '&email=' + "";
+        url += '&phone=' + "0705137765";
+        url += '&cityId=' + cityId;
+        url += '&districtId=' + districtId;
+        url += '&wardId=' + wardId;
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var result = JSON.parse(response);
+                if (result.error_code != "-1") {
+                    window.location.href = "/p/phananhkiennghi/pakn-gui-pakn.html";
+                } else {
+                    toastr.warning('Không thể gửi phản ánh kiến nghị hồ sơ này của bạn');
+                }
+            },
+            error: function (error) {
+                toastr.warning('Không thể gửi phản ánh kiến nghị hồ sơ này của bạn');
+            }
+        });
+    }
+
+    function voteSubmissionProcess(id, procedureCode, submissionId, submissionCode) {
+        if (id == 3) {
+            $("#popupVoteForm").modal("show");
+            $("#procedureCode").val(procedureCode);
+            $("#submissionId").val(submissionId);
+            $("#submissionCode").val(submissionCode);
+        } else {
+            insertVoteToDB(id, procedureCode, submissionId, submissionCode);
+        }
+    }
+
+    function voteUnHappySubmission(id) {
+        var procedureCode = $("#procedureCode").val();
+        var submissionId = $("#submissionId").val();
+        var submissionCode = $("#submissionCode").val();
+        insertVoteToDB(id, procedureCode, submissionId, submissionCode);
+    }
+
+    function insertVoteToDB(id, procedureCode, submissionId, submissionCode) {
+        var obj = new Object();
+        obj.service = 'dvcqg_insert_procedure_submission_vote';
+        obj.type = "val";
+        obj.voter_id = "cb0e4bee-6b12-4d92-a0c6-ca41a968a12f";
+        obj.voter_name = "cb0e4bee-6b12-4d92-a0c6-ca41a968a12f";
+        obj.vote_result = id;
+        obj.vote_reason = id == 3 ? $('#reasonContent').val() : "";
+        obj.procedure_code = procedureCode;
+        obj.submission_id = 0;
+        obj.submission_code = submissionCode;
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result == 1) {
+            if (id == 3) {
+                resetVotePopup();
+                $("#popupVoteForm").modal("hide");
+            }
+            toastr.success('Cảm ơn bạn đã đánh giá tiến trình xử lý hồ sơ này.')
+            //render html vote
+            $("#voteActions-" + submissionId).html('');
+            $("#voteActions-" + submissionId).html(insertVoteAction(id, obj.vote_reason));
+        } else {
+            toastr.error('Thực hiện không thành công.')
+        }
+    }
+
+    function viewDetail(id, maHoSo) {
+        //ThanhNV check HSLT forward to bca 
+        if (maHoSo.startsWith("G22.99.08") || maHoSo.startsWith("G22.99.09") || maHoSo.startsWith("G22.99.10")) {
+            window.location.href = 'https://lienthong.dichvucong.gov.vn/#/theo-doi-trang-thai/' + maHoSo;
+            return;
+        }
+
+        submissionId = maHoSo;
+        var obj = new Object();
+        obj.id = id;
+
+        $('#submissionDetail').hide();
+        resetDetailPopup();
+        $.ajax({
+            type: 'POST',
+            url: '/jsp/mongodb/submission/get-detail.jsp',
+            data: obj,
+            success: function (response) {
+                if (response.HoSoChiTiet && response.HoSoChiTiet.length > 0) {
+                    if (response.HoSo) {
+                        var hoSoObj = response.HoSo;
+                        var tenDichVu = hoSoObj.TenTTHC;
+                        var chuHS = hoSoObj.ChuHoSo;
+                        var ngayNop = getDateFromString(hoSoObj.NgayTiepNhan, true);
+                        var trangThai = getStatusNameFromId(hoSoObj.TrangThaiHoSo);
+                        $('#tenDichVu').html(tenDichVu);
+                        $('#maHoSo').html(maHoSo);
+                        $('#nguoiNop').html(chuHS);
+                        $('#thoiGian').html(ngayNop);
+                        $('#trangThai').html(trangThai);
+                    }
+                    renderDetailHTML(response.HoSoChiTiet);
+
+                    $('#submissionDetail').show();
+                    $('#popupDetail').modal("show");
+                } else {
+                    var dialog = bootbox.alert("Chưa có tiến trình xử lý nào cho hồ sơ này!");
+                }
+            },
+            error: function (error) {
+                console.log("Không thể kết nối tới server MongoDB");
+            }
+        });
+    }
+
+    function renderDetailHTML(result) {
+        var tblBody = "";
+
+        for (i = 0; i < result.length; i++) {
+            var data = result[i];
+
+            tblBody += '<tr>';
+            tblBody += '<td>' + validStr(data.NoiDungXuLy) + '</td>';
+            if (data.PhongBanXuLy) {
+                tblBody += '<td>' + data.PhongBanXuLy + '</td>';
+            } else {
+                tblBody += '<td>Không có thông tin</td>';
+            }
+
+            if (data.NguoiXuLy) {
+                tblBody += '<td>' + data.NguoiXuLy + '</td>';
+            } else {
+                tblBody += '<td>Không có thông tin</td>';
+            }
+
+            tblBody += '<td>' + getDateFromString(data.ThoiDiemXuLy) + '</td>';
+
+            if (data.NgayKetThucTheoQuyDinh) {
+                tblBody += '<td>' + getDateFromString(data.NgayKetThucTheoQuyDinh) + '</td>';
+            } else {
+                tblBody += '<td>Không có thông tin</td>';
+            }
+
+            tblBody += '</tr>';
+        }
+
+        $('#processTableBody').html(tblBody);
+    }
+
+    function getAddressAccount(key) {
+        var obj = new Object();
+        obj.service = 'get_user_info_full';
+        obj.type = "qry";
+        obj.technical_id = 'cb0e4bee-6b12-4d92-a0c6-ca41a968a12f';
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0 && JSON.stringify(result) != "[null]" && result[0].ERROR_CODE != "") {
+            var fullInfoStr = result[0].FULL_INFO_EXTRA;
+            if (fullInfoStr) {
+                var obj = JSON.parse(fullInfoStr);
+                var diaChiHienTai = obj.DiaChi;
+                if (diaChiHienTai && diaChiHienTai.value) {
+                    try {
+                        var diaChiHienTaiTemp = JSON.parse(diaChiHienTai.value);
+                        return diaChiHienTaiTemp[key];
+                    } catch (error) {
+                        console.log("Error dia chi hien tai");
+                    }
+
+                }
+            }
+        }
+
+        return "";
+    }
+
+    function getTotalSubmissionByUser() {
+        $.ajax({
+            type: 'GET',
+            url: '/jsp/mongodb/submission/count.jsp',
+            success: function (response) {
+                $('#finishNumber').text(response.total_finished);
+                $('#processingNumber').text(response.total_processing);
+            },
+            error: function (error) {
+                console.log("Không thể kết nối tới server MongoDB");
+            }
+        });
+    }
+
+    function insertVoteAction(result, reason, id) {
+        var listLi = "";
+        // VOTE_TYPE = 1 "Rất hài lòng", 2 "Hài lòng", 3 "Không hài lòng"
+        if (result == 1) {
+            listLi += '<button class="btn -sohappy" title="Bạn đã đánh giá: Rất hài lòng">';
+            listLi += '<span class="icon -ap icon-uniF12C"></span> RẤT HÀI LÒNG';
+            listLi += '</button>';
+        } else if (result == 2) {
+            listLi += '<button class="btn -happy" title="Bạn đã đánh giá: Hài lòng">'
+            listLi += '<span class="icon -ap icon-uniF12C"></span> HÀI LÒNG';
+            listLi += '</button>';
+        } else if (result == 3) {
+            //listLi += '<button class="btn -nohappy" title="Bạn đã đánh giá: Không hài lòng" onclick="viewNoHappyReason(\'' + reason + '\')">';
+            listLi += '<button class="btn -nohappy" title="Bạn đã đánh giá: Không hài lòng">';
+            listLi += '<span class="icon -ap icon-uniF114"></span> KHÔNG HÀI LÒNG';
+            listLi += '</button>';
+        }
+
+        return listLi;
+    }
+
+    function viewNoHappyReason(reason) {
+        $('#reasonVoteContent').val(reason);
+        $('#voteReasonModal').modal('show');
+    }
+
+    function extractOrgCode(input) {
+        //V1V2V3.Z1Z2.Y1Y2.MX1X2-YYMMDD-XXXX
+        if (input !== "") {
+            var str = input.split("-");
+            if (str[0] !== "") {
+                var org = str[0].split(".");
+                return org[3];
+            }
+        }
+
+        return "";
+    }
+
+    function extractAgencyCode(input) {
+        //V1V2V3.Z1Z2.Y1Y2.MX1X2-YYMMDD-XXXX
+        if (input !== "") {
+            var str = input.split("-");
+            return str[0];
+        }
+
+        return "";
+    }
+
+    function resetVotePopup() {
+        $("#procedureCode").val("");
+        $("#submissionId").val("");
+        $("#submissionCode").val("");
+        $("#reasonContent").val("");
+    }
+
+    function resetDetailPopup() {
+        $('#processTableBody').html("");
+        $('#tenDichVu').html("");
+        $('#maHoSo').html("");
+        $('#nguoiNop').html("");
+        $('#thoiGian').html("");
+        $('#trangThai').html("");
+    }
+
+    $(document).ready(function () {
+        $('#trangThaiSearch').select2({
+            width: "100%",
+        });
+
+        doSearch(1);
+        getTotalSubmissionByUser();
+
+        $('#tenDVC:text:visible:first').focus();
+
+        $("#popupDetail").on("hidden.bs.modal", function () {
+            resetDetailPopup();
+        });
+
+        $("#voteReasonModal").on("hidden.bs.modal", function () {
+            $('#reasonVoteContent').val("");
+        });
+
+        $("#modalViewDetail").on("hidden.bs.modal", function () {
+            $("#fileResultModalBody").html("");
+            $("#fileAttachModalBody").html("");
+        });
+
+        $('#fmAddPANK').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            excluded: [':disabled'],
+            fields: {
+                tieuDe: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Tên phản ánh kiến nghị là bắt buộc'
+                        },
+                        stringLength: {
+                            max: 300,
+                            message: 'Tên phản ánh kiến nghị nhập quá dài'
+                        }
+                    }
+                },
+                noiDung: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Nội dung phản ánh là bắt buộc'
+                        },
+                        stringLength: {
+                            max: 2000,
+                            message: 'Nộp dung nhập quá dài'
+                        }
+                    }
+                },
+                ipFiles: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Tệp đính kèm là bắt buộc'
+                        },
+                        file: {
+                            extension: 'jpg,png,pdf,doc,docx,xls,xlsx',
+                            type: 'image/jpeg,image/png,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,	application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            maxSize: 5 * 1024 * 1024,
+                            minSize: 1,
+                            message: 'Tệp định kèm không có nội dung hoặc dung lượng lớn hơn 5Mb hoặc định dạng không hợp lệ'
+                        },
+                    },
+
+                },
+            }
+        });
+    });
+</script> 
+  <style>
+    .form-horizontal-modal {
+        border: 1px solid #dddddd;
+    }
+
+    .form-horizontal-modal .header-detail-hs {
+        background: #f3f3f3;
+    }
+
+    .form-horizontal-modal .header-detail-hs span {
+        font-size: 18px;
+        padding: 10px;
+        font-weight: 500;
+    }
+
+    .form-horizontal-modal .content-detail-hs {
+        padding-top: 10px;
+    }
+
+    .form-horizontal-modal .content-detail-hs .form-group {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .form-horizontal-modal .content-detail-hs .form-group .label-text {
+        text-align: right;
+    }
+
+    .form-horizontal-modal .footable-header th {
+        border-top: none;
+    }
+
+    @media (max-width: 768px) {
+        .form-horizontal .content-detail-hs .form-group .label-text {
+            text-align: left !important;
+        }
+
+        #processTable {
+            overflow-x: auto;
+        }
+
+        .content-detail-hs .form-group {
+            display: flex;
+        }
+    }
+
+    .section-account .actions .btn {
+        margin-right: 5px;
+    }
+
+    .section-account .mydvc-list .title {
+        color: #000;
+    }
+
+    .bootbox .btn-primary {
+        background-color: #CE7A58 !important;
+        border-color: #d8541f !important;
+    }
+
+    .loading-all {
+        z-index: 100000;
+    }
+
+    .actions.vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 0px; /* khoảng cách giữa các nút */
+        align-items: flex-start; /* canh trái */
+    }
+
+    .actions.vertical .btn-img {
+        display: flex;
+        align-items: center;
+    }
+    .btn-img span {
+        margin-left: 6px;
+        font-size: 13px;
+        white-space: nowrap; 
+    }
+</style>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="loading" id="loading" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+   <style type="text/css">
+			.loading {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 1000;
+			}
+			.loading .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add"> 
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p> 
+     </div> 
+     <div class="add"> 
+      <p>www.dichvucong.gov.vn</p> 
+     </div> 
+     <div class="add"> 
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p> 
+     </div> 
+     <div class="add"> 
+      <p> Email: dichvucong@chinhphu.vn</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script type="text/javascript" src="theme/vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="theme/vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="theme/js/custom.js"></script> 
+  <script type="text/javascript">
+    function showLoading() {
+        $("#loading-all").show();
+    }
+    function hideLoading(){
+        $("#loading-all").hide();
+    }
+
+    function goToPage(url){
+        window.location.href = url;
+    }
+
+    function goToPage_blank(url){
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    $(".targetgroup-box .btn-readmore").click(function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            $(this).html('Xem tiếp <span class="-ap icon-chevron-thin-down icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+            $(this).removeClass("active");
+        }else{
+            $(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+            $(this).addClass("active");
+        }
+    });
+    var links = [
+            
+        ];
+
+
+    function searchProcedure(){
+        var key = getWords($("#searchKeyWord").val(), 100);
+		console.log(key);
+        // if($("#searchKeyWord").val()) {
+        var href = 'dvc-ket-qua-thu-tuc.html?originKey=' + encodeURIComponent(key) + '&tukhoa=' + key.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g, ' ').trim() + '&tinh_thanh=';
+        window.location.href = href;
+        //}
+    }
+
+function showAdvSearch() {
+    getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+}
+
+function doAdvSearch(){
+
+    let mess = '';
+    let keyWord = $('#txtKEYWORD').val().trim();
+    keyWord = getWords(keyWord, 100);
+    if (!keyWord) {
+        mess += 'Bạn vui lòng nhập từ khóa tìm kiếm!\n';
+    }
+    let tinhThanhValue = $('#cboTINH_THANH').val();
+    let boNganhValue = $('#cboBO_NGANH').val();
+    var rdoBO = $("input[name='cap_thuc_hien']:checked").val();
+
+    if (((!tinhThanhValue || '-1' == tinhThanhValue) && rdoBO != 'bonganh') || (rdoBO == 'bonganh' && (!boNganhValue || '-1' == boNganhValue))) {
+        mess += 'Bạn phải chọn ít nhất một Tỉnh/ Thành phố hoặc một Bộ ngành!\n';
+    }
+
+    if (mess) {
+        toastr.warning(mess);
+        return;
+    }
+
+    var rdoSO = $("input[name='quan_huyen_or_so']:checked").val();
+    if (rdoBO != 'bonganh' && $('#cboTINH_THANH').val() && $('#cboTINH_THANH').val() != '-1' && ($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val()) && ($('#cboSO').val() == '-1' || !$('#cboSO').val()) && ($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val())) {
+
+        var params = 'originKey=' + encodeURIComponent(keyWord) + '&tukhoa=' + keyWord.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g,' ').trim()
+        params+= "&tinh_thanh="+(($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val()  || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        window.location = 'dvc-ket-qua-thu-tuc.html?' + params;
+    } else {
+
+        var params = "tu_khoa=" + keyWord;
+        //params += "&bo_nganh="+(($('#cboBO').val() != '-1' || !$('#cboBO').val() || rdoBO != 'bonganh') ? "" : $('#cboBO option:selected').text());
+        params += "&bo_nganh=" + ($('#cboBO_NGANH option:selected').text());
+        params += "&tinh_thanh=" + (($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val() || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        params += "&so=" + (($('#cboSO').val() == '-1' || !$('#cboSO').val() || rdoSO != 'so') ? "" : $('#cboSO option:selected').text());
+        params += "&quan_huyen=" + (($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val() || rdoSO == 'so') ? "" : $('#cboQUAN_HUYEN option:selected').text());
+        params += "&phuong_xa=" + (($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val() || rdoSO == 'so') ? "" : $('#cboPHUONG_XA option:selected').text());
+        params += "&id_tinh_thanh=" + $('#cboTINH_THANH').val();
+        params += "&id_quan_huyen=" + $('#cboQUAN_HUYEN').val();
+        params += "&id_phuong_xa=" + $('#cboPHUONG_XA').val();
+        params += "&id_so=" + $('#cboSO').val();
+        params += "&id_bo_nganh=" + $('#cboBO_NGANH').val();
+        window.location = 'dvc-danh-sach-dich-vu-cong.html?' + params;
+    }
+
+    $('#advsearch').modal('hide');
+}
+$(document).ready(function(){
+    $("#searchKeyWord").keyup(function (e){
+        if (e.which == 13) {
+            searchProcedure();
+        }
+    });
+    bindEvent();
+});
+
+function changeHeight(){
+    var vl = 1 - $('#popupChange').attr('height');
+    $('#popupChange').attr('height', vl);
+    $('#popupChange').css('height', vl + "px");
+}
+
+function bindEvent(){
+    $('#searchKeyWord').keydown(function(e){
+        if (e.keyCode == 13) {
+            searchProcedure();
+        }
+    });
+    $('#advsearch').on('hidden.bs.modal', function () {
+        $('#divClosePopupSearch').click();
+    });
+    $('#divClosePopupSearch').click(function(){
+        $("#txtKEYWORD").val('');
+        $('#rdoTINH_THANH').click();
+        $('#rdoQUAN_HUYEN').click();
+        $("#cboTINH_THANH").change();
+        getLocation("dvcqg_get_phuong_xa_by_selected", "huyen_id", -1, "cboPHUONG_XA");
+        $('#advsearch').modal('hide');
+
+    });
+
+    $('#rdoTINH_THANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').show();
+        $('#cboBO_NGANH').select2().next().hide();
+        $('#cboTINH_THANH').select2().next().show();
+        getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", -1, "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", -1, "cboSO");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+    });
+    $('#rdoBO_NGANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').hide();
+        $('#cboBO_NGANH').select2().next().show();
+        $('#cboTINH_THANH').select2().next().hide();
+        getLocation("dvcqg_get_bo_nganh_by_selected_v2", null, null, "cboBO_NGANH");
+    });
+
+    $('#rdoQUAN_HUYEN').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+        $('#cboSO').select2().next().hide();
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+    });
+
+    $('#rdoSO').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+        $('#cboSO').select2().next().show();
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+    });
+
+    $("#cboTINH_THANH,#cboQUAN_HUYEN,#cboPHUONG_XA,#cboSO,#cboBO_NGANH").select2({
+        allowClear: true,
+        width: "100%",
+    });
+    $('#cboSO,#cboBO_NGANH').select2().next().hide();
+
+    $("#cboTINH_THANH").change(function () {
+        getLocation("dvcqg_get_so_by_selected", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+
+    });
+    $("#cboQUAN_HUYEN").change(function () {
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", $("#cboQUAN_HUYEN").val(), "cboPHUONG_XA");
+    });
+}
+
+//suggestion search
+function sugggestProcedure(keyword) {
+    var obj = new Object();
+    obj.key_search = 'al:"' + keyword +'"~5';
+    obj.page_size = 5;
+    obj.start_row = 0;
+    obj.source_data = "thu_tuc_v1";
+    obj.type = "fts";
+    var result = apiservice.AjaxJson.executeQuery(obj);
+    var dataMap = result.response.docs.map(function (i) {
+        return {
+            name: i.ten_thu_tuc,
+            link: i.ten_thu_tuc,
+            id: i.ma_thu_tuc
+        }
+    });
+
+    return dataMap;
+}
+
+jQuery(document).ready(function($) {
+
+    var engine = new Bloodhound({
+        remote: {
+            url: '/jsp/procedure-typehead.jsp?keyword=al:"%QUERY%"~5',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('keyword'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    $(".search-input").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3
+    }, {
+        source: engine.ttAdapter(),
+        displayKey: 'ten_thu_tuc',
+        name: 'usersList',
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                console.log(data);
+                if (data.isnganhdoc == 1) {
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else if(data.isdungchung == 1){
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else{
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }
+                
+            }
+        }
+    });
+    $('#searchKeyWord:text:visible:first').focus();
+});
+
+</script> 
+  <script type="text/javascript">
+
+    //
+    function autoSetmenu() {
+        var path = window.location.pathname;
+        var isRemoveDropdown = false;
+
+        // Cau hoi
+        if (path == '/p/home/dvc-chi-tiet-cau-hoi.html'){
+            path = '/p/home/dvc-cau-hoi-pho-bien.html';
+        }
+
+        // Huong dan su dung
+        if (path == '/p/home/dvc-huong-dan-bo-nganh-dia-phuong.html' || path == '/p/home/dvc-phan-mem-ho-tro.html' || path == '/p/home/dvc-thiet-ke-giao-dien.html' ||
+            path == '/p/home/dvc-nop-tien-dien.html' || path == '/p/home/dvc-liet-ket-giao-duc.html'
+            ){
+            path = '/p/dvc-huong-dan-cong-dan-doanh-nghiep.html';
+        }
+
+        // Thu tuc hanh hinh cong dan - doanh nghiep
+        if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html'
+            ){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }else if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+            ){
+            path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+        }else if (path == '/p/home/dvc-danh-sach-thu-tuc-theo-nhom-su-kien.html'
+                || path == '/p/home/dvc-danh-sach-cau-hoi-theo-nhom-su-kien.html'
+            ) {
+            var objectId = GetURLParameter('objectId');
+            if (objectId == 1){
+                path = '/p/home/dvc-trang-chu-cong-dan.html';
+            }else if(objectId == 5){
+                path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+            }
+        }
+
+        // DVC trực tuyến & đăng ký xe
+        if (path == '/p/home/dvc-dich-vu-cong-truc-tuyen-ds.html'
+                || path == '/p/home/dvc-dich-vu-cong-truc-tuyen.html'
+                || path == '/p/home/dvc-dang-ky-xe.html'
+            ) {
+            path = '/p/home/dvc-dich-vu-cong-truc-tuyen.html';
+        }
+
+        // Chi tiet TTHC va DVC
+        if (path == '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html' 
+                || path == '/p/home/dvc-danh-sach-dich-vu-cong.html'
+                || path == '/p/home/dvc-danh-sach-thu-tuc-theo-su-kien.html'
+                || path == '/p/home/dvc-ket-qua-thu-tuc.html'
+            ) {
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+            isRemoveDropdown = true;
+        }
+
+        // module TTHC
+        if (path == '/p/home/dvc-tthc-category.html') {
+            path = '/p/home/dvc-tthc-trang-chu.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html';
+        }
+        if (path == '/p/home/dvc-tthc-quyet-dinh-cong-bo-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-quyet-dinh-cong-bo.html';
+        }
+        if (path == '/p/home/dvc-tthc-bonganh-tinhtp.html') {
+            path = '/p/home/dvc-tthc-co-quan.html';
+        }
+
+        if (path == '/p/home/dvc-chi-tiet-tin-tuc.html') {
+            path = '/p/home/dvc-tin-tuc.html';
+        }
+
+        // dvc-cap-ban-sao-tu-ban-chinh
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh.html'){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }
+        //  Đặt lịch hẹn
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh-dlh.html'){
+            path = '/p/home/dvc-tra-cuu-ho-so.html';
+        }
+        // Active main menu
+        $("#main-menu li").each(function () {
+            var link = $(this).find(">a").attr("href");
+            if (path.indexOf(link) != -1) {
+                $(this).parents('li').siblings().removeClass("active");
+                $(this).parents('li').addClass("active");
+                $(this).parents('li').find("li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // Active dropdownmenu
+        $("#main-menu > li").each(function () {
+            if ($(this).hasClass("active")) {
+                var html = $(this).find(">ul").html();
+                $(this).addClass("active");
+                $(this).find(">ul").addClass("hidden");
+                $("#list-dropdown").html(html);
+                if($("#bn-ttp").hasClass("active")){
+                    $("#coquan").addClass("active");
+                }
+            }
+        });
+
+        // Remove
+        if (isRemoveDropdown) {
+            $('#list-dropdown > li').removeClass('active');
+        }
+    }
+
+    var pathHDSD = window.location.pathname;
+    $("#regionleft-introduce li").removeClass('active');
+    $("#left-introduce li a").each(function () {
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $('#left-introduce li:first-child').removeClass('active');
+    $('.child-menus a').each(function(){
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        autoSetmenu();
+    })
+
+
+</script> 
+  <style>
+    .bootbox .modal-footer .btn + .btn {
+        margin-bottom: 0;
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .input-captcha .code .number {
+        height: 100%;
+        padding: 2px;
+    }
+</style>   
+ </body>
+</html>

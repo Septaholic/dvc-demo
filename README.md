@@ -26,18 +26,21 @@ npm run preview
 
 ---
 
-## II. DANH SÁCH CÁC TRANG CHÍNH TRÊN ASTRO
+## II. DANH SÁCH CÁC TRANG CHÍNH
 
-| Trang | Đường dẫn Astro | Ghi chú |
+| Trang | Đường dẫn | Ghi chú |
 |:---|:---|:---|
-| **Trang chủ chính** | `http://localhost:4321/` | Hero banner, tìm kiếm, khối 13 dịch vụ công trọng tâm, tabs phân loại Công dân & Doanh nghiệp |
-| **Trang chủ Cổng (Alias)** | `http://localhost:4321/p/home/dvc-trang-chu.html` | Đường dẫn tương thích với định dạng cũ |
-| **Tra cứu Thủ tục hành chính** | `http://localhost:4321/p/home/dvc-tthc-thu-tuc-hanh-chinh.html` | Tìm kiếm, lọc theo bộ ngành/lĩnh vực, phân trang thời gian thực với 129 TTHC |
-| **Chi tiết Thủ tục hành chính** | `http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=...` | Hiển thị trình tự thực hiện, hồ sơ, cơ quan giải quyết, phí/lệ phí, căn cứ pháp lý & nút nộp trực tuyến |
-| **Sự kiện đời thường Công dân** | `http://localhost:4321/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html?group=753` | 11 nhóm sự kiện công dân (Cư trú, Hôn nhân, Xây dựng...), accordion danh sách TTHC theo sự kiện |
-| **Sự kiện đời thường Doanh nghiệp** | `http://localhost:4321/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html?group=760` | 11 nhóm sự kiện doanh nghiệp (Khởi sự kinh doanh, Lao động, Đất đai, Thương mại, Sở hữu trí tuệ...) |
-| **Câu hỏi thường gặp (FAQ)** | `http://localhost:4321/p/home/dvc-cau-hoi-pho-bien.html` | Tra cứu 237 câu hỏi thường gặp, tìm kiếm theo từ khoá, lọc theo lĩnh vực |
-| **Chi tiết câu hỏi** | `http://localhost:4321/p/home/dvc-chi-tiet-cau-hoi.html?id=10334` | Hiển thị chi tiết nội dung giải đáp, căn cứ pháp luật, thủ tục liên quan |
+| **Trang chủ chính** | `/index.html` | Hero banner, tìm kiếm, khối 13 dịch vụ công trọng tâm, tabs phân loại Công dân & Doanh nghiệp |
+| **Trang chủ Cổng (Alias)** | `/p/home/dvc-trang-chu.html` | Đường dẫn tương thích với định dạng cũ |
+| **Tra cứu Thủ tục hành chính** | `/p/home/dvc-tthc-thu-tuc-hanh-chinh.html` | Tìm kiếm, lọc theo bộ ngành/lĩnh vực, phân trang thời gian thực với 129 TTHC |
+| **Chi tiết Thủ tục hành chính** | `/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=...` | Hiển thị trình tự thực hiện, hồ sơ, cơ quan giải quyết, phí/lệ phí, căn cứ pháp lý & nút nộp trực tuyến |
+| **Tra cứu hồ sơ** | `/p/home/dvc-tra-cuu-ho-so.html` | Tra cứu trạng thái hồ sơ hành chính theo mã hồ sơ |
+| **Sự kiện đời thường Công dân** | `/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html@group=753.html` | 11 nhóm sự kiện công dân (Cư trú, Hôn nhân, Xây dựng...), accordion danh sách TTHC theo sự kiện |
+| **Sự kiện đời thường Doanh nghiệp** | `/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=760.html` | 11 nhóm sự kiện doanh nghiệp (Khởi sự kinh doanh, Lao động, Đất đai, Thương mại, Sở hữu trí tuệ...) |
+| **Câu hỏi thường gặp (FAQ)** | `/p/home/dvc-cau-hoi-pho-bien.html` | Tra cứu 237 câu hỏi thường gặp, tìm kiếm theo từ khoá, lọc theo lĩnh vực |
+| **Chi tiết câu hỏi** | `/p/home/dvc-chi-tiet-cau-hoi.html?id=10334` | Hiển thị chi tiết nội dung giải đáp, căn cứ pháp luật, thủ tục liên quan |
+| **Cổng xác thực / Đăng nhập** | `/authenticationendpoint/login.do.html` | Giao diện đăng nhập xacthuc.dichvucong.gov.vn (mô phỏng đăng nhập giả lập) |
+| **Dịch vụ công của tôi** | `/p/home/dvc-dich-vu-cong-cua-toi.html` | Trang quản lý thông tin cá nhân và hồ sơ DVC sau khi đăng nhập |
 
 ---
 
@@ -64,30 +67,36 @@ npm run preview
 ## IV. CẤU TRÚC MÃ NGUỒN
 
 ```
-dvc-demo\
-├── astro.config.mjs          # Cấu hình Astro v7 (output static, trailingSlash ignore)
-├── package.json              # Khai báo dependency astro và npm scripts
-├── public/                   # Thư mục tài nguyên tĩnh (junctions p/, theme/, js/, img/...)
+dvc\
+├── astro.config.mjs              # Cấu hình Astro (static output, trailingSlash ignore)
+├── package.json                  # Cấu hình npm scripts & dependencies
+├── public/                       # Tài nguyên tĩnh & junction liên kết
+│   ├── authenticationendpoint/   # Junction chứa tài nguyên tĩnh cổng xác thực
+│   ├── css/, img/, js/           # Junction tài nguyên CSS, hình ảnh, JavaScript
+│   ├── theme/, uploads/, vendor/ # Junction giao diện và thư viện phụ trợ
+│   ├── xacthuc.dichvucong.gov.vn/# Junction mô phỏng domain xác thực
+│   └── p/home/                   # Chứa hơn 530+ file HTML tĩnh pre-rendered (*.html@...html)
 ├── src/
 │   ├── layouts/
-│   │   └── Layout.astro      # Master layout (Header, Meta, CSS, Scripts, Slot, Footer)
-│   ├── components/
-│   │   ├── Header.astro      # Thanh điều hướng
-│   │   ├── Footer.astro      # Chân trang
-│   │   ├── HeroBanner.astro  # Banner tìm kiếm và 4 nút thao tác nhanh
-│   │   ├── FocusServicesSection.astro # Card grid 13 dịch vụ công trọng tâm
-│   │   └── CitizenBusinessTabs.astro  # Danh mục nhóm sự kiện Công dân & Doanh nghiệp
-│   └── pages/
-│       ├── index.astro       # Trang chủ chính Astro
+│   │   └── Layout.astro          # Layout dùng chung (header, navigation, auth state, footer)
+│   └── pages/                    # Các trang template Astro
+│       ├── index.astro           # Trang chủ chính
+│       ├── dvc-dich-vu-cong-cua-toi.astro # Trang cá nhân / DVC của tôi
+│       ├── authenticationendpoint/
+│       │   └── login.do.astro    # Cổng đăng nhập xác thực
+│       ├── oauth2/
+│       │   └── authorize.astro   # Xử lý điều hướng OAuth2
+│       ├── xacthuc.dichvucong.gov.vn/authenticationendpoint/
+│       │   └── login.do.astro    # Alias đăng nhập theo domain
 │       └── p/home/
-│           ├── dvc-trang-chu.astro
-│           ├── dvc-tthc-thu-tuc-hanh-chinh.astro
-│           ├── dvc-chi-tiet-thu-tuc-hanh-chinh.astro
-│           ├── dvc-chi-tiet-nhom-su-kien-cho-cong-dan.astro
-│           ├── dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.astro
-│           ├── dvc-cau-hoi-pho-bien.astro
-│           └── dvc-chi-tiet-cau-hoi.astro
-└── dist/                     # Thư mục xuất bản sau khi build
+│           ├── dvc-trang-chu.astro                   # Alias trang chủ
+│           ├── dvc-tthc-thu-tuc-hanh-chinh.astro     # Tra cứu danh mục TTHC
+│           ├── dvc-chi-tiet-thu-tuc-hanh-chinh.astro # Chi tiết TTHC (đọc param ma_thu_tuc)
+│           ├── dvc-tra-cuu-ho-so.astro               # Tra cứu hồ sơ
+│           ├── dvc-cau-hoi-pho-bien.astro            # Tra cứu câu hỏi thường gặp
+│           ├── dvc-chi-tiet-cau-hoi.astro            # Chi tiết câu hỏi (đọc param id)
+│           └── dvc-dich-vu-cong-cua-toi.astro        # Quản lý DVC của tôi
+└── dist/                         # Thư mục kết xuất sau khi chạy npm run build
 ```
 
 ---
