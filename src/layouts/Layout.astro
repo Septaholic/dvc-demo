@@ -691,9 +691,35 @@ jQuery(document).ready(function($) {
 
     $(document).on('click', 'a', function(e) {
         var href = $(this).attr('href') || '';
-        if (href.indexOf('xacthuc.dichvucong.gov.vn') !== -1 || href.indexOf('/oauth2/authorize') !== -1) {
+        if (!href || href === '#' || href.indexOf('javascript:') === 0) return;
+
+        if (href.indexOf('xacthuc.dichvucong.gov.vn') !== -1 || 
+            href.indexOf('dangky.dichvucong.gov.vn') !== -1 || 
+            href.indexOf('/oauth2/authorize') !== -1) {
             e.preventDefault();
-            window.location.href = '/authenticationendpoint/login.do.html';
+            var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+            window.location.href = isInSubDir ? '../../authenticationendpoint/login.do.html' : 'authenticationendpoint/login.do.html';
+            return;
+        }
+
+        var pHomeIndex = href.indexOf('/p/home/');
+        if (pHomeIndex !== -1 && (href.indexOf('dichvucong.gov.vn') !== -1 || href.indexOf('http') === 0)) {
+            e.preventDefault();
+            var targetPath = href.substring(pHomeIndex + '/p/home/'.length);
+            var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+            window.location.href = isInSubDir ? targetPath : 'p/home/' + targetPath;
+            return;
+        }
+
+        if (href.indexOf('dichvucong.gov.vn') !== -1) {
+            e.preventDefault();
+            if (typeof toastr !== 'undefined') {
+                toastr.info('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+            } else if (typeof bootbox !== 'undefined') {
+                bootbox.alert('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+            } else {
+                alert('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+            }
         }
     });
 

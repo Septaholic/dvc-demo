@@ -269,7 +269,7 @@ import Layout from '../../../layouts/Layout.astro';
 		if (listData.length >= 1) {
 			for (var i = 0; i < listData.length; i++) {
 				var data = listData[i];
-				listLi += '<a class="item" href="https://vpcp.dichvucong.gov.vn/p/home/dvc-chi-tiet-cau-hoi.html?id='+data.ID+'&row_limit=1" >' + data.CONTENT + '</a>';
+				listLi += '<a class="item" href="dvc-chi-tiet-cau-hoi.html?id='+data.ID+'&row_limit=1" >' + data.CONTENT + '</a>';
 			}
 			$('.list-document').append(listLi);
 			loadPagination(totalCnt, currentPage, "paginationKQTT", "doChangePageAll", '', PAGE_SIZE);
