@@ -4,6 +4,9 @@ interface Props {
 }
 
 const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
+const pathname = Astro.url.pathname;
+const isRoot = !pathname.includes('/p/home/');
+const prefix = isRoot ? 'p/home/' : '';
 ---
 <!DOCTYPE html>
 <html lang="vi">
@@ -96,7 +99,7 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
    <div class="container"> 
     <div class="relative content"> 
      <div class="logo-text"> 
-      <a href="dvc-trang-chu.html" class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
+      <a href={`${prefix}dvc-trang-chu.html`} class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
      </div> 
      <div class="nav-toggle"> 
       <span class="-ap icon icon-menu"></span> 
@@ -117,7 +120,7 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
        </div> 
       </div> 
       <ul class="dropdown-menu"> 
-       <li><a href="dvc-dich-vu-cong-cua-toi.html"><span class="icon -ap icon-user5"></span> Thông tin cá nhân</a></li> 
+       <li><a href={`${prefix}dvc-dich-vu-cong-cua-toi.html`}><span class="icon -ap icon-user5"></span> Thông tin cá nhân</a></li> 
        <li><a href="javascript:void(0);" onclick="dvcLogout();"><span class="icon -ap icon-log-out"></span> Đăng xuất</a></li> 
       </ul> 
      </div> 
@@ -127,9 +130,9 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
   <nav class="header-nav"> 
    <div class="container"> 
     <ul id="main-menu" class="pull-left menus"> 
-     <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
-     <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
-     <li> <a href="dvc-trang-chu.html#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+     <li class="active" id="home-page"><a href={`${prefix}dvc-trang-chu.html`}><span class="-ap icon icon-home4"></span></a></li> 
+     <!-- <li><a href={`${prefix}dvc-gioi-thieu.html`}>Giới thiệu</a></li> --> 
+     <li> <a href={`${prefix}dvc-trang-chu.html#`}>Th&ocirc;ng tin v&agrave; dịch vụ</a> 
       <ul class="dropdown-menu"> 
        <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
        <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
@@ -145,11 +148,11 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
 						</li> --> 
        <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
        <!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --> 
-       <li><a href="dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
-       <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
-       <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+       <li><a href={`${prefix}dvc-tra-cuu-ho-so.html`}>Tra cứu hồ sơ</a></li> 
+       <li><a href={`${prefix}dvc-tra-cuu-ban-an.html`}>T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
+       <li><a href={`${prefix}dvc-cau-hoi-pho-bien.html`}>C&acirc;u hỏi thường gặp</a></li> 
       </ul> </li> 
-     <li> <a href="dvc-trang-chu.html">Thanh to&aacute;n trực tuyến</a> 
+     <li> <a href={`${prefix}dvc-trang-chu.html`}>Thanh to&aacute;n trực tuyến</a> 
       <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
       <!-- <ul class="dropdown-menu">
 						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
@@ -169,12 +172,12 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
 						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
 						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
 					</ul> --> </li> 
-     <li> <a href="dvc-trang-chu.html#">Phản &aacute;nh kiến nghị</a> 
+     <li> <a href={`${prefix}dvc-trang-chu.html#`}>Phản &aacute;nh kiến nghị</a> 
       <ul class="dropdown-menu"> 
        <li><a href="../phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> 
        <li><a href="../phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
       </ul> </li> 
-     <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
+     <li><a href={`${prefix}dvc-index-tinhthanhpho-tonghop.html`}>Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
      <!-- <li>
 				  <a href="#">Thủ tục hành chính</a>
 				  <ul class="dropdown-menu">
@@ -185,12 +188,12 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
 					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
 				  </ul>
 				</li> --> 
-     <li class=""> <a href="dvc-trang-chu.html#">Hỗ trợ</a> 
+     <li class=""> <a href={`${prefix}dvc-trang-chu.html#`}>Hỗ trợ</a> 
       <ul class="dropdown-menu"> 
-       <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
-       <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
-       <li><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
-       <li><a href="dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+       <li><a href={`${prefix}dvc-gioi-thieu.html`}>Giới thiệu</a></li> 
+       <li><a href={`${prefix}dvc-dieu-khoan-su-dung.html`}>Điều khoản sử dụng</a></li> 
+       <li><a href={`${prefix}dvc-huong-dan-cong-dan-doanh-nghiep.html`}>Hướng dẫn sử dụng</a></li> 
+       <li><a href={`${prefix}dvc-tin-tuc.html`}>Th&ocirc;ng b&aacute;o</a></li> 
       </ul> </li> 
     </ul> 
     <div class="header-account mobile-ds header-account-guest"> 
@@ -209,7 +212,7 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
       </div> 
      </div> 
      <ul class="dropdown-menu"> 
-      <li><a href="dvc-dich-vu-cong-cua-toi.html"><span class="icon -ap icon-user5"></span> Thông tin cá nhân</a></li> 
+      <li><a href={`${prefix}dvc-dich-vu-cong-cua-toi.html`}><span class="icon -ap icon-user5"></span> Thông tin cá nhân</a></li> 
       <li><a href="javascript:void(0);" onclick="dvcLogout();"><span class="icon -ap icon-log-out"></span> Đăng xuất</a></li> 
      </ul> 
     </div> 
@@ -257,12 +260,30 @@ const { title = "Cổng Dịch vụ công Quốc gia" } = Astro.props;
     }
 
     function goToPage(url){
-        window.location.href = url;
+        var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+        if (!isInSubDir && url.indexOf('dvc-') === 0) {
+            window.location.href = 'p/home/' + url;
+        } else {
+            window.location.href = url;
+        }
     }
 
     function goToPage_blank(url){
         window.open(url, '_blank', 'noopener,noreferrer');
     }
+
+    // Đảm bảo không bao giờ thiếu /p/home/ khi click link dvc-* từ trang chủ gốc
+    document.addEventListener('click', function(e) {
+        var a = e.target && e.target.closest('a');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href === '#' || href.indexOf('javascript:') === 0 || href.indexOf('http') === 0 || href.indexOf('/') === 0) return;
+        var isInPHome = window.location.pathname.indexOf('/p/home/') !== -1;
+        if (!isInPHome && href.indexOf('dvc-') === 0) {
+            e.preventDefault();
+            window.location.href = 'p/home/' + href;
+        }
+    }, true);
 
     $(".targetgroup-box .btn-readmore").click(function(e){
         e.preventDefault();
@@ -691,9 +712,35 @@ jQuery(document).ready(function($) {
 
     $(document).on('click', 'a', function(e) {
         var href = $(this).attr('href') || '';
-        if (href.indexOf('xacthuc.dichvucong.gov.vn') !== -1 || href.indexOf('/oauth2/authorize') !== -1) {
+        if (!href || href === '#' || href.indexOf('javascript:') === 0) return;
+
+        if (href.indexOf('xacthuc.dichvucong.gov.vn') !== -1 || 
+            href.indexOf('dangky.dichvucong.gov.vn') !== -1 || 
+            href.indexOf('/oauth2/authorize') !== -1) {
             e.preventDefault();
-            window.location.href = '/authenticationendpoint/login.do.html';
+            var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+            window.location.href = isInSubDir ? '../../authenticationendpoint/login.do.html' : 'authenticationendpoint/login.do.html';
+            return;
+        }
+
+        var pHomeIndex = href.indexOf('/p/home/');
+        if (pHomeIndex !== -1 && (href.indexOf('dichvucong.gov.vn') !== -1 || href.indexOf('http') === 0)) {
+            e.preventDefault();
+            var targetPath = href.substring(pHomeIndex + '/p/home/'.length);
+            var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+            window.location.href = isInSubDir ? targetPath : 'p/home/' + targetPath;
+            return;
+        }
+
+        if (href.indexOf('dichvucong.gov.vn') !== -1) {
+            e.preventDefault();
+            if (typeof toastr !== 'undefined') {
+                toastr.info('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+            } else if (typeof bootbox !== 'undefined') {
+                bootbox.alert('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+            } else {
+                alert('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+            }
         }
     });
 

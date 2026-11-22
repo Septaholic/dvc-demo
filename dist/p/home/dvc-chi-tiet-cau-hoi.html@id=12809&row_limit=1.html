@@ -95,8 +95,8 @@
      </div> 
      <div class="header-account"> 
       <div class="buttons"> 
-       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-login">Đăng k&yacute;</a> 
-       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-register">Đăng nhập</a> 
+       <a href="/authenticationendpoint/login.do.html" class="btn btn-login">Đăng k&yacute;</a> 
+       <a href="/authenticationendpoint/login.do.html" class="btn btn-register">Đăng nhập</a> 
       </div> 
      </div> 
     </div> 
@@ -114,11 +114,11 @@
        <!-- <li>
 							<a href="#">Thủ tục hành chính</a>
 							<ul class="dropdown-menu">
-								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
-								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
-								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
-								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
-								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+								<li><a href="dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="dvc-tthc-co-quan.html">Cơ quan</a></li>
 							</ul>
 						</li> --> 
        <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
@@ -156,11 +156,11 @@
      <!-- <li>
 				  <a href="#">Thủ tục hành chính</a>
 				  <ul class="dropdown-menu">
-					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
-					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
-					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
-					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
-					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+					<li><a href="dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="dvc-tthc-co-quan.html">Cơ quan</a></li>
 				  </ul>
 				</li> --> 
      <li class=""> <a href="dvc-chi-tiet-cau-hoi.html@id=12809&amp;row_limit=1.html#">Hỗ trợ</a> 
@@ -173,8 +173,8 @@
     </ul> 
     <div class="header-account mobile-ds"> 
      <div class="buttons"> 
-      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
-      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+      <a href="/authenticationendpoint/login.do.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="/authenticationendpoint/login.do.html" class="btn btn-register">Đăng k&yacute;</a> 
      </div> 
     </div> 
    </div> 
@@ -321,7 +321,7 @@
 
         for (var i = 0; i < results.length; i++) {
             var data = results[i];
-            listQuestionData += '<li><a href="https://vpcp.dichvucong.gov.vn/p/home/dvc-chi-tiet-cau-hoi.html?id='&#32;+&#32;data.ID&#32;+'&amp;row_limit=1" >' + data.CONTENT + '</a></li>';
+            listQuestionData += '<li><a href="dvc-chi-tiet-cau-hoi.html?id="&#32;+&#32;data.ID&#32;+'&amp;row_limit=1" >' + data.CONTENT + '</a></li>';
         }
         $('#list-questions').html(listQuestionData);
     }

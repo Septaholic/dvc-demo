@@ -30,7 +30,7 @@ jobs:
       - name: Thiết lập Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22.x'
           cache: 'npm'
 
       - name: Cài đặt dependencies

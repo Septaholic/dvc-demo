@@ -322,3 +322,54 @@ function htmlEncode(str){
         return '&#'+c.charCodeAt(0)+';';
     });
 }
+
+// Universal link interceptor: Ngăn chặn redirect sang website gốc dichvucong.gov.vn trong demo
+if (typeof jQuery !== 'undefined') {
+    jQuery(document).ready(function($) {
+        $(document).on('click', 'a', function(e) {
+            var href = $(this).attr('href') || '';
+            if (!href || href === '#' || href.indexOf('javascript:') === 0) return;
+
+            // 1. Chuyển hướng xác thực / đăng nhập / đăng ký về trang giả lập
+            if (href.indexOf('xacthuc.dichvucong.gov.vn') !== -1 || 
+                href.indexOf('dangky.dichvucong.gov.vn') !== -1 || 
+                href.indexOf('/oauth2/authorize') !== -1) {
+                e.preventDefault();
+                var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+                window.location.href = isInSubDir ? '../../authenticationendpoint/login.do.html' : 'authenticationendpoint/login.do.html';
+                return;
+            }
+
+            // 2. Chuyển hướng các trang cổng chứa /p/home/ sang file cục bộ
+            var pHomeIndex = href.indexOf('/p/home/');
+            if (pHomeIndex !== -1 && (href.indexOf('dichvucong.gov.vn') !== -1 || href.indexOf('http') === 0)) {
+                e.preventDefault();
+                var targetPath = href.substring(pHomeIndex + '/p/home/'.length);
+                var isInSubDir = window.location.pathname.indexOf('/p/home/') !== -1;
+                window.location.href = isInSubDir ? targetPath : 'p/home/' + targetPath;
+                return;
+            }
+
+            // 3. Các link khác thuộc dichvucong.gov.vn giữ nguyên trong demo
+            if (href.indexOf('dichvucong.gov.vn') !== -1) {
+                e.preventDefault();
+                if (typeof toastr !== 'undefined') {
+                    toastr.info('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+                } else if (typeof bootbox !== 'undefined') {
+                    bootbox.alert('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+                } else {
+                    alert('Tính năng hoặc liên kết này được bảo lưu trong môi trường demo tĩnh.');
+                }
+                return;
+            }
+
+            // 4. Nếu đang ở trang chủ gốc (không thuộc /p/home/) và click vào file dvc-*.html
+            var isInsidePHome = window.location.pathname.indexOf('/p/home/') !== -1;
+            if (!isInsidePHome && href.indexOf('dvc-') === 0) {
+                e.preventDefault();
+                window.location.href = 'p/home/' + href;
+                return;
+            }
+        });
+    });
+}
