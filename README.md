@@ -1,6 +1,12 @@
-# DEMO DVC
+# WEB DVC DEMO
 
 ---
+
+Don't mind
+
+```
+https://video.twimg.com/amplify_video/2121488887247712256/vid/avc1/320x320/R_DUcOdyTHn7UbXU.mp4
+```
 
 ## I. KHỞI CHẠY ASTRO
 
@@ -58,9 +64,9 @@ npm run preview
 | **7** | **Đăng ký bảo hộ nhãn hiệu, logo** | Doanh nghiệp | Sở hữu trí tuệ, tài sản (765) | Nhãn hiệu (297) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000297) |
 | **8** | **Thông báo hoạt động khuyến mại** | Doanh nghiệp | Thương mại, quảng cáo (764) | Quản lý cạnh tranh / Khuyến mại (292) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=2.000033) |
 | **9** | **Cấp chứng chỉ hành nghề y dược** | Công dân | Việc làm (752) | Chứng chỉ hành nghề (264) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000264) |
-| **10** | **Cấp đổi Hộ chiếu** *(Ảnh 2 #0)* | Công dân | Cư trú và giấy tờ tùy thân (753) | Hộ chiếu (273) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.001456) |
-| **11** | **Đăng ký kết hôn** *(Ảnh 2 #1)* | Công dân | Hôn nhân và gia đình (754) | Kết hôn (274) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000274) |
-| **12** | **Sang tên, đổi chủ xe** *(Ảnh 2 #2)* | Công dân | Phương tiện và người lái (757) | Đăng ký phương tiện (316) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000316) |
+| **10** | **Cấp đổi Hộ chiếu** | Công dân | Cư trú và giấy tờ tùy thân (753) | Hộ chiếu (273) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.001456) |
+| **11** | **Đăng ký kết hôn** | Công dân | Hôn nhân và gia đình (754) | Kết hôn (274) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000274) |
+| **12** | **Sang tên, đổi chủ xe** | Công dân | Phương tiện và người lái (757) | Đăng ký phương tiện (316) | [Xem chi tiết](http://localhost:4321/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000316) |
 
 ---
 
@@ -95,7 +101,7 @@ dvc\
 │           ├── dvc-tra-cuu-ho-so.astro               # Tra cứu hồ sơ
 │           ├── dvc-cau-hoi-pho-bien.astro            # Tra cứu câu hỏi thường gặp
 │           ├── dvc-chi-tiet-cau-hoi.astro            # Chi tiết câu hỏi (đọc param id)
-│           └── dvc-dich-vu-cong-cua-toi.astro        # Quản lý DVC của tôi
+│           └── dvc-dich-vu-cong-cua-toi.astro        # Quản lý DVC của tôi (broken, will fix soon :>)
 └── dist/                         # Thư mục kết xuất sau khi chạy npm run build
 ```
 
