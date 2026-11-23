@@ -1,3 +1,21 @@
+function isInteger(num) {
+  return (num ^ 0) === num;
+}
+
+(function() {
+  if (typeof window.OFFLINE_PROCEDURES === 'undefined') {
+    var scripts = document.getElementsByTagName('script');
+    var currentScriptPath = '';
+    for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src && scripts[i].src.indexOf('ApiService.js') !== -1) {
+        currentScriptPath = scripts[i].src.substring(0, scripts[i].src.lastIndexOf('/') + 1);
+        break;
+      }
+    }
+    document.write('<script src="' + (currentScriptPath || 'js/') + 'offline-data.js"><\/script>');
+  }
+})();
+
 var TARGET_SERVICES_BY_EVENT = {
   "250": [],
   "251": [],
@@ -28,480 +46,33 @@ var TARGET_SERVICES_BY_EVENT = {
   "254": [],
   "255": [],
   "256": [],
-  "257": [
-    {
-      "PROCEDURE_CODE": "1.002571",
-      "PROCEDURE_NAME": "Cấp bản sao văn bằng, chứng chỉ từ sổ gốc",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002571.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
+  "257": [],
   "258": [
     {
-      "PROCEDURE_CODE": "1.002581",
-      "PROCEDURE_NAME": "Đăng ký thành lập doanh nghiệp tư nhân, công ty TNHH, công ty cổ phần",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002581.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "259": [
-    {
-      "PROCEDURE_CODE": "1.002499",
-      "PROCEDURE_NAME": "Tiếp nhận du học sinh học bổng ngân sách nhà nước tốt nghiệp về nước",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002500",
-      "PROCEDURE_NAME": "Tuyển sinh công dân Việt Nam ra nước ngoài học tập bằng học bổng ngân sách nhà nước",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002501",
-      "PROCEDURE_NAME": "Cử đi học nước ngoài",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002502",
-      "PROCEDURE_NAME": "Gia hạn thời gian học tập ở nước ngoài",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002503",
-      "PROCEDURE_NAME": "Cấp chính sách nội trú cho học sinh, sinh viên tham gia chương trình đào tạo trình độ cao đẳng, trung cấp tại các cơ sở giáo dục nghề nghiệp tư thục hoặc cơ sở giáo dục có vốn đầu tư nước ngoài",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "262": [
-    {
-      "PROCEDURE_CODE": "1.000262",
-      "PROCEDURE_NAME": "Thực hiện, điều chỉnh, thôi hưởng trợ cấp xã hội hàng tháng, hỗ trợ kinh phí chăm sóc hàng tháng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000262.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "264": [
-    {
-      "PROCEDURE_CODE": "1.000264",
-      "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề khám bệnh, chữa bệnh đối với người Việt Nam",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000264.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "267": [
-    {
-      "PROCEDURE_CODE": "1.000267",
-      "PROCEDURE_NAME": "Cấp giấy phép lao động cho người lao động nước ngoài làm việc tại Việt Nam",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000267.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "268": [
-    {
-      "PROCEDURE_CODE": "1.000268",
-      "PROCEDURE_NAME": "Cấp mới Giấy chứng nhận đủ điều kiện về an ninh, trật tự để làm ngành, nghề kinh doanh có điều kiện",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000268.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "272": [
-    {
-      "PROCEDURE_CODE": "1.001766",
-      "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho công dân Việt Nam, người nước ngoài đang cư trú tại Việt Nam",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001766.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000110",
-      "PROCEDURE_NAME": "Thủ tục xin nhập quốc tịch Việt Nam",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000110.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000080",
-      "PROCEDURE_NAME": "Thủ tục chứng thực bản sao từ bản chính các giấy tờ, văn bản",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000080.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "273": [
-    {
-      "PROCEDURE_CODE": "1.001456",
-      "PROCEDURE_NAME": "Cấp hộ chiếu phổ thông ở trong nước",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001456.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "274": [
-    {
-      "PROCEDURE_CODE": "1.000274",
-      "PROCEDURE_NAME": "Cấp Giấy xác nhận tình trạng hôn nhân / Thủ tục Đăng ký kết hôn",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000274.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "275": [
-    {
-      "PROCEDURE_CODE": "1.001022",
-      "PROCEDURE_NAME": "Thủ tục đăng ký giám hộ",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001022.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "281": [
-    {
-      "PROCEDURE_CODE": "2.001263",
-      "PROCEDURE_NAME": "Giải quyết việc nuôi con nuôi trong nước",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.001263.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "283": [
-    {
-      "PROCEDURE_CODE": "1.002498",
-      "PROCEDURE_NAME": "Cấp giấy phép xây dựng mới đối với công trình cấp III, cấp IV",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "292": [
-    {
-      "PROCEDURE_CODE": "2.000033",
-      "PROCEDURE_NAME": "Thông báo hoạt động khuyến mại",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000033.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "295": [
-    {
-      "PROCEDURE_CODE": "1.000295",
-      "PROCEDURE_NAME": "Cấp Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm đối với cơ sở sản xuất thực phẩm nông, lâm, thủy sản",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000295.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "297": [
-    {
-      "PROCEDURE_CODE": "1.000297",
-      "PROCEDURE_NAME": "Thủ tục đăng ký nhãn hiệu",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000297.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "312": [],
-  "313": [
-    {
-      "PROCEDURE_CODE": "1.003655",
-      "PROCEDURE_NAME": "Đăng ký đất đai, cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003655.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002498",
-      "PROCEDURE_NAME": "Cấp giấy phép xây dựng mới đối với công trình cấp III, cấp IV / Đăng ký biến động đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001425",
-      "PROCEDURE_NAME": "Đăng ký biến động quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001425.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "314": [
-    {
-      "PROCEDURE_CODE": "1.000265",
-      "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề dược",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000264.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000266",
-      "PROCEDURE_NAME": "Ký hợp đồng khám, chữa bệnh BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001656.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "316": [
-    {
-      "PROCEDURE_CODE": "1.000316",
-      "PROCEDURE_NAME": "Đăng ký sang tên xe trong cùng tỉnh, thành phố trực thuộc Trung ương",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000316.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "320": [
-    {
-      "PROCEDURE_CODE": "1.000419",
-      "PROCEDURE_NAME": "Thủ tục Đăng ký khai tử",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000419.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000656",
-      "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai tử, xóa đăng ký thường trú, hưởng chế độ tử tuất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000656.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "363": [
-    {
-      "PROCEDURE_CODE": "1.000363",
-      "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000363.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ]
-};
-
-function isInteger(num) {
-  return (num ^ 0) === num;
-}
-
-(function() {
-  if (typeof window.OFFLINE_PROCEDURES === 'undefined') {
-    var scripts = document.getElementsByTagName('script');
-    var currentScriptPath = '';
-    for (var i = 0; i < scripts.length; i++) {
-      if (scripts[i].src && scripts[i].src.indexOf('ApiService.js') !== -1) {
-        currentScriptPath = scripts[i].src.substring(0, scripts[i].src.lastIndexOf('/') + 1);
-        break;
-      }
-    }
-    document.write('<script src="' + (currentScriptPath || 'js/') + 'offline-data.js"><\/script>');
-  }
-})();
-
-var TARGET_SERVICES_BY_EVENT = {
-  "250": [
-    {
-      "PROCEDURE_CODE": "1.000689",
-      "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai sinh, đăng ký thường trú và cấp thẻ BHYT cho trẻ dưới 6 tuổi",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000689.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001193",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001193.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "251": [
-    {
-      "PROCEDURE_CODE": "1.001193",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001193.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000110",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh có yếu tố nước ngoài tại khu vực biên giới",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000110.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000893",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh có yếu tố nước ngoài cho người đã có hồ sơ, giấy tờ cá nhân",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000893.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000689",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh kết hợp đăng ký nhận cha, mẹ, con",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000689.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001695",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh kết hợp đăng ký nhận cha, mẹ, con có yếu tố nước ngoài",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001695.html",
-      "TOTAL": 5,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "252": [],
-  "253": [
-    {
-      "PROCEDURE_CODE": "1.000363",
-      "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000363.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002691",
-      "PROCEDURE_NAME": "Thủ tục đăng ký thường trú",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002691.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002701",
-      "PROCEDURE_NAME": "Thủ tục đăng ký tạm trú",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002701.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "254": [
-    {
-      "PROCEDURE_CODE": "1.002541",
-      "PROCEDURE_NAME": "Tuyển sinh vào các trường trung học phổ thông chuyên",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002541.html",
+      "PROCEDURE_CODE": "2.002043",
+      "PROCEDURE_NAME": "Đăng ký thành lập công ty cổ phần",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002043.html",
       "TOTAL": 4,
       "ISNGANHDOC": 0
     },
     {
-      "PROCEDURE_CODE": "1.002542",
-      "PROCEDURE_NAME": "Tuyển sinh vào lớp 10 trung học phổ thông",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002542.html",
+      "PROCEDURE_CODE": "2.002042",
+      "PROCEDURE_NAME": "Đăng ký thành lập công ty hợp danh",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002042.html",
       "TOTAL": 4,
       "ISNGANHDOC": 0
     },
     {
-      "PROCEDURE_CODE": "1.002543",
-      "PROCEDURE_NAME": "Tuyển sinh vào các lớp đầu cấp mầm non, tiểu học, trung học cơ sở",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002543.html",
+      "PROCEDURE_CODE": "1.005176",
+      "PROCEDURE_NAME": "Đăng ký thành lập, đăng ký thay đổi nội dung đăng ký hoạt động của doanh nghiệp",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.005176.html",
       "TOTAL": 4,
       "ISNGANHDOC": 0
     },
     {
-      "PROCEDURE_CODE": "1.002544",
-      "PROCEDURE_NAME": "Tuyển sinh đào tạo trình độ trung cấp, cao đẳng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002544.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "255": [
-    {
-      "PROCEDURE_CODE": "1.002551",
-      "PROCEDURE_NAME": "Chuyển trường đối với học sinh trung học phổ thông",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002551.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002552",
-      "PROCEDURE_NAME": "Chuyển trường đối với học sinh tiểu học",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002552.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002553",
-      "PROCEDURE_NAME": "Chuyển trường đối với học sinh trung học cơ sở",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002553.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002554",
-      "PROCEDURE_NAME": "Tiếp nhận học sinh Việt Nam về nước học tập tại các trường trung học phổ thông",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002554.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "256": [
-    {
-      "PROCEDURE_CODE": "1.003702",
-      "PROCEDURE_NAME": "Hỗ trợ học tập đối với trẻ mẫu giáo, học sinh tiểu học, học sinh trung học cơ sở, sinh viên các dân tộc thiểu số rất ít người",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003702.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002561",
-      "PROCEDURE_NAME": "Miễn, giảm học phí và hỗ trợ chi phí học tập đối với học sinh, sinh viên",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002561.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002562",
-      "PROCEDURE_NAME": "Xét cấp học bổng khuyến khích học tập cho học sinh, sinh viên",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002562.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002563",
-      "PROCEDURE_NAME": "Hỗ trợ chi phí học tập đối với sinh viên người dân tộc thiểu số học tại các cơ sở giáo dục đại học",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002563.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "257": [
-    {
-      "PROCEDURE_CODE": "1.002571",
-      "PROCEDURE_NAME": "Cấp bản sao văn bằng, chứng chỉ từ sổ gốc",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002571.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002572",
-      "PROCEDURE_NAME": "Công nhận văn bằng giáo dục nghề nghiệp do cơ sở giáo dục nước ngoài cấp",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002572.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002573",
-      "PROCEDURE_NAME": "Công nhận văn bằng do cơ sở giáo dục nước ngoài cấp để sử dụng tại Việt Nam",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002573.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002574",
-      "PROCEDURE_NAME": "Chỉnh sửa nội dung văn bằng, chứng chỉ",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002574.html",
+      "PROCEDURE_CODE": "2.002000",
+      "PROCEDURE_NAME": "Đăng ký thay đổi chủ doanh nghiệp tư nhân trong trường hợp bán, tặng cho doanh nghiệp, chủ doanh nghiệp chết",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002000.html",
       "TOTAL": 4,
       "ISNGANHDOC": 0
     }
@@ -598,6 +169,22 @@ var TARGET_SERVICES_BY_EVENT = {
       "ISNGANHDOC": 0
     }
   ],
+  "263": [
+    {
+      "PROCEDURE_CODE": "1.000103",
+      "PROCEDURE_NAME": "Thay đổi, bổ sung các thông tin của nhà thầu, nhà đầu tư đăng ký tham gia vào Hệ thống mạng đấu thầu quốc gia",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000103.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "2.002097",
+      "PROCEDURE_NAME": "Thẩm định báo cáo nghiên cứu tiền khả thi dự án đầu tư",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002097.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
   "264": [
     {
       "PROCEDURE_CODE": "1.000264",
@@ -652,6 +239,22 @@ var TARGET_SERVICES_BY_EVENT = {
       "PROCEDURE_NAME": "Cấp Giấy phép lao động cho người lao động nước ngoài làm việc tại Việt Nam",
       "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000267.html",
       "TOTAL": 1,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "268": [
+    {
+      "PROCEDURE_CODE": "1.000268",
+      "PROCEDURE_NAME": "Cấp Giấy chứng nhận đủ điều kiện về an ninh, trật tự để làm ngành, nghề đầu tư kinh doanh có điều kiện",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000268.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.001029",
+      "PROCEDURE_NAME": "Thủ tục cấp giấy phép đủ điều kiện kinh doanh dịch vụ karaoke",
+      "URL": "dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html@ma_thu_tuc=1535.html",
+      "TOTAL": 2,
       "ISNGANHDOC": 0
     }
   ],
@@ -728,15 +331,6 @@ var TARGET_SERVICES_BY_EVENT = {
       "ISNGANHDOC": 0
     }
   ],
-  "363": [
-    {
-      "PROCEDURE_CODE": "1.000363",
-      "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000363.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
   "274": [
     {
       "PROCEDURE_CODE": "1.000274",
@@ -765,442 +359,6 @@ var TARGET_SERVICES_BY_EVENT = {
       "PROCEDURE_CODE": "1.002751",
       "PROCEDURE_NAME": "Đăng ký giám hộ cử",
       "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002751.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "279": [
-    {
-      "PROCEDURE_CODE": "1.001022",
-      "PROCEDURE_NAME": "Thủ tục đăng ký nhận cha, mẹ, con",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001022.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000080",
-      "PROCEDURE_NAME": "Thủ tục đăng ký nhận cha, mẹ, con có yếu tố nước ngoài tại khu vực biên giới",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000080.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "2.000779",
-      "PROCEDURE_NAME": "Thủ tục đăng ký nhận cha, mẹ, con có yếu tố nước ngoài",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000779.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "281": [
-    {
-      "PROCEDURE_CODE": "2.001263",
-      "PROCEDURE_NAME": "Đăng ký việc nuôi con nuôi trong nước",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.001263.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "2.001255",
-      "PROCEDURE_NAME": "Đăng ký lại việc nuôi con nuôi trong nước",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.001255.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002312",
-      "PROCEDURE_NAME": "Thủ tục Đăng ký việc nuôi con nuôi thực tế",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002312.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.004878",
-      "PROCEDURE_NAME": "Giải quyết việc nuôi con nuôi có yếu tố nước ngoài đối với trường hợp cha dượng, mẹ kế nhận con riêng của vợ hoặc chồng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.004878.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "286": [
-    {
-      "PROCEDURE_CODE": "1.002861",
-      "PROCEDURE_NAME": "Thủ tục đăng ký thay đổi, cải chính, bổ sung hộ tịch, xác định lại dân tộc",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002861.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002862",
-      "PROCEDURE_NAME": "Thủ tục cấp bản sao trích lục hộ tịch",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002862.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "287": [
-    {
-      "PROCEDURE_CODE": "1.002871",
-      "PROCEDURE_NAME": "Đăng ký quyền sở hữu nhà ở và tài sản khác gắn liền với đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002871.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002872",
-      "PROCEDURE_NAME": "Cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở (Sổ đỏ)",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002872.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "288": [
-    {
-      "PROCEDURE_CODE": "1.002881",
-      "PROCEDURE_NAME": "Đăng ký chuyển nhượng, tặng cho, thừa kế quyền sử dụng đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002881.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001856",
-      "PROCEDURE_NAME": "Công chứng hợp đồng ủy quyền, chuyển nhượng quyền sử dụng đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001856.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "290": [
-    {
-      "PROCEDURE_CODE": "1.002901",
-      "PROCEDURE_NAME": "Đăng ký thế chấp quyền sử dụng đất, tài sản gắn liền với đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002901.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002902",
-      "PROCEDURE_NAME": "Xóa đăng ký thế chấp quyền sử dụng đất",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002902.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "311": [
-    {
-      "PROCEDURE_CODE": "1.003111",
-      "PROCEDURE_NAME": "Chuyển mục đích sử dụng đất phải được phép của cơ quan nhà nước có thẩm quyền",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003111.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "313": [
-    {
-      "PROCEDURE_CODE": "1.002498",
-      "PROCEDURE_NAME": "Cấp Giấy phép xây dựng mới công trình cấp đặc biệt (bao gồm giấy phép xây dựng mới, sửa chữa, cải tạo, di dời)",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003655",
-      "PROCEDURE_NAME": "Cấp Giấy phép xây dựng mới đối với công trình cấp I, II; nhà ở riêng lẻ đô thị",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003655.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "323": [
-    {
-      "PROCEDURE_CODE": "1.003231",
-      "PROCEDURE_NAME": "Cấp điện sinh hoạt từ lưới điện hạ áp (220/380V)",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003231.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003232",
-      "PROCEDURE_NAME": "Thay đổi chủ thể hợp đồng mua bán điện sinh hoạt",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003232.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "312": [
-    {
-      "PROCEDURE_CODE": "1.000264",
-      "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề khám bệnh, chữa bệnh",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000264.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001656",
-      "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001656.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001759",
-      "PROCEDURE_NAME": "Khám chữa bệnh bảo hiểm y tế",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001759.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "314": [
-    {
-      "PROCEDURE_CODE": "1.002012",
-      "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002012.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003141",
-      "PROCEDURE_NAME": "Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003141.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003142",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ thai sản",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003142.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003143",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ ốm đau",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003143.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003144",
-      "PROCEDURE_NAME": "Giải quyết hưởng trợ cấp nghỉ DSPHSK sau ốm đau, thai sản, TNLĐ, BNN",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003144.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001656",
-      "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT/Cấp giấy chứng nhận không cùng chi trả trong năm",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001656.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003145",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ lần đầu",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003145.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003146",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003146.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003147",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003147.html",
-      "TOTAL": 9,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "315": [
-    {
-      "PROCEDURE_CODE": "1.002821",
-      "PROCEDURE_NAME": "Đổi Giấy phép lái xe do ngành Giao thông vận tải cấp",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002821.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002822",
-      "PROCEDURE_NAME": "Cấp lại Giấy phép lái xe",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002822.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002823",
-      "PROCEDURE_NAME": "Cấp Giấy phép lái xe quốc tế",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002823.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "316": [
-    {
-      "PROCEDURE_CODE": "1.000316",
-      "PROCEDURE_NAME": "Thủ tục Đăng ký sang tên, di chuyển xe (Sang tên, đổi chủ xe)",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000316.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003161",
-      "PROCEDURE_NAME": "Đăng ký, cấp biển số xe mô tô, xe gắn máy lần đầu",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003161.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "317": [
-    {
-      "PROCEDURE_CODE": "1.001261",
-      "PROCEDURE_NAME": "Cấp Giấy chứng nhận, Tem kiểm định an toàn kỹ thuật và bảo vệ môi trường đối với phương tiện giao thông cơ giới đường bộ",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001261.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "318": [
-    {
-      "PROCEDURE_CODE": "1.003181",
-      "PROCEDURE_NAME": "Hướng dẫn hoàn thiện hồ sơ hưởng chế độ hưu trí",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003181.html",
-      "TOTAL": 1,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "319": [
-    {
-      "PROCEDURE_CODE": "2.000740",
-      "PROCEDURE_NAME": "Người hưởng lĩnh chế độ bảo hiểm xã hội bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000740.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003191",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ hưu trí hàng tháng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003191.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "320": [
-    {
-      "PROCEDURE_CODE": "1.000656",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai tử",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000656.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.000419",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai tử lưu động",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000419.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001766",
-      "PROCEDURE_NAME": "Thủ tục đăng ký khai tử có yếu tố nước ngoài",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001766.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "321": [
-    {
-      "PROCEDURE_CODE": "1.003211",
-      "PROCEDURE_NAME": "Giải quyết hưởng trợ cấp mai táng phí",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003211.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003212",
-      "PROCEDURE_NAME": "Giải quyết hưởng chế độ tử tuất một lần hoặc hàng tháng",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003212.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "343": [
-    {
-      "PROCEDURE_CODE": "1.003431",
-      "PROCEDURE_NAME": "Tiếp nhận, xử lý và thụ lý đơn khiếu nại của công dân",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003431.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.003432",
-      "PROCEDURE_NAME": "Tiếp nhận và giải quyết đơn tố cáo của công dân",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003432.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "258": [
-    {
-      "PROCEDURE_CODE": "2.002043",
-      "PROCEDURE_NAME": "Đăng ký thành lập công ty cổ phần",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002043.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "2.002042",
-      "PROCEDURE_NAME": "Đăng ký thành lập công ty hợp danh",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002042.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.005176",
-      "PROCEDURE_NAME": "Đăng ký thành lập, đăng ký thay đổi nội dung đăng ký hoạt động của doanh nghiệp",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.005176.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "2.002000",
-      "PROCEDURE_NAME": "Đăng ký thay đổi chủ doanh nghiệp tư nhân trong trường hợp bán, tặng cho doanh nghiệp, chủ doanh nghiệp chết",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002000.html",
-      "TOTAL": 4,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "263": [
-    {
-      "PROCEDURE_CODE": "1.000103",
-      "PROCEDURE_NAME": "Thay đổi, bổ sung các thông tin của nhà thầu, nhà đầu tư đăng ký tham gia vào Hệ thống mạng đấu thầu quốc gia",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000103.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "2.002097",
-      "PROCEDURE_NAME": "Thẩm định báo cáo nghiên cứu tiền khả thi dự án đầu tư",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002097.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    }
-  ],
-  "268": [
-    {
-      "PROCEDURE_CODE": "1.000268",
-      "PROCEDURE_NAME": "Cấp Giấy chứng nhận đủ điều kiện về an ninh, trật tự để làm ngành, nghề đầu tư kinh doanh có điều kiện",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000268.html",
-      "TOTAL": 2,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001029",
-      "PROCEDURE_NAME": "Thủ tục cấp giấy phép đủ điều kiện kinh doanh dịch vụ karaoke",
-      "URL": "dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html@ma_thu_tuc=1535.html",
       "TOTAL": 2,
       "ISNGANHDOC": 0
     }
@@ -1253,6 +411,29 @@ var TARGET_SERVICES_BY_EVENT = {
       "ISNGANHDOC": 0
     }
   ],
+  "279": [
+    {
+      "PROCEDURE_CODE": "1.001022",
+      "PROCEDURE_NAME": "Thủ tục đăng ký nhận cha, mẹ, con",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001022.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.000080",
+      "PROCEDURE_NAME": "Thủ tục đăng ký nhận cha, mẹ, con có yếu tố nước ngoài tại khu vực biên giới",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000080.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "2.000779",
+      "PROCEDURE_NAME": "Thủ tục đăng ký nhận cha, mẹ, con có yếu tố nước ngoài",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000779.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    }
+  ],
   "280": [
     {
       "PROCEDURE_CODE": "2.000482",
@@ -1266,6 +447,36 @@ var TARGET_SERVICES_BY_EVENT = {
       "PROCEDURE_NAME": "Thủ tục phê duyệt cho hộ nghèo, hộ cận nghèo vay vốn tín dụng",
       "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000436.html",
       "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "281": [
+    {
+      "PROCEDURE_CODE": "2.001263",
+      "PROCEDURE_NAME": "Đăng ký việc nuôi con nuôi trong nước",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.001263.html",
+      "TOTAL": 4,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "2.001255",
+      "PROCEDURE_NAME": "Đăng ký lại việc nuôi con nuôi trong nước",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.001255.html",
+      "TOTAL": 4,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.002312",
+      "PROCEDURE_NAME": "Thủ tục Đăng ký việc nuôi con nuôi thực tế",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002312.html",
+      "TOTAL": 4,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.004878",
+      "PROCEDURE_NAME": "Giải quyết việc nuôi con nuôi có yếu tố nước ngoài đối với trường hợp cha dượng, mẹ kế nhận con riêng của vợ hoặc chồng",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.004878.html",
+      "TOTAL": 4,
       "ISNGANHDOC": 0
     }
   ],
@@ -1333,12 +544,51 @@ var TARGET_SERVICES_BY_EVENT = {
       "ISNGANHDOC": 0
     }
   ],
-  "324": [
+  "286": [
     {
-      "PROCEDURE_CODE": "1.003241",
-      "PROCEDURE_NAME": "Cấp điện trung áp qua lưới điện phân phối đối với khách hàng doanh nghiệp",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003241.html",
-      "TOTAL": 1,
+      "PROCEDURE_CODE": "1.002861",
+      "PROCEDURE_NAME": "Thủ tục đăng ký thay đổi, cải chính, bổ sung hộ tịch, xác định lại dân tộc",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002861.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.002862",
+      "PROCEDURE_NAME": "Thủ tục cấp bản sao trích lục hộ tịch",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002862.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "287": [
+    {
+      "PROCEDURE_CODE": "1.002871",
+      "PROCEDURE_NAME": "Đăng ký quyền sở hữu nhà ở và tài sản khác gắn liền với đất",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002871.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.002872",
+      "PROCEDURE_NAME": "Cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở (Sổ đỏ)",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002872.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "288": [
+    {
+      "PROCEDURE_CODE": "1.002881",
+      "PROCEDURE_NAME": "Đăng ký chuyển nhượng, tặng cho, thừa kế quyền sử dụng đất",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002881.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.001856",
+      "PROCEDURE_NAME": "Công chứng hợp đồng ủy quyền, chuyển nhượng quyền sử dụng đất",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001856.html",
+      "TOTAL": 2,
       "ISNGANHDOC": 0
     }
   ],
@@ -1348,6 +598,22 @@ var TARGET_SERVICES_BY_EVENT = {
       "PROCEDURE_NAME": "Cấp Giấy chứng nhận xuất xứ hàng hoá (C/O) ưu đãi một chiều mẫu A",
       "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000533.html",
       "TOTAL": 1,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "290": [
+    {
+      "PROCEDURE_CODE": "1.002901",
+      "PROCEDURE_NAME": "Đăng ký thế chấp quyền sử dụng đất, tài sản gắn liền với đất",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002901.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.002902",
+      "PROCEDURE_NAME": "Xóa đăng ký thế chấp quyền sử dụng đất",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002902.html",
+      "TOTAL": 2,
       "ISNGANHDOC": 0
     }
   ],
@@ -1559,6 +825,250 @@ var TARGET_SERVICES_BY_EVENT = {
       "ISNGANHDOC": 0
     }
   ],
+  "311": [
+    {
+      "PROCEDURE_CODE": "1.003111",
+      "PROCEDURE_NAME": "Chuyển mục đích sử dụng đất phải được phép của cơ quan nhà nước có thẩm quyền",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003111.html",
+      "TOTAL": 1,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "312": [],
+  "313": [
+    {
+      "PROCEDURE_CODE": "1.002498",
+      "PROCEDURE_NAME": "Cấp Giấy phép xây dựng mới công trình cấp đặc biệt (bao gồm giấy phép xây dựng mới, sửa chữa, cải tạo, di dời)",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002498.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003655",
+      "PROCEDURE_NAME": "Cấp Giấy phép xây dựng mới đối với công trình cấp I, II; nhà ở riêng lẻ đô thị",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003655.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "314": [
+    {
+      "PROCEDURE_CODE": "1.002012",
+      "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002012.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003141",
+      "PROCEDURE_NAME": "Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003141.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003142",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ thai sản",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003142.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003143",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ ốm đau",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003143.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003144",
+      "PROCEDURE_NAME": "Giải quyết hưởng trợ cấp nghỉ DSPHSK sau ốm đau, thai sản, TNLĐ, BNN",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003144.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.001656",
+      "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT/Cấp giấy chứng nhận không cùng chi trả trong năm",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001656.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003145",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ lần đầu",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003145.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003146",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003146.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003147",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003147.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "315": [
+    {
+      "PROCEDURE_CODE": "1.002821",
+      "PROCEDURE_NAME": "Đổi Giấy phép lái xe do ngành Giao thông vận tải cấp",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002821.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.002822",
+      "PROCEDURE_NAME": "Cấp lại Giấy phép lái xe",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002822.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.002823",
+      "PROCEDURE_NAME": "Cấp Giấy phép lái xe quốc tế",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002823.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "316": [
+    {
+      "PROCEDURE_CODE": "1.000316",
+      "PROCEDURE_NAME": "Thủ tục Đăng ký sang tên, di chuyển xe (Sang tên, đổi chủ xe)",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000316.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003161",
+      "PROCEDURE_NAME": "Đăng ký, cấp biển số xe mô tô, xe gắn máy lần đầu",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003161.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "317": [
+    {
+      "PROCEDURE_CODE": "1.001261",
+      "PROCEDURE_NAME": "Cấp Giấy chứng nhận, Tem kiểm định an toàn kỹ thuật và bảo vệ môi trường đối với phương tiện giao thông cơ giới đường bộ",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001261.html",
+      "TOTAL": 1,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "318": [
+    {
+      "PROCEDURE_CODE": "1.003181",
+      "PROCEDURE_NAME": "Hướng dẫn hoàn thiện hồ sơ hưởng chế độ hưu trí",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003181.html",
+      "TOTAL": 1,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "319": [
+    {
+      "PROCEDURE_CODE": "2.000740",
+      "PROCEDURE_NAME": "Người hưởng lĩnh chế độ bảo hiểm xã hội bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.000740.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003191",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ hưu trí hàng tháng",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003191.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "320": [
+    {
+      "PROCEDURE_CODE": "1.000656",
+      "PROCEDURE_NAME": "Thủ tục đăng ký khai tử",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000656.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.000419",
+      "PROCEDURE_NAME": "Thủ tục đăng ký khai tử lưu động",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000419.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.001766",
+      "PROCEDURE_NAME": "Thủ tục đăng ký khai tử có yếu tố nước ngoài",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001766.html",
+      "TOTAL": 3,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "321": [
+    {
+      "PROCEDURE_CODE": "1.003211",
+      "PROCEDURE_NAME": "Giải quyết hưởng trợ cấp mai táng phí",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003211.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003212",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ tử tuất một lần hoặc hàng tháng",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003212.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "323": [
+    {
+      "PROCEDURE_CODE": "1.003231",
+      "PROCEDURE_NAME": "Cấp điện sinh hoạt từ lưới điện hạ áp (220/380V)",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003231.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003232",
+      "PROCEDURE_NAME": "Thay đổi chủ thể hợp đồng mua bán điện sinh hoạt",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003232.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "324": [
+    {
+      "PROCEDURE_CODE": "1.003241",
+      "PROCEDURE_NAME": "Cấp điện trung áp qua lưới điện phân phối đối với khách hàng doanh nghiệp",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003241.html",
+      "TOTAL": 1,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "343": [
+    {
+      "PROCEDURE_CODE": "1.003431",
+      "PROCEDURE_NAME": "Tiếp nhận, xử lý và thụ lý đơn khiếu nại của công dân",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003431.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003432",
+      "PROCEDURE_NAME": "Tiếp nhận và giải quyết đơn tố cáo của công dân",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003432.html",
+      "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
   "344": [
     {
       "PROCEDURE_CODE": "1.003441",
@@ -1572,6 +1082,15 @@ var TARGET_SERVICES_BY_EVENT = {
       "PROCEDURE_NAME": "Hòa giải tranh chấp thương mại",
       "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003442.html",
       "TOTAL": 2,
+      "ISNGANHDOC": 0
+    }
+  ],
+  "363": [
+    {
+      "PROCEDURE_CODE": "1.000363",
+      "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000363.html",
+      "TOTAL": 1,
       "ISNGANHDOC": 0
     }
   ]
@@ -1729,21 +1248,32 @@ function getOfflineResponse(jsonData) {
   }
 
   // Danh sach TTHC theo su kien (Accordion)
-  if (service === "dvcqg_gets_procedure_by_event_id_limit_v2") {
+  if (service === "dvcqg_gets_procedure_by_event_id_limit_v2" || service === "dvcqg_gets_procedure_by_event_service_v2") {
     var eid = "" + (jsonData.event_id || "");
     if (TARGET_SERVICES_BY_EVENT[eid]) {
-    var arr = TARGET_SERVICES_BY_EVENT[eid];
-    return arr.map(function(item) {
-      return {
-        PROCEDURE_CODE: item.PROCEDURE_CODE,
-        PROCEDURE_NAME: item.PROCEDURE_NAME,
-        URL: item.URL,
-        ISNGANHDOC: item.ISNGANHDOC || 0,
-        TOTAL: arr.length
-      };
-    });
+      var arr = TARGET_SERVICES_BY_EVENT[eid];
+      var pName = (jsonData.procedure_name || '').toLowerCase().trim();
+      var filtered = arr;
+      if (pName) {
+        filtered = arr.filter(function(item) {
+          return item.PROCEDURE_NAME && item.PROCEDURE_NAME.toLowerCase().indexOf(pName) !== -1;
+        });
+      }
+      var pSize = parseInt(jsonData.page_size || jsonData.limit || 10, 10);
+      var pIdx = parseInt(jsonData.page_index || 1, 10);
+      var start = (pIdx - 1) * pSize;
+      return filtered.slice(start, start + pSize).map(function(item) {
+        return {
+          PROCEDURE_CODE: item.PROCEDURE_CODE,
+          PROCEDURE_NAME: item.PROCEDURE_NAME,
+          URL: item.URL,
+          ISNGANHDOC: item.ISNGANHDOC || 0,
+          TOTAL: filtered.length
+        };
+      });
+    }
+    return [];
   }
-  return [];
 
 function initApiService(restUrl){
   apiservice={};
