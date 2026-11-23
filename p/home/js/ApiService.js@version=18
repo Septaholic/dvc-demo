@@ -70,29 +70,7 @@ var TARGET_SERVICES_BY_EVENT = {
       "ISNGANHDOC": 0
     }
   ],
-  "252": [
-    {
-      "PROCEDURE_CODE": "1.001656",
-      "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001656.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.001759",
-      "PROCEDURE_NAME": "Khám chữa bệnh bảo hiểm y tế",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001759.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    },
-    {
-      "PROCEDURE_CODE": "1.002012",
-      "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin sổ BHXH, thẻ BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002012.html",
-      "TOTAL": 3,
-      "ISNGANHDOC": 0
-    }
-  ],
+  "252": [],
   "253": [
     {
       "PROCEDURE_CODE": "1.000363",
@@ -682,17 +660,66 @@ var TARGET_SERVICES_BY_EVENT = {
   ],
   "314": [
     {
-      "PROCEDURE_CODE": "1.000265",
-      "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề dược",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.000265.html",
-      "TOTAL": 2,
+      "PROCEDURE_CODE": "1.002012",
+      "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.002012.html",
+      "TOTAL": 9,
       "ISNGANHDOC": 0
     },
     {
-      "PROCEDURE_CODE": "1.001798",
-      "PROCEDURE_NAME": "Ký hợp đồng khám, chữa bệnh BHYT",
-      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001798.html",
-      "TOTAL": 2,
+      "PROCEDURE_CODE": "1.003141",
+      "PROCEDURE_NAME": "Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003141.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003142",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ thai sản",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003142.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003143",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ ốm đau",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003143.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003144",
+      "PROCEDURE_NAME": "Giải quyết hưởng trợ cấp nghỉ DSPHSK sau ốm đau, thai sản, TNLĐ, BNN",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003144.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.001656",
+      "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT/Cấp giấy chứng nhận không cùng chi trả trong năm",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.001656.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003145",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ lần đầu",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003145.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003146",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003146.html",
+      "TOTAL": 9,
+      "ISNGANHDOC": 0
+    },
+    {
+      "PROCEDURE_CODE": "1.003147",
+      "PROCEDURE_NAME": "Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát",
+      "URL": "dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=1.003147.html",
+      "TOTAL": 9,
       "ISNGANHDOC": 0
     }
   ],

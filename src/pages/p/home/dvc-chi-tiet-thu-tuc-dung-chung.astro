@@ -1,0 +1,24 @@
+---
+// Router chi tiết thủ tục dùng chung
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết thủ tục dùng chung - Cổng Dịch vụ công Quốc gia</title>
+<script is:inline>
+(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var code = urlParams.get('ma_thu_tuc');
+  if (code) {
+    window.location.replace("dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=" + encodeURIComponent(code) + ".html");
+  } else {
+    window.location.replace("dvc-tthc-thu-tuc-hanh-chinh.html");
+  }
+})();
+</script>
+</head>
+<body>
+<p>Đang chuyển hướng đến chi tiết thủ tục hành chính...</p>
+</body>
+</html>

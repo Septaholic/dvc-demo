@@ -9,11 +9,27 @@
       var search = window.location.search || '';
       var hash = window.location.hash || '';
 
+      // Trường hợp URL có @ nhưng thiếu đuôi .html
+      if (pathname.indexOf('@') !== -1 && !pathname.endsWith('.html')) {
+        var corrected = pathname + '.html';
+        if (corrected.indexOf('/p/home/') === -1 && corrected.indexOf('dvc-') !== -1) {
+          var lastSlash = corrected.lastIndexOf('/');
+          var base = corrected.substring(0, lastSlash + 1);
+          var filename = corrected.substring(lastSlash + 1);
+          corrected = base + 'p/home/' + filename;
+        }
+        window.location.replace(corrected + search + hash);
+        return;
+      }
+
       // Trường hợp URL thiếu /p/home/ (ví dụ /dvc-demo/dvc-chi-tiet-... hoặc /dvc-chi-tiet-...)
       if (pathname.indexOf('/p/home/') === -1 && (pathname.indexOf('dvc-') !== -1 || pathname.indexOf('@') !== -1)) {
         var lastSlash = pathname.lastIndexOf('/');
         var base = pathname.substring(0, lastSlash + 1);
         var filename = pathname.substring(lastSlash + 1);
+        if (filename.indexOf('@') !== -1 && !filename.endsWith('.html')) {
+          filename += '.html';
+        }
         var target = base + 'p/home/' + filename + search + hash;
         window.location.replace(target);
         return;

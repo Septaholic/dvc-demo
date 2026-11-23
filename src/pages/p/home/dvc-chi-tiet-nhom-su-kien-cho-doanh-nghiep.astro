@@ -1,0 +1,24 @@
+---
+// Router chi tiết nhóm sự kiện cho doanh nghiệp
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết nhóm sự kiện doanh nghiệp - Cổng Dịch vụ công Quốc gia</title>
+<script is:inline>
+(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var group = urlParams.get('group');
+  if (group) {
+    window.location.replace("dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html@group=" + encodeURIComponent(group) + ".html");
+  } else {
+    window.location.replace("dvc-trang-chu.html");
+  }
+})();
+</script>
+</head>
+<body>
+<p>Đang chuyển hướng đến sự kiện doanh nghiệp...</p>
+</body>
+</html>
