@@ -1,49 +1,49 @@
 /* Fonts */
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/roboto/Roboto-Bold.eot@") format("embedded-opentype"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype"), url("../fonts/roboto/Roboto-Bold.svg") format("svg");
+  src: url("../fonts/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype"), url("../fonts/roboto/Roboto-Bold.svg#SFUFutura") format("svg");
   font-weight: bold; }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/roboto/Roboto-Light.eot@") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/roboto/Roboto-Light.ttf") format("truetype"), url("../fonts/roboto/Roboto-Light.svg") format("svg");
+  src: url("../fonts/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/roboto/Roboto-Light.ttf") format("truetype"), url("../fonts/roboto/Roboto-Light.svg#SFUFutura") format("svg");
   font-weight: 300; }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/roboto/Roboto-Regular.eot@") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/roboto/Roboto-Regular.ttf") format("truetype"), url("../fonts/roboto/Roboto-Regular.svg") format("svg");
+  src: url("../fonts/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/roboto/Roboto-Regular.ttf") format("truetype"), url("../fonts/roboto/Roboto-Regular.svg#SFUFutura") format("svg");
   font-weight: normal; }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/roboto/Roboto-Medium.eot@") format("embedded-opentype"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype"), url("../fonts/roboto/Roboto-Medium.svg") format("svg");
+  src: url("../fonts/roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype"), url("../fonts/roboto/Roboto-Medium.svg#SFUFutura") format("svg");
   font-weight: 500; }
 
 /*Lora*/
 @font-face {
   font-family: 'Lora';
-  src: url("../fonts/lora/Lora-Bold.eot@") format("embedded-opentype"), url("../fonts/lora/Lora-Bold.woff") format("woff"), url("../fonts/lora/Lora-Bold.ttf") format("truetype"), url("../fonts/lora/Lora-Bold.svg") format("svg");
+  src: url("../fonts/lora/Lora-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/lora/Lora-Bold.woff") format("woff"), url("../fonts/lora/Lora-Bold.ttf") format("truetype"), url("../fonts/lora/Lora-Bold.svg#SFUFutura") format("svg");
   font-weight: bold; }
 
 @font-face {
   font-family: 'Lora';
-  src: url("../fonts/lora/Lora-Regular.eot@") format("embedded-opentype"), url("../fonts/lora/Lora-Regular.woff") format("woff"), url("../fonts/lora/Lora-Regular.ttf") format("truetype"), url("../fonts/lora/Lora-Regular.svg") format("svg");
+  src: url("../fonts/lora/Lora-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/lora/Lora-Regular.woff") format("woff"), url("../fonts/lora/Lora-Regular.ttf") format("truetype"), url("../fonts/lora/Lora-Regular.svg#SFUFutura") format("svg");
   font-weight: normal; }
 
 /* Nunito */
 @font-face {
   font-family: 'Nunito';
-  src: url("../fonts/nunito/NunitoSans-Bold.eot@") format("embedded-opentype"), url("../fonts/nunito/NunitoSans-Bold.woff") format("woff"), url("../fonts/nunito/NunitoSans-Bold.ttf") format("truetype"), url("../fonts/nunito/NunitoSans-Bold.svg") format("svg");
+  src: url("../fonts/nunito/NunitoSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/NunitoSans-Bold.woff") format("woff"), url("../fonts/nunito/NunitoSans-Bold.ttf") format("truetype"), url("../fonts/nunito/NunitoSans-Bold.svg#SFUFutura") format("svg");
   font-weight: bold; }
 
 @font-face {
   font-family: 'Nunito';
-  src: url("../fonts/nunito/NunitoSans-SemiBold.eot@") format("embedded-opentype"), url("../fonts/nunito/NunitoSans-SemiBold.woff") format("woff"), url("../fonts/nunito/NunitoSans-SemiBold.ttf") format("truetype"), url("../fonts/nunito/NunitoSans-SemiBold.svg") format("svg");
+  src: url("../fonts/nunito/NunitoSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/NunitoSans-SemiBold.woff") format("woff"), url("../fonts/nunito/NunitoSans-SemiBold.ttf") format("truetype"), url("../fonts/nunito/NunitoSans-SemiBold.svg#SFUFutura") format("svg");
   font-weight: 500; }
 
 @font-face {
   font-family: 'Nunito';
-  src: url("../fonts/nunito/NunitoSans-Regular.eot@") format("embedded-opentype"), url("../fonts/nunito/NunitoSans-Regular.woff") format("woff"), url("../fonts/nunito/NunitoSans-Regular.ttf") format("truetype"), url("../fonts/nunito/NunitoSans-Regular.svg") format("svg");
+  src: url("../fonts/nunito/NunitoSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/NunitoSans-Regular.woff") format("woff"), url("../fonts/nunito/NunitoSans-Regular.ttf") format("truetype"), url("../fonts/nunito/NunitoSans-Regular.svg#SFUFutura") format("svg");
   font-weight: normal; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -10625,7 +10625,7 @@ pre {
       content: "";
       width: 24px;
       height: 24px;
-      background-image: url("https://vpcp.dichvucong.gov.vn/p/home/theme/img/cauhoi/notepad.svg"); }
+      background-image: url("../img/cauhoi/notepad.svg"); }
   .cau-hoi-pho-bien .list-tt > li:last-child {
     border-bottom: 0px; }
 

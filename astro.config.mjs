@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8',
+  '.htm': 'text/html; charset=utf-8',
   '.js': 'application/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
@@ -15,8 +16,21 @@ const mimeTypes = {
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
-  '.ttf': 'font/ttf'
+  '.ttf': 'font/ttf',
+  '.eot': 'application/vnd.ms-fontobject'
 };
+
+const assetExtensions = ['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.eot', '.json'];
+
+function getMimeType(urlOrPath) {
+  let clean = urlOrPath.toLowerCase().split('?')[0].split('@')[0];
+  let ext = path.extname(clean);
+  if (mimeTypes[ext]) return mimeTypes[ext];
+  if (clean.endsWith('.css')) return 'text/css; charset=utf-8';
+  if (clean.endsWith('.js')) return 'application/javascript; charset=utf-8';
+  if (clean.endsWith('.html') || clean.endsWith('.htm')) return 'text/html; charset=utf-8';
+  return 'application/octet-stream';
+}
 
 function handleDvcRequest(req, res, next) {
   if (!req.url) return next();
@@ -29,10 +43,9 @@ function handleDvcRequest(req, res, next) {
     cleanUrl = rawPath.replace(/%40/g, '@');
   }
 
-  // 1. Tự động chuyển hướng nếu người dùng truy cập /dvc-* ở root (thiếu /p/home/)
+  // 1. Root redirect or missing /p/home/ prefix
   if (cleanUrl.startsWith('/dvc-')) {
     let target = '/p/home' + cleanUrl;
-    // Nếu file tương ứng có đuôi .html thì gắn thêm .html
     let publicCheck = path.join(process.cwd(), 'public', target);
     if (!fs.existsSync(publicCheck) && fs.existsSync(publicCheck + '.html')) {
       target += '.html';
@@ -44,32 +57,72 @@ function handleDvcRequest(req, res, next) {
     return;
   }
 
-  // 2. Phục vụ file tĩnh trong public/p/home/
-  if (cleanUrl.startsWith('/p/home/')) {
-    let filePath = path.join(process.cwd(), 'public', cleanUrl);
-    // Nếu truy cập không có .html nhưng trên đĩa có file .html
-    if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
-      filePath = filePath + '.html';
-    }
+  // 2. Static Asset handling (CSS, JS, Fonts, Images)
+  let cleanLower = cleanUrl.toLowerCase();
+  let isAsset = assetExtensions.some(ext => cleanLower.endsWith(ext));
 
+  if (isAsset) {
+    let relPath = cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl;
+    let filePath = path.join(process.cwd(), 'public', relPath);
+
+    // If file exists as-is, serve it directly with strict MIME type
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-      let ext = path.extname(filePath).toLowerCase();
-      res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
+      res.setHeader('Content-Type', getMimeType(cleanUrl));
       fs.createReadStream(filePath).pipe(res);
       return;
     }
 
-    // 3. Nếu truy cập file .html tương ứng với page .astro (ví dụ /p/home/dvc-trang-chu.html)
-    if (cleanUrl.endsWith('.html')) {
-      let astroCandidate = cleanUrl.slice(0, -5) + '.astro';
-      let astroFile = path.join(process.cwd(), 'src', 'pages', astroCandidate);
-      if (fs.existsSync(astroFile)) {
-        res.writeHead(302, {
-          Location: rawPath.replace(/\.html$/, '') + (search ? '?' + search : '')
-        });
-        res.end();
+    // If search exists (e.g. ?version=9) and file was saved with @
+    if (search) {
+      let candidate = filePath + '@' + search;
+      if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+        res.setHeader('Content-Type', getMimeType(cleanUrl));
+        fs.createReadStream(candidate).pipe(res);
         return;
       }
+    }
+  }
+
+  // 3. Query string mapping for HTML pages (e.g. ?group=750 or ?ma_thu_tuc=...)
+  if (search && !isAsset) {
+    let candidate = cleanUrl + '@' + search;
+    let candidateFile = path.join(process.cwd(), 'public', candidate.startsWith('/') ? candidate.slice(1) : candidate);
+    let targetFound = null;
+    if (fs.existsSync(candidateFile) && fs.statSync(candidateFile).isFile()) {
+      targetFound = candidateFile;
+    } else if (fs.existsSync(candidateFile + '.html') && fs.statSync(candidateFile + '.html').isFile()) {
+      targetFound = candidateFile + '.html';
+    }
+
+    if (targetFound) {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      fs.createReadStream(targetFound).pipe(res);
+      return;
+    }
+  }
+
+  // 4. Serve HTML / static files directly from public directory
+  let relPath = cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl;
+  let filePath = path.join(process.cwd(), 'public', relPath);
+
+  // If no extension or missing .html, check if .html exists
+  if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath = filePath + '.html';
+  }
+
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    res.setHeader('Content-Type', getMimeType(filePath));
+    fs.createReadStream(filePath).pipe(res);
+    return;
+  }
+
+  // 5. Default home fallback
+  if (cleanUrl === '/p/home' || cleanUrl === '/p/home/' || cleanUrl === '/p/home/dvc-trang-chu') {
+    let homeFile = path.join(process.cwd(), 'public', 'p', 'home', 'dvc-trang-chu.html');
+    if (fs.existsSync(homeFile)) {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      fs.createReadStream(homeFile).pipe(res);
+      return;
     }
   }
 
@@ -91,16 +144,10 @@ export default defineConfig({
       {
         name: 'dvc-portal-dev-middleware',
         configureServer(server) {
-          // Pre-middleware để xử lý sớm nhất
-          server.middlewares.use(handleDvcRequest);
-
-          return () => {
-            // Post-middleware dự phòng
-            server.middlewares.stack.unshift({
-              route: '',
-              handle: handleDvcRequest
-            });
-          };
+          server.middlewares.stack.unshift({
+            route: '',
+            handle: handleDvcRequest
+          });
         }
       }
     ]

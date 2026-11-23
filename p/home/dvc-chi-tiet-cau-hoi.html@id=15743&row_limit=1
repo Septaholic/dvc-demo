@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta name="description" content="Cổng Dịch vụ c&ocirc;ng Quốc gia hỗ trợ th&ocirc;ng tin, đăng k&yacute; thủ tục h&agrave;nh ch&iacute;nh như đổi giấy ph&eacute;p l&aacute;i xe, nộp thuế điện tử, th&ocirc;ng b&aacute;o khuyến mại, cấp lại thẻ BHYT, cấp điện mới..." /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="theme/vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/iconsax/style.css" /> 
+  <!-- <link rel="stylesheet" href="../vendor/iconsax/style.css"> --> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrapValidator.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css" /> 
+  <link rel="stylesheet" href="theme/css/style.css?version=9" /> 
+  <link rel="shortcut icon" href="img/header/quoc_huy.png" /> 
+  <script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrapValidator.js"></script> 
+  <script type="text/javascript" src="theme/vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/modules/variable-pie.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts-more.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+  <script type="text/javascript" src="vendor/jq-paginator.js"></script> 
+  <script type="text/javascript" src="vendor/bootbox.all.min.js"></script> 
+  <script type="text/javascript" src="vendor/select2.min.js"></script> 
+  <script type="text/javascript" src="vendor/mime.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script> 
+  <link rel="stylesheet" href="vendor/select2.min.css" /> 
+  <script src="./js/ApiService.js?version=18"></script> 
+  <script src="./js/CommonUtil.js?version=16"></script> 
+  <script src="./js/Constants.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
+  <script src="./js/base64.js"></script> 
+  <script type="text/javascript" src="vendor/d3.v4.min.js"></script> 
+  <script>
+		initApiService();
+	</script> 
+ </head> 
+ <body> 
+  <div class="loading-all" id="loading-all" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.png" alt="" /> 
+    <span style="color:blue">Đang xử l&yacute;...<span> </span></span>
+   </div> 
+   <style type="text/css">
+			.loading-all {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 10000;
+				background: #dbdcdc40;
+			}
+			.loading-all .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="overlay-common"></div> 
+  <!-- /mtv/ Log propertise--> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="dvc-trang-chu.html" class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account"> 
+      <div class="buttons"> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-login">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-register">Đăng nhập</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
+     <li> <a href="#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
+       <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
+       <!-- <li>
+							<a href="#">Thủ tục hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+							</ul>
+						</li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --> 
+       <li><a href="dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
+       <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="">Thanh to&aacute;n trực tuyến</a> 
+      <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
+      <!-- <ul class="dropdown-menu">
+						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
+						<li><a href="dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế cá nhân/Trước bạ</a></li>
+						<li>
+							<a href="#">Thanh toán vi phạm hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh toán vi phạm giao thông</a></li>
+								<li><a href="dvc-thanh-toan-vi-pham-xay-dung.html">Tra cứu/Thanh toán vi phạm xây dựng</a></li>
+							</ul>
+						</li>
+						<li><a href="dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh toán phí/lệ phí dịch vụ công</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-bhyt.html">Đóng tiếp BHXH tự nguyện, gia hạn BHYT</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-doanh-nghiep.html">Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN</a></li>
+						<li><a href="dvc-thanh-toan-thue-dat-dai.html">Thanh toán nghĩa vụ tài chính về đất đai</a></li>
+						<li><a href="dvc-thanh-toan-dien.html">Thanh toán tiền điện</a></li>
+						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
+						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
+					</ul> --> </li> 
+     <li> <a href="#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> --> 
+       <li><a href="/p/phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+      </ul> </li> 
+     <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
+     <!-- <li>
+				  <a href="#">Thủ tục hành chính</a>
+				  <ul class="dropdown-menu">
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+				  </ul>
+				</li> --> 
+     <li class=""> <a href="#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
+       <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="buttons"> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div> 
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <!-- # set($object_id = $request.getParameter("object_id")) --> 
+  <div class="section-hotro"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="/p/home/dvc-trang-chu.html">Trang chủ</a></li> 
+     <li><a href="#">Chi tiết c&acirc;u hỏi</a></li> 
+    </ul> 
+    <div class="cau-hoi-pho-bien"> 
+     <div class="box-form"> 
+      <div class="row"> 
+       <div class="col-sm-6 col-xs-12"> 
+        <input type="text" class="form-control" placeholder="Nhập nội dung cần t&igrave;m" id="tuKhoa" /> 
+       </div> 
+       <div class="col-sm-6 col-xs-12"> 
+        <div class="input-right-button"> 
+         <div class="select-custom"> 
+          <select name="ministry" id="ministry" class="form-control"> </select> 
+         </div> 
+         <button class="btn btn-search btn-main" onclick="searchQuestion();"> <span class="-ap icon-search icon"></span> T&igrave;m kiếm </button> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <!-- # set($answers=[{ID=31879, CONTENT=<p>1. Thời điểm thẻ BHYT có giá trị sử dụng được quy định như sau:a) Đối tượng “Nhóm do người lao động và người sử dụng lao động đóng, Nhóm do ngân sách nhà nước đóng, Nhóm do tổ chức BHXH đóng, theo quy định của Luật BHYT ” tham gia BHYT lần đầu, thẻ BHYT có giá trị sử dụng kể từ ngày đóng BHYT;b) Người tham gia BHYT liên tục kể từ lần thứ hai trở đi thì thẻ BHYT có giá trị sử dụng nối tiếp với ngày hết hạn sử dụng của thẻ lần trước;c) Đối tượng “Nhóm được ngân sách nhà nước hỗ trợ mức đóng, Nhóm tham gia BHYT theo hộ gia đình, theo quy định của Luật BHYT” tham gia BHYT không liên tục từ 3 tháng trở lên trong năm tài chính thì thẻ BHYT có giá trị sử dụng sau 30 ngày, kể từ ngày đóng BHYT;d) Đối với trẻ em dưới 6 tuổi thì thẻ BHYT có giá trị sử dụng đến ngày trẻ đủ 72 tháng tuổi; Trường hợp trẻ em sinh trước ngày 30 tháng 9: Thẻ BHYT có giá trị sử dụng đến hết ngày 30 tháng 9 của năm trẻ đủ 72 tháng tuổi; Trường hợp trẻ sinh sau ngày 30 tháng 9: Thẻ BHYT có giá trị sử dụng đến hết ngày cuối của tháng trẻ đủ 72 tháng tuổi.2. Thời hạn thẻ BHYT có giá trị sử dụng đối với một số nhóm đối tượng:a) Người đang hưởng trợ cấp thất nghiệp, thẻ BHYT có giá trị sử dụng từ tháng đầu tiên hưởng trợ cấp thất nghiệp ghi trong quyết định hưởng trợ cấp thất nghiệp của cơ quan nhà nước cấp có thẩm quyền.b) Người thuộc diện hưởng trợ cấp bảo trợ xã hội hằng tháng theo quy định của pháp luật về người cao tuổi, người khuyết tật, đối tượng bảo trợ xã hội, thẻ BHYT có giá trị sử dụng từ ngày được hưởng trợ cấp xã hội tại quyết định của Ủy ban nhân dân cấp huyện.c) Người thuộc hộ gia đình nghèo; người dân tộc thiểu số đang sinh sống tại vùng có điều kiện kinh tế - xã hội khó khăn; người đang sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn; người đang sinh sống tại xã đảo, huyện đảo và một số đối tượng khác, cụ thể: (1) Người thuộc hộ gia đình nghèo theo tiêu chí về thu nhập, người thuộc hộ nghèo đa chiều có thiếu hụt về BHYT quy định tại Quyết định số 59/2015/QĐ-TTg ngày 19/11/2015 của Thủ tướng Chính phủ ban hành chuẩn nghèo tiếp cận đa chiều áp dụng cho giai đoạn 2016 - 2020 và các quyết định khác của cơ quan có thẩm quyền sửa đổi, bổ sung hoặc thay thế chuẩn nghèo áp dụng cho từng giai đoạn; (2) Người dân tộc thiểu số đang sinh sống tại vùng có điều kiện kinh tế - xã hội khó khăn theo quy định của Chính phủ, Thủ tướng Chính phủ; (3) Người đang sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn theo quy định của Chính phủ, Thủ tướng Chính phủ; (4) Người đang sinh sống tại xã đảo, huyện đảo theo quy định của Chính phủ, Thủ tướng Chính phủ; (5) Người thuộc hộ gia đình cận nghèo theo tiêu chí chuẩn cận nghèo theo quy định của Chính phủ, Thủ tướng Chính phủ.” mà được ngân sách nhà nước hỗ trợ 100% mức đóng BHYT, thẻ BHYT có giá trị sử dụng từ ngày được xác định tại quyết định phê duyệt danh sách của cơ quan nhà nước có thẩm quyền.d) Người được phong tặng danh hiệu nghệ nhân nhân dân, nghệ nhân ưu tú thuộc hộ gia đình có mức thu nhập bình quân đầu người hằng tháng thấp hơn mức lương cơ sở theo quy định của Chính phủ, thẻ BHYT có giá trị sử dụng từ ngày được xác định tại Quyết định phê duyệt danh sách của cơ quan nhà nước có thẩm quyền.đ) Người đã hiến bộ phận cơ thể người theo quy định của pháp luật về hiến ghép mô tạng, thẻ BHYT có giá trị sử dụng ngay sau khi hiến bộ phận cơ thể.e) Đối với học sinh, sinh viên: (1) Thẻ BHYT được cấp hằng năm cho học sinh của cơ sở giáo dục phổ thông, trong đó:- Đối với học sinh lớp 1: Giá trị sử dụng bắt đầu từ ngày 01 tháng 10 năm đầu tiên của cấp tiểu học;- Đối với học sinh lớp 12: Thẻ BHYT có giá trị sử dụng đến hết ngày 30 tháng 9 của năm đó.(2) Thẻ BHYT được cấp hằng năm cho học sinh, sinh viên của cơ sở giáo dục đại học, cơ sở giáo dục nghề nghiệp, trong đó:- Đối với học sinh, sinh viên năm thứ nhất của khóa học: Thẻ có giá trị sử dụng từ ngày nhập học, trừ trường hợp thẻ của học sinh lớp 12 đang còn giá trị sử dụng;- Đối với học sinh, sinh viên năm cuối của khóa học: Thẻ có giá trị sử dụng đến ngày cuối của tháng kết thúc khóa học.g) Đối với đối tượng khác, thẻ BHYT có giá trị sử dụng từ ngày người tham gia nộp tiền đóng BHYT. Trường hợp đối tượng “Người thuộc hộ gia đình làm nông nghiệp, lâm nghiệp, ngư nghiệp và diêm nghiệp có mức sống trung bình theo quy định của Chính phủ, Thủ tướng Chính phủ; Nhóm tham gia BHYT theo hộ gia đình; Nhóm do người sử dụng lao động đóng theo quy định tại NĐ số 146/2018/NĐ-CP” tham gia BHYT lần đầu hoặc tham gia không liên tục từ 03 tháng trở lên trong năm tài chính thì thẻ BHYT có thời hạn sử dụng là 12 tháng kể từ ngày thẻ BHYT có giá trị sử dụng tham gia không liên tục từ 3 tháng trở lên trong năm tài chính thì thẻ BHYT có giá trị sử dụng sau 30 ngày, kể từ ngày đóng BHYT;h) Giá trị sử dụng của thẻ BHYT quy định tại Khoản 2 này tương ứng số tiền đóng BHYT theo quy định, trừ đối tượng là trẻ em dưới 6 tuổi.</p>, CONTENT_LOWER=<p>1. thời điểm thẻ bhyt có giá trị sử dụng được quy định như sau:a) đối tượng “nhóm do người lao động và người sử dụng lao động đóng, nhóm do ngân sách nhà nước đóng, nhóm do tổ chức bhxh đóng, theo quy định của luật bhyt ” tham gia bhyt lần đầu, thẻ bhyt có giá trị sử dụng kể từ ngày đóng bhyt;b) người tham gia bhyt liên tục kể từ lần thứ hai trở đi thì thẻ bhyt có giá trị sử dụng nối tiếp với ngày hết hạn sử dụng của thẻ lần trước;c) đối tượng “nhóm được ngân sách nhà nước hỗ trợ mức đóng, nhóm tham gia bhyt theo hộ gia đình, theo quy định của luật bhyt” tham gia bhyt không liên tục từ 3 tháng trở lên trong năm tài chính thì thẻ bhyt có giá trị sử dụng sau 30 ngày, kể từ ngày đóng bhyt;d) đối với trẻ em dưới 6 tuổi thì thẻ bhyt có giá trị sử dụng đến ngày trẻ đủ 72 tháng tuổi; trường hợp trẻ em sinh trước ngày 30 tháng 9: thẻ bhyt có giá trị sử dụng đến hết ngày 30 tháng 9 của năm trẻ đủ 72 tháng tuổi; trường hợp trẻ sinh sau ngày 30 tháng 9: thẻ bhyt có giá trị sử dụng đến hết ngày cuối của tháng trẻ đủ 72 tháng tuổi.2. thời hạn thẻ bhyt có giá trị sử dụng đối với một số nhóm đối tượng:a) người đang hưởng trợ cấp thất nghiệp, thẻ bhyt có giá trị sử dụng từ tháng đầu tiên hưởng trợ cấp thất nghiệp ghi trong quyết định hưởng trợ cấp thất nghiệp của cơ quan nhà nước cấp có thẩm quyền.b) người thuộc diện hưởng trợ cấp bảo trợ xã hội hằng tháng theo quy định của pháp luật về người cao tuổi, người khuyết tật, đối tượng bảo trợ xã hội, thẻ bhyt có giá trị sử dụng từ ngày được hưởng trợ cấp xã hội tại quyết định của ủy ban nhân dân cấp huyện.c) người thuộc hộ gia đình nghèo; người dân tộc thiểu số đang sinh sống tại vùng có điều kiện kinh tế - xã hội khó khăn; người đang sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn; người đang sinh sống tại xã đảo, huyện đảo và một số đối tượng khác, cụ thể: (1) người thuộc hộ gia đình nghèo theo tiêu chí về thu nhập, người thuộc hộ nghèo đa chiều có thiếu hụt về bhyt quy định tại quyết định số 59/2015/qđ-ttg ngày 19/11/2015 của thủ tướng chính phủ ban hành chuẩn nghèo tiếp cận đa chiều áp dụng cho giai đoạn 2016 - 2020 và các quyết định khác của cơ quan có thẩm quyền sửa đổi, bổ sung hoặc thay thế chuẩn nghèo áp dụng cho từng giai đoạn; (2) người dân tộc thiểu số đang sinh sống tại vùng có điều kiện kinh tế - xã hội khó khăn theo quy định của chính phủ, thủ tướng chính phủ; (3) người đang sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn theo quy định của chính phủ, thủ tướng chính phủ; (4) người đang sinh sống tại xã đảo, huyện đảo theo quy định của chính phủ, thủ tướng chính phủ; (5) người thuộc hộ gia đình cận nghèo theo tiêu chí chuẩn cận nghèo theo quy định của chính phủ, thủ tướng chính phủ.” mà được ngân sách nhà nước hỗ trợ 100% mức đóng bhyt, thẻ bhyt có giá trị sử dụng từ ngày được xác định tại quyết định phê duyệt danh sách của cơ quan nhà nước có thẩm quyền.d) người được phong tặng danh hiệu nghệ nhân nhân dân, nghệ nhân ưu tú thuộc hộ gia đình có mức thu nhập bình quân đầu người hằng tháng thấp hơn mức lương cơ sở theo quy định của chính phủ, thẻ bhyt có giá trị sử dụng từ ngày được xác định tại quyết định phê duyệt danh sách của cơ quan nhà nước có thẩm quyền.đ) người đã hiến bộ phận cơ thể người theo quy định của pháp luật về hiến ghép mô tạng, thẻ bhyt có giá trị sử dụng ngay sau khi hiến bộ phận cơ thể.e) đối với học sinh, sinh viên: (1) thẻ bhyt được cấp hằng năm cho học sinh của cơ sở giáo dục phổ thông, trong đó:- đối với học sinh lớp 1: giá trị sử dụng bắt đầu từ ngày 01 tháng 10 năm đầu tiên của cấp tiểu học;- đối với học sinh lớp 12: thẻ bhyt có giá trị sử dụng đến hết ngày 30 tháng 9 của năm đó.(2) thẻ bhyt được cấp hằng năm cho học sinh, sinh viên của cơ sở giáo dục đại học, cơ sở giáo dục nghề nghiệp, trong đó:- đối với học sinh, sinh viên năm thứ nhất của khóa học: thẻ có giá trị sử dụng từ ngày nhập học, trừ trường hợp thẻ của học sinh lớp 12 đang còn giá trị sử dụng;- đối với học sinh, sinh viên năm cuối của khóa học: thẻ có giá trị sử dụng đến ngày cuối của tháng kết thúc khóa học.g) đối với đối tượng khác, thẻ bhyt có giá trị sử dụng từ ngày người tham gia nộp tiền đóng bhyt. trường hợp đối tượng “người thuộc hộ gia đình làm nông nghiệp, lâm nghiệp, ngư nghiệp và diêm nghiệp có mức sống trung bình theo quy định của chính phủ, thủ tướng chính phủ; nhóm tham gia bhyt theo hộ gia đình; nhóm do người sử dụng lao động đóng theo quy định tại nđ số 146/2018/nđ-cp” tham gia bhyt lần đầu hoặc tham gia không liên tục từ 03 tháng trở lên trong năm tài chính thì thẻ bhyt có thời hạn sử dụng là 12 tháng kể từ ngày thẻ bhyt có giá trị sử dụng tham gia không liên tục từ 3 tháng trở lên trong năm tài chính thì thẻ bhyt có giá trị sử dụng sau 30 ngày, kể từ ngày đóng bhyt;h) giá trị sử dụng của thẻ bhyt quy định tại khoản 2 này tương ứng số tiền đóng bhyt theo quy định, trừ đối tượng là trẻ em dưới 6 tuổi.</p>}]) --> 
+     <h1 class="main-title-sub">Thời hạn thẻ BHYT c&oacute; gi&aacute; trị sử dụng như thế n&agrave;o?</h1> 
+     <div class="article"> 
+      <p class="f22">Trả lời:</p> 
+      <p> </p>
+      <p>1. Thời điểm thẻ BHYT c&oacute; gi&aacute; trị sử dụng được quy định như sau:a) Đối tượng “Nh&oacute;m do người lao động v&agrave; người sử dụng lao động đ&oacute;ng, Nh&oacute;m do ng&acirc;n s&aacute;ch nh&agrave; nước đ&oacute;ng, Nh&oacute;m do tổ chức BHXH đ&oacute;ng, theo quy định của Luật BHYT ” tham gia BHYT lần đầu, thẻ BHYT c&oacute; gi&aacute; trị sử dụng kể từ ng&agrave;y đ&oacute;ng BHYT;b) Người tham gia BHYT li&ecirc;n tục kể từ lần thứ hai trở đi th&igrave; thẻ BHYT c&oacute; gi&aacute; trị sử dụng nối tiếp với ng&agrave;y hết hạn sử dụng của thẻ lần trước;c) Đối tượng “Nh&oacute;m được ng&acirc;n s&aacute;ch nh&agrave; nước hỗ trợ mức đ&oacute;ng, Nh&oacute;m tham gia BHYT theo hộ gia đ&igrave;nh, theo quy định của Luật BHYT” tham gia BHYT kh&ocirc;ng li&ecirc;n tục từ 3 th&aacute;ng trở l&ecirc;n trong năm t&agrave;i ch&iacute;nh th&igrave; thẻ BHYT c&oacute; gi&aacute; trị sử dụng sau 30 ng&agrave;y, kể từ ng&agrave;y đ&oacute;ng BHYT;d) Đối với trẻ em dưới 6 tuổi th&igrave; thẻ BHYT c&oacute; gi&aacute; trị sử dụng đến ng&agrave;y trẻ đủ 72 th&aacute;ng tuổi; Trường hợp trẻ em sinh trước ng&agrave;y 30 th&aacute;ng 9: Thẻ BHYT c&oacute; gi&aacute; trị sử dụng đến hết ng&agrave;y 30 th&aacute;ng 9 của năm trẻ đủ 72 th&aacute;ng tuổi; Trường hợp trẻ sinh sau ng&agrave;y 30 th&aacute;ng 9: Thẻ BHYT c&oacute; gi&aacute; trị sử dụng đến hết ng&agrave;y cuối của th&aacute;ng trẻ đủ 72 th&aacute;ng tuổi.2. Thời hạn thẻ BHYT c&oacute; gi&aacute; trị sử dụng đối với một số nh&oacute;m đối tượng:a) Người đang hưởng trợ cấp thất nghiệp, thẻ BHYT c&oacute; gi&aacute; trị sử dụng từ th&aacute;ng đầu ti&ecirc;n hưởng trợ cấp thất nghiệp ghi trong quyết định hưởng trợ cấp thất nghiệp của cơ quan nh&agrave; nước cấp c&oacute; thẩm quyền.b) Người thuộc diện hưởng trợ cấp bảo trợ x&atilde; hội hằng th&aacute;ng theo quy định của ph&aacute;p luật về người cao tuổi, người khuyết tật, đối tượng bảo trợ x&atilde; hội, thẻ BHYT c&oacute; gi&aacute; trị sử dụng từ ng&agrave;y được hưởng trợ cấp x&atilde; hội tại quyết định của Ủy ban nh&acirc;n d&acirc;n cấp huyện.c) Người thuộc hộ gia đ&igrave;nh ngh&egrave;o; người d&acirc;n tộc thiểu số đang sinh sống tại v&ugrave;ng c&oacute; điều kiện kinh tế - x&atilde; hội kh&oacute; khăn; người đang sinh sống tại v&ugrave;ng c&oacute; điều kiện kinh tế - x&atilde; hội đặc biệt kh&oacute; khăn; người đang sinh sống tại x&atilde; đảo, huyện đảo v&agrave; một số đối tượng kh&aacute;c, cụ thể: (1) Người thuộc hộ gia đ&igrave;nh ngh&egrave;o theo ti&ecirc;u ch&iacute; về thu nhập, người thuộc hộ ngh&egrave;o đa chiều c&oacute; thiếu hụt về BHYT quy định tại Quyết định số 59/2015/QĐ-TTg ng&agrave;y 19/11/2015 của Thủ tướng Ch&iacute;nh phủ ban h&agrave;nh chuẩn ngh&egrave;o tiếp cận đa chiều &aacute;p dụng cho giai đoạn 2016 - 2020 v&agrave; c&aacute;c quyết định kh&aacute;c của cơ quan c&oacute; thẩm quyền sửa đổi, bổ sung hoặc thay thế chuẩn ngh&egrave;o &aacute;p dụng cho từng giai đoạn; (2) Người d&acirc;n tộc thiểu số đang sinh sống tại v&ugrave;ng c&oacute; điều kiện kinh tế - x&atilde; hội kh&oacute; khăn theo quy định của Ch&iacute;nh phủ, Thủ tướng Ch&iacute;nh phủ; (3) Người đang sinh sống tại v&ugrave;ng c&oacute; điều kiện kinh tế - x&atilde; hội đặc biệt kh&oacute; khăn theo quy định của Ch&iacute;nh phủ, Thủ tướng Ch&iacute;nh phủ; (4) Người đang sinh sống tại x&atilde; đảo, huyện đảo theo quy định của Ch&iacute;nh phủ, Thủ tướng Ch&iacute;nh phủ; (5) Người thuộc hộ gia đ&igrave;nh cận ngh&egrave;o theo ti&ecirc;u ch&iacute; chuẩn cận ngh&egrave;o theo quy định của Ch&iacute;nh phủ, Thủ tướng Ch&iacute;nh phủ.” m&agrave; được ng&acirc;n s&aacute;ch nh&agrave; nước hỗ trợ 100% mức đ&oacute;ng BHYT, thẻ BHYT c&oacute; gi&aacute; trị sử dụng từ ng&agrave;y được x&aacute;c định tại quyết định ph&ecirc; duyệt danh s&aacute;ch của cơ quan nh&agrave; nước c&oacute; thẩm quyền.d) Người được phong tặng danh hiệu nghệ nh&acirc;n nh&acirc;n d&acirc;n, nghệ nh&acirc;n ưu t&uacute; thuộc hộ gia đ&igrave;nh c&oacute; mức thu nhập b&igrave;nh qu&acirc;n đầu người hằng th&aacute;ng thấp hơn mức lương cơ sở theo quy định của Ch&iacute;nh phủ, thẻ BHYT c&oacute; gi&aacute; trị sử dụng từ ng&agrave;y được x&aacute;c định tại Quyết định ph&ecirc; duyệt danh s&aacute;ch của cơ quan nh&agrave; nước c&oacute; thẩm quyền.đ) Người đ&atilde; hiến bộ phận cơ thể người theo quy định của ph&aacute;p luật về hiến gh&eacute;p m&ocirc; tạng, thẻ BHYT c&oacute; gi&aacute; trị sử dụng ngay sau khi hiến bộ phận cơ thể.e) Đối với học sinh, sinh vi&ecirc;n: (1) Thẻ BHYT được cấp hằng năm cho học sinh của cơ sở gi&aacute;o dục phổ th&ocirc;ng, trong đ&oacute;:- Đối với học sinh lớp 1: Gi&aacute; trị sử dụng bắt đầu từ ng&agrave;y 01 th&aacute;ng 10 năm đầu ti&ecirc;n của cấp tiểu học;- Đối với học sinh lớp 12: Thẻ BHYT c&oacute; gi&aacute; trị sử dụng đến hết ng&agrave;y 30 th&aacute;ng 9 của năm đ&oacute;.(2) Thẻ BHYT được cấp hằng năm cho học sinh, sinh vi&ecirc;n của cơ sở gi&aacute;o dục đại học, cơ sở gi&aacute;o dục nghề nghiệp, trong đ&oacute;:- Đối với học sinh, sinh vi&ecirc;n năm thứ nhất của kh&oacute;a học: Thẻ c&oacute; gi&aacute; trị sử dụng từ ng&agrave;y nhập học, trừ trường hợp thẻ của học sinh lớp 12 đang c&ograve;n gi&aacute; trị sử dụng;- Đối với học sinh, sinh vi&ecirc;n năm cuối của kh&oacute;a học: Thẻ c&oacute; gi&aacute; trị sử dụng đến ng&agrave;y cuối của th&aacute;ng kết th&uacute;c kh&oacute;a học.g) Đối với đối tượng kh&aacute;c, thẻ BHYT c&oacute; gi&aacute; trị sử dụng từ ng&agrave;y người tham gia nộp tiền đ&oacute;ng BHYT. Trường hợp đối tượng “Người thuộc hộ gia đ&igrave;nh l&agrave;m n&ocirc;ng nghiệp, l&acirc;m nghiệp, ngư nghiệp v&agrave; di&ecirc;m nghiệp c&oacute; mức sống trung b&igrave;nh theo quy định của Ch&iacute;nh phủ, Thủ tướng Ch&iacute;nh phủ; Nh&oacute;m tham gia BHYT theo hộ gia đ&igrave;nh; Nh&oacute;m do người sử dụng lao động đ&oacute;ng theo quy định tại NĐ số 146/2018/NĐ-CP” tham gia BHYT lần đầu hoặc tham gia kh&ocirc;ng li&ecirc;n tục từ 03 th&aacute;ng trở l&ecirc;n trong năm t&agrave;i ch&iacute;nh th&igrave; thẻ BHYT c&oacute; thời hạn sử dụng l&agrave; 12 th&aacute;ng kể từ ng&agrave;y thẻ BHYT c&oacute; gi&aacute; trị sử dụng tham gia kh&ocirc;ng li&ecirc;n tục từ 3 th&aacute;ng trở l&ecirc;n trong năm t&agrave;i ch&iacute;nh th&igrave; thẻ BHYT c&oacute; gi&aacute; trị sử dụng sau 30 ng&agrave;y, kể từ ng&agrave;y đ&oacute;ng BHYT;h) Gi&aacute; trị sử dụng của thẻ BHYT quy định tại Khoản 2 n&agrave;y tương ứng số tiền đ&oacute;ng BHYT theo quy định, trừ đối tượng l&agrave; trẻ em dưới 6 tuổi.</p> 
+      <p></p> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <div class="main-title-sub">
+       C&aacute;c thủ tục li&ecirc;n quan 
+     </div> 
+     <ul class="list-document"> 
+      <li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.001939">Đăng k&yacute; đ&oacute;ng, cấp thẻ BHYT đối với người chỉ tham gia BHYT</a></li> 
+      <li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.002535">Cấp thẻ bảo hiểm y tế</a></li> 
+     </ul> 
+     <div class="divider-gray"></div> 
+     <div class="main-title-sub">
+       C&aacute;c c&acirc;u hỏi li&ecirc;n quan 
+     </div> 
+     <ul class="list-document -question" id="list-questions"> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=15736&amp;row_limit=1">Đối với đối tượng Th&acirc;n nh&acirc;n của lực lượng c&ocirc;ng nh&acirc;n, vi&ecirc;n chức Quốc ph&ograve;ng đang phục vụ trong Qu&acirc;n đội, Th&acirc;n nh&acirc;n c&ocirc;ng nh&acirc;n c&ocirc;ng an đang phục vụ trong C&ocirc;ng an nh&acirc;n d&acirc;n, Th&acirc;n nh&acirc;n người l&agrave;m c&ocirc;ng t&aacute;c kh&aacute;c trong Tổ chức cơ yếu, khi tham gia BHYT th&igrave; mức đ&oacute;ng BHYT như thế n&agrave;o? v&agrave; ai l&agrave; người chịu tr&aacute;ch nhiệm đ&oacute;ng BHYT cho c&aacute;c th&acirc;n nh&acirc;n n&agrave;y?</a></li> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=15748&amp;row_limit=1">Do thay đổi chỗ ở, t&ocirc;i muốn thay đổi nơi đăng k&yacute; KCB BHYT ban đầu ghi tr&ecirc;n thẻ BHYT, tr&igrave;nh tự l&agrave;m như thế n&agrave;o?</a></li> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=15728&amp;row_limit=1">Cơ sở KCB BHYT ban đầu l&agrave; g&igrave;?</a></li> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=15732&amp;row_limit=1">Tr&aacute;ch nhiệm của BHXH Việt Nam trong thực hiện BHYT?</a></li> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=15739&amp;row_limit=1">Những người thuộc hộ gia đ&igrave;nh khi tham gia BHYT th&igrave; mức đ&oacute;ng BHYT được giảm trừ từ th&agrave;nh vi&ecirc;n thứ hai trở đi, cụ thể như thế n&agrave;o?</a></li> 
+     </ul> 
+     <a class="readmore" id="readMore" name="readMore" onclick="showAllRelatedQuestion('1');">Xem tất cả 20 c&acirc;u hỏi li&ecirc;n quan<span class="icon fa fa-angle-down"></span></a> 
+     <a class="readmore" id="readLess" onclick="showAllRelatedQuestion(0);" style="visibility: hidden;">Thu nhỏ c&acirc;u hỏi li&ecirc;n quan<span class="icon fa fa-angle-up"></span></a> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="section section-menu-bottom"> 
+   <div class="container"> 
+    <div class="pull-left"> 
+     <a class="wrap" onclick="goToQuestion()"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        C&acirc;u hỏi thường gặp 
+      </div> </a> 
+    </div> 
+    <div class="pull-right"> 
+     <a class="wrap" href="dvc-huong-dan-cong-dan-doanh-nghiep.html"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        Hướng dẫn sử dụng 
+      </div> </a> 
+    </div> 
+    <div class="clearfix"></div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+
+	function goToQuestion(){
+		var path = window.location.pathname;
+		var targetPage = 'dvc-cau-hoi-pho-bien.html';
+		if (path == '/p/home/dvc-trang-chu-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+			){
+			targetPage += '?pObject=5';
+		}else {
+			targetPage += '?pObject=1'
+		}
+		window.location.href = targetPage;
+	}
+</script> 
+  <script>
+
+    function showAllRelatedQuestion(rowLimit) {
+        $("#list-questions").html('Đang load...');
+        varRowLimit = 0;
+        if (rowLimit == 1){
+            varRowLimit = 0;
+            document.getElementById("readMore").style.visibility = "hidden";
+            document.getElementById("readLess").style.visibility = "visible";
+        } 
+        else {
+            varRowLimit = 1;
+            document.getElementById("readMore").style.visibility = "visible";
+            document.getElementById("readLess").style.visibility = "hidden";
+        }
+        var obj = new Object();
+        obj.service = "crud_find_list_question_related_service_v2";
+        obj.id = "15743";
+        obj.row_limit = varRowLimit;
+        obj.type = "ref";
+        var results = apiservice.AjaxJson.executeQuery(obj);
+        
+        if (results && results.length > 0 && JSON.stringify(results) != "[null]") {
+            renderHTML(results, rowLimit);
+        }
+    }
+
+    function doChangePageEvent (rowLimit) {
+        showAllRelatedQuestion(rowLimit);
+    }
+
+    function renderHTML (results, rowLimit) {
+        var listQuestionData = "";
+
+        for (var i = 0; i < results.length; i++) {
+            var data = results[i];
+            listQuestionData += '<li><a href="dvc-chi-tiet-cau-hoi.html?id=' + data.ID +'&row_limit=1" >' + data.CONTENT + '</a></li>';
+        }
+        $('#list-questions').html(listQuestionData);
+    }
+
+    function searchQuestion(){
+        var href = '/p/home/dvc-cau-hoi-pho-bien.html?boNganh=' + $("#ministry").val() +'&tuKhoa=' + $("#tuKhoa").val();
+        window.location.href = href;
+	}
+
+
+    $('#ministry').on('change', function() {
+        searchQuestion();
+    });
+
+    // $(_=>{
+	$(document).ready(function(){
+        getLocation("dvcqg_get_list_ministry_have_question_service_v2", null, null, "ministry");
+    });
+	// $(function(){
+    $("#tuKhoa").keyup(function (e) {
+        if (e.which == 13) {
+            searchQuestion();
+        }
+    });
+    
+</script>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="loading" id="loading" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+   <style type="text/css">
+			.loading {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 1000;
+			}
+			.loading .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add"> 
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p> 
+     </div> 
+     <div class="add"> 
+      <p>www.dichvucong.gov.vn</p> 
+     </div> 
+     <div class="add"> 
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p> 
+     </div> 
+     <div class="add"> 
+      <p> Email: dichvucong@chinhphu.vn</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script type="text/javascript" src="theme/vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="theme/vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="theme/js/custom.js"></script> 
+  <script type="text/javascript">
+    function showLoading() {
+        $("#loading-all").show();
+    }
+    function hideLoading(){
+        $("#loading-all").hide();
+    }
+
+    function goToPage(url){
+        window.location.href = url;
+    }
+
+    function goToPage_blank(url){
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    $(".targetgroup-box .btn-readmore").click(function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            $(this).html('Xem tiếp <span class="-ap icon-chevron-thin-down icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+            $(this).removeClass("active");
+        }else{
+            $(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+            $(this).addClass("active");
+        }
+    });
+    var links = [
+            
+        ];
+
+
+    function searchProcedure(){
+        var key = getWords($("#searchKeyWord").val(), 100);
+		console.log(key);
+        // if($("#searchKeyWord").val()) {
+        var href = 'dvc-ket-qua-thu-tuc.html?originKey=' + encodeURIComponent(key) + '&tukhoa=' + key.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g, ' ').trim() + '&tinh_thanh=';
+        window.location.href = href;
+        //}
+    }
+
+function showAdvSearch() {
+    getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+}
+
+function doAdvSearch(){
+
+    let mess = '';
+    let keyWord = $('#txtKEYWORD').val().trim();
+    keyWord = getWords(keyWord, 100);
+    if (!keyWord) {
+        mess += 'Bạn vui lòng nhập từ khóa tìm kiếm!\n';
+    }
+    let tinhThanhValue = $('#cboTINH_THANH').val();
+    let boNganhValue = $('#cboBO_NGANH').val();
+    var rdoBO = $("input[name='cap_thuc_hien']:checked").val();
+
+    if (((!tinhThanhValue || '-1' == tinhThanhValue) && rdoBO != 'bonganh') || (rdoBO == 'bonganh' && (!boNganhValue || '-1' == boNganhValue))) {
+        mess += 'Bạn phải chọn ít nhất một Tỉnh/ Thành phố hoặc một Bộ ngành!\n';
+    }
+
+    if (mess) {
+        toastr.warning(mess);
+        return;
+    }
+
+    var rdoSO = $("input[name='quan_huyen_or_so']:checked").val();
+    if (rdoBO != 'bonganh' && $('#cboTINH_THANH').val() && $('#cboTINH_THANH').val() != '-1' && ($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val()) && ($('#cboSO').val() == '-1' || !$('#cboSO').val()) && ($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val())) {
+
+        var params = 'originKey=' + encodeURIComponent(keyWord) + '&tukhoa=' + keyWord.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g,' ').trim()
+        params+= "&tinh_thanh="+(($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val()  || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        window.location = 'dvc-ket-qua-thu-tuc.html?' + params;
+    } else {
+
+        var params = "tu_khoa=" + keyWord;
+        //params += "&bo_nganh="+(($('#cboBO').val() != '-1' || !$('#cboBO').val() || rdoBO != 'bonganh') ? "" : $('#cboBO option:selected').text());
+        params += "&bo_nganh=" + ($('#cboBO_NGANH option:selected').text());
+        params += "&tinh_thanh=" + (($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val() || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        params += "&so=" + (($('#cboSO').val() == '-1' || !$('#cboSO').val() || rdoSO != 'so') ? "" : $('#cboSO option:selected').text());
+        params += "&quan_huyen=" + (($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val() || rdoSO == 'so') ? "" : $('#cboQUAN_HUYEN option:selected').text());
+        params += "&phuong_xa=" + (($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val() || rdoSO == 'so') ? "" : $('#cboPHUONG_XA option:selected').text());
+        params += "&id_tinh_thanh=" + $('#cboTINH_THANH').val();
+        params += "&id_quan_huyen=" + $('#cboQUAN_HUYEN').val();
+        params += "&id_phuong_xa=" + $('#cboPHUONG_XA').val();
+        params += "&id_so=" + $('#cboSO').val();
+        params += "&id_bo_nganh=" + $('#cboBO_NGANH').val();
+        window.location = 'dvc-danh-sach-dich-vu-cong.html?' + params;
+    }
+
+    $('#advsearch').modal('hide');
+}
+$(document).ready(function(){
+    $("#searchKeyWord").keyup(function (e){
+        if (e.which == 13) {
+            searchProcedure();
+        }
+    });
+    bindEvent();
+});
+
+function changeHeight(){
+    var vl = 1 - $('#popupChange').attr('height');
+    $('#popupChange').attr('height', vl);
+    $('#popupChange').css('height', vl + "px");
+}
+
+function bindEvent(){
+    $('#searchKeyWord').keydown(function(e){
+        if (e.keyCode == 13) {
+            searchProcedure();
+        }
+    });
+    $('#advsearch').on('hidden.bs.modal', function () {
+        $('#divClosePopupSearch').click();
+    });
+    $('#divClosePopupSearch').click(function(){
+        $("#txtKEYWORD").val('');
+        $('#rdoTINH_THANH').click();
+        $('#rdoQUAN_HUYEN').click();
+        $("#cboTINH_THANH").change();
+        getLocation("dvcqg_get_phuong_xa_by_selected", "huyen_id", -1, "cboPHUONG_XA");
+        $('#advsearch').modal('hide');
+
+    });
+
+    $('#rdoTINH_THANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').show();
+        $('#cboBO_NGANH').select2().next().hide();
+        $('#cboTINH_THANH').select2().next().show();
+        getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", -1, "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", -1, "cboSO");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+    });
+    $('#rdoBO_NGANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').hide();
+        $('#cboBO_NGANH').select2().next().show();
+        $('#cboTINH_THANH').select2().next().hide();
+        getLocation("dvcqg_get_bo_nganh_by_selected_v2", null, null, "cboBO_NGANH");
+    });
+
+    $('#rdoQUAN_HUYEN').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+        $('#cboSO').select2().next().hide();
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+    });
+
+    $('#rdoSO').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+        $('#cboSO').select2().next().show();
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+    });
+
+    $("#cboTINH_THANH,#cboQUAN_HUYEN,#cboPHUONG_XA,#cboSO,#cboBO_NGANH").select2({
+        allowClear: true,
+        width: "100%",
+    });
+    $('#cboSO,#cboBO_NGANH').select2().next().hide();
+
+    $("#cboTINH_THANH").change(function () {
+        getLocation("dvcqg_get_so_by_selected", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+
+    });
+    $("#cboQUAN_HUYEN").change(function () {
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", $("#cboQUAN_HUYEN").val(), "cboPHUONG_XA");
+    });
+}
+
+//suggestion search
+function sugggestProcedure(keyword) {
+    var obj = new Object();
+    obj.key_search = 'al:"' + keyword +'"~5';
+    obj.page_size = 5;
+    obj.start_row = 0;
+    obj.source_data = "thu_tuc_v1";
+    obj.type = "fts";
+    var result = apiservice.AjaxJson.executeQuery(obj);
+    var dataMap = result.response.docs.map(function (i) {
+        return {
+            name: i.ten_thu_tuc,
+            link: i.ten_thu_tuc,
+            id: i.ma_thu_tuc
+        }
+    });
+
+    return dataMap;
+}
+
+jQuery(document).ready(function($) {
+
+    var engine = new Bloodhound({
+        remote: {
+            url: '/jsp/procedure-typehead.jsp?keyword=al:"%QUERY%"~5',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('keyword'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    $(".search-input").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3
+    }, {
+        source: engine.ttAdapter(),
+        displayKey: 'ten_thu_tuc',
+        name: 'usersList',
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                console.log(data);
+                if (data.isnganhdoc == 1) {
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else if(data.isdungchung == 1){
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else{
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }
+                
+            }
+        }
+    });
+    $('#searchKeyWord:text:visible:first').focus();
+});
+
+</script> 
+  <script type="text/javascript">
+
+    //
+    function autoSetmenu() {
+        var path = window.location.pathname;
+        var isRemoveDropdown = false;
+
+        // Cau hoi
+        if (path == '/p/home/dvc-chi-tiet-cau-hoi.html'){
+            path = '/p/home/dvc-cau-hoi-pho-bien.html';
+        }
+
+        // Huong dan su dung
+        if (path == '/p/home/dvc-huong-dan-bo-nganh-dia-phuong.html' || path == '/p/home/dvc-phan-mem-ho-tro.html' || path == '/p/home/dvc-thiet-ke-giao-dien.html' ||
+            path == '/p/home/dvc-nop-tien-dien.html' || path == '/p/home/dvc-liet-ket-giao-duc.html'
+            ){
+            path = '/p/dvc-huong-dan-cong-dan-doanh-nghiep.html';
+        }
+
+        // Thu tuc hanh hinh cong dan - doanh nghiep
+        if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html'
+            ){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }else if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+            ){
+            path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+        }else if (path == '/p/home/dvc-danh-sach-thu-tuc-theo-nhom-su-kien.html'
+                || path == '/p/home/dvc-danh-sach-cau-hoi-theo-nhom-su-kien.html'
+            ) {
+            var objectId = GetURLParameter('objectId');
+            if (objectId == 1){
+                path = '/p/home/dvc-trang-chu-cong-dan.html';
+            }else if(objectId == 5){
+                path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+            }
+        }
+
+        // DVC trực tuyến & đăng ký xe
+        if (path == '/p/home/dvc-dich-vu-cong-truc-tuyen-ds.html'
+                || path == '/p/home/dvc-dich-vu-cong-truc-tuyen.html'
+                || path == '/p/home/dvc-dang-ky-xe.html'
+            ) {
+            path = '/p/home/dvc-dich-vu-cong-truc-tuyen.html';
+        }
+
+        // Chi tiet TTHC va DVC
+        if (path == '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html' 
+                || path == '/p/home/dvc-danh-sach-dich-vu-cong.html'
+                || path == '/p/home/dvc-danh-sach-thu-tuc-theo-su-kien.html'
+                || path == '/p/home/dvc-ket-qua-thu-tuc.html'
+            ) {
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+            isRemoveDropdown = true;
+        }
+
+        // module TTHC
+        if (path == '/p/home/dvc-tthc-category.html') {
+            path = '/p/home/dvc-tthc-trang-chu.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html';
+        }
+        if (path == '/p/home/dvc-tthc-quyet-dinh-cong-bo-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-quyet-dinh-cong-bo.html';
+        }
+        if (path == '/p/home/dvc-tthc-bonganh-tinhtp.html') {
+            path = '/p/home/dvc-tthc-co-quan.html';
+        }
+
+        if (path == '/p/home/dvc-chi-tiet-tin-tuc.html') {
+            path = '/p/home/dvc-tin-tuc.html';
+        }
+
+        // dvc-cap-ban-sao-tu-ban-chinh
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh.html'){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }
+        //  Đặt lịch hẹn
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh-dlh.html'){
+            path = '/p/home/dvc-tra-cuu-ho-so.html';
+        }
+        // Active main menu
+        $("#main-menu li").each(function () {
+            var link = $(this).find(">a").attr("href");
+            if (path.indexOf(link) != -1) {
+                $(this).parents('li').siblings().removeClass("active");
+                $(this).parents('li').addClass("active");
+                $(this).parents('li').find("li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // Active dropdownmenu
+        $("#main-menu > li").each(function () {
+            if ($(this).hasClass("active")) {
+                var html = $(this).find(">ul").html();
+                $(this).addClass("active");
+                $(this).find(">ul").addClass("hidden");
+                $("#list-dropdown").html(html);
+                if($("#bn-ttp").hasClass("active")){
+                    $("#coquan").addClass("active");
+                }
+            }
+        });
+
+        // Remove
+        if (isRemoveDropdown) {
+            $('#list-dropdown > li').removeClass('active');
+        }
+    }
+
+    var pathHDSD = window.location.pathname;
+    $("#regionleft-introduce li").removeClass('active');
+    $("#left-introduce li a").each(function () {
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $('#left-introduce li:first-child').removeClass('active');
+    $('.child-menus a').each(function(){
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        autoSetmenu();
+    })
+
+
+</script> 
+  <style>
+    .bootbox .modal-footer .btn + .btn {
+        margin-bottom: 0;
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .input-captcha .code .number {
+        height: 100%;
+        padding: 2px;
+    }
+</style>   
+ </body>
+</html>

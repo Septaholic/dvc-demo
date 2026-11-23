@@ -31,8 +31,10 @@ function getProcedureByEvent(id) {
    var _html = '';
    if (result != null && result.length > 0) {
       $.each(result, function (i) {
-         var targetUrl = result[i].URL || ('dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=' + result[i].PROCEDURE_CODE + '.html');
-         _html += '<li><a href="' + targetUrl + '">' + result[i].PROCEDURE_NAME + '</a></li>';
+         if (result[i].ISNGANHDOC == 1)
+            _html += '<li><a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + result[i].PROCEDURE_CODE + '">' + result[i].PROCEDURE_NAME + '</a></li>';
+         else 
+            _html += '<li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + result[i].PROCEDURE_CODE + '">' + result[i].PROCEDURE_NAME + '</a></li>';
       });
       $('#event_' + id).html(_html);
       if (result[0] .TOTAL > PAGE_SIZE) $('#eventViewMore_' + id).show();
@@ -91,8 +93,10 @@ function getsProcedure(currentPage) {
 function renderHTML(result, currentPage, totalCnt) {
    var _html = '';
    $.each(result, function(i){
-      var targetUrl = result[i].URL || ('dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=' + result[i].PROCEDURE_CODE + '.html');
-         _html += '<li><a href="' + targetUrl + '">' + result[i].PROCEDURE_NAME + '</a></li>';
+      if (result[i].ISNGANHDOC == 1)
+         _html += '<li><a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + result[i].PROCEDURE_CODE + '">' + result[i].PROCEDURE_NAME + '</a></li>';
+      else 
+         _html += '<li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + result[i].PROCEDURE_CODE + '">' + result[i].PROCEDURE_NAME + '</a></li>';
    });
    $('#procedures_body').html(_html);
    loadPagination(parseInt(totalCnt), currentPage, "paginationTTBySK", "changePageTTBySK", result, PAGE_SIZE_PROCEDURE);

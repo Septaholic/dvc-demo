@@ -1,4 +1,565 @@
 window.OFFLINE_PROCEDURES = [
+    {
+  "PROCEDURE_CODE": "1.002498",
+  "PROCEDURE_NAME": "Cấp giấy phép xây dựng mới đối với công trình cấp III, cấp IV",
+  "FIELD_NAME": "Xây dựng",
+  "IMPLEMENTATION_AGENCY": "Sở Xây dựng"
+},
+    {
+  "PROCEDURE_CODE": "1.000295",
+  "PROCEDURE_NAME": "Cấp Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm đối với cơ sở sản xuất thực phẩm nông, lâm, thủy sản",
+  "FIELD_NAME": "An toàn thực phẩm",
+  "IMPLEMENTATION_AGENCY": "Bộ Nông nghiệp và Phát triển nông thôn"
+},
+    {
+  "PROCEDURE_CODE": "2.001263",
+  "PROCEDURE_NAME": "Giải quyết việc nuôi con nuôi trong nước",
+  "FIELD_NAME": "Nuôi con nuôi",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000268",
+  "PROCEDURE_NAME": "Cấp mới Giấy chứng nhận đủ điều kiện về an ninh, trật tự để làm ngành, nghề kinh doanh có điều kiện",
+  "FIELD_NAME": "An ninh trật tự",
+  "IMPLEMENTATION_AGENCY": "Công an cấp tỉnh"
+},
+    {
+  "PROCEDURE_CODE": "1.000267",
+  "PROCEDURE_NAME": "Cấp giấy phép lao động cho người lao động nước ngoài làm việc tại Việt Nam",
+  "FIELD_NAME": "Lao động - Tiền lương",
+  "IMPLEMENTATION_AGENCY": "Sở Lao động - Thương binh và Xã hội"
+},
+    {
+  "PROCEDURE_CODE": "1.000363",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
+  "FIELD_NAME": "Đăng ký, quản lý cư trú",
+  "IMPLEMENTATION_AGENCY": "Công an cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000262",
+  "PROCEDURE_NAME": "Thực hiện, điều chỉnh, thôi hưởng trợ cấp xã hội hàng tháng, hỗ trợ kinh phí chăm sóc hàng tháng",
+  "FIELD_NAME": "Bảo trợ xã hội",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000297",
+  "PROCEDURE_NAME": "Thủ tục đăng ký nhãn hiệu",
+  "FIELD_NAME": "Sở hữu công nghiệp",
+  "IMPLEMENTATION_AGENCY": "Cục Sở hữu trí tuệ"
+},
+    {
+  "PROCEDURE_CODE": "2.000033",
+  "PROCEDURE_NAME": "Thông báo hoạt động khuyến mại",
+  "FIELD_NAME": "Thương mại",
+  "IMPLEMENTATION_AGENCY": "Sở Công thương"
+},
+    {
+  "PROCEDURE_CODE": "1.000264",
+  "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề khám bệnh, chữa bệnh đối với người Việt Nam",
+  "FIELD_NAME": "Khám bệnh, chữa bệnh",
+  "IMPLEMENTATION_AGENCY": "Sở Y tế"
+},
+    {
+  "PROCEDURE_CODE": "1.001456",
+  "PROCEDURE_NAME": "Cấp hộ chiếu phổ thông ở trong nước",
+  "FIELD_NAME": "Quản lý xuất nhập cảnh",
+  "IMPLEMENTATION_AGENCY": "Cục Quản lý xuất nhập cảnh"
+},
+    {
+  "PROCEDURE_CODE": "1.000274",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký kết hôn",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000316",
+  "PROCEDURE_NAME": "Đăng ký sang tên xe trong cùng tỉnh, thành phố trực thuộc Trung ương",
+  "FIELD_NAME": "Đăng ký, quản lý phương tiện giao thông cơ giới đường bộ",
+  "IMPLEMENTATION_AGENCY": "Công an cấp tỉnh / huyện"
+},
+    {
+  "PROCEDURE_CODE": "1.001193",
+  "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000689",
+  "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai sinh, đăng ký thường trú và cấp thẻ BHYT cho trẻ dưới 6 tuổi",
+  "FIELD_NAME": "Dịch vụ công liên thông",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002381",
+  "PROCEDURE_NAME": "Thủ tục đăng ký nghĩa vụ quân sự lần đầu",
+  "FIELD_NAME": "Nghĩa vụ quân sự",
+  "IMPLEMENTATION_AGENCY": "Ban Chỉ huy quân sự cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002571",
+  "PROCEDURE_NAME": "Cấp bản sao văn bằng, chứng chỉ từ sổ gốc",
+  "FIELD_NAME": "Giáo dục và Đào tạo",
+  "IMPLEMENTATION_AGENCY": "Sở Giáo dục và Đào tạo"
+},
+    {
+  "PROCEDURE_CODE": "1.001022",
+  "PROCEDURE_NAME": "Thủ tục đăng ký giám hộ",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.001255",
+  "PROCEDURE_NAME": "Đăng ký giám hộ cử",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002012",
+  "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT",
+  "FIELD_NAME": "Bảo hiểm xã hội",
+  "IMPLEMENTATION_AGENCY": "Bảo hiểm xã hội Việt Nam"
+},
+    {
+  "PROCEDURE_CODE": "1.001656",
+  "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT / Cấp lại thẻ BHYT",
+  "FIELD_NAME": "Bảo hiểm y tế",
+  "IMPLEMENTATION_AGENCY": "Bảo hiểm xã hội Việt Nam"
+},
+    {
+  "PROCEDURE_CODE": "1.001766",
+  "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho công dân Việt Nam, người nước ngoài đang cư trú tại Việt Nam",
+  "FIELD_NAME": "Lý lịch tư pháp",
+  "IMPLEMENTATION_AGENCY": "Sở Tư pháp"
+},
+    {
+  "PROCEDURE_CODE": "1.001288",
+  "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho người nước ngoài đã từng cư trú tại Việt Nam",
+  "FIELD_NAME": "Lý lịch tư pháp",
+  "IMPLEMENTATION_AGENCY": "Trung tâm Lý lịch tư pháp quốc gia"
+},
+    {
+  "PROCEDURE_CODE": "1.003655",
+  "PROCEDURE_NAME": "Đăng ký đất đai, cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở",
+  "FIELD_NAME": "Đất đai",
+  "IMPLEMENTATION_AGENCY": "Văn phòng Đăng ký đất đai"
+},
+    {
+  "PROCEDURE_CODE": "1.001425",
+  "PROCEDURE_NAME": "Đăng ký đất đai, tài sản gắn liền với đất lần đầu",
+  "FIELD_NAME": "Đất đai",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã / Văn phòng ĐKĐĐ"
+},
+    {
+  "PROCEDURE_CODE": "1.000274",
+  "PROCEDURE_NAME": "Cấp Giấy xác nhận tình trạng hôn nhân",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000110",
+  "PROCEDURE_NAME": "Thủ tục xin nhập quốc tịch Việt Nam",
+  "FIELD_NAME": "Quốc tịch",
+  "IMPLEMENTATION_AGENCY": "Sở Tư pháp"
+},
+    {
+  "PROCEDURE_CODE": "1.000080",
+  "PROCEDURE_NAME": "Thủ tục chứng thực bản sao từ bản chính các giấy tờ, văn bản",
+  "FIELD_NAME": "Chứng thực",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002581",
+  "PROCEDURE_NAME": "Đăng ký thành lập doanh nghiệp tư nhân, công ty TNHH, công ty cổ phần",
+  "FIELD_NAME": "Thành lập doanh nghiệp",
+  "IMPLEMENTATION_AGENCY": "Sở Kế hoạch và Đầu tư"
+},
+    {
+  "PROCEDURE_CODE": "1.000419",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký khai tử",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000656",
+  "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai tử, xóa đăng ký thường trú, hưởng chế độ tử tuất",
+  "FIELD_NAME": "Dịch vụ công liên thông",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    
+    {
+  "PROCEDURE_CODE": "1.002498",
+  "PROCEDURE_NAME": "Cấp giấy phép xây dựng mới đối với công trình cấp III, cấp IV",
+  "FIELD_NAME": "Xây dựng",
+  "IMPLEMENTATION_AGENCY": "Sở Xây dựng"
+},
+    {
+  "PROCEDURE_CODE": "1.000295",
+  "PROCEDURE_NAME": "Cấp Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm đối với cơ sở sản xuất thực phẩm nông, lâm, thủy sản",
+  "FIELD_NAME": "An toàn thực phẩm",
+  "IMPLEMENTATION_AGENCY": "Bộ Nông nghiệp và Phát triển nông thôn"
+},
+    {
+  "PROCEDURE_CODE": "2.001263",
+  "PROCEDURE_NAME": "Giải quyết việc nuôi con nuôi trong nước",
+  "FIELD_NAME": "Nuôi con nuôi",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000268",
+  "PROCEDURE_NAME": "Cấp mới Giấy chứng nhận đủ điều kiện về an ninh, trật tự để làm ngành, nghề kinh doanh có điều kiện",
+  "FIELD_NAME": "An ninh trật tự",
+  "IMPLEMENTATION_AGENCY": "Công an cấp tỉnh"
+},
+    {
+  "PROCEDURE_CODE": "1.000267",
+  "PROCEDURE_NAME": "Cấp giấy phép lao động cho người lao động nước ngoài làm việc tại Việt Nam",
+  "FIELD_NAME": "Lao động - Tiền lương",
+  "IMPLEMENTATION_AGENCY": "Sở Lao động - Thương binh và Xã hội"
+},
+    {
+  "PROCEDURE_CODE": "1.000363",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
+  "FIELD_NAME": "Đăng ký, quản lý cư trú",
+  "IMPLEMENTATION_AGENCY": "Công an cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000262",
+  "PROCEDURE_NAME": "Thực hiện, điều chỉnh, thôi hưởng trợ cấp xã hội hàng tháng, hỗ trợ kinh phí chăm sóc hàng tháng",
+  "FIELD_NAME": "Bảo trợ xã hội",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000297",
+  "PROCEDURE_NAME": "Thủ tục đăng ký nhãn hiệu",
+  "FIELD_NAME": "Sở hữu công nghiệp",
+  "IMPLEMENTATION_AGENCY": "Cục Sở hữu trí tuệ"
+},
+    {
+  "PROCEDURE_CODE": "2.000033",
+  "PROCEDURE_NAME": "Thông báo hoạt động khuyến mại",
+  "FIELD_NAME": "Thương mại",
+  "IMPLEMENTATION_AGENCY": "Sở Công thương"
+},
+    {
+  "PROCEDURE_CODE": "1.000264",
+  "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề khám bệnh, chữa bệnh đối với người Việt Nam",
+  "FIELD_NAME": "Khám bệnh, chữa bệnh",
+  "IMPLEMENTATION_AGENCY": "Sở Y tế"
+},
+    {
+  "PROCEDURE_CODE": "1.001456",
+  "PROCEDURE_NAME": "Cấp hộ chiếu phổ thông ở trong nước",
+  "FIELD_NAME": "Quản lý xuất nhập cảnh",
+  "IMPLEMENTATION_AGENCY": "Cục Quản lý xuất nhập cảnh"
+},
+    {
+  "PROCEDURE_CODE": "1.000274",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký kết hôn",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000316",
+  "PROCEDURE_NAME": "Đăng ký sang tên xe trong cùng tỉnh, thành phố trực thuộc Trung ương",
+  "FIELD_NAME": "Đăng ký, quản lý phương tiện giao thông cơ giới đường bộ",
+  "IMPLEMENTATION_AGENCY": "Công an cấp tỉnh / huyện"
+},
+    {
+  "PROCEDURE_CODE": "1.001193",
+  "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000689",
+  "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai sinh, đăng ký thường trú và cấp thẻ BHYT cho trẻ dưới 6 tuổi",
+  "FIELD_NAME": "Dịch vụ công liên thông",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002381",
+  "PROCEDURE_NAME": "Thủ tục đăng ký nghĩa vụ quân sự lần đầu",
+  "FIELD_NAME": "Nghĩa vụ quân sự",
+  "IMPLEMENTATION_AGENCY": "Ban Chỉ huy quân sự cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002571",
+  "PROCEDURE_NAME": "Cấp bản sao văn bằng, chứng chỉ từ sổ gốc",
+  "FIELD_NAME": "Giáo dục và Đào tạo",
+  "IMPLEMENTATION_AGENCY": "Sở Giáo dục và Đào tạo"
+},
+    {
+  "PROCEDURE_CODE": "1.001022",
+  "PROCEDURE_NAME": "Thủ tục đăng ký giám hộ",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.001255",
+  "PROCEDURE_NAME": "Đăng ký giám hộ cử",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002012",
+  "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT",
+  "FIELD_NAME": "Bảo hiểm xã hội",
+  "IMPLEMENTATION_AGENCY": "Bảo hiểm xã hội Việt Nam"
+},
+    {
+  "PROCEDURE_CODE": "1.001656",
+  "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT / Cấp lại thẻ BHYT",
+  "FIELD_NAME": "Bảo hiểm y tế",
+  "IMPLEMENTATION_AGENCY": "Bảo hiểm xã hội Việt Nam"
+},
+    {
+  "PROCEDURE_CODE": "1.001766",
+  "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho công dân Việt Nam, người nước ngoài đang cư trú tại Việt Nam",
+  "FIELD_NAME": "Lý lịch tư pháp",
+  "IMPLEMENTATION_AGENCY": "Sở Tư pháp"
+},
+    {
+  "PROCEDURE_CODE": "1.001288",
+  "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho người nước ngoài đã từng cư trú tại Việt Nam",
+  "FIELD_NAME": "Lý lịch tư pháp",
+  "IMPLEMENTATION_AGENCY": "Trung tâm Lý lịch tư pháp quốc gia"
+},
+    {
+  "PROCEDURE_CODE": "1.003655",
+  "PROCEDURE_NAME": "Đăng ký đất đai, cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở",
+  "FIELD_NAME": "Đất đai",
+  "IMPLEMENTATION_AGENCY": "Văn phòng Đăng ký đất đai"
+},
+    {
+  "PROCEDURE_CODE": "1.001425",
+  "PROCEDURE_NAME": "Đăng ký đất đai, tài sản gắn liền với đất lần đầu",
+  "FIELD_NAME": "Đất đai",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã / Văn phòng ĐKĐĐ"
+},
+    {
+  "PROCEDURE_CODE": "1.000274",
+  "PROCEDURE_NAME": "Cấp Giấy xác nhận tình trạng hôn nhân",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000110",
+  "PROCEDURE_NAME": "Thủ tục xin nhập quốc tịch Việt Nam",
+  "FIELD_NAME": "Quốc tịch",
+  "IMPLEMENTATION_AGENCY": "Sở Tư pháp"
+},
+    {
+  "PROCEDURE_CODE": "1.000080",
+  "PROCEDURE_NAME": "Thủ tục chứng thực bản sao từ bản chính các giấy tờ, văn bản",
+  "FIELD_NAME": "Chứng thực",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002581",
+  "PROCEDURE_NAME": "Đăng ký thành lập doanh nghiệp tư nhân, công ty TNHH, công ty cổ phần",
+  "FIELD_NAME": "Thành lập doanh nghiệp",
+  "IMPLEMENTATION_AGENCY": "Sở Kế hoạch và Đầu tư"
+},
+    {
+  "PROCEDURE_CODE": "1.000419",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký khai tử",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000656",
+  "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai tử, xóa đăng ký thường trú, hưởng chế độ tử tuất",
+  "FIELD_NAME": "Dịch vụ công liên thông",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    
+    {
+  "PROCEDURE_CODE": "1.002498",
+  "PROCEDURE_NAME": "Cấp giấy phép xây dựng mới đối với công trình cấp III, cấp IV",
+  "FIELD_NAME": "Xây dựng",
+  "IMPLEMENTATION_AGENCY": "Sở Xây dựng"
+},
+    {
+  "PROCEDURE_CODE": "1.000295",
+  "PROCEDURE_NAME": "Cấp Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm đối với cơ sở sản xuất thực phẩm nông, lâm, thủy sản",
+  "FIELD_NAME": "An toàn thực phẩm",
+  "IMPLEMENTATION_AGENCY": "Bộ Nông nghiệp và Phát triển nông thôn"
+},
+    {
+  "PROCEDURE_CODE": "2.001263",
+  "PROCEDURE_NAME": "Giải quyết việc nuôi con nuôi trong nước",
+  "FIELD_NAME": "Nuôi con nuôi",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000268",
+  "PROCEDURE_NAME": "Cấp mới Giấy chứng nhận đủ điều kiện về an ninh, trật tự để làm ngành, nghề kinh doanh có điều kiện",
+  "FIELD_NAME": "An ninh trật tự",
+  "IMPLEMENTATION_AGENCY": "Công an cấp tỉnh"
+},
+    {
+  "PROCEDURE_CODE": "1.000267",
+  "PROCEDURE_NAME": "Cấp giấy phép lao động cho người lao động nước ngoài làm việc tại Việt Nam",
+  "FIELD_NAME": "Lao động - Tiền lương",
+  "IMPLEMENTATION_AGENCY": "Sở Lao động - Thương binh và Xã hội"
+},
+    {
+  "PROCEDURE_CODE": "1.000363",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký tạm vắng",
+  "FIELD_NAME": "Đăng ký, quản lý cư trú",
+  "IMPLEMENTATION_AGENCY": "Công an cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000262",
+  "PROCEDURE_NAME": "Thực hiện, điều chỉnh, thôi hưởng trợ cấp xã hội hàng tháng, hỗ trợ kinh phí chăm sóc hàng tháng",
+  "FIELD_NAME": "Bảo trợ xã hội",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000297",
+  "PROCEDURE_NAME": "Thủ tục đăng ký nhãn hiệu",
+  "FIELD_NAME": "Sở hữu công nghiệp",
+  "IMPLEMENTATION_AGENCY": "Cục Sở hữu trí tuệ"
+},
+    {
+  "PROCEDURE_CODE": "2.000033",
+  "PROCEDURE_NAME": "Thông báo hoạt động khuyến mại",
+  "FIELD_NAME": "Thương mại",
+  "IMPLEMENTATION_AGENCY": "Sở Công thương"
+},
+    {
+  "PROCEDURE_CODE": "1.000264",
+  "PROCEDURE_NAME": "Cấp chứng chỉ hành nghề khám bệnh, chữa bệnh đối với người Việt Nam",
+  "FIELD_NAME": "Khám bệnh, chữa bệnh",
+  "IMPLEMENTATION_AGENCY": "Sở Y tế"
+},
+    {
+  "PROCEDURE_CODE": "1.001456",
+  "PROCEDURE_NAME": "Cấp hộ chiếu phổ thông ở trong nước",
+  "FIELD_NAME": "Quản lý xuất nhập cảnh",
+  "IMPLEMENTATION_AGENCY": "Cục Quản lý xuất nhập cảnh"
+},
+    {
+  "PROCEDURE_CODE": "1.000274",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký kết hôn",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000316",
+  "PROCEDURE_NAME": "Đăng ký sang tên xe trong cùng tỉnh, thành phố trực thuộc Trung ương",
+  "FIELD_NAME": "Đăng ký, quản lý phương tiện giao thông cơ giới đường bộ",
+  "IMPLEMENTATION_AGENCY": "Công an cấp tỉnh / huyện"
+},
+    {
+  "PROCEDURE_CODE": "1.001193",
+  "PROCEDURE_NAME": "Thủ tục đăng ký khai sinh",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000689",
+  "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai sinh, đăng ký thường trú và cấp thẻ BHYT cho trẻ dưới 6 tuổi",
+  "FIELD_NAME": "Dịch vụ công liên thông",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002381",
+  "PROCEDURE_NAME": "Thủ tục đăng ký nghĩa vụ quân sự lần đầu",
+  "FIELD_NAME": "Nghĩa vụ quân sự",
+  "IMPLEMENTATION_AGENCY": "Ban Chỉ huy quân sự cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002571",
+  "PROCEDURE_NAME": "Cấp bản sao văn bằng, chứng chỉ từ sổ gốc",
+  "FIELD_NAME": "Giáo dục và Đào tạo",
+  "IMPLEMENTATION_AGENCY": "Sở Giáo dục và Đào tạo"
+},
+    {
+  "PROCEDURE_CODE": "1.001022",
+  "PROCEDURE_NAME": "Thủ tục đăng ký giám hộ",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.001255",
+  "PROCEDURE_NAME": "Đăng ký giám hộ cử",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002012",
+  "PROCEDURE_NAME": "Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT",
+  "FIELD_NAME": "Bảo hiểm xã hội",
+  "IMPLEMENTATION_AGENCY": "Bảo hiểm xã hội Việt Nam"
+},
+    {
+  "PROCEDURE_CODE": "1.001656",
+  "PROCEDURE_NAME": "Thanh toán trực tiếp chi phí khám, chữa bệnh BHYT / Cấp lại thẻ BHYT",
+  "FIELD_NAME": "Bảo hiểm y tế",
+  "IMPLEMENTATION_AGENCY": "Bảo hiểm xã hội Việt Nam"
+},
+    {
+  "PROCEDURE_CODE": "1.001766",
+  "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho công dân Việt Nam, người nước ngoài đang cư trú tại Việt Nam",
+  "FIELD_NAME": "Lý lịch tư pháp",
+  "IMPLEMENTATION_AGENCY": "Sở Tư pháp"
+},
+    {
+  "PROCEDURE_CODE": "1.001288",
+  "PROCEDURE_NAME": "Cấp Phiếu lý lịch tư pháp cho người nước ngoài đã từng cư trú tại Việt Nam",
+  "FIELD_NAME": "Lý lịch tư pháp",
+  "IMPLEMENTATION_AGENCY": "Trung tâm Lý lịch tư pháp quốc gia"
+},
+    {
+  "PROCEDURE_CODE": "1.003655",
+  "PROCEDURE_NAME": "Đăng ký đất đai, cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở",
+  "FIELD_NAME": "Đất đai",
+  "IMPLEMENTATION_AGENCY": "Văn phòng Đăng ký đất đai"
+},
+    {
+  "PROCEDURE_CODE": "1.001425",
+  "PROCEDURE_NAME": "Đăng ký đất đai, tài sản gắn liền với đất lần đầu",
+  "FIELD_NAME": "Đất đai",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã / Văn phòng ĐKĐĐ"
+},
+    {
+  "PROCEDURE_CODE": "1.000274",
+  "PROCEDURE_NAME": "Cấp Giấy xác nhận tình trạng hôn nhân",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000110",
+  "PROCEDURE_NAME": "Thủ tục xin nhập quốc tịch Việt Nam",
+  "FIELD_NAME": "Quốc tịch",
+  "IMPLEMENTATION_AGENCY": "Sở Tư pháp"
+},
+    {
+  "PROCEDURE_CODE": "1.000080",
+  "PROCEDURE_NAME": "Thủ tục chứng thực bản sao từ bản chính các giấy tờ, văn bản",
+  "FIELD_NAME": "Chứng thực",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.002581",
+  "PROCEDURE_NAME": "Đăng ký thành lập doanh nghiệp tư nhân, công ty TNHH, công ty cổ phần",
+  "FIELD_NAME": "Thành lập doanh nghiệp",
+  "IMPLEMENTATION_AGENCY": "Sở Kế hoạch và Đầu tư"
+},
+    {
+  "PROCEDURE_CODE": "1.000419",
+  "PROCEDURE_NAME": "Thủ tục Đăng ký khai tử",
+  "FIELD_NAME": "Hộ tịch",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    {
+  "PROCEDURE_CODE": "1.000656",
+  "PROCEDURE_NAME": "Liên thông thủ tục đăng ký khai tử, xóa đăng ký thường trú, hưởng chế độ tử tuất",
+  "FIELD_NAME": "Dịch vụ công liên thông",
+  "IMPLEMENTATION_AGENCY": "Ủy ban nhân dân cấp xã"
+},
+    
   {
     "ID": "112",
     "PROCEDURE_CODE": "1.000080",

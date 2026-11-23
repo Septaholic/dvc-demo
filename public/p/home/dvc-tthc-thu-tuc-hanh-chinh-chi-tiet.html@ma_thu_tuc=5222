@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta name="description" content="Cổng Dịch vụ c&ocirc;ng Quốc gia hỗ trợ th&ocirc;ng tin, đăng k&yacute; thủ tục h&agrave;nh ch&iacute;nh như đổi giấy ph&eacute;p l&aacute;i xe, nộp thuế điện tử, th&ocirc;ng b&aacute;o khuyến mại, cấp lại thẻ BHYT, cấp điện mới..." /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="theme/vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/iconsax/style.css" /> 
+  <!-- <link rel="stylesheet" href="../vendor/iconsax/style.css"> --> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrapValidator.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css" /> 
+  <link rel="stylesheet" href="theme/css/style.css?version=9" /> 
+  <link rel="shortcut icon" href="img/header/quoc_huy.png" /> 
+  <script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrapValidator.js"></script> 
+  <script type="text/javascript" src="theme/vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/modules/variable-pie.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts-more.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+  <script type="text/javascript" src="vendor/jq-paginator.js"></script> 
+  <script type="text/javascript" src="vendor/bootbox.all.min.js"></script> 
+  <script type="text/javascript" src="vendor/select2.min.js"></script> 
+  <script type="text/javascript" src="vendor/mime.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script> 
+  <link rel="stylesheet" href="vendor/select2.min.css" /> 
+  <script src="./js/ApiService.js?version=18"></script> 
+  <script src="./js/CommonUtil.js?version=16"></script> 
+  <script src="./js/Constants.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
+  <script src="./js/base64.js"></script> 
+  <script type="text/javascript" src="vendor/d3.v4.min.js"></script> 
+  <script>
+		initApiService();
+	</script> 
+ </head> 
+ <body> 
+  <div class="loading-all" id="loading-all" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.png" alt="" /> 
+    <span style="color:blue">Đang xử l&yacute;...<span> </span></span>
+   </div> 
+   <style type="text/css">
+			.loading-all {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 10000;
+				background: #dbdcdc40;
+			}
+			.loading-all .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="overlay-common"></div> 
+  <!-- /mtv/ Log propertise--> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="dvc-trang-chu.html" class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account"> 
+      <div class="buttons"> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-login">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-register">Đăng nhập</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
+     <li> <a href="#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
+       <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
+       <!-- <li>
+							<a href="#">Thủ tục hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+							</ul>
+						</li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --> 
+       <li><a href="dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
+       <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="">Thanh to&aacute;n trực tuyến</a> 
+      <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
+      <!-- <ul class="dropdown-menu">
+						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
+						<li><a href="dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế cá nhân/Trước bạ</a></li>
+						<li>
+							<a href="#">Thanh toán vi phạm hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh toán vi phạm giao thông</a></li>
+								<li><a href="dvc-thanh-toan-vi-pham-xay-dung.html">Tra cứu/Thanh toán vi phạm xây dựng</a></li>
+							</ul>
+						</li>
+						<li><a href="dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh toán phí/lệ phí dịch vụ công</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-bhyt.html">Đóng tiếp BHXH tự nguyện, gia hạn BHYT</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-doanh-nghiep.html">Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN</a></li>
+						<li><a href="dvc-thanh-toan-thue-dat-dai.html">Thanh toán nghĩa vụ tài chính về đất đai</a></li>
+						<li><a href="dvc-thanh-toan-dien.html">Thanh toán tiền điện</a></li>
+						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
+						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
+					</ul> --> </li> 
+     <li> <a href="#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> --> 
+       <li><a href="/p/phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+      </ul> </li> 
+     <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
+     <!-- <li>
+				  <a href="#">Thủ tục hành chính</a>
+				  <ul class="dropdown-menu">
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+				  </ul>
+				</li> --> 
+     <li class=""> <a href="#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
+       <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="buttons"> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div> 
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <style>
+    /* .list-expand > .item > .content {
+        padding-bottom: 50px;
+    } */
+
+    .tphs {
+        margin-left: 20px;
+    }
+
+    .ttth {
+        margin-left: 20px;
+    }
+</style> 
+  <div class="tthc"> 
+   <div class="section-tthc"> 
+    <div class="container"> 
+     <ul class="breadcrumb"> 
+      <li><a href="dvc-trang-chu.html">Trang chủ</a></li> 
+      <li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục h&agrave;nh ch&iacute;nh</a></li> 
+      <li><a href="#">Chi tiết thủ tục</a></li> 
+     </ul> 
+     <div class="row"> 
+      <div class="col-sm-9 col-xs-12"> 
+       <h1 class="main-title -none" style="margin-bottom: 10px;"> Cấp giấy ph&eacute;p x&acirc;y dựng mới đối với c&ocirc;ng tr&igrave;nh cấp I, II; c&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o; c&ocirc;ng tr&igrave;nh di t&iacute;ch lịch sử - văn h&oacute;a, tượng đ&agrave;i, tranh ho&agrave;nh tr&aacute;ng được xếp hạng; c&ocirc;ng tr&igrave;nh tr&ecirc;n c&aacute;c tuyến, trục đường phố ch&iacute;nh trong đ&ocirc; thị; c&ocirc;ng tr&igrave;nh thuộc dự &aacute;n c&oacute; vốn đầu tư trực tiếp nước ngo&agrave;i </h1> 
+       <div class="box-form-result"> 
+        <div class="pull-left"> 
+         <a class="url thick" data-toggle="modal" href="#popupChitietTTHC">Xem chi tiết</a> 
+        </div> 
+        <div class="pull-right"> 
+         <div class="text-result"> 
+          <a href="/jsp/tthc/export/export_word_detail_tthc.jsp?maTTHC=1.003655&amp;idTTHC=5222" title="Tải xuống chi tiết thủ tục"><i class="fa fa-2x fa-file-word-o" aria-hidden="true" style="color:red"></i></a> 
+         </div> 
+        </div> 
+        <div class="clearfix"></div> 
+        <div id="dataList"></div> 
+       </div> 
+       <div class="divider-gray"></div> 
+       <h2 class="main-title-sub">C&aacute;ch thức thực hiện</h2> 
+       <table class="table-data" style="width:100%;"> 
+        <thead> 
+         <tr> 
+          <th style="width:10%;">H&igrave;nh thức nộp</th> 
+          <th style="width:15%;">Thời hạn giải quyết</th> 
+          <th style="width:25%;">Ph&iacute;, lệ ph&iacute;</th> 
+          <th style="width:50%;">M&ocirc; tả</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td data-title="H&igrave;nh thức nộp">Trực tiếp</td> 
+          <td data-title="Thời hạn giải quyết"> 30 Ng&agrave;y </td> 
+          <td data-title="Ph&iacute;, lệ ph&iacute;"> </td> 
+          <td data-title="M&ocirc; tả">Kh&ocirc;ng qu&aacute; 30 ng&agrave;y kể từ ng&agrave;y nhận đủ hồ sơ hợp lệ.</td> 
+         </tr> 
+         <tr> 
+          <td data-title="H&igrave;nh thức nộp">Dịch vụ bưu ch&iacute;nh</td> 
+          <td data-title="Thời hạn giải quyết"> 30 Ng&agrave;y </td> 
+          <td data-title="Ph&iacute;, lệ ph&iacute;"> </td> 
+          <td data-title="M&ocirc; tả">Kh&ocirc;ng qu&aacute; 30 ng&agrave;y kể từ ng&agrave;y nhận đủ hồ sơ hợp lệ.</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="divider-gray"></div> 
+       <h2 class="main-title-sub">Th&agrave;nh phần hồ sơ</h2> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title=" (1.3) Đối với c&ocirc;ng tr&igrave;nh tượng đ&agrave;i, tranh ho&agrave;nh tr&aacute;ng: " style="font-size: 17px; font-weight: 400;">
+           (1.3) Đối với c&ocirc;ng tr&igrave;nh tượng đ&agrave;i, tranh ho&agrave;nh tr&aacute;ng: 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh giấy ph&eacute;p hoặc văn bản chấp thuận của cơ quan quản l&yacute; nh&agrave; nước về văn ho&aacute;, di t&iacute;ch lịch sử theo ph&acirc;n cấp;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ c&aacute;c mặt đứng, c&aacute;c mặt cắt chủ yếu c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title=" (2.2) Đối với c&ocirc;ng tr&igrave;nh theo tuyến trong đ&ocirc; thị: Việc ph&acirc;n chia c&ocirc;ng tr&igrave;nh theo giai đoạn thực hiện do chủ đầu tư x&aacute;c định theo quyết định đầu tư. Hồ sơ gồm:" style="font-size: 17px; font-weight: 400;">
+           (2.2) Đối với c&ocirc;ng tr&igrave;nh theo tuyến trong đ&ocirc; thị: Việc ph&acirc;n chia c&ocirc;ng tr&igrave;nh theo giai.. 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai hoặc văn bản chấp thuận của cơ quan nh&agrave; nước c&oacute; thẩm quyền về vị tr&iacute; v&agrave; phương &aacute;n tuyến;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh Quyết định thu hồi đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền phần đất thực hiện theo giai đoạn hoặc cả dự &aacute;n theo quy định của ph&aacute;p luật về đất đai;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Sơ đồ vị tr&iacute; tuyến c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng tổng thể hoặc bản vẽ b&igrave;nh đồ c&ocirc;ng tr&igrave;nh tỷ lệ 1/500 - 1/5000; + C&aacute;c bản vẽ theo từng giai đoạn: Bản vẽ c&aacute;c mặt cắt ngang chủ yếu của tuyến c&ocirc;ng tr&igrave;nh theo giai đoạn tỷ lệ 1/50 - 1/200; Đối với c&ocirc;ng tr&igrave;nh ngầm y&ecirc;u cầu phải c&oacute; bản vẽ c&aacute;c mặt cắt ngang, c&aacute;c mặt cắt dọc thể hiện chiều s&acirc;u c&ocirc;ng tr&igrave;nh theo từng giai đoạn tỷ lệ 1/50 - 1/200; Sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật theo từng giai đoạn tỷ lệ 1/100 - 1/500.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title="(1.1) Đối với c&ocirc;ng tr&igrave;nh kh&ocirc;ng theo tuy&ecirc;́n; C&ocirc;ng tr&igrave;nh t&iacute;n ngưỡng; C&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o; C&ocirc;ng tr&igrave;nh của cơ quan ngoại giao v&agrave; tổ chức quốc tế:" style="font-size: 17px; font-weight: 400;">
+           (1.1) Đối với c&ocirc;ng tr&igrave;nh kh&ocirc;ng theo tuy&ecirc;́n; C&ocirc;ng tr&igrave;nh t&iacute;n ngưỡng; C&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o;.. 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">- Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy chứng nhận quyền sử dụng đất được cấp theo quy định của Luật đất đai năm 1987, Luật đất đai năm 1993, Luật sửa đổi, bổ sung một số điều của Luật đất đai năm 2001, Luật đất đai năm 2003.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất được cấp theo quy định của Luật đất đai năm 2013, Luật sửa đổi, bổ sung một số điều của c&aacute;c luật li&ecirc;n quan đến đầu tư x&acirc;y dựng cơ bản số 38/2009/QH12.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy chứng nhận quyền sở hữu nh&agrave; ở v&agrave; quyền sử dụng đất ở được cấp theo quy định tại Nghị định số 60/CP ng&agrave;y 05 th&aacute;ng 7 năm 1994 của Ch&iacute;nh phủ về quyền sở hữu nh&agrave; ở v&agrave; quyền sử dụng đất ở tại đ&ocirc; thị, Nghị định số 61/CP ng&agrave;y 05 th&aacute;ng 7 năm 1994 của Ch&iacute;nh phủ về mua b&aacute;n v&agrave; kinh doanh nh&agrave; ở.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản vẽ mặt bằng m&oacute;ng tỷ lệ 1/100 - 1/200 v&agrave; mặt cắt m&oacute;ng tỷ lệ 1/50, k&egrave;m theo sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật về giao th&ocirc;ng; cấp nước; tho&aacute;t nước mưa, nước bẩn; xử l&yacute; nước thải; cấp điện; th&ocirc;ng tin li&ecirc;n lạc; c&aacute;c hệ thống hạ tầng kỹ thuật kh&aacute;c li&ecirc;n quan đến c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200. Ri&ecirc;ng đối với c&ocirc;ng tr&igrave;nh của c&aacute;c cơ quan ngoại giao, tổ chức quốc tế v&agrave; cơ quan nước ngo&agrave;i đầu tư tại Việt Nam c&ograve;n tu&acirc;n thủ c&aacute;c điều khoản quy định của Hiệp định hoặc thỏa thuận đ&atilde; được đ&atilde; được k&yacute; kết với Ch&iacute;nh phủ Việt Nam; Đối với c&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o bổ sung bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về sự cần thiết x&acirc;y dựng v&agrave; quy m&ocirc; c&ocirc;ng tr&igrave;nh của cơ quan t&ocirc;n gi&aacute;o theo ph&acirc;n cấp.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy chứng nhận quyền sở hữu nh&agrave; ở; giấy chứng nhận quyền sở hữu c&ocirc;ng tr&igrave;nh x&acirc;y dựng đ&atilde; được cấp theo quy định tại Ph&aacute;p lệnh nh&agrave; ở năm 1991; Luật nh&agrave; ở năm 2005; Nghị định số 81/2001/NĐ-CP ng&agrave;y 05 th&aacute;ng 11 năm 2001 của Ch&iacute;nh phủ về việc người Việt Nam định cư ở nước ngo&agrave;i mua nh&agrave; ở tại Việt Nam; Nghị định số 95/2005/NĐ-CP ng&agrave;y 15 th&aacute;ng 7 năm 2005 của Ch&iacute;nh phủ về việc cấp giấy chứng nhận quyền sở hữu nh&agrave; ở, quyền sở hữu c&ocirc;ng tr&igrave;nh x&acirc;y dựng; Nghị định số 90/2006/NĐ-CP ng&agrave;y 06 th&aacute;ng 9 năm 2006 của Ch&iacute;nh phủ quy định chi tiết v&agrave; hướng dẫn thi h&agrave;nh Luật nh&agrave; ở; Nghị định số 51/2009/NĐ-CP ng&agrave;y 03 th&aacute;ng 6 năm 2009 hướng dẫn thi h&agrave;nh một số điều của Nghị quyết số 19/2008/QH12 ng&agrave;y 03 th&aacute;ng 6 năm 2008 của Quốc hội về việc th&iacute; điểm cho tổ chức, c&aacute; nh&acirc;n nước ngo&agrave;i mua v&agrave; sở hữu nh&agrave; ở tại Việt Nam; Điều 31, Điều 32 Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai; c&aacute;c giấy chứng nhận kh&aacute;c về quyền sở hữu nh&agrave; ở, quyền sở hữu c&ocirc;ng tr&igrave;nh x&acirc;y dựng đ&atilde; được cấp theo quy định của ph&aacute;p luật về đất đai, ph&aacute;p luật về nh&agrave; ở, ph&aacute;p luật về x&acirc;y dựng qua c&aacute;c thời kỳ.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">C&aacute;c loại giấy tờ đủ điều kiện để cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất nhưng chưa được cấp giấy chứng nhận gồm: C&aacute;c loại giấy tờ quy định tại Điều 100 của Luật đất đai năm 2013; Điều 18 của Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai năm 2013 v&agrave; quy định tại khoản 16 Điều 2 Nghị định số 01/2017/NĐ-CP ng&agrave;y 06 th&aacute;ng 01 năm 2017 sửa đổi, bổ sung một số Nghị định quy định chi tiết thi h&agrave;nh Luật đất đai hoặc giấy x&aacute;c nhận của Ủy ban nh&acirc;n d&acirc;n cấp x&atilde; v&agrave; được cơ quan đăng k&yacute; đất đai x&aacute;c nhận đủ điều kiện để cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy tờ về đất đai đối với trường hợp được Nh&agrave; nước giao đất, cho thu&ecirc; đất, chuyển mục đ&iacute;ch sử dụng đất từ sau ng&agrave;y 01 th&aacute;ng 7 năm 2004 nhưng kh&ocirc;ng c&oacute; giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất theo quy định của ph&aacute;p luật về đất đai, gồm: Quyết định giao đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền hoặc Quyết định cho thu&ecirc; đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền v&agrave; hợp đồng thu&ecirc; đất k&egrave;m theo (nếu c&oacute;) hoặc giấy tờ về tr&uacute;ng đấu gi&aacute; quyền sử dụng đất, đấu thầu dự &aacute;n c&oacute; sử dụng đất hoặc Quyết định cho ph&eacute;p chuyển mục đ&iacute;ch sử dụng đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">B&aacute;o c&aacute;o r&agrave; so&aacute;t, k&ecirc; khai hiện trạng sử dụng đất đối với trường hợp tổ chức, cơ sở t&ocirc;n gi&aacute;o đang sử dụng m&agrave; chưa được cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất được Ủy ban nh&acirc;n d&acirc;n cấp tỉnh nơi c&oacute; đất kiểm tra v&agrave; quyết định xử l&yacute; theo quy định tại Điều 28 Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy tờ về việc xếp hạng di t&iacute;ch lịch sử - văn h&oacute;a, danh lam thắng cảnh đối với trường hợp cấp giấy ph&eacute;p x&acirc;y dựng để thực hiện x&acirc;y dựng mới, sửa chữa, cải tạo hoặc di dời c&aacute;c c&ocirc;ng tr&igrave;nh di t&iacute;ch lịch sử - văn h&oacute;a, danh lam thắng cảnh nhưng chưa được cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất theo quy định tại Điều 27 Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai năm 2013.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Giấy chứng nhận quyền sử dụng đất hoặc văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng biển quảng c&aacute;o, trạm viễn th&ocirc;ng, cột ăng-ten tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng để x&acirc;y dựng v&agrave; kh&ocirc;ng được chuyển đổi mục đ&iacute;ch sử dụng đất.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Hợp đồng thu&ecirc; đất được giao kết giữa chủ đầu tư x&acirc;y dựng c&ocirc;ng tr&igrave;nh v&agrave; người quản l&yacute;, sử dụng c&ocirc;ng tr&igrave;nh giao th&ocirc;ng hoặc văn bản chấp thuận của cơ quan quản l&yacute; nh&agrave; nước c&oacute; thẩm quyền về giao th&ocirc;ng đối với c&ocirc;ng tr&igrave;nh được ph&eacute;p x&acirc;y dựng trong phạm vi đất d&agrave;nh cho giao th&ocirc;ng theo quy định của ph&aacute;p luật.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Văn bản của cơ quan nh&agrave; nước c&oacute; thẩm quyền cho ph&eacute;p chuyển mục đ&iacute;ch sử dụng đất đối với trường hợp người sử dụng đất đ&atilde; c&oacute; giấy tờ hợp ph&aacute;p về đất đai theo quy định tại c&aacute;c khoản 1, 2, 3, 4 v&agrave; 5 Điều n&agrave;y nhưng đề nghị được cấp giấy ph&eacute;p x&acirc;y dựng sử dụng v&agrave;o mục đ&iacute;ch kh&aacute;c với mục đ&iacute;ch sử dụng đất đ&atilde; được ghi tr&ecirc;n giấy tờ đ&oacute;.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Văn bản của cơ quan nh&agrave; nước c&oacute; thẩm quyền đ&atilde; cấp giấy chứng nhận quyền sử dụng đất, theo đề nghị của cơ quan cấp giấy ph&eacute;p x&acirc;y dựng để x&aacute;c định diện t&iacute;ch c&aacute;c loại đất đối với trường hợp người sử dụng đất c&oacute; một trong c&aacute;c loại giấy tờ hợp ph&aacute;p về đất đai theo quy định tại c&aacute;c khoản 1, 2, 3, 4 v&agrave; 5 Điều n&agrave;y nhưng tr&ecirc;n c&aacute;c giấy tờ đ&oacute; kh&ocirc;ng ghi r&otilde; diện t&iacute;ch c&aacute;c loại đất để l&agrave;m cơ sở cấp giấy ph&eacute;p x&acirc;y dựng. Trường hợp đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng trạm, cột ph&aacute;t s&oacute;ng tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng cho x&acirc;y dựng, kh&ocirc;ng chuyển đổi được mục đ&iacute;ch sử dụng đất th&igrave; nộp bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản vẽ mặt bằng vị tr&iacute; c&ocirc;ng tr&igrave;nh tr&ecirc;n l&ocirc; đất tỷ lệ 1/100 - 1/500, k&egrave;m theo sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản vẽ c&aacute;c mặt bằng, c&aacute;c mặt đứng v&agrave; mặt cắt chủ yếu của c&ocirc;ng tr&igrave;nh, tỷ lệ 1/50 - 1/200;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Mẫu đơn</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> <span class="link" style="cursor: pointer;" onclick="downloadMaudon('3fe2cd881632da0b')">Mau don de nghi cap giay phep xay dung.doc</span><br /> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title="(1.2) Đối với c&ocirc;ng tr&igrave;nh theo tuyến trong đ&ocirc; thị: " style="font-size: 17px; font-weight: 400;">
+           (1.2) Đối với c&ocirc;ng tr&igrave;nh theo tuyến trong đ&ocirc; thị: 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai hoặc văn bản chấp thuận của cơ quan nh&agrave; nước c&oacute; thẩm quyền về vị tr&iacute; v&agrave; phương &aacute;n tuyến.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh Quyết định thu hồi đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền theo quy định của ph&aacute;p luật về đất đai;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Sơ đồ vị tr&iacute; tuyến c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng tổng thể hoặc bản vẽ b&igrave;nh đồ c&ocirc;ng tr&igrave;nh tỷ lệ 1/500 - 1/5000; + Bản vẽ c&aacute;c mặt cắt ngang chủ yếu của tuyến c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200; + Ri&ecirc;ng đối với c&ocirc;ng tr&igrave;nh ngầm phải bổ sung th&ecirc;m: Bản vẽ c&aacute;c mặt cắt ngang, c&aacute;c mặt cắt dọc thể hiện chiều s&acirc;u c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200; Sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật ngo&agrave;i c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Mẫu đơn</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> <span class="link" style="cursor: pointer;" onclick="downloadMaudon('3fc7912047e99370')">Mau don de nghi cap giay phep xay dung.doc</span><br /> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title="(1.4) Đối với c&ocirc;ng tr&igrave;nh quảng c&aacute;o:" style="font-size: 17px; font-weight: 400;">
+           (1.4) Đối với c&ocirc;ng tr&igrave;nh quảng c&aacute;o: 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo quy định tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai. Trường hợp đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng cho x&acirc;y dựng, kh&ocirc;ng chuyển đổi được mục đ&iacute;ch sử dụng đất th&igrave; nộp bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: - Đối với trường hợp c&ocirc;ng tr&igrave;nh x&acirc;y dựng mới: + Sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/500; + Bản vẽ mặt bằng c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/500; + Bản vẽ mặt cắt m&oacute;ng v&agrave; mặt cắt c&ocirc;ng tr&igrave;nh tỷ lệ 1/50; + Bản vẽ c&aacute;c mặt đứng ch&iacute;nh c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200; - Đối với trường hợp biển quảng c&aacute;o được gắn v&agrave;o c&ocirc;ng tr&igrave;nh đ&atilde; được x&acirc;y dựng hợp ph&aacute;p: + Bản vẽ kết cấu của bộ phận c&ocirc;ng tr&igrave;nh tại vị tr&iacute; gắn biển quảng c&aacute;o tỷ lệ 1/50; + Bản vẽ c&aacute;c mặt đứng c&ocirc;ng tr&igrave;nh c&oacute; gắn biển quảng c&aacute;o tỷ lệ 1/50 - 1/100.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title="(2.1) Đối với c&ocirc;ng tr&igrave;nh kh&ocirc;ng theo tuyến: Đối với c&ocirc;ng tr&igrave;nh cấp I, nếu chủ đầu tư c&oacute; nhu cầu th&igrave; c&oacute; thể đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo hai giai đoạn. Hồ sơ gồm:" style="font-size: 17px; font-weight: 400;">
+           (2.1) Đối với c&ocirc;ng tr&igrave;nh kh&ocirc;ng theo tuyến: Đối với c&ocirc;ng tr&igrave;nh cấp I, nếu chủ đầu tư c&oacute;.. 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai. Trường hợp đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng trạm, cột ph&aacute;t s&oacute;ng tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng cho x&acirc;y dựng, kh&ocirc;ng chuyển đổi được mục đ&iacute;ch sử dụng đất th&igrave; nộp bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: - Giai đoạn 1: + Bản vẽ mặt bằng c&ocirc;ng tr&igrave;nh tr&ecirc;n l&ocirc; đất tỷ lệ 1/100 - 1/500, k&egrave;m theo sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh; + Bản vẽ mặt bằng m&oacute;ng tỷ lệ 1/100 - 1/200 v&agrave; mặt cắt m&oacute;ng tỷ lệ 1/50, bản vẽ mặt bằng, mặt cắt ch&iacute;nh của phần c&ocirc;ng tr&igrave;nh đ&atilde; được ph&ecirc; duyệt trong giai đoạn 1 tỷ lệ 1/50 - 1/200 k&egrave;m theo sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật, gồm: Giao th&ocirc;ng, tho&aacute;t nước mưa, xử l&yacute; nước thải, cấp nước, cấp điện, th&ocirc;ng tin li&ecirc;n lạc tỷ lệ 1/100 - 1/200. - Giai đoạn 2: + Bản vẽ c&aacute;c mặt bằng, c&aacute;c mặt đứng v&agrave; mặt cắt ch&iacute;nh giai đoạn 2 của c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Doan nay da duoc fix --> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title f18 tphs" title="(3) Đối với c&ocirc;ng tr&igrave;nh theo dự &aacute;n: " style="font-size: 17px; font-weight: 400;">
+           (3) Đối với c&ocirc;ng tr&igrave;nh theo dự &aacute;n: 
+         </div> 
+         <div class="content"> 
+          <table class="table-data tphs" style="width:fit-content;"> 
+           <thead> 
+            <tr> 
+             <th>Loại giấy tờ</th> 
+             <th>Bản ch&iacute;nh</th> 
+             <th>Bản sao</th> 
+             <th>Mẫu đơn, tờ khai</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD.</td> 
+             <td data-title="Bản ch&iacute;nh">1</td> 
+             <td data-title="Bản sao">0</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng c&aacute;c c&ocirc;ng tr&igrave;nh x&acirc;y dựng đ&atilde; được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Bản vẽ tổng mặt bằng của dự &aacute;n hoặc tổng mặt bằng từng giai đoạn của dự &aacute;n tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng từng c&ocirc;ng tr&igrave;nh tr&ecirc;n l&ocirc; đất tỷ lệ 1/100 - 1/500, k&egrave;m theo sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh; +) Bản vẽ c&aacute;c mặt đứng v&agrave; c&aacute;c mặt cắt ch&iacute;nh của từng c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200;</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">- Bản vẽ mặt bằng m&oacute;ng tỷ lệ 1/100 - 1/200 v&agrave; mặt cắt m&oacute;ng tỷ lệ 1/50 của từng c&ocirc;ng tr&igrave;nh k&egrave;m theo sơ đồ đấu nối với hệ thống tho&aacute;t nước mưa, xử l&yacute; nước thải, cấp nước, cấp điện, th&ocirc;ng tin li&ecirc;n lạc tỷ lệ 1/50 - 1/200. Trường hợp thiết kế x&acirc;y dựng của c&ocirc;ng tr&igrave;nh đ&atilde; được cơ quan chuy&ecirc;n m&ocirc;n về x&acirc;y dựng thẩm định, c&aacute;c bản vẽ thiết kế quy định tại nội dung n&agrave;y l&agrave; bản sao hoặc tệp tin chứa bản chụp c&aacute;c bản vẽ thiết kế x&acirc;y dựng đ&atilde; được cơ quan chuy&ecirc;n m&ocirc;n về x&acirc;y dựng thẩm định.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+            <tr> 
+             <td data-title="Loại giấy tờ" class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh quyết định ph&ecirc; duyệt dự &aacute;n đầu tư x&acirc;y dựng c&ocirc;ng tr&igrave;nh.</td> 
+             <td data-title="Bản ch&iacute;nh">0</td> 
+             <td data-title="Bản sao">1</td> 
+             <td data-title="Mẫu đơn, tờ khai"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="divider-gray"></div> 
+       <h2 class="main-title-sub">Tr&igrave;nh tự thực hiện</h2> 
+       <div class="cls-impl-orders"> 
+       </div> 
+       <div class="divider-gray" style="margin: 20px 0px 0px 0px;"></div> 
+       <div class="list-expand"> 
+        <div class="item"> 
+         <div class="title">
+           Cơ quan thực hiện 
+         </div> 
+         <div class="content"> 
+          <div class="article">
+            Sở X&acirc;y dựng, Ban Quản l&yacute; Khu chế xuất- Khu c&ocirc;ng nghiệp, Ban quản l&yacute; c&aacute;c khu c&ocirc;ng nghiệp v&agrave; chế xuất 
+          </div> 
+         </div> 
+        </div> 
+        <div class="item"> 
+         <div class="title">
+           Y&ecirc;u cầu, điều kiện 
+         </div> 
+         <div class="content"> 
+          <div class="article cls-requires" style="white-space: pre-wrap;"> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <h2 class="main-title-sub -none">Thủ tục h&agrave;nh ch&iacute;nh li&ecirc;n quan</h2> 
+       <ul id="list-related-procedures" class="links"> 
+       </ul> 
+      </div> 
+      <div class="col-sm-3 col-xs-12"> 
+       <div class="sidebar"> 
+        <div class="head">
+         T&igrave;m kiếm nhiều nhất
+        </div> 
+        <div class="body"> 
+         <ul class="links"> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1480" title="Cấp Giấy x&aacute;c nhận nh&acirc;n sự của c&ocirc;ng d&acirc;n Việt Nam ở nước ngo&agrave;i (thực hiện tại cấp Trung ương)">Cấp Giấy x&aacute;c nhận nh&acirc;n sự của c&ocirc;ng d&acirc;n Việt Nam ở nước ngo&agrave;i (thực hiện tại cấp Trung ương)</a> <p class="unit">Bộ C&ocirc;ng an</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1399" title="Cấp lại Giấy ph&eacute;p th&agrave;nh lập Văn ph&ograve;ng đại diện của thương nh&acirc;n nước ngo&agrave;i tại Việt Nam">Cấp lại Giấy ph&eacute;p th&agrave;nh lập Văn ph&ograve;ng đại diện của thương nh&acirc;n nước ngo&agrave;i tại Việt Nam</a> <p class="unit">Bộ C&ocirc;ng thương</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1393" title="Cấp lại giấy ph&eacute;p hoạt động dự b&aacute;o, cảnh b&aacute;o kh&iacute; tượng thủy văn (cấp tỉnh)">Cấp lại giấy ph&eacute;p hoạt động dự b&aacute;o, cảnh b&aacute;o kh&iacute; tượng thủy văn (cấp tỉnh)</a> <p class="unit">Bộ N&ocirc;ng nghiệp v&agrave; M&ocirc;i trường</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1243" title="Thủ tục cấp Giấy chứng nhận đủ điều kiện kinh doanh hoạt động thể thao đối với m&ocirc;n Judo">Thủ tục cấp Giấy chứng nhận đủ điều kiện kinh doanh hoạt động thể thao đối với m&ocirc;n Judo</a> <p class="unit">Bộ Văn h&oacute;a, Thể thao v&agrave; Du lịch</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1241" title="Thủ tục cấp Giấy miễn thị thực tại Cơ quan đại diện VIệt Nam ở nước ngo&agrave;i">Thủ tục cấp Giấy miễn thị thực tại Cơ quan đại diện VIệt Nam ở nước ngo&agrave;i</a> <p class="unit">Bộ Ngoại giao</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1535" title="Thủ tục cấp giấy ph&eacute;p đủ điều kiện kinh doanh dịch vụ karaoke">Thủ tục cấp giấy ph&eacute;p đủ điều kiện kinh doanh dịch vụ karaoke</a> <p class="unit">Bộ Văn h&oacute;a, Thể thao v&agrave; Du lịch</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1484" title="Thủ tục gia hạn Giấy chứng nhận đăng k&yacute; th&agrave;nh lập v&agrave; hoạt động của cơ sở văn h&oacute;a nước ngo&agrave;i tại Việt Nam">Thủ tục gia hạn Giấy chứng nhận đăng k&yacute; th&agrave;nh lập v&agrave; hoạt động của cơ sở văn h&oacute;a nước ngo&agrave;i tại Việt Nam</a> <p class="unit">Bộ Văn h&oacute;a, Thể thao v&agrave; Du lịch</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1338" title="Thủ tục ph&ecirc; duyệt cho hộ ngh&egrave;o, hộ cận ngh&egrave;o, hộ mới tho&aacute;t ngh&egrave;o bị rủi ro do nguy&ecirc;n nh&acirc;n kh&aacute;ch quan vay bổ sung vốn để kh&ocirc;i phục sản xuất, kinh doanh">Thủ tục ph&ecirc; duyệt cho hộ ngh&egrave;o, hộ cận ngh&egrave;o, hộ mới tho&aacute;t ngh&egrave;o bị rủi ro do nguy&ecirc;n nh&acirc;n kh&aacute;ch quan vay bổ sung vốn để kh&ocirc;i phục sản xuất, kinh doanh</a> <p class="unit">Ng&acirc;n h&agrave;ng Ch&iacute;nh s&aacute;ch x&atilde; hội</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1483" title="Thủ tục trả nợ, trả l&atilde;i trực tiếp bằng tiền mặt của người vay l&agrave; tổ vi&ecirc;n Tổ Tiết kiệm v&agrave; vay vốn">Thủ tục trả nợ, trả l&atilde;i trực tiếp bằng tiền mặt của người vay l&agrave; tổ vi&ecirc;n Tổ Tiết kiệm v&agrave; vay vốn</a> <p class="unit">Ng&acirc;n h&agrave;ng Ch&iacute;nh s&aacute;ch x&atilde; hội</p> </li> 
+          <li> <a class="link" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=1392" title="Trả lại giấy ph&eacute;p nhận ch&igrave;m (cấp tỉnh)">Trả lại giấy ph&eacute;p nhận ch&igrave;m (cấp tỉnh)</a> <p class="unit">Bộ N&ocirc;ng nghiệp v&agrave; M&ocirc;i trường</p> </li> 
+         </ul> 
+        </div> 
+       </div> 
+       <!-- <div class="sidebar -statis">
+    <div class="head">Số liệu thống kê </div>
+    <div class="body">
+                <div class="info">
+            <span class="value" style="color: #7C964C;">
+                                5290
+                            </span>
+            <div class="key">Tổng số TTHC</div>
+        </div>
+        <div class="divider-gray" style="margin: 10px 0px;"></div>
+        <div class="info">
+            <span class="value" style="color: #F2A634;">
+                                2593
+                            </span>
+            <div class="key">TTHC thực hiện tại Bộ, cơ quan</div>
+        </div>
+        <div class="divider-gray" style="margin: 10px 0px;"></div>
+        <div class="info">
+            <span class="value" style="color: #F2A634;">
+                                894
+                            </span>
+            <div class="key">TTHC thực hiện tại địa phương</div>
+        </div>
+        <div class="divider-gray" style="margin: 10px 0px;"></div>
+        <div class="info">
+            <span class="value" style="color: #F2A634;">
+                                1439
+                            </span>
+            <div class="key">TTHC ngành dọc tại địa phương</div>
+        </div>
+    </div>
+</div> --> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="popupChitietTTHC" class="modal fade popupChitietTTHC box-chitiettthc-phienban" role="dialog"> 
+    <div class="modal-dialog" style="max-width: 991px;width: 100%;"> 
+     <div class="modal-content"> 
+      <div class="modal-body"> 
+       <div class="close" data-dismiss="modal"> 
+        <span id="btnCLOSE_POPUP" class="-ap icon icon-close"></span> 
+       </div> 
+       <h2 class="main-title">Chi tiết thủ tục h&agrave;nh ch&iacute;nh:</h2> 
+       <div class="content"> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           M&atilde; thủ tục: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           1.003655 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Số quyết định: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           123/QĐ-BXD 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           T&ecirc;n thủ tục: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Cấp giấy ph&eacute;p x&acirc;y dựng mới đối với c&ocirc;ng tr&igrave;nh cấp I, II; c&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o; c&ocirc;ng tr&igrave;nh di t&iacute;ch lịch sử - văn h&oacute;a, tượng đ&agrave;i, tranh ho&agrave;nh tr&aacute;ng được xếp hạng; c&ocirc;ng tr&igrave;nh tr&ecirc;n c&aacute;c tuyến, trục đường phố ch&iacute;nh trong đ&ocirc; thị; c&ocirc;ng tr&igrave;nh thuộc dự &aacute;n c&oacute; vốn đầu tư trực tiếp nước ngo&agrave;i 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Cấp thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Cấp Tỉnh 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Loại thủ tục: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           TTHC được luật giao quy định chi tiết 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Lĩnh vực: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Quy hoạch đ&ocirc; thị v&agrave; n&ocirc;ng th&ocirc;n 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Tr&igrave;nh tự thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12 cls-impl-orders" style="white-space: pre-wrap;"> 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           C&aacute;ch thức thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12"> 
+          <div class="table-content"> 
+           <table class="table-data"> 
+            <thead> 
+             <tr> 
+              <th style="width:10%;">H&igrave;nh thức nộp</th> 
+              <th style="width:15%;">Thời hạn giải quyết</th> 
+              <th style="width:25%;">Ph&iacute;, lệ ph&iacute;</th> 
+              <th style="width:50%;">M&ocirc; tả</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td>Trực tiếp</td> 
+              <td> 30 Ng&agrave;y </td> 
+              <td> </td> 
+              <td style="white-space: pre-wrap;" class="content">Kh&ocirc;ng qu&aacute; 30 ng&agrave;y kể từ ng&agrave;y nhận đủ hồ sơ hợp lệ.</td> 
+             </tr> 
+             <tr> 
+              <td>Dịch vụ bưu ch&iacute;nh</td> 
+              <td> 30 Ng&agrave;y </td> 
+              <td> </td> 
+              <td style="white-space: pre-wrap;" class="content">Kh&ocirc;ng qu&aacute; 30 ng&agrave;y kể từ ng&agrave;y nhận đủ hồ sơ hợp lệ.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Th&agrave;nh phần hồ sơ: 
+         </div> 
+         <div class="col-sm-9 col-xs-12"> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (1.3) Đối với c&ocirc;ng tr&igrave;nh tượng đ&agrave;i, tranh ho&agrave;nh tr&aacute;ng: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh giấy ph&eacute;p hoặc văn bản chấp thuận của cơ quan quản l&yacute; nh&agrave; nước về văn ho&aacute;, di t&iacute;ch lịch sử theo ph&acirc;n cấp;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ c&aacute;c mặt đứng, c&aacute;c mặt cắt chủ yếu c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (2.2) Đối với c&ocirc;ng tr&igrave;nh theo tuyến trong đ&ocirc; thị: Việc ph&acirc;n chia c&ocirc;ng tr&igrave;nh theo giai đoạn thực hiện do chủ đầu tư x&aacute;c định theo quyết định đầu tư. Hồ sơ gồm: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai hoặc văn bản chấp thuận của cơ quan nh&agrave; nước c&oacute; thẩm quyền về vị tr&iacute; v&agrave; phương &aacute;n tuyến;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh Quyết định thu hồi đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền phần đất thực hiện theo giai đoạn hoặc cả dự &aacute;n theo quy định của ph&aacute;p luật về đất đai;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Sơ đồ vị tr&iacute; tuyến c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng tổng thể hoặc bản vẽ b&igrave;nh đồ c&ocirc;ng tr&igrave;nh tỷ lệ 1/500 - 1/5000; + C&aacute;c bản vẽ theo từng giai đoạn: Bản vẽ c&aacute;c mặt cắt ngang chủ yếu của tuyến c&ocirc;ng tr&igrave;nh theo giai đoạn tỷ lệ 1/50 - 1/200; Đối với c&ocirc;ng tr&igrave;nh ngầm y&ecirc;u cầu phải c&oacute; bản vẽ c&aacute;c mặt cắt ngang, c&aacute;c mặt cắt dọc thể hiện chiều s&acirc;u c&ocirc;ng tr&igrave;nh theo từng giai đoạn tỷ lệ 1/50 - 1/200; Sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật theo từng giai đoạn tỷ lệ 1/100 - 1/500.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (1.1) Đối với c&ocirc;ng tr&igrave;nh kh&ocirc;ng theo tuy&ecirc;́n; C&ocirc;ng tr&igrave;nh t&iacute;n ngưỡng; C&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o; C&ocirc;ng tr&igrave;nh của cơ quan ngoại giao v&agrave; tổ chức quốc tế: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">- Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy chứng nhận quyền sử dụng đất được cấp theo quy định của Luật đất đai năm 1987, Luật đất đai năm 1993, Luật sửa đổi, bổ sung một số điều của Luật đất đai năm 2001, Luật đất đai năm 2003.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất được cấp theo quy định của Luật đất đai năm 2013, Luật sửa đổi, bổ sung một số điều của c&aacute;c luật li&ecirc;n quan đến đầu tư x&acirc;y dựng cơ bản số 38/2009/QH12.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy chứng nhận quyền sở hữu nh&agrave; ở v&agrave; quyền sử dụng đất ở được cấp theo quy định tại Nghị định số 60/CP ng&agrave;y 05 th&aacute;ng 7 năm 1994 của Ch&iacute;nh phủ về quyền sở hữu nh&agrave; ở v&agrave; quyền sử dụng đất ở tại đ&ocirc; thị, Nghị định số 61/CP ng&agrave;y 05 th&aacute;ng 7 năm 1994 của Ch&iacute;nh phủ về mua b&aacute;n v&agrave; kinh doanh nh&agrave; ở.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản vẽ mặt bằng m&oacute;ng tỷ lệ 1/100 - 1/200 v&agrave; mặt cắt m&oacute;ng tỷ lệ 1/50, k&egrave;m theo sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật về giao th&ocirc;ng; cấp nước; tho&aacute;t nước mưa, nước bẩn; xử l&yacute; nước thải; cấp điện; th&ocirc;ng tin li&ecirc;n lạc; c&aacute;c hệ thống hạ tầng kỹ thuật kh&aacute;c li&ecirc;n quan đến c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200. Ri&ecirc;ng đối với c&ocirc;ng tr&igrave;nh của c&aacute;c cơ quan ngoại giao, tổ chức quốc tế v&agrave; cơ quan nước ngo&agrave;i đầu tư tại Việt Nam c&ograve;n tu&acirc;n thủ c&aacute;c điều khoản quy định của Hiệp định hoặc thỏa thuận đ&atilde; được đ&atilde; được k&yacute; kết với Ch&iacute;nh phủ Việt Nam; Đối với c&ocirc;ng tr&igrave;nh t&ocirc;n gi&aacute;o bổ sung bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về sự cần thiết x&acirc;y dựng v&agrave; quy m&ocirc; c&ocirc;ng tr&igrave;nh của cơ quan t&ocirc;n gi&aacute;o theo ph&acirc;n cấp.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy chứng nhận quyền sở hữu nh&agrave; ở; giấy chứng nhận quyền sở hữu c&ocirc;ng tr&igrave;nh x&acirc;y dựng đ&atilde; được cấp theo quy định tại Ph&aacute;p lệnh nh&agrave; ở năm 1991; Luật nh&agrave; ở năm 2005; Nghị định số 81/2001/NĐ-CP ng&agrave;y 05 th&aacute;ng 11 năm 2001 của Ch&iacute;nh phủ về việc người Việt Nam định cư ở nước ngo&agrave;i mua nh&agrave; ở tại Việt Nam; Nghị định số 95/2005/NĐ-CP ng&agrave;y 15 th&aacute;ng 7 năm 2005 của Ch&iacute;nh phủ về việc cấp giấy chứng nhận quyền sở hữu nh&agrave; ở, quyền sở hữu c&ocirc;ng tr&igrave;nh x&acirc;y dựng; Nghị định số 90/2006/NĐ-CP ng&agrave;y 06 th&aacute;ng 9 năm 2006 của Ch&iacute;nh phủ quy định chi tiết v&agrave; hướng dẫn thi h&agrave;nh Luật nh&agrave; ở; Nghị định số 51/2009/NĐ-CP ng&agrave;y 03 th&aacute;ng 6 năm 2009 hướng dẫn thi h&agrave;nh một số điều của Nghị quyết số 19/2008/QH12 ng&agrave;y 03 th&aacute;ng 6 năm 2008 của Quốc hội về việc th&iacute; điểm cho tổ chức, c&aacute; nh&acirc;n nước ngo&agrave;i mua v&agrave; sở hữu nh&agrave; ở tại Việt Nam; Điều 31, Điều 32 Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai; c&aacute;c giấy chứng nhận kh&aacute;c về quyền sở hữu nh&agrave; ở, quyền sở hữu c&ocirc;ng tr&igrave;nh x&acirc;y dựng đ&atilde; được cấp theo quy định của ph&aacute;p luật về đất đai, ph&aacute;p luật về nh&agrave; ở, ph&aacute;p luật về x&acirc;y dựng qua c&aacute;c thời kỳ.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">C&aacute;c loại giấy tờ đủ điều kiện để cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất nhưng chưa được cấp giấy chứng nhận gồm: C&aacute;c loại giấy tờ quy định tại Điều 100 của Luật đất đai năm 2013; Điều 18 của Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai năm 2013 v&agrave; quy định tại khoản 16 Điều 2 Nghị định số 01/2017/NĐ-CP ng&agrave;y 06 th&aacute;ng 01 năm 2017 sửa đổi, bổ sung một số Nghị định quy định chi tiết thi h&agrave;nh Luật đất đai hoặc giấy x&aacute;c nhận của Ủy ban nh&acirc;n d&acirc;n cấp x&atilde; v&agrave; được cơ quan đăng k&yacute; đất đai x&aacute;c nhận đủ điều kiện để cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy tờ về đất đai đối với trường hợp được Nh&agrave; nước giao đất, cho thu&ecirc; đất, chuyển mục đ&iacute;ch sử dụng đất từ sau ng&agrave;y 01 th&aacute;ng 7 năm 2004 nhưng kh&ocirc;ng c&oacute; giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất theo quy định của ph&aacute;p luật về đất đai, gồm: Quyết định giao đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền hoặc Quyết định cho thu&ecirc; đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền v&agrave; hợp đồng thu&ecirc; đất k&egrave;m theo (nếu c&oacute;) hoặc giấy tờ về tr&uacute;ng đấu gi&aacute; quyền sử dụng đất, đấu thầu dự &aacute;n c&oacute; sử dụng đất hoặc Quyết định cho ph&eacute;p chuyển mục đ&iacute;ch sử dụng đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">B&aacute;o c&aacute;o r&agrave; so&aacute;t, k&ecirc; khai hiện trạng sử dụng đất đối với trường hợp tổ chức, cơ sở t&ocirc;n gi&aacute;o đang sử dụng m&agrave; chưa được cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất được Ủy ban nh&acirc;n d&acirc;n cấp tỉnh nơi c&oacute; đất kiểm tra v&agrave; quyết định xử l&yacute; theo quy định tại Điều 28 Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy tờ về việc xếp hạng di t&iacute;ch lịch sử - văn h&oacute;a, danh lam thắng cảnh đối với trường hợp cấp giấy ph&eacute;p x&acirc;y dựng để thực hiện x&acirc;y dựng mới, sửa chữa, cải tạo hoặc di dời c&aacute;c c&ocirc;ng tr&igrave;nh di t&iacute;ch lịch sử - văn h&oacute;a, danh lam thắng cảnh nhưng chưa được cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nh&agrave; ở v&agrave; t&agrave;i sản kh&aacute;c gắn liền với đất theo quy định tại Điều 27 Nghị định số 43/2014/NĐ-CP ng&agrave;y 15 th&aacute;ng 5 năm 2014 của Ch&iacute;nh phủ quy định chi tiết thi h&agrave;nh một số điều của Luật đất đai năm 2013.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Giấy chứng nhận quyền sử dụng đất hoặc văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng biển quảng c&aacute;o, trạm viễn th&ocirc;ng, cột ăng-ten tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng để x&acirc;y dựng v&agrave; kh&ocirc;ng được chuyển đổi mục đ&iacute;ch sử dụng đất.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Hợp đồng thu&ecirc; đất được giao kết giữa chủ đầu tư x&acirc;y dựng c&ocirc;ng tr&igrave;nh v&agrave; người quản l&yacute;, sử dụng c&ocirc;ng tr&igrave;nh giao th&ocirc;ng hoặc văn bản chấp thuận của cơ quan quản l&yacute; nh&agrave; nước c&oacute; thẩm quyền về giao th&ocirc;ng đối với c&ocirc;ng tr&igrave;nh được ph&eacute;p x&acirc;y dựng trong phạm vi đất d&agrave;nh cho giao th&ocirc;ng theo quy định của ph&aacute;p luật.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Văn bản của cơ quan nh&agrave; nước c&oacute; thẩm quyền cho ph&eacute;p chuyển mục đ&iacute;ch sử dụng đất đối với trường hợp người sử dụng đất đ&atilde; c&oacute; giấy tờ hợp ph&aacute;p về đất đai theo quy định tại c&aacute;c khoản 1, 2, 3, 4 v&agrave; 5 Điều n&agrave;y nhưng đề nghị được cấp giấy ph&eacute;p x&acirc;y dựng sử dụng v&agrave;o mục đ&iacute;ch kh&aacute;c với mục đ&iacute;ch sử dụng đất đ&atilde; được ghi tr&ecirc;n giấy tờ đ&oacute;.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Văn bản của cơ quan nh&agrave; nước c&oacute; thẩm quyền đ&atilde; cấp giấy chứng nhận quyền sử dụng đất, theo đề nghị của cơ quan cấp giấy ph&eacute;p x&acirc;y dựng để x&aacute;c định diện t&iacute;ch c&aacute;c loại đất đối với trường hợp người sử dụng đất c&oacute; một trong c&aacute;c loại giấy tờ hợp ph&aacute;p về đất đai theo quy định tại c&aacute;c khoản 1, 2, 3, 4 v&agrave; 5 Điều n&agrave;y nhưng tr&ecirc;n c&aacute;c giấy tờ đ&oacute; kh&ocirc;ng ghi r&otilde; diện t&iacute;ch c&aacute;c loại đất để l&agrave;m cơ sở cấp giấy ph&eacute;p x&acirc;y dựng. Trường hợp đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng trạm, cột ph&aacute;t s&oacute;ng tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng cho x&acirc;y dựng, kh&ocirc;ng chuyển đổi được mục đ&iacute;ch sử dụng đất th&igrave; nộp bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản vẽ mặt bằng vị tr&iacute; c&ocirc;ng tr&igrave;nh tr&ecirc;n l&ocirc; đất tỷ lệ 1/100 - 1/500, k&egrave;m theo sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản vẽ c&aacute;c mặt bằng, c&aacute;c mặt đứng v&agrave; mặt cắt chủ yếu của c&ocirc;ng tr&igrave;nh, tỷ lệ 1/50 - 1/200;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Mẫu đơn</td> 
+             <td> <span class="link" style="cursor: pointer;" onclick="downloadMaudon('3fe2cd881632da0b');">Mau don de nghi cap giay phep xay dung.doc</span><br /> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 0</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (1.2) Đối với c&ocirc;ng tr&igrave;nh theo tuyến trong đ&ocirc; thị: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai hoặc văn bản chấp thuận của cơ quan nh&agrave; nước c&oacute; thẩm quyền về vị tr&iacute; v&agrave; phương &aacute;n tuyến.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh Quyết định thu hồi đất của cơ quan nh&agrave; nước c&oacute; thẩm quyền theo quy định của ph&aacute;p luật về đất đai;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Sơ đồ vị tr&iacute; tuyến c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng tổng thể hoặc bản vẽ b&igrave;nh đồ c&ocirc;ng tr&igrave;nh tỷ lệ 1/500 - 1/5000; + Bản vẽ c&aacute;c mặt cắt ngang chủ yếu của tuyến c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200; + Ri&ecirc;ng đối với c&ocirc;ng tr&igrave;nh ngầm phải bổ sung th&ecirc;m: Bản vẽ c&aacute;c mặt cắt ngang, c&aacute;c mặt cắt dọc thể hiện chiều s&acirc;u c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200; Sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật ngo&agrave;i c&ocirc;ng tr&igrave;nh tỷ lệ 1/100 - 1/500.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Mẫu đơn</td> 
+             <td> <span class="link" style="cursor: pointer;" onclick="downloadMaudon('3fc7912047e99370');">Mau don de nghi cap giay phep xay dung.doc</span><br /> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 0</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (1.4) Đối với c&ocirc;ng tr&igrave;nh quảng c&aacute;o: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo quy định tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai. Trường hợp đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng cho x&acirc;y dựng, kh&ocirc;ng chuyển đổi được mục đ&iacute;ch sử dụng đất th&igrave; nộp bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: - Đối với trường hợp c&ocirc;ng tr&igrave;nh x&acirc;y dựng mới: + Sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/500; + Bản vẽ mặt bằng c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/500; + Bản vẽ mặt cắt m&oacute;ng v&agrave; mặt cắt c&ocirc;ng tr&igrave;nh tỷ lệ 1/50; + Bản vẽ c&aacute;c mặt đứng ch&iacute;nh c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200; - Đối với trường hợp biển quảng c&aacute;o được gắn v&agrave;o c&ocirc;ng tr&igrave;nh đ&atilde; được x&acirc;y dựng hợp ph&aacute;p: + Bản vẽ kết cấu của bộ phận c&ocirc;ng tr&igrave;nh tại vị tr&iacute; gắn biển quảng c&aacute;o tỷ lệ 1/50; + Bản vẽ c&aacute;c mặt đứng c&ocirc;ng tr&igrave;nh c&oacute; gắn biển quảng c&aacute;o tỷ lệ 1/50 - 1/100.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (2.1) Đối với c&ocirc;ng tr&igrave;nh kh&ocirc;ng theo tuyến: Đối với c&ocirc;ng tr&igrave;nh cấp I, nếu chủ đầu tư c&oacute; nhu cầu th&igrave; c&oacute; thể đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo hai giai đoạn. Hồ sơ gồm: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai. Trường hợp đối với c&ocirc;ng tr&igrave;nh x&acirc;y dựng trạm, cột ph&aacute;t s&oacute;ng tại khu vực kh&ocirc;ng thuộc nh&oacute;m đất c&oacute; mục đ&iacute;ch sử dụng cho x&acirc;y dựng, kh&ocirc;ng chuyển đổi được mục đ&iacute;ch sử dụng đất th&igrave; nộp bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh văn bản chấp thuận về địa điểm x&acirc;y dựng của Ủy ban nh&acirc;n d&acirc;n cấp huyện;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">- Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: - Giai đoạn 1: + Bản vẽ mặt bằng c&ocirc;ng tr&igrave;nh tr&ecirc;n l&ocirc; đất tỷ lệ 1/100 - 1/500, k&egrave;m theo sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh; + Bản vẽ mặt bằng m&oacute;ng tỷ lệ 1/100 - 1/200 v&agrave; mặt cắt m&oacute;ng tỷ lệ 1/50, bản vẽ mặt bằng, mặt cắt ch&iacute;nh của phần c&ocirc;ng tr&igrave;nh đ&atilde; được ph&ecirc; duyệt trong giai đoạn 1 tỷ lệ 1/50 - 1/200 k&egrave;m theo sơ đồ đấu nối với hệ thống hạ tầng kỹ thuật, gồm: Giao th&ocirc;ng, tho&aacute;t nước mưa, xử l&yacute; nước thải, cấp nước, cấp điện, th&ocirc;ng tin li&ecirc;n lạc tỷ lệ 1/100 - 1/200. - Giai đoạn 2: + Bản vẽ c&aacute;c mặt bằng, c&aacute;c mặt đứng v&agrave; mặt cắt ch&iacute;nh giai đoạn 2 của c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+          <!-- Doan nay da duoc fix --> 
+          <div class="key">
+            (3) Đối với c&ocirc;ng tr&igrave;nh theo dự &aacute;n: 
+          </div> 
+          <table class="table-data" style="width:100%;"> 
+           <thead> 
+            <tr> 
+             <th style="width:65%;">T&ecirc;n giấy tờ</th> 
+             <th style="width:15%;">Mẫu đơn, tờ khai</th> 
+             <th style="width:20%;">Số lượng</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="justify">Đơn đề nghị cấp giấy ph&eacute;p x&acirc;y dựng theo mẫu tại Phụ lục số 1 Th&ocirc;ng tư số 15/2016/TT-BXD.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 1<br />Bản sao: 0</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh một trong những giấy tờ chứng minh quyền sử dụng đất theo quy định của ph&aacute;p luật về đất đai.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh hai bộ bản vẽ thiết kế kỹ thuật hoặc thiết kế bản vẽ thi c&ocirc;ng c&aacute;c c&ocirc;ng tr&igrave;nh x&acirc;y dựng đ&atilde; được ph&ecirc; duyệt theo quy định của ph&aacute;p luật về x&acirc;y dựng, mỗi bộ gồm: + Bản vẽ tổng mặt bằng của dự &aacute;n hoặc tổng mặt bằng từng giai đoạn của dự &aacute;n tỷ lệ 1/100 - 1/500; + Bản vẽ mặt bằng từng c&ocirc;ng tr&igrave;nh tr&ecirc;n l&ocirc; đất tỷ lệ 1/100 - 1/500, k&egrave;m theo sơ đồ vị tr&iacute; c&ocirc;ng tr&igrave;nh; +) Bản vẽ c&aacute;c mặt đứng v&agrave; c&aacute;c mặt cắt ch&iacute;nh của từng c&ocirc;ng tr&igrave;nh tỷ lệ 1/50 - 1/200;</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">- Bản vẽ mặt bằng m&oacute;ng tỷ lệ 1/100 - 1/200 v&agrave; mặt cắt m&oacute;ng tỷ lệ 1/50 của từng c&ocirc;ng tr&igrave;nh k&egrave;m theo sơ đồ đấu nối với hệ thống tho&aacute;t nước mưa, xử l&yacute; nước thải, cấp nước, cấp điện, th&ocirc;ng tin li&ecirc;n lạc tỷ lệ 1/50 - 1/200. Trường hợp thiết kế x&acirc;y dựng của c&ocirc;ng tr&igrave;nh đ&atilde; được cơ quan chuy&ecirc;n m&ocirc;n về x&acirc;y dựng thẩm định, c&aacute;c bản vẽ thiết kế quy định tại nội dung n&agrave;y l&agrave; bản sao hoặc tệp tin chứa bản chụp c&aacute;c bản vẽ thiết kế x&acirc;y dựng đ&atilde; được cơ quan chuy&ecirc;n m&ocirc;n về x&acirc;y dựng thẩm định.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+            <tr> 
+             <td class="justify">Bản sao hoặc tệp tin chứa bản chụp ch&iacute;nh quyết định ph&ecirc; duyệt dự &aacute;n đầu tư x&acirc;y dựng c&ocirc;ng tr&igrave;nh.</td> 
+             <td> </td> 
+             <td>Bản ch&iacute;nh: 0<br />Bản sao: 1</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br /> 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Đối tượng thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           C&ocirc;ng d&acirc;n Việt Nam, Người Việt Nam định cư ở nước ngo&agrave;i, Người nước ngo&agrave;i, Doanh nghiệp, Doanh nghiệp c&oacute; vốn đầu tư nước ngo&agrave;i, Tổ chức (kh&ocirc;ng bao gồm doanh nghiệp, HTX), Tổ chức nước ngo&agrave;i, Hợp t&aacute;c x&atilde; 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Cơ quan thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Sở X&acirc;y dựng, Ban Quản l&yacute; Khu chế xuất- Khu c&ocirc;ng nghiệp, Ban quản l&yacute; c&aacute;c khu c&ocirc;ng nghiệp v&agrave; chế xuất 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Cơ quan c&oacute; thẩm quyền: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Kh&ocirc;ng c&oacute; th&ocirc;ng tin 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Địa chỉ tiếp nhận HS: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Cơ quan c&oacute; thẩm quyền cấp giấy ph&eacute;p x&acirc;y dựng. 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Cơ quan được ủy quyền: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Kh&ocirc;ng c&oacute; th&ocirc;ng tin 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Cơ quan phối hợp: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Kh&ocirc;ng c&oacute; th&ocirc;ng tin 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Kết quả thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Giấy ph&eacute;p x&acirc;y dựng k&egrave;m theo hồ sơ thiết kế tr&igrave;nh xin cấp giấy ph&eacute;p x&acirc;y dựng c&oacute; đ&oacute;ng dấu của cơ quan c&oacute; thẩm quyền cấp giấy ph&eacute;p x&acirc;y dựng tại nơi tiếp nhận hồ sơ. 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Căn cứ ph&aacute;p l&yacute;: 
+         </div> 
+         <div class="col-sm-9 col-xs-12"> 
+          <div class="table-content"> 
+           <table class="table-data" style="width: 100%;"> 
+            <thead> 
+             <tr> 
+              <th style="width: 20%;">Số k&yacute; hiệu</th> 
+              <th style="width: 45%;">Tr&iacute;ch yếu</th> 
+              <th style="width: 10%;">Ng&agrave;y ban h&agrave;nh</th> 
+              <th style="width: 25%;">Cơ quan ban h&agrave;nh</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td>59/2015/NĐ-CP</td> 
+              <td>Nghị định 59/2015/NĐ-CP</td> 
+              <td>05-09-2015</td> 
+              <td>Ch&iacute;nh phủ</td> 
+             </tr> 
+             <tr> 
+              <td>50/2014/QH13</td> 
+              <td>Luật X&acirc;y dựng</td> 
+              <td>18-06-2014</td> 
+              <td>Quốc Hội</td> 
+             </tr> 
+             <tr> 
+              <td>15/2016/TT-BXD</td> 
+              <td>Th&ocirc;ng tư 15/2016/TT-BXD</td> 
+              <td>30-06-2016</td> 
+              <td>Bộ X&acirc;y dựng</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Y&ecirc;u cầu, điều kiện thực hiện: 
+         </div> 
+         <div class="col-sm-9 col-xs-12 cls-requires" style="white-space: pre-wrap;"> 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           Từ kh&oacute;a: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Kh&ocirc;ng c&oacute; th&ocirc;ng tin 
+         </div> 
+        </div> 
+        <div class="row info-row"> 
+         <div class="col-sm-3 col-xs-12 key">
+           M&ocirc; tả: 
+         </div> 
+         <div class="col-sm-9 col-xs-12">
+           Kh&ocirc;ng c&oacute; th&ocirc;ng tin 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+    $(document).ready(() => {
+
+        $("#li-tthc").addClass("active");
+
+        loadImplOrders();
+        loadRequires();
+        loadRelatedProcedures();
+
+        // open pop-up after loading page
+        if (getUrlParameter("open_popup") == 1) {
+            $('#popupChitietTTHC').modal('show');
+
+            // $('#btnCLOSE_POPUP').click(() => {
+            //     window.location.replace('dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + '1.003655');
+            // });
+
+            // $('#popupChitietTTHC').on('hidden.bs.modal', function () {
+            //     $('#btnCLOSE_POPUP').click();
+            // });
+        }
+
+        $(".list-expand .item .title").unbind().click(function(){
+                    if($(this).parent().hasClass("active")){
+                        // $(this).parent().siblings().removeClass("active");
+                        $(this).parent().removeClass("active");
+                    }else{
+                        $(this).parent().addClass("active");
+                        // $(this).parent().siblings().removeClass("active");
+                    }
+
+        });
+
+    });
+
+    let searchParams = new URLSearchParams(window.location.search);
+    function getUrlParameter(sParam) {
+        return searchParams.get(sParam);
+    }
+
+    function loadImplOrders() {
+
+        var obj = new Object();
+        obj.service = "procedure_get_impl_orders_by_proc_id_service_v2";
+        obj.provider = "dvcquocgia";
+        obj.type = "ref";
+
+        obj.id = '5222';
+        obj.parent_id = '';
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        var listScenario = [];
+        if (result && result.length > 0) {
+            result.forEach(item => {
+                // if (item.SCENARIO) {
+                    if (!listScenario.includes(item.SCENARIO))
+                        listScenario.push(item.SCENARIO);
+                // }
+            });
+        }
+
+        if (result && result.length > 0) {
+
+            if (listScenario.length == 0) {
+
+                var htmlText = '';
+
+                htmlText += `<div style="white-space: pre-wrap;">`;
+                result.forEach(item => {
+                    htmlText += item.CONTENT + '<br />';
+                });
+                htmlText += `</div>`;
+
+                $(".cls-impl-orders").html(htmlText);
+            
+            } else {
+
+                var htmlText = '';
+                var htmlTextPopup = '';
+
+                htmlText += '<div class="list-expand">';
+                listScenario.forEach(item => {
+
+                    var htmlContent = '';
+                    result.forEach(e => {
+                        if (e.SCENARIO == item)
+                            htmlContent += e.CONTENT + '<br />';
+                    });
+
+                    if (item) {
+                        htmlText += `<div class="item">
+                                    <div class="title f18 ttth" title="${item}" style="font-size: 17px; font-weight: 400;">${item}</div>
+                                    <div class="content ttth" style="white-space: pre-line;">
+                                        ${htmlContent}
+                                    </div>
+                                </div>`;
+
+                        htmlTextPopup += `<div class="key">${item}</div><div style="white-space: pre-wrap;">${htmlContent}</div><br />`;
+                    
+                    } else {
+                        htmlText += `<div class="ttth" style="white-space: pre-line;">
+                                        ${htmlContent}
+                                    </div>`;
+
+                        htmlTextPopup += `<div style="white-space: pre-wrap;">${htmlContent}</div><br />`;
+                    
+                    }
+
+                });
+                htmlText += '</div>';
+
+                $(".cls-impl-orders").html(htmlText);
+
+                $(".info-row > .cls-impl-orders").html(htmlTextPopup);
+
+            }
+
+        } else {
+            $(".cls-impl-orders").html("Không có thông tin");
+        }
+
+    }
+
+    function loadRequires() {
+
+        var obj = new Object();
+        obj.service = "procedure_get_requires_by_procedure_id_service_v2";
+        obj.provider = "dvcquocgia";
+        obj.type = "ref";
+
+        obj.id = '5222';
+        obj.parent_id = '';
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if(result == undefined){
+            console.log("oke");
+        }
+        if (result && result.length > 0) {
+
+            var htmlText = '';
+            result.forEach(item => {
+
+                htmlText += item.REQUIRE_NAME;
+            });
+            $(".cls-requires").html(htmlText);
+        
+        } else {
+            $(".cls-requires").html("Không có thông tin");
+        }
+    }
+
+    function loadRelatedProcedures() {
+
+        var obj = new Object();
+        obj.service = "procedure_get_related_procedures_service_v2";
+        obj.provider = "dvcquocgia";
+        obj.type = "ref";
+
+        obj.id = '5222';
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+
+        if (result && result.length > 0) {
+
+            var htmlText = '';
+            result.forEach(item => {
+
+                if (item.ISLIENTHONG == 1)
+                    htmlText += '<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html?ma_thu_tuc=' + item.ID + '" class="link f16">' + item.PROCEDURE_NAME + '</a></li>';
+                else
+                    htmlText += '<li><a href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=' + item.ID + '" class="link f16">' + item.PROCEDURE_NAME + '</a></li>';
+
+            });
+            $("#list-related-procedures").html(htmlText);
+
+        } else {
+            $("#list-related-procedures").html("Không có thông tin");
+        }
+    }
+
+    function getUrlDownload(procedureCode) {
+
+        var obj = new Object();
+        obj.service = "get_url_downfile";
+        obj.provider = "dvcquocgia";
+        obj.type = "ref";
+
+        var result = apiservice.AjaxJson.executeQuery(obj);
+        return result[0].URL_DOWNLOAD;
+       
+    }
+
+    function downloadMaudon(code){
+		// if (id == '' || id == undefined) return;
+		// var obj = {
+		// 	id: base64.encode(id)
+		// };
+		// var url = "http://10.193.72.20:7005/web/jsp/download_file.jsp?ma=" + $.param(obj);
+        // var url = "https://csdltest.dichvucong.gov.vn/web/jsp/download_file.jsp?ma=" +code;
+        var url = getUrlDownload() + "?ma=" +code;
+		window.open(url, '_blank');
+	}
+
+    // phản ánh kiến nghị
+    function sendPAKN(id, code, name) {
+        submissionCodePA = code;
+        var orgCode = extractAgencyCode(submissionCodePA);
+        var title = 'Phản ánh kiến nghị về hồ sơ: "' + submissionCodePA + '"';
+        var url = '/jsp/reflection.jsp?';
+        url += '&title=' + title;
+        url += '&orgCode=' + orgCode;
+        url += '&orgName=' + name;
+        url += '&object=' + "";
+        url += '&address=' + "";
+        url += '&name=' + "";
+        url += '&email=' + "";
+        url += '&phone=' + "";
+        $.ajax({
+            type: 'GET',
+            url: url,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var result = JSON.parse(response);
+                if (result.error_code != "-1") {
+                    window.location.href = "/p/phananhkiennghi/pakn-gui-pakn.html";
+                } else {
+                    toastr.error('Thực hiện không thành công.');
+                }
+            },
+            error: function (error) {
+                toastr.error('Thực hiện không thành công.');
+            }
+        });
+    }
+
+    function extractAgencyCode(input) {
+        //V1V2V3.Z1Z2.Y1Y2.MX1X2-YYMMDD-XXXX
+        if (input !== "") {
+            var str = input.split("-");
+            return str[0];
+        }
+
+        return "";
+    }
+    // phản ánh kiến nghị: end
+</script>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="loading" id="loading" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+   <style type="text/css">
+			.loading {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 1000;
+			}
+			.loading .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add"> 
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p> 
+     </div> 
+     <div class="add"> 
+      <p>www.dichvucong.gov.vn</p> 
+     </div> 
+     <div class="add"> 
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p> 
+     </div> 
+     <div class="add"> 
+      <p> Email: dichvucong@chinhphu.vn</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script type="text/javascript" src="theme/vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="theme/vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="theme/js/custom.js"></script> 
+  <script type="text/javascript">
+    function showLoading() {
+        $("#loading-all").show();
+    }
+    function hideLoading(){
+        $("#loading-all").hide();
+    }
+
+    function goToPage(url){
+        window.location.href = url;
+    }
+
+    function goToPage_blank(url){
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    $(".targetgroup-box .btn-readmore").click(function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            $(this).html('Xem tiếp <span class="-ap icon-chevron-thin-down icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+            $(this).removeClass("active");
+        }else{
+            $(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+            $(this).addClass("active");
+        }
+    });
+    var links = [
+            
+        ];
+
+
+    function searchProcedure(){
+        var key = getWords($("#searchKeyWord").val(), 100);
+		console.log(key);
+        // if($("#searchKeyWord").val()) {
+        var href = 'dvc-ket-qua-thu-tuc.html?originKey=' + encodeURIComponent(key) + '&tukhoa=' + key.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g, ' ').trim() + '&tinh_thanh=';
+        window.location.href = href;
+        //}
+    }
+
+function showAdvSearch() {
+    getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+}
+
+function doAdvSearch(){
+
+    let mess = '';
+    let keyWord = $('#txtKEYWORD').val().trim();
+    keyWord = getWords(keyWord, 100);
+    if (!keyWord) {
+        mess += 'Bạn vui lòng nhập từ khóa tìm kiếm!\n';
+    }
+    let tinhThanhValue = $('#cboTINH_THANH').val();
+    let boNganhValue = $('#cboBO_NGANH').val();
+    var rdoBO = $("input[name='cap_thuc_hien']:checked").val();
+
+    if (((!tinhThanhValue || '-1' == tinhThanhValue) && rdoBO != 'bonganh') || (rdoBO == 'bonganh' && (!boNganhValue || '-1' == boNganhValue))) {
+        mess += 'Bạn phải chọn ít nhất một Tỉnh/ Thành phố hoặc một Bộ ngành!\n';
+    }
+
+    if (mess) {
+        toastr.warning(mess);
+        return;
+    }
+
+    var rdoSO = $("input[name='quan_huyen_or_so']:checked").val();
+    if (rdoBO != 'bonganh' && $('#cboTINH_THANH').val() && $('#cboTINH_THANH').val() != '-1' && ($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val()) && ($('#cboSO').val() == '-1' || !$('#cboSO').val()) && ($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val())) {
+
+        var params = 'originKey=' + encodeURIComponent(keyWord) + '&tukhoa=' + keyWord.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g,' ').trim()
+        params+= "&tinh_thanh="+(($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val()  || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        window.location = 'dvc-ket-qua-thu-tuc.html?' + params;
+    } else {
+
+        var params = "tu_khoa=" + keyWord;
+        //params += "&bo_nganh="+(($('#cboBO').val() != '-1' || !$('#cboBO').val() || rdoBO != 'bonganh') ? "" : $('#cboBO option:selected').text());
+        params += "&bo_nganh=" + ($('#cboBO_NGANH option:selected').text());
+        params += "&tinh_thanh=" + (($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val() || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        params += "&so=" + (($('#cboSO').val() == '-1' || !$('#cboSO').val() || rdoSO != 'so') ? "" : $('#cboSO option:selected').text());
+        params += "&quan_huyen=" + (($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val() || rdoSO == 'so') ? "" : $('#cboQUAN_HUYEN option:selected').text());
+        params += "&phuong_xa=" + (($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val() || rdoSO == 'so') ? "" : $('#cboPHUONG_XA option:selected').text());
+        params += "&id_tinh_thanh=" + $('#cboTINH_THANH').val();
+        params += "&id_quan_huyen=" + $('#cboQUAN_HUYEN').val();
+        params += "&id_phuong_xa=" + $('#cboPHUONG_XA').val();
+        params += "&id_so=" + $('#cboSO').val();
+        params += "&id_bo_nganh=" + $('#cboBO_NGANH').val();
+        window.location = 'dvc-danh-sach-dich-vu-cong.html?' + params;
+    }
+
+    $('#advsearch').modal('hide');
+}
+$(document).ready(function(){
+    $("#searchKeyWord").keyup(function (e){
+        if (e.which == 13) {
+            searchProcedure();
+        }
+    });
+    bindEvent();
+});
+
+function changeHeight(){
+    var vl = 1 - $('#popupChange').attr('height');
+    $('#popupChange').attr('height', vl);
+    $('#popupChange').css('height', vl + "px");
+}
+
+function bindEvent(){
+    $('#searchKeyWord').keydown(function(e){
+        if (e.keyCode == 13) {
+            searchProcedure();
+        }
+    });
+    $('#advsearch').on('hidden.bs.modal', function () {
+        $('#divClosePopupSearch').click();
+    });
+    $('#divClosePopupSearch').click(function(){
+        $("#txtKEYWORD").val('');
+        $('#rdoTINH_THANH').click();
+        $('#rdoQUAN_HUYEN').click();
+        $("#cboTINH_THANH").change();
+        getLocation("dvcqg_get_phuong_xa_by_selected", "huyen_id", -1, "cboPHUONG_XA");
+        $('#advsearch').modal('hide');
+
+    });
+
+    $('#rdoTINH_THANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').show();
+        $('#cboBO_NGANH').select2().next().hide();
+        $('#cboTINH_THANH').select2().next().show();
+        getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", -1, "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", -1, "cboSO");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+    });
+    $('#rdoBO_NGANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').hide();
+        $('#cboBO_NGANH').select2().next().show();
+        $('#cboTINH_THANH').select2().next().hide();
+        getLocation("dvcqg_get_bo_nganh_by_selected_v2", null, null, "cboBO_NGANH");
+    });
+
+    $('#rdoQUAN_HUYEN').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+        $('#cboSO').select2().next().hide();
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+    });
+
+    $('#rdoSO').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+        $('#cboSO').select2().next().show();
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+    });
+
+    $("#cboTINH_THANH,#cboQUAN_HUYEN,#cboPHUONG_XA,#cboSO,#cboBO_NGANH").select2({
+        allowClear: true,
+        width: "100%",
+    });
+    $('#cboSO,#cboBO_NGANH').select2().next().hide();
+
+    $("#cboTINH_THANH").change(function () {
+        getLocation("dvcqg_get_so_by_selected", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+
+    });
+    $("#cboQUAN_HUYEN").change(function () {
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", $("#cboQUAN_HUYEN").val(), "cboPHUONG_XA");
+    });
+}
+
+//suggestion search
+function sugggestProcedure(keyword) {
+    var obj = new Object();
+    obj.key_search = 'al:"' + keyword +'"~5';
+    obj.page_size = 5;
+    obj.start_row = 0;
+    obj.source_data = "thu_tuc_v1";
+    obj.type = "fts";
+    var result = apiservice.AjaxJson.executeQuery(obj);
+    var dataMap = result.response.docs.map(function (i) {
+        return {
+            name: i.ten_thu_tuc,
+            link: i.ten_thu_tuc,
+            id: i.ma_thu_tuc
+        }
+    });
+
+    return dataMap;
+}
+
+jQuery(document).ready(function($) {
+
+    var engine = new Bloodhound({
+        remote: {
+            url: '/jsp/procedure-typehead.jsp?keyword=al:"%QUERY%"~5',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('keyword'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    $(".search-input").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3
+    }, {
+        source: engine.ttAdapter(),
+        displayKey: 'ten_thu_tuc',
+        name: 'usersList',
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                console.log(data);
+                if (data.isnganhdoc == 1) {
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else if(data.isdungchung == 1){
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else{
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }
+                
+            }
+        }
+    });
+    $('#searchKeyWord:text:visible:first').focus();
+});
+
+</script> 
+  <script type="text/javascript">
+
+    //
+    function autoSetmenu() {
+        var path = window.location.pathname;
+        var isRemoveDropdown = false;
+
+        // Cau hoi
+        if (path == '/p/home/dvc-chi-tiet-cau-hoi.html'){
+            path = '/p/home/dvc-cau-hoi-pho-bien.html';
+        }
+
+        // Huong dan su dung
+        if (path == '/p/home/dvc-huong-dan-bo-nganh-dia-phuong.html' || path == '/p/home/dvc-phan-mem-ho-tro.html' || path == '/p/home/dvc-thiet-ke-giao-dien.html' ||
+            path == '/p/home/dvc-nop-tien-dien.html' || path == '/p/home/dvc-liet-ket-giao-duc.html'
+            ){
+            path = '/p/dvc-huong-dan-cong-dan-doanh-nghiep.html';
+        }
+
+        // Thu tuc hanh hinh cong dan - doanh nghiep
+        if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html'
+            ){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }else if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+            ){
+            path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+        }else if (path == '/p/home/dvc-danh-sach-thu-tuc-theo-nhom-su-kien.html'
+                || path == '/p/home/dvc-danh-sach-cau-hoi-theo-nhom-su-kien.html'
+            ) {
+            var objectId = GetURLParameter('objectId');
+            if (objectId == 1){
+                path = '/p/home/dvc-trang-chu-cong-dan.html';
+            }else if(objectId == 5){
+                path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+            }
+        }
+
+        // DVC trực tuyến & đăng ký xe
+        if (path == '/p/home/dvc-dich-vu-cong-truc-tuyen-ds.html'
+                || path == '/p/home/dvc-dich-vu-cong-truc-tuyen.html'
+                || path == '/p/home/dvc-dang-ky-xe.html'
+            ) {
+            path = '/p/home/dvc-dich-vu-cong-truc-tuyen.html';
+        }
+
+        // Chi tiet TTHC va DVC
+        if (path == '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html' 
+                || path == '/p/home/dvc-danh-sach-dich-vu-cong.html'
+                || path == '/p/home/dvc-danh-sach-thu-tuc-theo-su-kien.html'
+                || path == '/p/home/dvc-ket-qua-thu-tuc.html'
+            ) {
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+            isRemoveDropdown = true;
+        }
+
+        // module TTHC
+        if (path == '/p/home/dvc-tthc-category.html') {
+            path = '/p/home/dvc-tthc-trang-chu.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html';
+        }
+        if (path == '/p/home/dvc-tthc-quyet-dinh-cong-bo-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-quyet-dinh-cong-bo.html';
+        }
+        if (path == '/p/home/dvc-tthc-bonganh-tinhtp.html') {
+            path = '/p/home/dvc-tthc-co-quan.html';
+        }
+
+        if (path == '/p/home/dvc-chi-tiet-tin-tuc.html') {
+            path = '/p/home/dvc-tin-tuc.html';
+        }
+
+        // dvc-cap-ban-sao-tu-ban-chinh
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh.html'){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }
+        //  Đặt lịch hẹn
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh-dlh.html'){
+            path = '/p/home/dvc-tra-cuu-ho-so.html';
+        }
+        // Active main menu
+        $("#main-menu li").each(function () {
+            var link = $(this).find(">a").attr("href");
+            if (path.indexOf(link) != -1) {
+                $(this).parents('li').siblings().removeClass("active");
+                $(this).parents('li').addClass("active");
+                $(this).parents('li').find("li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // Active dropdownmenu
+        $("#main-menu > li").each(function () {
+            if ($(this).hasClass("active")) {
+                var html = $(this).find(">ul").html();
+                $(this).addClass("active");
+                $(this).find(">ul").addClass("hidden");
+                $("#list-dropdown").html(html);
+                if($("#bn-ttp").hasClass("active")){
+                    $("#coquan").addClass("active");
+                }
+            }
+        });
+
+        // Remove
+        if (isRemoveDropdown) {
+            $('#list-dropdown > li').removeClass('active');
+        }
+    }
+
+    var pathHDSD = window.location.pathname;
+    $("#regionleft-introduce li").removeClass('active');
+    $("#left-introduce li a").each(function () {
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $('#left-introduce li:first-child').removeClass('active');
+    $('.child-menus a').each(function(){
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        autoSetmenu();
+    })
+
+
+</script> 
+  <style>
+    .bootbox .modal-footer .btn + .btn {
+        margin-bottom: 0;
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .input-captcha .code .number {
+        height: 100%;
+        padding: 2px;
+    }
+</style>   
+ </body>
+</html>

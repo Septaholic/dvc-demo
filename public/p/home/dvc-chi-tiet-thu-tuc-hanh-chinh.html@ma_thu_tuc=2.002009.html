@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css" /> 
   <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" /> 
   <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css" /> 
-  <link rel="stylesheet" href="theme/css/style.css@version=9.css" /> 
+  <link rel="stylesheet" href="theme/css/style.css?version=9" /> 
   <link rel="shortcut icon" href="img/header/quoc_huy.png" /> 
   <script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script> 
   <script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script> 
@@ -38,14 +38,14 @@
   <script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script> 
   <script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script> 
   <link rel="stylesheet" href="vendor/select2.min.css" /> 
-  <script src="js/ApiService.js@version=18"></script> 
-  <script src="js/CommonUtil.js@version=16"></script> 
-  <script src="js/Constants.js"></script> 
+  <script src="./js/ApiService.js?version=18"></script> 
+  <script src="./js/CommonUtil.js?version=16"></script> 
+  <script src="./js/Constants.js"></script> 
   <script type="text/javascript" src="vendor/typeahead/index.js"></script> 
   <script type="text/javascript" src="vendor/typeahead/handlebars.js"></script> 
   <script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> 
   <script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
-  <script src="js/base64.js"></script> 
+  <script src="./js/base64.js"></script> 
   <script type="text/javascript" src="vendor/d3.v4.min.js"></script> 
   <script>
 		initApiService();
@@ -95,8 +95,8 @@
      </div> 
      <div class="header-account"> 
       <div class="buttons"> 
-       <a href="/authenticationendpoint/login.do.html" class="btn btn-login">Đăng k&yacute;</a> 
-       <a href="/authenticationendpoint/login.do.html" class="btn btn-register">Đăng nhập</a> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-login">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-register">Đăng nhập</a> 
       </div> 
      </div> 
     </div> 
@@ -107,18 +107,18 @@
     <ul id="main-menu" class="pull-left menus"> 
      <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
      <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
-     <li> <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002009.html#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+     <li> <a href="#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
       <ul class="dropdown-menu"> 
        <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
        <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
        <!-- <li>
 							<a href="#">Thủ tục hành chính</a>
 							<ul class="dropdown-menu">
-								<li><a href="dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
-								<li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
-								<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
-								<li><a href="dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
-								<li><a href="dvc-tthc-co-quan.html">Cơ quan</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
 							</ul>
 						</li> --> 
        <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
@@ -127,7 +127,7 @@
        <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
        <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
       </ul> </li> 
-     <li> <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002009.html">Thanh to&aacute;n trực tuyến</a> 
+     <li> <a href="">Thanh to&aacute;n trực tuyến</a> 
       <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
       <!-- <ul class="dropdown-menu">
 						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
@@ -147,23 +147,23 @@
 						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
 						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
 					</ul> --> </li> 
-     <li> <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002009.html#">Phản &aacute;nh kiến nghị</a> 
+     <li> <a href="#">Phản &aacute;nh kiến nghị</a> 
       <ul class="dropdown-menu"> 
        <!-- <li><a href="/p/phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> --> 
-       <li><a href="../phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+       <li><a href="/p/phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
       </ul> </li> 
      <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
      <!-- <li>
 				  <a href="#">Thủ tục hành chính</a>
 				  <ul class="dropdown-menu">
-					<li><a href="dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
-					<li><a href="dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
-					<li><a href="dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
-					<li><a href="dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
-					<li><a href="dvc-tthc-co-quan.html">Cơ quan</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
 				  </ul>
 				</li> --> 
-     <li class=""> <a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002009.html#">Hỗ trợ</a> 
+     <li class=""> <a href="#">Hỗ trợ</a> 
       <ul class="dropdown-menu"> 
        <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
        <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
@@ -173,8 +173,8 @@
     </ul> 
     <div class="header-account mobile-ds"> 
      <div class="buttons"> 
-      <a href="/authenticationendpoint/login.do.html" class="btn btn-login">Đăng nhập</a> 
-      <a href="/authenticationendpoint/login.do.html" class="btn btn-register">Đăng k&yacute;</a> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
      </div> 
     </div> 
    </div> 
@@ -189,16 +189,17 @@
 </html><html>
  <head></head> 
  <body> 
+  <!-- Redirect removed to display static procedure details --> 
   <div class="section-cong-dan"> 
    <div class="container"> 
     <ul class="breadcrumb"> 
      <li><a href="dvc-trang-chu.html">Trang chủ</a></li> 
-     <li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002009.html">Chi tiết thủ tục h&agrave;nh ch&iacute;nh</a></li> 
+     <li><a href="">Chi tiết thủ tục h&agrave;nh ch&iacute;nh</a></li> 
     </ul> 
     <div class="row"> 
      <div class="col-sm-8 col-xs-12"> 
       <h1 class="main-title -none" style="margin-bottom: 10px;">Đăng k&yacute; thay đổi vốn điều lệ, phần vốn g&oacute;p, tỷ lệ phần vốn g&oacute;p (đối với c&ocirc;ng ty TNHH, c&ocirc;ng ty cổ phần, c&ocirc;ng ty hợp danh)</h1> 
-      <a class="url" data-toggle="modal" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html@ma_thu_tuc=7149.html">Xem chi tiết</a> 
+      <a class="url" data-toggle="modal" href="dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=7149">Xem chi tiết</a> 
       <div class="divider-gray"></div> 
       <h2 class="main-title-sub">Tr&igrave;nh tự thực hiện</h2>
       <div class="list-expand">
@@ -985,7 +986,7 @@
 			$("#ds-co-quan-thuc-hien").show();
 			var content = '';
 			for(i = 0; i < result.length; i++) {
-				content += '<li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc=2.002009.html#">' + (i + 1) + '. ' + result[i].TEN + '</a></li>';
+				content += '<li><a href="#">' + (i + 1) + '. ' + result[i].TEN + '</a></li>';
 			}
 			$("#ds-co-quan-thuc-hien-content").html(content);
 			if(result.length==1){
@@ -1478,11 +1479,11 @@ jQuery(document).ready(function($) {
             suggestion: function (data) {
                 console.log(data);
                 if (data.isnganhdoc == 1) {
-                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html@ma_thu_tuc='%20+%20data.ma_thu_tuc%20+%20'.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
                 }else if(data.isdungchung == 1){
-                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html@ma_thu_tuc='%20+%20data.ma_thu_tuc%20+%20'.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
                 }else{
-                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html@ma_thu_tuc='%20+%20data.ma_thu_tuc%20+%20'.html" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
                 }
                 
             }

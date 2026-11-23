@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>Cổng Dịch vụ c&ocirc;ng Quốc gia</title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta name="description" content="Cổng Dịch vụ c&ocirc;ng Quốc gia hỗ trợ th&ocirc;ng tin, đăng k&yacute; thủ tục h&agrave;nh ch&iacute;nh như đổi giấy ph&eacute;p l&aacute;i xe, nộp thuế điện tử, th&ocirc;ng b&aacute;o khuyến mại, cấp lại thẻ BHYT, cấp điện mới..." /> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport" />  
+  <meta content="index, follow" name="ROBOTS" /> 
+  <link rel="stylesheet" href="theme/vendor/font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/iconsax/style.css" /> 
+  <!-- <link rel="stylesheet" href="../vendor/iconsax/style.css"> --> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/ap8/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/slick/slick.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="theme/vendor/typeahead/style.css" /> 
+  <link rel="stylesheet" href="vendor/toastr/toastr.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrapValidator.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="theme/vendor/swiper/css/swiper.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" /> 
+  <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/timepicker.css" /> 
+  <link rel="stylesheet" href="theme/css/style.css?version=9" /> 
+  <link rel="shortcut icon" href="img/header/quoc_huy.png" /> 
+  <script type="text/javascript" src="theme/vendor/jquery/jquery.2.1.1.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrapValidator.js"></script> 
+  <script type="text/javascript" src="theme/vendor/slick/slick.min.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/modules/variable-pie.js"></script> 
+  <script type="text/javascript" src="theme/vendor/highchart/highcharts-more.js"></script> 
+  <script type="text/javascript" src="vendor/toastr/toastr.min.js"></script> 
+  <script type="text/javascript" src="vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+  <script type="text/javascript" src="vendor/jq-paginator.js"></script> 
+  <script type="text/javascript" src="vendor/bootbox.all.min.js"></script> 
+  <script type="text/javascript" src="vendor/select2.min.js"></script> 
+  <script type="text/javascript" src="vendor/mime.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery-iframe-auto-height.min.js"></script> 
+  <script type="text/javascript" src="vendor/jquery/jquery.browser.js"></script> 
+  <link rel="stylesheet" href="vendor/select2.min.css" /> 
+  <script src="./js/ApiService.js?version=18"></script> 
+  <script src="./js/CommonUtil.js?version=16"></script> 
+  <script src="./js/Constants.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
+  <script src="./js/base64.js"></script> 
+  <script type="text/javascript" src="vendor/d3.v4.min.js"></script> 
+  <script>
+		initApiService();
+	</script> 
+ </head> 
+ <body> 
+  <div class="loading-all" id="loading-all" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.png" alt="" /> 
+    <span style="color:blue">Đang xử l&yacute;...<span> </span></span>
+   </div> 
+   <style type="text/css">
+			.loading-all {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 10000;
+				background: #dbdcdc40;
+			}
+			.loading-all .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <!--DEFINE CONSTANT --> 
+  <!--END CONSTANT--> 
+  <div class="overlay-common"></div> 
+  <!-- /mtv/ Log propertise--> 
+  <div class="header"> 
+   <div class="container"> 
+    <div class="relative content"> 
+     <div class="logo-text"> 
+      <a href="dvc-trang-chu.html" class="logo"> <img src="theme/img/header/logo.png" alt="" /> </a> 
+     </div> 
+     <div class="nav-toggle"> 
+      <span class="-ap icon icon-menu"></span> 
+     </div> 
+     <div class="header-account"> 
+      <div class="buttons"> 
+       <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-login">Đăng k&yacute;</a> 
+       <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-register">Đăng nhập</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <nav class="header-nav"> 
+   <div class="container"> 
+    <ul id="main-menu" class="pull-left menus"> 
+     <li class="active" id="home-page"><a href="dvc-trang-chu.html"><span class="-ap icon icon-home4"></span></a></li> 
+     <!-- <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> --> 
+     <li> <a href="#">Th&ocirc;ng tin v&agrave; dịch vụ</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="dvc-trang-chu-cong-dan.html">Công dân</a></li> --> 
+       <!-- <li><a href="dvc-trang-chu-doanh-nghiep.html">Doanh nghiệp</a></li> --> 
+       <!-- <li>
+							<a href="#">Thủ tục hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+								<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+							</ul>
+						</li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-truc-tuyen.html">Dịch vụ công trực tuyến</a></li> --> 
+       <!-- <li><a href="dvc-dich-vu-cong-noi-bat.html">Dịch vụ công nổi bật</a></li> --> 
+       <li><a href="dvc-tra-cuu-ho-so.html">Tra cứu hồ sơ</a></li> 
+       <li><a href="dvc-tra-cuu-ban-an.html">T&ograve;a &aacute;n nh&acirc;n d&acirc;n</a></li> 
+       <li><a href="dvc-cau-hoi-pho-bien.html">C&acirc;u hỏi thường gặp</a></li> 
+      </ul> </li> 
+     <li> <a href="">Thanh to&aacute;n trực tuyến</a> 
+      <!-- <a href="dvc-thanh-toan-truc-tuyen.html">Thanh toán trực tuyến</a> --> 
+      <!-- <ul class="dropdown-menu">
+						<li><a href="dvc-thanh-toan.html">Nộp thuế doanh nghiệp</a></li>
+						<li><a href="dvc-thanh-toan-thue-ca-nhan.html">Nộp thuế cá nhân/Trước bạ</a></li>
+						<li>
+							<a href="#">Thanh toán vi phạm hành chính</a>
+							<ul class="dropdown-menu">
+								<li><a href="dvc-thanh-toan-vi-pham-giao-thong.html">Tra cứu/Thanh toán vi phạm giao thông</a></li>
+								<li><a href="dvc-thanh-toan-vi-pham-xay-dung.html">Tra cứu/Thanh toán vi phạm xây dựng</a></li>
+							</ul>
+						</li>
+						<li><a href="dvc-thanh-toan-phi-le-phi-ho-so.html">Thanh toán phí/lệ phí dịch vụ công</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-bhyt.html">Đóng tiếp BHXH tự nguyện, gia hạn BHYT</a></li>
+						<li><a href="dvc-thanh-toan-bhxh-doanh-nghiep.html">Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN</a></li>
+						<li><a href="dvc-thanh-toan-thue-dat-dai.html">Thanh toán nghĩa vụ tài chính về đất đai</a></li>
+						<li><a href="dvc-thanh-toan-dien.html">Thanh toán tiền điện</a></li>
+						<li><a href="dvc-thanh-toan-vien-phi.html">Thanh toán viện phí</a></li>
+						<li><a href="dvc-thanh-toan-an-phi.html">Thanh toán tạm ứng án phí</a></li>
+					</ul> --> </li> 
+     <li> <a href="#">Phản &aacute;nh kiến nghị</a> 
+      <ul class="dropdown-menu"> 
+       <!-- <li><a href="/p/phananhkiennghi/pakn-gui-pakn.html">Gửi PAKN</a></li> --> 
+       <li><a href="/p/phananhkiennghi/pakn-search.html">Tra cứu kết quả trả lời</a></li> 
+      </ul> </li> 
+     <li><a href="dvc-index-tinhthanhpho-tonghop.html">Đ&aacute;nh gi&aacute; chất lượng phục vụ</a></li> 
+     <!-- <li>
+				  <a href="#">Thủ tục hành chính</a>
+				  <ul class="dropdown-menu">
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-trang-chu.html">Tra cứu TTHC</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh.html">Thủ tục hành chính</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html">Thủ tục hành chính liên thông</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-quyet-dinh-cong-bo.html">Quyết định công bố</a></li>
+					<li><a href="https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-co-quan.html">Cơ quan</a></li>
+				  </ul>
+				</li> --> 
+     <li class=""> <a href="#">Hỗ trợ</a> 
+      <ul class="dropdown-menu"> 
+       <li><a href="dvc-gioi-thieu.html">Giới thiệu</a></li> 
+       <li><a href="dvc-dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li> 
+       <li><a href="dvc-huong-dan-cong-dan-doanh-nghiep.html">Hướng dẫn sử dụng</a></li> 
+       <li><a href="dvc-tin-tuc.html">Th&ocirc;ng b&aacute;o</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="header-account mobile-ds"> 
+     <div class="buttons"> 
+      <a href="https://xacthuc.dichvucong.gov.vn/oauth2/authorize?response_type=code&amp;client_id=0vFpdFtniMwmiWOUnWfOFYZcNdAa&amp;scope=openid&amp;redirect_uri=https://vpcp.dichvucong.gov.vn/p/home/dvc-trang-chu.html" class="btn btn-login">Đăng nhập</a> 
+      <a href="https://dangky.dichvucong.gov.vn/register" class="btn btn-register">Đăng k&yacute;</a> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="header-bottom"> 
+   <div class="container"> 
+    <ul id="list-dropdown"> 
+    </ul> 
+   </div> 
+  </div> 
+ </body>
+</html><html>
+ <head></head> 
+ <body> 
+  <!-- # set($object_id = $request.getParameter("object_id")) --> 
+  <div class="section-hotro"> 
+   <div class="container"> 
+    <ul class="breadcrumb"> 
+     <li><a href="/p/home/dvc-trang-chu.html">Trang chủ</a></li> 
+     <li><a href="#">Chi tiết c&acirc;u hỏi</a></li> 
+    </ul> 
+    <div class="cau-hoi-pho-bien"> 
+     <div class="box-form"> 
+      <div class="row"> 
+       <div class="col-sm-6 col-xs-12"> 
+        <input type="text" class="form-control" placeholder="Nhập nội dung cần t&igrave;m" id="tuKhoa" /> 
+       </div> 
+       <div class="col-sm-6 col-xs-12"> 
+        <div class="input-right-button"> 
+         <div class="select-custom"> 
+          <select name="ministry" id="ministry" class="form-control"> </select> 
+         </div> 
+         <button class="btn btn-search btn-main" onclick="searchQuestion();"> <span class="-ap icon-search icon"></span> T&igrave;m kiếm </button> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <!-- # set($answers=[{ID=19405, CONTENT=<p>- Công dân xuất trình sổ hộ khẩu và đơn đề nghị cấp Chứng minh nhân dân cùng các giấy tờ liên quan khác; - Cơ quan Công an tiếp nhận đơn đề nghị cấp Chứng minh nhân dân đối chiếu thông tin kê khai với sổ hộ khẩu cùng các giấy tờ liên quan;- Công dân kê khai Tờ khai Chứng minh nhân dân và Chỉ bản; - Chụp ảnh: Ảnh chân dung làm Chứng minh nhân dân là ảnh màu, phông nền xanh hoặc trắng, chụp chính diện, đầu để trần, rõ mặt, rõ hai tai, không đeo kính, trang phục, tác phong nghiêm túc, lịch sự, không được sử dụng trang phục chuyên ngành khi chụp ảnh Chứng minh nhân dân; ảnh không qua chỉnh sửa photoshop, riêng đối với trường hợp công dân theo tôn giáo, dân tộc thì được phép mặc lễ phục tôn giáo, dân tộc đó, nếu có khăn đội đầu thì được giữ nguyên khi chụp ảnh Chứng minh nhân dân nhưng phải đảm bảo rõ mặt. - Cơ quan Công an thu nhận vân tay của công dân vào tờ khai, chỉ bản và Chứng minh nhân dân theo quy định; trường hợp ngón tay bị cụt, khèo, dị tật, bị thương không lấy được vân tay thì ghi nội dung cụ thể vào vị trí tương ứng của ngón đó trên Tờ khai Chứng minh nhân dân và Chỉ bản; nội dung thể hiện dấu vân tay ngón trỏ trái, ngón trỏ phải trên Chứng minh nhân dân đối với trường hợp bị cụt, khèo, dị tật, bị thương không lấy được vân tay thì đánh dấu gạch chéo (X) vào vị trí tương ứng của ngón đó.- Ghi mục dân tộc trên Chứng minh nhân dân: Ghi mục dân tộc theo giấy khai sinh và sổ hộ khẩu nếu tên mục dân tộc đó nằm trong danh mục đã được quy định theo Quyết định số 121/TCTK/PPCĐ ngày 02/3/1979 của Tổng cục Thống kê; trường hợp trường thông tin về dân tộc không nằm trong danh mục đã được quy định thì yêu cầu công dân điều chỉnh mục dân tộc trong giấy khai sinh và sổ hộ khẩu cho đúng với tên dân tộc đã được quy định sau đó mới tiến hành cấp Chứng minh nhân dân. Đối với trường hợp công dân có nguyện vọng ghi tên gọi khác của dân tộc mình (nhóm nhỏ đã được quy định) nằm trong 54 dân tộc Việt Nam theo Quyết định số 121/TCTK/PPCĐ ngày 02/3/1979 của Tổng cục Thống kê trên Chứng minh nhân dân thì ghi tên dân tộc chính thức trước, đóng mở ngoặc ghi tên nhóm nhỏ của dân tộc, như: Tày (Thổ), Sán Chay (Cao Lan), Dao (Mán)… Việc ghi mục dân tộc như vậy vừa đảm bảo đúng theo danh mục thành phần các dân tộc Việt Nam, đồng thời đáp ứng được nguyện vọng của công dân có vướng mắc về thành phần dân tộc, đảm bảo việc giữ gìn tên thường gọi của cộng đồng dân tộc mình. Trường hợp một số dân tộc mà tên chính thức và tên nhóm nhỏ có tổng số ký tự dài hơn so với khoảng trống của mục dân tộc trên Chứng minh nhân dân thì chỉ ghi tên dân tộc chính thức trước, sau đó đóng mở ngoặc ghi tên nhóm nhỏ của dân tộc trên Tờ khai Chứng minh nhân dân còn trên Chứng minh nhân dân chỉ thể hiện tên nhóm chính dân tộc của công dân.- Ghi mục tôn giáo trên Chứng minh nhân dân: Đối với một số tôn giáo có nhiều chi phái khác nhau như tổ chức hội thánh, ban đại diện… nhưng về danh xưng vẫn thống nhất gọi theo tôn giáo đó. Trường hợp công dân khai theo tôn giáo thuộc một trong số các tổ chức hội thánh, ban đại diện… thuộc tổ chức tôn giáo đã được Ban tôn giáo Chính phủ công nhận thì việc ghi mục tôn giáo trên Chứng minh nhân dân không ghi theo lời khai của công dân mà thống nhất ghi theo tên tổ chức tôn giáo đã được quy định.- Đối với công dân bị mắc bệnh tâm thần hoặc một bệnh khác làm mất khả năng nhận thức, khả năng điều khiển hành vi khi làm thủ tục cấp, đổi, cấp lại Chứng minh nhân dân thực hiện các thủ tục theo quy định chung, ngoài ra phải có người đại diện hợp pháp đến cùng để làm thủ tục theo quy định. Việc viết đơn đề nghị, kê khai Tờ khai Chứng minh nhân dân do người đại diện hợp pháp thực hiện và phải chịu trách nhiệm về các nội dung kê khai. Cơ quan cấp Chứng minh nhân dân cho những trường hợp này có trách nhiệm lập danh sách và lưu hồ sơ riêng để theo dõi, quản lý.- Công dân nộp lệ phí cấp Chứng minh nhân dân theo quy định tại điểm b, khoản 2 Điều 5 Thông tư số 250/2016/TT-BCT ngày 11/11/2016 của Bộ Tài chính hướng dẫn về phí và lệ phí thuộc thẩm quyền quyết định của Hội đồng nhân dân tỉnh, thành phố trực thuộc Trung ương;- Cơ quan Công an cấp giấy hẹn trả kết quả cho công dân; - Trả Chứng minh nhân dân theo thời gian và địa điểm trong giấy hẹn. Nơi trả Chứng minh nhân dân là nơi làm thủ tục cấp Chứng minh nhân dân; trường hợp công dân có yêu cầu trả Chứng minh nhân dân tại địa điểm khác thì công dân đăng ký dịch vụ chuyển phát qua bưu điện và trả phí theo quy định.</p>, CONTENT_LOWER=<p>- công dân xuất trình sổ hộ khẩu và đơn đề nghị cấp chứng minh nhân dân cùng các giấy tờ liên quan khác; - cơ quan công an tiếp nhận đơn đề nghị cấp chứng minh nhân dân đối chiếu thông tin kê khai với sổ hộ khẩu cùng các giấy tờ liên quan;- công dân kê khai tờ khai chứng minh nhân dân và chỉ bản; - chụp ảnh: ảnh chân dung làm chứng minh nhân dân là ảnh màu, phông nền xanh hoặc trắng, chụp chính diện, đầu để trần, rõ mặt, rõ hai tai, không đeo kính, trang phục, tác phong nghiêm túc, lịch sự, không được sử dụng trang phục chuyên ngành khi chụp ảnh chứng minh nhân dân; ảnh không qua chỉnh sửa photoshop, riêng đối với trường hợp công dân theo tôn giáo, dân tộc thì được phép mặc lễ phục tôn giáo, dân tộc đó, nếu có khăn đội đầu thì được giữ nguyên khi chụp ảnh chứng minh nhân dân nhưng phải đảm bảo rõ mặt. - cơ quan công an thu nhận vân tay của công dân vào tờ khai, chỉ bản và chứng minh nhân dân theo quy định; trường hợp ngón tay bị cụt, khèo, dị tật, bị thương không lấy được vân tay thì ghi nội dung cụ thể vào vị trí tương ứng của ngón đó trên tờ khai chứng minh nhân dân và chỉ bản; nội dung thể hiện dấu vân tay ngón trỏ trái, ngón trỏ phải trên chứng minh nhân dân đối với trường hợp bị cụt, khèo, dị tật, bị thương không lấy được vân tay thì đánh dấu gạch chéo (x) vào vị trí tương ứng của ngón đó.- ghi mục dân tộc trên chứng minh nhân dân: ghi mục dân tộc theo giấy khai sinh và sổ hộ khẩu nếu tên mục dân tộc đó nằm trong danh mục đã được quy định theo quyết định số 121/tctk/ppcđ ngày 02/3/1979 của tổng cục thống kê; trường hợp trường thông tin về dân tộc không nằm trong danh mục đã được quy định thì yêu cầu công dân điều chỉnh mục dân tộc trong giấy khai sinh và sổ hộ khẩu cho đúng với tên dân tộc đã được quy định sau đó mới tiến hành cấp chứng minh nhân dân. đối với trường hợp công dân có nguyện vọng ghi tên gọi khác của dân tộc mình (nhóm nhỏ đã được quy định) nằm trong 54 dân tộc việt nam theo quyết định số 121/tctk/ppcđ ngày 02/3/1979 của tổng cục thống kê trên chứng minh nhân dân thì ghi tên dân tộc chính thức trước, đóng mở ngoặc ghi tên nhóm nhỏ của dân tộc, như: tày (thổ), sán chay (cao lan), dao (mán)… việc ghi mục dân tộc như vậy vừa đảm bảo đúng theo danh mục thành phần các dân tộc việt nam, đồng thời đáp ứng được nguyện vọng của công dân có vướng mắc về thành phần dân tộc, đảm bảo việc giữ gìn tên thường gọi của cộng đồng dân tộc mình. trường hợp một số dân tộc mà tên chính thức và tên nhóm nhỏ có tổng số ký tự dài hơn so với khoảng trống của mục dân tộc trên chứng minh nhân dân thì chỉ ghi tên dân tộc chính thức trước, sau đó đóng mở ngoặc ghi tên nhóm nhỏ của dân tộc trên tờ khai chứng minh nhân dân còn trên chứng minh nhân dân chỉ thể hiện tên nhóm chính dân tộc của công dân.- ghi mục tôn giáo trên chứng minh nhân dân: đối với một số tôn giáo có nhiều chi phái khác nhau như tổ chức hội thánh, ban đại diện… nhưng về danh xưng vẫn thống nhất gọi theo tôn giáo đó. trường hợp công dân khai theo tôn giáo thuộc một trong số các tổ chức hội thánh, ban đại diện… thuộc tổ chức tôn giáo đã được ban tôn giáo chính phủ công nhận thì việc ghi mục tôn giáo trên chứng minh nhân dân không ghi theo lời khai của công dân mà thống nhất ghi theo tên tổ chức tôn giáo đã được quy định.- đối với công dân bị mắc bệnh tâm thần hoặc một bệnh khác làm mất khả năng nhận thức, khả năng điều khiển hành vi khi làm thủ tục cấp, đổi, cấp lại chứng minh nhân dân thực hiện các thủ tục theo quy định chung, ngoài ra phải có người đại diện hợp pháp đến cùng để làm thủ tục theo quy định. việc viết đơn đề nghị, kê khai tờ khai chứng minh nhân dân do người đại diện hợp pháp thực hiện và phải chịu trách nhiệm về các nội dung kê khai. cơ quan cấp chứng minh nhân dân cho những trường hợp này có trách nhiệm lập danh sách và lưu hồ sơ riêng để theo dõi, quản lý.- công dân nộp lệ phí cấp chứng minh nhân dân theo quy định tại điểm b, khoản 2 điều 5 thông tư số 250/2016/tt-bct ngày 11/11/2016 của bộ tài chính hướng dẫn về phí và lệ phí thuộc thẩm quyền quyết định của hội đồng nhân dân tỉnh, thành phố trực thuộc trung ương;- cơ quan công an cấp giấy hẹn trả kết quả cho công dân; - trả chứng minh nhân dân theo thời gian và địa điểm trong giấy hẹn. nơi trả chứng minh nhân dân là nơi làm thủ tục cấp chứng minh nhân dân; trường hợp công dân có yêu cầu trả chứng minh nhân dân tại địa điểm khác thì công dân đăng ký dịch vụ chuyển phát qua bưu điện và trả phí theo quy định.</p>}]) --> 
+     <h1 class="main-title-sub">Tr&igrave;nh tự, thủ tục cấp Chứng minh nh&acirc;n d&acirc;n được quy định như thế n&agrave;o?</h1> 
+     <div class="article"> 
+      <p class="f22">Trả lời:</p> 
+      <p> </p>
+      <p>- C&ocirc;ng d&acirc;n xuất tr&igrave;nh sổ hộ khẩu v&agrave; đơn đề nghị cấp Chứng minh nh&acirc;n d&acirc;n c&ugrave;ng c&aacute;c giấy tờ li&ecirc;n quan kh&aacute;c; - Cơ quan C&ocirc;ng an tiếp nhận đơn đề nghị cấp Chứng minh nh&acirc;n d&acirc;n đối chiếu th&ocirc;ng tin k&ecirc; khai với sổ hộ khẩu c&ugrave;ng c&aacute;c giấy tờ li&ecirc;n quan;- C&ocirc;ng d&acirc;n k&ecirc; khai Tờ khai Chứng minh nh&acirc;n d&acirc;n v&agrave; Chỉ bản; - Chụp ảnh: Ảnh ch&acirc;n dung l&agrave;m Chứng minh nh&acirc;n d&acirc;n l&agrave; ảnh m&agrave;u, ph&ocirc;ng nền xanh hoặc trắng, chụp ch&iacute;nh diện, đầu để trần, r&otilde; mặt, r&otilde; hai tai, kh&ocirc;ng đeo k&iacute;nh, trang phục, t&aacute;c phong nghi&ecirc;m t&uacute;c, lịch sự, kh&ocirc;ng được sử dụng trang phục chuy&ecirc;n ng&agrave;nh khi chụp ảnh Chứng minh nh&acirc;n d&acirc;n; ảnh kh&ocirc;ng qua chỉnh sửa photoshop, ri&ecirc;ng đối với trường hợp c&ocirc;ng d&acirc;n theo t&ocirc;n gi&aacute;o, d&acirc;n tộc th&igrave; được ph&eacute;p mặc lễ phục t&ocirc;n gi&aacute;o, d&acirc;n tộc đ&oacute;, nếu c&oacute; khăn đội đầu th&igrave; được giữ nguy&ecirc;n khi chụp ảnh Chứng minh nh&acirc;n d&acirc;n nhưng phải đảm bảo r&otilde; mặt. - Cơ quan C&ocirc;ng an thu nhận v&acirc;n tay của c&ocirc;ng d&acirc;n v&agrave;o tờ khai, chỉ bản v&agrave; Chứng minh nh&acirc;n d&acirc;n theo quy định; trường hợp ng&oacute;n tay bị cụt, kh&egrave;o, dị tật, bị thương kh&ocirc;ng lấy được v&acirc;n tay th&igrave; ghi nội dung cụ thể v&agrave;o vị tr&iacute; tương ứng của ng&oacute;n đ&oacute; tr&ecirc;n Tờ khai Chứng minh nh&acirc;n d&acirc;n v&agrave; Chỉ bản; nội dung thể hiện dấu v&acirc;n tay ng&oacute;n trỏ tr&aacute;i, ng&oacute;n trỏ phải tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n đối với trường hợp bị cụt, kh&egrave;o, dị tật, bị thương kh&ocirc;ng lấy được v&acirc;n tay th&igrave; đ&aacute;nh dấu gạch ch&eacute;o (X) v&agrave;o vị tr&iacute; tương ứng của ng&oacute;n đ&oacute;.- Ghi mục d&acirc;n tộc tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n: Ghi mục d&acirc;n tộc theo giấy khai sinh v&agrave; sổ hộ khẩu nếu t&ecirc;n mục d&acirc;n tộc đ&oacute; nằm trong danh mục đ&atilde; được quy định theo Quyết định số 121/TCTK/PPCĐ ng&agrave;y 02/3/1979 của Tổng cục Thống k&ecirc;; trường hợp trường th&ocirc;ng tin về d&acirc;n tộc kh&ocirc;ng nằm trong danh mục đ&atilde; được quy định th&igrave; y&ecirc;u cầu c&ocirc;ng d&acirc;n điều chỉnh mục d&acirc;n tộc trong giấy khai sinh v&agrave; sổ hộ khẩu cho đ&uacute;ng với t&ecirc;n d&acirc;n tộc đ&atilde; được quy định sau đ&oacute; mới tiến h&agrave;nh cấp Chứng minh nh&acirc;n d&acirc;n. Đối với trường hợp c&ocirc;ng d&acirc;n c&oacute; nguyện vọng ghi t&ecirc;n gọi kh&aacute;c của d&acirc;n tộc m&igrave;nh (nh&oacute;m nhỏ đ&atilde; được quy định) nằm trong 54 d&acirc;n tộc Việt Nam theo Quyết định số 121/TCTK/PPCĐ ng&agrave;y 02/3/1979 của Tổng cục Thống k&ecirc; tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n th&igrave; ghi t&ecirc;n d&acirc;n tộc ch&iacute;nh thức trước, đ&oacute;ng mở ngoặc ghi t&ecirc;n nh&oacute;m nhỏ của d&acirc;n tộc, như: T&agrave;y (Thổ), S&aacute;n Chay (Cao Lan), Dao (M&aacute;n)… Việc ghi mục d&acirc;n tộc như vậy vừa đảm bảo đ&uacute;ng theo danh mục th&agrave;nh phần c&aacute;c d&acirc;n tộc Việt Nam, đồng thời đ&aacute;p ứng được nguyện vọng của c&ocirc;ng d&acirc;n c&oacute; vướng mắc về th&agrave;nh phần d&acirc;n tộc, đảm bảo việc giữ g&igrave;n t&ecirc;n thường gọi của cộng đồng d&acirc;n tộc m&igrave;nh. Trường hợp một số d&acirc;n tộc m&agrave; t&ecirc;n ch&iacute;nh thức v&agrave; t&ecirc;n nh&oacute;m nhỏ c&oacute; tổng số k&yacute; tự d&agrave;i hơn so với khoảng trống của mục d&acirc;n tộc tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n th&igrave; chỉ ghi t&ecirc;n d&acirc;n tộc ch&iacute;nh thức trước, sau đ&oacute; đ&oacute;ng mở ngoặc ghi t&ecirc;n nh&oacute;m nhỏ của d&acirc;n tộc tr&ecirc;n Tờ khai Chứng minh nh&acirc;n d&acirc;n c&ograve;n tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n chỉ thể hiện t&ecirc;n nh&oacute;m ch&iacute;nh d&acirc;n tộc của c&ocirc;ng d&acirc;n.- Ghi mục t&ocirc;n gi&aacute;o tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n: Đối với một số t&ocirc;n gi&aacute;o c&oacute; nhiều chi ph&aacute;i kh&aacute;c nhau như tổ chức hội th&aacute;nh, ban đại diện… nhưng về danh xưng vẫn thống nhất gọi theo t&ocirc;n gi&aacute;o đ&oacute;. Trường hợp c&ocirc;ng d&acirc;n khai theo t&ocirc;n gi&aacute;o thuộc một trong số c&aacute;c tổ chức hội th&aacute;nh, ban đại diện… thuộc tổ chức t&ocirc;n gi&aacute;o đ&atilde; được Ban t&ocirc;n gi&aacute;o Ch&iacute;nh phủ c&ocirc;ng nhận th&igrave; việc ghi mục t&ocirc;n gi&aacute;o tr&ecirc;n Chứng minh nh&acirc;n d&acirc;n kh&ocirc;ng ghi theo lời khai của c&ocirc;ng d&acirc;n m&agrave; thống nhất ghi theo t&ecirc;n tổ chức t&ocirc;n gi&aacute;o đ&atilde; được quy định.- Đối với c&ocirc;ng d&acirc;n bị mắc bệnh t&acirc;m thần hoặc một bệnh kh&aacute;c l&agrave;m mất khả năng nhận thức, khả năng điều khiển h&agrave;nh vi khi l&agrave;m thủ tục cấp, đổi, cấp lại Chứng minh nh&acirc;n d&acirc;n thực hiện c&aacute;c thủ tục theo quy định chung, ngo&agrave;i ra phải c&oacute; người đại diện hợp ph&aacute;p đến c&ugrave;ng để l&agrave;m thủ tục theo quy định. Việc viết đơn đề nghị, k&ecirc; khai Tờ khai Chứng minh nh&acirc;n d&acirc;n do người đại diện hợp ph&aacute;p thực hiện v&agrave; phải chịu tr&aacute;ch nhiệm về c&aacute;c nội dung k&ecirc; khai. Cơ quan cấp Chứng minh nh&acirc;n d&acirc;n cho những trường hợp n&agrave;y c&oacute; tr&aacute;ch nhiệm lập danh s&aacute;ch v&agrave; lưu hồ sơ ri&ecirc;ng để theo d&otilde;i, quản l&yacute;.- C&ocirc;ng d&acirc;n nộp lệ ph&iacute; cấp Chứng minh nh&acirc;n d&acirc;n theo quy định tại điểm b, khoản 2 Điều 5 Th&ocirc;ng tư số 250/2016/TT-BCT ng&agrave;y 11/11/2016 của Bộ T&agrave;i ch&iacute;nh hướng dẫn về ph&iacute; v&agrave; lệ ph&iacute; thuộc thẩm quyền quyết định của Hội đồng nh&acirc;n d&acirc;n tỉnh, th&agrave;nh phố trực thuộc Trung ương;- Cơ quan C&ocirc;ng an cấp giấy hẹn trả kết quả cho c&ocirc;ng d&acirc;n; - Trả Chứng minh nh&acirc;n d&acirc;n theo thời gian v&agrave; địa điểm trong giấy hẹn. Nơi trả Chứng minh nh&acirc;n d&acirc;n l&agrave; nơi l&agrave;m thủ tục cấp Chứng minh nh&acirc;n d&acirc;n; trường hợp c&ocirc;ng d&acirc;n c&oacute; y&ecirc;u cầu trả Chứng minh nh&acirc;n d&acirc;n tại địa điểm kh&aacute;c th&igrave; c&ocirc;ng d&acirc;n đăng k&yacute; dịch vụ chuyển ph&aacute;t qua bưu điện v&agrave; trả ph&iacute; theo quy định.</p> 
+      <p></p> 
+     </div> 
+     <div class="divider-gray"></div> 
+     <div class="main-title-sub">
+       C&aacute;c thủ tục li&ecirc;n quan 
+     </div> 
+     <ul class="list-document"> 
+      <li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=2.001238">Cấp Chứng minh nh&acirc;n d&acirc;n (9 số) thực hiện tại cấp huyện</a></li> 
+      <li><a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.003411">Cấp Chứng minh nh&acirc;n d&acirc;n (9 số) thực hiện tại cấp tỉnh</a></li> 
+     </ul> 
+     <div class="divider-gray"></div> 
+     <div class="main-title-sub">
+       C&aacute;c c&acirc;u hỏi li&ecirc;n quan 
+     </div> 
+     <ul class="list-document -question" id="list-questions"> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=19386&amp;row_limit=1">Nơi l&agrave;m thủ tục cấp, đổi, cấp lại Chứng minh nh&acirc;n d&acirc;n ở đ&acirc;u?</a></li> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=19393&amp;row_limit=1">Ai c&oacute; thẩm quyền cấp, đổi, cấp lại Chứng minh nh&acirc;n d&acirc;n?</a></li> 
+      <li><a href="dvc-chi-tiet-cau-hoi.html?id=19394&amp;row_limit=1">Lệ ph&iacute; cấp Chứng minh nh&acirc;n d&acirc;n được quy định như thế n&agrave;o?</a></li> 
+     </ul> 
+     <a class="readmore" id="readLess" onclick="showAllRelatedQuestion(0);" style="visibility: hidden;">Thu nhỏ c&acirc;u hỏi li&ecirc;n quan<span class="icon fa fa-angle-up"></span></a> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="section section-menu-bottom"> 
+   <div class="container"> 
+    <div class="pull-left"> 
+     <a class="wrap" onclick="goToQuestion()"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        C&acirc;u hỏi thường gặp 
+      </div> </a> 
+    </div> 
+    <div class="pull-right"> 
+     <a class="wrap" href="dvc-huong-dan-cong-dan-doanh-nghiep.html"> 
+      <div class="icon"> 
+       <img src="img/home/trongdong.png" alt="" /> 
+      </div> 
+      <div class="text">
+        Hướng dẫn sử dụng 
+      </div> </a> 
+    </div> 
+    <div class="clearfix"></div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+
+	function goToQuestion(){
+		var path = window.location.pathname;
+		var targetPage = 'dvc-cau-hoi-pho-bien.html';
+		if (path == '/p/home/dvc-trang-chu-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+				|| path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+			){
+			targetPage += '?pObject=5';
+		}else {
+			targetPage += '?pObject=1'
+		}
+		window.location.href = targetPage;
+	}
+</script> 
+  <script>
+
+    function showAllRelatedQuestion(rowLimit) {
+        $("#list-questions").html('Đang load...');
+        varRowLimit = 0;
+        if (rowLimit == 1){
+            varRowLimit = 0;
+            document.getElementById("readMore").style.visibility = "hidden";
+            document.getElementById("readLess").style.visibility = "visible";
+        } 
+        else {
+            varRowLimit = 1;
+            document.getElementById("readMore").style.visibility = "visible";
+            document.getElementById("readLess").style.visibility = "hidden";
+        }
+        var obj = new Object();
+        obj.service = "crud_find_list_question_related_service_v2";
+        obj.id = "19384";
+        obj.row_limit = varRowLimit;
+        obj.type = "ref";
+        var results = apiservice.AjaxJson.executeQuery(obj);
+        
+        if (results && results.length > 0 && JSON.stringify(results) != "[null]") {
+            renderHTML(results, rowLimit);
+        }
+    }
+
+    function doChangePageEvent (rowLimit) {
+        showAllRelatedQuestion(rowLimit);
+    }
+
+    function renderHTML (results, rowLimit) {
+        var listQuestionData = "";
+
+        for (var i = 0; i < results.length; i++) {
+            var data = results[i];
+            listQuestionData += '<li><a href="dvc-chi-tiet-cau-hoi.html?id=' + data.ID +'&row_limit=1" >' + data.CONTENT + '</a></li>';
+        }
+        $('#list-questions').html(listQuestionData);
+    }
+
+    function searchQuestion(){
+        var href = '/p/home/dvc-cau-hoi-pho-bien.html?boNganh=' + $("#ministry").val() +'&tuKhoa=' + $("#tuKhoa").val();
+        window.location.href = href;
+	}
+
+
+    $('#ministry').on('change', function() {
+        searchQuestion();
+    });
+
+    // $(_=>{
+	$(document).ready(function(){
+        getLocation("dvcqg_get_list_ministry_have_question_service_v2", null, null, "ministry");
+    });
+	// $(function(){
+    $("#tuKhoa").keyup(function (e) {
+        if (e.which == 13) {
+            searchQuestion();
+        }
+    });
+    
+</script>  
+ </body>
+</html><html>
+ <head></head>
+ <body>
+  <div class="loading" id="loading" style="display:none"> 
+   <div class="icon"> 
+    <img src="img/loading.svg" alt="" /> 
+   </div> 
+   <style type="text/css">
+			.loading {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 1000;
+			}
+			.loading .icon {
+				width: 100px;
+				position: absolute;
+				top: 0px;
+				height: 100px;
+				bottom: 0px;
+				right: 0px;
+				margin: auto;
+				left: 0px;
+			}
+
+		</style> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-bottom"> 
+    <div class="container"> 
+     <div class="add"> 
+      <p>Cơ quan chủ quản: Văn ph&ograve;ng Ch&iacute;nh phủ</p> 
+     </div> 
+     <div class="add"> 
+      <p>www.dichvucong.gov.vn</p> 
+     </div> 
+     <div class="add"> 
+      <p>Tổng đ&agrave;i hỗ trợ: 18001096</p> 
+     </div> 
+     <div class="add"> 
+      <p> Email: dichvucong@chinhphu.vn</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script type="text/javascript" src="theme/vendor/typeahead/index.js"></script> 
+  <script type="text/javascript" src="theme/vendor/typeahead/handlebars.js"></script> 
+  <script type="text/javascript" src="theme/js/custom.js"></script> 
+  <script type="text/javascript">
+    function showLoading() {
+        $("#loading-all").show();
+    }
+    function hideLoading(){
+        $("#loading-all").hide();
+    }
+
+    function goToPage(url){
+        window.location.href = url;
+    }
+
+    function goToPage_blank(url){
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    $(".targetgroup-box .btn-readmore").click(function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            $(this).html('Xem tiếp <span class="-ap icon-chevron-thin-down icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"250px"});
+            $(this).removeClass("active");
+        }else{
+            $(this).html('Thu gọn <span class="-ap icon-chevron-thin-up icon"></span>');
+            $(this).parents(".targetgroup-box").find(".links").css({"height":"auto"});
+            $(this).addClass("active");
+        }
+    });
+    var links = [
+            
+        ];
+
+
+    function searchProcedure(){
+        var key = getWords($("#searchKeyWord").val(), 100);
+		console.log(key);
+        // if($("#searchKeyWord").val()) {
+        var href = 'dvc-ket-qua-thu-tuc.html?originKey=' + encodeURIComponent(key) + '&tukhoa=' + key.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g, ' ').trim() + '&tinh_thanh=';
+        window.location.href = href;
+        //}
+    }
+
+function showAdvSearch() {
+    getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+}
+
+function doAdvSearch(){
+
+    let mess = '';
+    let keyWord = $('#txtKEYWORD').val().trim();
+    keyWord = getWords(keyWord, 100);
+    if (!keyWord) {
+        mess += 'Bạn vui lòng nhập từ khóa tìm kiếm!\n';
+    }
+    let tinhThanhValue = $('#cboTINH_THANH').val();
+    let boNganhValue = $('#cboBO_NGANH').val();
+    var rdoBO = $("input[name='cap_thuc_hien']:checked").val();
+
+    if (((!tinhThanhValue || '-1' == tinhThanhValue) && rdoBO != 'bonganh') || (rdoBO == 'bonganh' && (!boNganhValue || '-1' == boNganhValue))) {
+        mess += 'Bạn phải chọn ít nhất một Tỉnh/ Thành phố hoặc một Bộ ngành!\n';
+    }
+
+    if (mess) {
+        toastr.warning(mess);
+        return;
+    }
+
+    var rdoSO = $("input[name='quan_huyen_or_so']:checked").val();
+    if (rdoBO != 'bonganh' && $('#cboTINH_THANH').val() && $('#cboTINH_THANH').val() != '-1' && ($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val()) && ($('#cboSO').val() == '-1' || !$('#cboSO').val()) && ($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val())) {
+
+        var params = 'originKey=' + encodeURIComponent(keyWord) + '&tukhoa=' + keyWord.replace(/[&\/\\#,+()$~%'":*?<>{}^]/g,' ').trim()
+        params+= "&tinh_thanh="+(($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val()  || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        window.location = 'dvc-ket-qua-thu-tuc.html?' + params;
+    } else {
+
+        var params = "tu_khoa=" + keyWord;
+        //params += "&bo_nganh="+(($('#cboBO').val() != '-1' || !$('#cboBO').val() || rdoBO != 'bonganh') ? "" : $('#cboBO option:selected').text());
+        params += "&bo_nganh=" + ($('#cboBO_NGANH option:selected').text());
+        params += "&tinh_thanh=" + (($('#cboTINH_THANH').val() == '-1' || !$('#cboTINH_THANH').val() || rdoBO == 'bonganh') ? "" : $('#cboTINH_THANH option:selected').text());
+        params += "&so=" + (($('#cboSO').val() == '-1' || !$('#cboSO').val() || rdoSO != 'so') ? "" : $('#cboSO option:selected').text());
+        params += "&quan_huyen=" + (($('#cboQUAN_HUYEN').val() == '-1' || !$('#cboQUAN_HUYEN').val() || rdoSO == 'so') ? "" : $('#cboQUAN_HUYEN option:selected').text());
+        params += "&phuong_xa=" + (($('#cboPHUONG_XA').val() == '-1' || !$('#cboPHUONG_XA').val() || rdoSO == 'so') ? "" : $('#cboPHUONG_XA option:selected').text());
+        params += "&id_tinh_thanh=" + $('#cboTINH_THANH').val();
+        params += "&id_quan_huyen=" + $('#cboQUAN_HUYEN').val();
+        params += "&id_phuong_xa=" + $('#cboPHUONG_XA').val();
+        params += "&id_so=" + $('#cboSO').val();
+        params += "&id_bo_nganh=" + $('#cboBO_NGANH').val();
+        window.location = 'dvc-danh-sach-dich-vu-cong.html?' + params;
+    }
+
+    $('#advsearch').modal('hide');
+}
+$(document).ready(function(){
+    $("#searchKeyWord").keyup(function (e){
+        if (e.which == 13) {
+            searchProcedure();
+        }
+    });
+    bindEvent();
+});
+
+function changeHeight(){
+    var vl = 1 - $('#popupChange').attr('height');
+    $('#popupChange').attr('height', vl);
+    $('#popupChange').css('height', vl + "px");
+}
+
+function bindEvent(){
+    $('#searchKeyWord').keydown(function(e){
+        if (e.keyCode == 13) {
+            searchProcedure();
+        }
+    });
+    $('#advsearch').on('hidden.bs.modal', function () {
+        $('#divClosePopupSearch').click();
+    });
+    $('#divClosePopupSearch').click(function(){
+        $("#txtKEYWORD").val('');
+        $('#rdoTINH_THANH').click();
+        $('#rdoQUAN_HUYEN').click();
+        $("#cboTINH_THANH").change();
+        getLocation("dvcqg_get_phuong_xa_by_selected", "huyen_id", -1, "cboPHUONG_XA");
+        $('#advsearch').modal('hide');
+
+    });
+
+    $('#rdoTINH_THANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').show();
+        $('#cboBO_NGANH').select2().next().hide();
+        $('#cboTINH_THANH').select2().next().show();
+        getLocation("dvcqg_get_tinh_thanh_by_selected_v2", null, null, "cboTINH_THANH");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", -1, "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", -1, "cboSO");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+    });
+    $('#rdoBO_NGANH').click(function(){
+        changeHeight();
+        $('#hide_for_bo_nganh').hide();
+        $('#cboBO_NGANH').select2().next().show();
+        $('#cboTINH_THANH').select2().next().hide();
+        getLocation("dvcqg_get_bo_nganh_by_selected_v2", null, null, "cboBO_NGANH");
+    });
+
+    $('#rdoQUAN_HUYEN').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+        $('#cboSO').select2().next().hide();
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+    });
+
+    $('#rdoSO').click(function(){
+        $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+        $('#cboSO').select2().next().show();
+        getLocation("dvcqg_get_so_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+    });
+
+    $("#cboTINH_THANH,#cboQUAN_HUYEN,#cboPHUONG_XA,#cboSO,#cboBO_NGANH").select2({
+        allowClear: true,
+        width: "100%",
+    });
+    $('#cboSO,#cboBO_NGANH').select2().next().hide();
+
+    $("#cboTINH_THANH").change(function () {
+        getLocation("dvcqg_get_so_by_selected", "tinh_id", $("#cboTINH_THANH").val(), "cboSO");
+        getLocation("dvcqg_get_quan_huyen_by_selected_v2", "tinh_id", $("#cboTINH_THANH").val(), "cboQUAN_HUYEN");
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", -1, "cboPHUONG_XA");
+        if ($("input[name='quan_huyen_or_so']:checked").val() == "so") {
+
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().hide();
+            $('#cboSO').select2().next().show();
+        } else {
+            $('#cboQUAN_HUYEN,#cboPHUONG_XA').select2().next().show();
+            $('#cboSO').select2().next().hide();
+
+        }
+
+    });
+    $("#cboQUAN_HUYEN").change(function () {
+        getLocation("dvcqg_get_phuong_xa_by_selected_v2", "huyen_id", $("#cboQUAN_HUYEN").val(), "cboPHUONG_XA");
+    });
+}
+
+//suggestion search
+function sugggestProcedure(keyword) {
+    var obj = new Object();
+    obj.key_search = 'al:"' + keyword +'"~5';
+    obj.page_size = 5;
+    obj.start_row = 0;
+    obj.source_data = "thu_tuc_v1";
+    obj.type = "fts";
+    var result = apiservice.AjaxJson.executeQuery(obj);
+    var dataMap = result.response.docs.map(function (i) {
+        return {
+            name: i.ten_thu_tuc,
+            link: i.ten_thu_tuc,
+            id: i.ma_thu_tuc
+        }
+    });
+
+    return dataMap;
+}
+
+jQuery(document).ready(function($) {
+
+    var engine = new Bloodhound({
+        remote: {
+            url: '/jsp/procedure-typehead.jsp?keyword=al:"%QUERY%"~5',
+            wildcard: '%QUERY%'
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace('keyword'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    $(".search-input").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3
+    }, {
+        source: engine.ttAdapter(),
+        displayKey: 'ten_thu_tuc',
+        name: 'usersList',
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function (data) {
+                console.log(data);
+                if (data.isnganhdoc == 1) {
+                    return '<a href="dvc-chi-tiet-thu-tuc-nganh-doc.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else if(data.isdungchung == 1){
+                    return '<a href="dvc-chi-tiet-thu-tuc-dung-chung.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }else{
+                    return '<a href="dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=' + data.ma_thu_tuc + '" class="list-group-item">' + data.ten_thu_tuc + '</a>'
+                }
+                
+            }
+        }
+    });
+    $('#searchKeyWord:text:visible:first').focus();
+});
+
+</script> 
+  <script type="text/javascript">
+
+    //
+    function autoSetmenu() {
+        var path = window.location.pathname;
+        var isRemoveDropdown = false;
+
+        // Cau hoi
+        if (path == '/p/home/dvc-chi-tiet-cau-hoi.html'){
+            path = '/p/home/dvc-cau-hoi-pho-bien.html';
+        }
+
+        // Huong dan su dung
+        if (path == '/p/home/dvc-huong-dan-bo-nganh-dia-phuong.html' || path == '/p/home/dvc-phan-mem-ho-tro.html' || path == '/p/home/dvc-thiet-ke-giao-dien.html' ||
+            path == '/p/home/dvc-nop-tien-dien.html' || path == '/p/home/dvc-liet-ket-giao-duc.html'
+            ){
+            path = '/p/dvc-huong-dan-cong-dan-doanh-nghiep.html';
+        }
+
+        // Thu tuc hanh hinh cong dan - doanh nghiep
+        if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-cong-dan.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-cong-dan.html'
+            ){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }else if (path == '/p/home/dvc-ket-qua-thu-tuc-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-dich-vu-cho-doanh-nghiep.html'
+                || path == '/p/home/dvc-chi-tiet-nhom-su-kien-cho-doanh-nghiep.html'
+            ){
+            path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+        }else if (path == '/p/home/dvc-danh-sach-thu-tuc-theo-nhom-su-kien.html'
+                || path == '/p/home/dvc-danh-sach-cau-hoi-theo-nhom-su-kien.html'
+            ) {
+            var objectId = GetURLParameter('objectId');
+            if (objectId == 1){
+                path = '/p/home/dvc-trang-chu-cong-dan.html';
+            }else if(objectId == 5){
+                path = '/p/home/dvc-trang-chu-doanh-nghiep.html';
+            }
+        }
+
+        // DVC trực tuyến & đăng ký xe
+        if (path == '/p/home/dvc-dich-vu-cong-truc-tuyen-ds.html'
+                || path == '/p/home/dvc-dich-vu-cong-truc-tuyen.html'
+                || path == '/p/home/dvc-dang-ky-xe.html'
+            ) {
+            path = '/p/home/dvc-dich-vu-cong-truc-tuyen.html';
+        }
+
+        // Chi tiet TTHC va DVC
+        if (path == '/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html' 
+                || path == '/p/home/dvc-danh-sach-dich-vu-cong.html'
+                || path == '/p/home/dvc-danh-sach-thu-tuc-theo-su-kien.html'
+                || path == '/p/home/dvc-ket-qua-thu-tuc.html'
+            ) {
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+            isRemoveDropdown = true;
+        }
+
+        // module TTHC
+        if (path == '/p/home/dvc-tthc-category.html') {
+            path = '/p/home/dvc-tthc-trang-chu.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh.html';
+        }
+        if (path == '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-thu-tuc-hanh-chinh-lien-thong.html';
+        }
+        if (path == '/p/home/dvc-tthc-quyet-dinh-cong-bo-chi-tiet.html') {
+            path = '/p/home/dvc-tthc-quyet-dinh-cong-bo.html';
+        }
+        if (path == '/p/home/dvc-tthc-bonganh-tinhtp.html') {
+            path = '/p/home/dvc-tthc-co-quan.html';
+        }
+
+        if (path == '/p/home/dvc-chi-tiet-tin-tuc.html') {
+            path = '/p/home/dvc-tin-tuc.html';
+        }
+
+        // dvc-cap-ban-sao-tu-ban-chinh
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh.html'){
+            path = '/p/home/dvc-trang-chu-cong-dan.html';
+        }
+        //  Đặt lịch hẹn
+        if (path == '/p/home/dvc-cap-ban-sao-tu-ban-chinh-dlh.html'){
+            path = '/p/home/dvc-tra-cuu-ho-so.html';
+        }
+        // Active main menu
+        $("#main-menu li").each(function () {
+            var link = $(this).find(">a").attr("href");
+            if (path.indexOf(link) != -1) {
+                $(this).parents('li').siblings().removeClass("active");
+                $(this).parents('li').addClass("active");
+                $(this).parents('li').find("li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // Active dropdownmenu
+        $("#main-menu > li").each(function () {
+            if ($(this).hasClass("active")) {
+                var html = $(this).find(">ul").html();
+                $(this).addClass("active");
+                $(this).find(">ul").addClass("hidden");
+                $("#list-dropdown").html(html);
+                if($("#bn-ttp").hasClass("active")){
+                    $("#coquan").addClass("active");
+                }
+            }
+        });
+
+        // Remove
+        if (isRemoveDropdown) {
+            $('#list-dropdown > li').removeClass('active');
+        }
+    }
+
+    var pathHDSD = window.location.pathname;
+    $("#regionleft-introduce li").removeClass('active');
+    $("#left-introduce li a").each(function () {
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $('#left-introduce li:first-child').removeClass('active');
+    $('.child-menus a').each(function(){
+        var href = $(this).attr('href');
+        if (pathHDSD.indexOf(href) != -1) {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        autoSetmenu();
+    })
+
+
+</script> 
+  <style>
+    .bootbox .modal-footer .btn + .btn {
+        margin-bottom: 0;
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .input-captcha .code .number {
+        height: 100%;
+        padding: 2px;
+    }
+</style>   
+ </body>
+</html>
