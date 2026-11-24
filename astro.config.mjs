@@ -96,8 +96,6 @@ function rewriteUrls(text, reqHost) {
   if (typeof text !== 'string') return text;
   const base = `http://${reqHost || 'localhost:4321'}`;
   return text
-    .replace(/https:\/\/lienthong\.dichvucong\.gov\.vn/g, `${base}/_ext/lienthong.dichvucong.gov.vn`)
-    .replace(/http:\/\/lienthong\.dichvucong\.gov\.vn/g, `${base}/_ext/lienthong.dichvucong.gov.vn`)
     .replace(/https:\/\/dichvucong\.gov\.vn/g, base)
     .replace(/http:\/\/dichvucong\.gov\.vn/g, base);
 }
@@ -133,19 +131,8 @@ function handleDvcRequest(req, res, next) {
     return;
   }
 
-  let host = 'dichvucong.gov.vn';
-  let lookupPath = cleanUrl;
-  if (cleanUrl.startsWith('/_ext/')) {
-    const rest = cleanUrl.slice('/_ext/'.length);
-    const slashIdx = rest.indexOf('/');
-    if (slashIdx !== -1) {
-      host = rest.slice(0, slashIdx);
-      lookupPath = rest.slice(slashIdx);
-    } else {
-      host = rest;
-      lookupPath = '/';
-    }
-  }
+  const host = 'dichvucong.gov.vn';
+  const lookupPath = cleanUrl;
 
   // 1. API Mock Matching
   const isApi = cleanUrl.includes('/api/') || cleanUrl.includes('/oauth2/') || method !== 'GET';
