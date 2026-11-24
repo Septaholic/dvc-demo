@@ -1,0 +1,26 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function getStaticPaths() {
+  const sitemapPath = path.resolve('public/sitemap.xml');
+  const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+  const urls = [];
+  const regex = /<loc>https:\/\/dichvucong\.gov\.vn\/([^<]+)<\/loc>/g;
+  let match;
+  const set = new Set();
+  while ((match = regex.exec(sitemapContent)) !== null) {
+    let slug = match[1].trim();
+    if (slug.endsWith('/')) slug = slug.slice(0, -1);
+    if (slug && !set.has(slug)) {
+      set.add(slug);
+      urls.push({ params: { slug } });
+    }
+  }
+  return urls;
+}
+
+const htmlPath = path.resolve('public/index.html');
+const html = fs.readFileSync(htmlPath, 'utf8');
+---
+<Fragment set:html={html} />

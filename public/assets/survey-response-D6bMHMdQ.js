@@ -1,0 +1,1 @@
+import{c as s}from"./index-DXjvarUE.js";function n(e){return s("/submitting/citizen/survey-response/list",e)}function i(e){return s("/submitting/citizen/survey-response/get-survey",e)}function r(e){return s("/submitting/citizen/survey-response/update",e)}export{i as g,n as l,r as u};

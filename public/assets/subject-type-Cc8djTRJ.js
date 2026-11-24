@@ -1,0 +1,1 @@
+import{c as e}from"./index-DXjvarUE.js";function c(t){return e("/configuring/subject-type/list-by-formality-case",t)}function n(t){return e("/configuring/subject-type/get-list-by-citizen",t)}export{c as a,n as g};

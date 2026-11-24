@@ -2,7 +2,8 @@
 .astro/
 dist/
 node_modules/
-backup/
+backupv1/
+backupv2/
 
 # Logs
 npm-debug.log*

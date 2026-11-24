@@ -1,0 +1,14 @@
+{
+  "encryptionKey": "S6|d'qc1GG,'rx&xn0XC",
+  "maxSize": 1572864,
+  "CanhBao": {
+    "HienThi": false,
+    "NoiDung": "<p><i class=\"material-icons\">report_problem</i> Hệ thống đang tạm dừng để nâng cấp, triển khai Nghị định số 301/2026/NĐ-CP của Chính phủ. Kính mong Quý công dân thông cảm và quay lại truy cập sau. Xin cảm ơn!</p>"
+  },
+  "UAT": false,
+  "Regex": {
+    "InvalidCharacters": "[^a-zA-ZÀÁÂÃÄÅÈÉÊËÌÍÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåèéêëìíïðñòóôõöùúûüýĀāĂăĆćĈĉĊċČčĎďĐđĒēĔĕĚěĜĝĞğĤĥĨĩĬĭİŅņŇňŌōŎŏŐőŔŕŘřŤťŨũŪūŬŭŮůŰűƀƇƠơƯưǍǎǏǐǑǒǓǔǙǚǦǧǨǩǰǸǹǺǻȎȏȐȑȖȗȞȟȦȧȰȱȲȳɃΫϋЎўҤҥӐӑӖӗḰḱṆṇṌṍṸṹẄẅẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹᾰᾱᾸᾹῐῘῠῨ̛̣̣̽̐̆̌᷃̂̇̃̄̀́̉̃\\.\\'\\,\\s_\\`\\-]",
+    "MultipleSpaces": "\\s{2,}"
+  },
+  "ClientIdVneid": "sso-dvc-lienthong-web"
+}
