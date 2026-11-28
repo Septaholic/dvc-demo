@@ -1,0 +1,1 @@
+import{j as r,aH as t}from"./index-DXjvarUE.js";function i({data:s}){return r.jsx(t,{children:r.jsx("script",{type:"application/ld+json",children:JSON.stringify(s).replace(/</g,"\\u003c")})})}export{i as J};

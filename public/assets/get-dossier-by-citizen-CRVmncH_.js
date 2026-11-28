@@ -1,0 +1,1 @@
+import{c as t}from"./index-DXjvarUE.js";function r(i){const{key:n,...s}=i;return t("/submitting/list-dossier-by-citizen-id",s)}function o(i){return t("/submitting/list-qna-dossier-by-citizen-id",i)}export{o as a,r as l};

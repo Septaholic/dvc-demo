@@ -1,0 +1,24 @@
+# Chỉ MỘT nhóm User-agent duy nhất: crawler chỉ áp dụng 1 nhóm khớp nhất và KHÔNG gộp nhóm
+# (RFC 9309). Trước đây nhóm riêng của Googlebot chỉ có Allow nên Googlebot bỏ qua toàn bộ
+# Disallow bên dưới và được phép crawl cả trang đăng nhập/hồ sơ. Đừng tách nhóm riêng cho
+# từng bot trừ khi lặp lại ĐẦY ĐỦ Disallow trong nhóm đó.
+User-agent: *
+Allow: /
+
+# ── Chặn các trang nội bộ / không có giá trị SEO ────────
+# Không có dấu "/" cuối để khớp cả "/ho-so-cong-dan" lẫn "/ho-so-cong-dan/...".
+# Danh sách này phải khớp NOINDEX_PATH_PREFIXES trong src/common/constants/seo.constants.ts.
+Disallow: /ho-so-cong-dan
+Disallow: /nop-ho-so
+Disallow: /tao-ho-so
+Disallow: /sua-ho-so
+Disallow: /sso
+Disallow: /vnconnect-sso
+Disallow: /dang-nhap
+Disallow: /dang-ky
+
+# /assets/ (JS/CSS đã hash của Vite) KHÔNG được chặn: đây là SPA, công cụ tìm kiếm cần tải JS/CSS
+# mới render được nội dung. Bundle vốn đã công khai với mọi người dùng nên chặn không tăng bảo mật.
+
+# ── Sitemap ──────────────────────────────────────────────
+Sitemap: https://dichvucong.gov.vn/sitemap.xml

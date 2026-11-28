@@ -1,0 +1,1 @@
+import{aK as l,r as s,s as u}from"./index-DXjvarUE.js";function p(t={}){const e=t.maxLen??l,n=s.useCallback(a=>(a??"").normalize("NFC"),[]),r=s.useCallback(a=>n(a).slice(0,e),[e,n]),o=s.useCallback(a=>u(n(a)).slice(0,e),[e,n]),c=s.useCallback(a=>i=>a(r(i)),[r]);return{maxLen:e,normalize:r,normalizeForApi:o,inputProps:{maxLength:e},bindOnChange:c}}export{p as u};

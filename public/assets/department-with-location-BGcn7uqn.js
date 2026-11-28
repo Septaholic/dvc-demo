@@ -1,0 +1,1 @@
+import{c as t}from"./index-DXjvarUE.js";var i=(e=>(e.LEVEL_1="level_1",e.LEVEL_2="level_2",e.LEVEL_3="level_3",e.LEVEL_4="level_4",e))(i||{});function r(e={}){return t("/configuring/citizen/department/list-with-location",{direction:"DESC",order:"",...e})}export{i as A,r as l};
