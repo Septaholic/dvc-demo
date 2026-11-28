@@ -1,5 +1,6 @@
 # WEB DVC DEMO
 
+Web demo trang dịch vụ công tại https://dichvucong.gov.vn/
 Được thiêt lập trên Astro
 
 ---
@@ -51,32 +52,31 @@ Sẽ đc cập nhật sau khi hoàn thành
 
 ```
 dvc-demo\
-├── astro.config.mjs              # Cấu hình Astro & Vite middleware giả lập API, tìm kiếm và VNeID SSO
-├── GUIDES.md                     # Tài liệu hướng dẫn khởi chạy và demo cho mô hình ngôn ngữ (PhoBERT)
-├── package.json                  # Cấu hình npm scripts & dependencies
-├── extraassets/                  # Tài nguyên hình ảnh bổ sung cho trang đăng nhập VNeID SSO
-├── server/                       # Backend mô phỏng trạng thái ngoại tuyến & tìm kiếm
-│   ├── dvc-data-templates.mjs    # Dữ liệu công dân mẫu, biểu mẫu điện tử và sinh tệp PDF biên lai
-│   ├── dvc-portal-engine.mjs     # Xử lý API đăng nhập, hồ sơ, nộp/lưu thủ tục, thanh toán & tải tệp
-│   ├── search-engine.mjs         # Bộ máy tìm kiếm thủ tục hành chính toàn văn không dấu
-│   └── vneid-qr-sample.json      # Ảnh QR giả lập (placebo đã làm mờ) cho trang SSO VNeID
 ├── public/                       # Tài nguyên tĩnh SPA & dữ liệu giả lập API
-│   ├── api-mocks.json            # 186 API endpoints trích xuất và lọc PII từ file HAR
 │   ├── _next/                    # Tài nguyên tĩnh của cổng đăng nhập VNeID SSO (/auth)
 │   ├── assets/                   # Chunks JS, CSS, GeoJSON của React SPA portal
 │   ├── fonts/                    # Font chữ Inter, Nunito Sans
 │   ├── imgs/                     # Hình ảnh, icon, logo, quốc huy SVG
+│   ├── api-mocks.json            # 186 API endpoints được giả lập
 │   ├── index.html                # Single Page Application HTML chính
-│   ├── sso-auth.html             # Trang đăng nhập VNeID SSO mô phỏng 1:1 (/auth)
-│   ├── favicon-vneid.ico         # Biểu tượng favicon của trang VNeID SSO
 │   ├── file-preview-sw.js        # Service worker hỗ trợ xem trước tệp
-│   ├── robots.txt, sitemap.xml   # Cấu hình SEO và danh sách 62+ route chính thức
+│   ├── robots.txt, sitemap.xml   # Cấu hình SEO và danh sách 62+ route từ DVC
 │   └── site.webmanifest          # Manifest PWA của Cổng Dịch vụ công Quốc gia
+│   ├── sso-auth.html             # Trang đăng nhập VNeID SSO
+├── server/                       # Backend mô phỏng trạng thái ngoại tuyến & tìm kiếm
+│   ├── dvc-data-templates.mjs    # Dữ liệu công dân mẫu, biểu mẫu điện tử và sinh tệp PDF biên lai
+│   ├── dvc-portal-engine.mjs     # Xử lý API đăng nhập, hồ sơ, nộp/lưu thủ tục, thanh toán & tải tệp
+│   ├── search-engine.mjs         # Bộ máy tìm kiếm thủ tục hành chính toàn văn không dấu
+│   └── vneid-qr-sample.json      # Ảnh QR placebo cho trang SSO
 ├── src/
 │   └── pages/                    # Các trang tĩnh Astro
 │       ├── 404.astro             # Trang fallback 404 điều hướng SPA client-side
 │       └── [...slug].astro       # Dynamic route sinh trước 62 trang tĩnh từ sitemap
 └── dist/                         # Thư mục kết xuất sau khi chạy npm run build
+├── GUIDES.md                     # Tài liệu hướng dẫn khởi chạy và demo
+├── README.md                     # You are here :()
+├── astro.config.mjs              # Cấu hình Astro & Vite middleware giả lập API, tìm kiếm và VNeID SSO
+├── package.json                  # Cấu hình npm scripts & dependencies
 ```
 
 ---
