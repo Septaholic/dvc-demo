@@ -1,0 +1,1 @@
+import{r as n}from"./index-DXjvarUE.js";const d=(a=!1)=>{const[s,e]=n.useState(a),[l,t]=n.useState(null);return{isOpen:s,data:l,openModal:o=>{o&&!(o instanceof MouseEvent)&&t(o),e(!0)},closeModal:()=>{e(!1),t(null)},toggleModal:()=>e(!s),setIsOpen:e,setData:t}};export{d as u};
