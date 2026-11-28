@@ -1,9 +1,10 @@
-# Build outputs and cache
+# Build outputs, cache and extra files
 .astro/
 dist/
 node_modules/
 backupv1/
 backupv2/
+extraassets/
 
 # Logs
 npm-debug.log*

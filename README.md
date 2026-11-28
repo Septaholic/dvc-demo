@@ -1,6 +1,6 @@
 # WEB DVC DEMO
 
-Được thiêt lập trên Astro, đây là bản 2 của web demo
+Được thiêt lập trên Astro
 
 ---
 
@@ -51,14 +51,24 @@ Sẽ đc cập nhật sau khi hoàn thành
 
 ```
 dvc-demo\
-├── astro.config.mjs              # Cấu hình Astro & Vite middleware giả lập API từ HAR
+├── astro.config.mjs              # Cấu hình Astro & Vite middleware giả lập API, tìm kiếm và VNeID SSO
+├── GUIDES.md                     # Tài liệu hướng dẫn khởi chạy và demo cho mô hình ngôn ngữ (PhoBERT)
 ├── package.json                  # Cấu hình npm scripts & dependencies
+├── extraassets/                  # Tài nguyên hình ảnh bổ sung cho trang đăng nhập VNeID SSO
+├── server/                       # Backend mô phỏng trạng thái ngoại tuyến & tìm kiếm
+│   ├── dvc-data-templates.mjs    # Dữ liệu công dân mẫu, biểu mẫu điện tử và sinh tệp PDF biên lai
+│   ├── dvc-portal-engine.mjs     # Xử lý API đăng nhập, hồ sơ, nộp/lưu thủ tục, thanh toán & tải tệp
+│   ├── search-engine.mjs         # Bộ máy tìm kiếm thủ tục hành chính toàn văn không dấu
+│   └── vneid-qr-sample.json      # Ảnh QR giả lập (placebo đã làm mờ) cho trang SSO VNeID
 ├── public/                       # Tài nguyên tĩnh SPA & dữ liệu giả lập API
-│   ├── api-mocks.json            # 163 API endpoints trích xuất từ file har (không có ở mã nguồn)
+│   ├── api-mocks.json            # 186 API endpoints trích xuất và lọc PII từ file HAR
+│   ├── _next/                    # Tài nguyên tĩnh của cổng đăng nhập VNeID SSO (/auth)
 │   ├── assets/                   # Chunks JS, CSS, GeoJSON của React SPA portal
 │   ├── fonts/                    # Font chữ Inter, Nunito Sans
 │   ├── imgs/                     # Hình ảnh, icon, logo, quốc huy SVG
 │   ├── index.html                # Single Page Application HTML chính
+│   ├── sso-auth.html             # Trang đăng nhập VNeID SSO mô phỏng 1:1 (/auth)
+│   ├── favicon-vneid.ico         # Biểu tượng favicon của trang VNeID SSO
 │   ├── file-preview-sw.js        # Service worker hỗ trợ xem trước tệp
 │   ├── robots.txt, sitemap.xml   # Cấu hình SEO và danh sách 62+ route chính thức
 │   └── site.webmanifest          # Manifest PWA của Cổng Dịch vụ công Quốc gia
