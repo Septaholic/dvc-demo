@@ -1,7 +1,6 @@
 # WEB DVC DEMO
 
-Web demo trang dịch vụ công tại https://dichvucong.gov.vn/
-Được thiêt lập trên Astro
+Web demo trang dịch vụ công tại https://dichvucong.gov.vn/, được thiêt lập trên Astro
 
 ---
 
