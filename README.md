@@ -19,7 +19,7 @@ Máy ai chả có npm đúng ko :v
 
 Hệ thống đã được thiết lập sẵn các lệnh chuẩn trong `package.json`
 
-Port mặc định cho localhost là 4321/4322, vào package.json để đổi. Nếu bị trùng port thì Astro sẽ tự động chọn một port free xung quanh 4321 (check terminal để biết chi tiết)
+Port mặc định cho localhost là 4321/4322. Nếu bị trùng port thì Astro sẽ tự động chọn một port free xung quanh 4321 (check terminal để biết chi tiết)
 
 [Đọc thêm về Astro dev server](https://docs.astro.build/en/develop-and-build/#start-the-astro-dev-server)
 
